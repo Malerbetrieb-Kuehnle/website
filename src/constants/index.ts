@@ -3,20 +3,16 @@ import facebook from "../assets/facebook.svg";
 
 export const navLinks = [
   {
-    id: "home",
-    title: "Home",
+    id: "service",
+    title: "Service",
   },
   {
-    id: "features",
-    title: "Features",
+    id: "referenzen",
+    title: "Referenzen",
   },
   {
-    id: "product",
-    title: "Product",
-  },
-  {
-    id: "clients",
-    title: "Clients",
+    id: "kontakt",
+    title: "Kontakt",
   },
 ];
 
@@ -26,15 +22,15 @@ export const footerLinks = [
     links: [
       {
         name: "Service",
-        link: "https://www.hoobank.com/content/",
+        link: "https://www.malerbetrieb-kuehnle/services",
       },
       {
         name: "Referenzen",
-        link: "https://www.hoobank.com/how-it-works/",
+        link: "https://www.malerbetrieb-kuehnle/referenzen",
       },
       {
         name: "Kontakt",
-        link: "https://www.hoobank.com/create/",
+        link: "https://www.malerbetrieb-kuehnle/kontakt",
       },
     ],
   },
@@ -43,15 +39,15 @@ export const footerLinks = [
     links: [
       {
         name: "Impressum",
-        link: "https://www.hoobank.com/help-center/",
+        link: "https://www.malerbetrieb-kuehnle/impressum",
       },
       {
         name: "Datenschutz",
-        link: "https://www.hoobank.com/partners/",
+        link: "https://www.malerbetrieb-kuehnle/datenschutz",
       },
       {
         name: "Cookie-Einstellungen",
-        link: "https://www.hoobank.com/suggestions/",
+        link: "https://www.malerbetrieb-kuehnle/cookies",
       },
     ],
   },

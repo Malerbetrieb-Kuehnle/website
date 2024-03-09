@@ -15,8 +15,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-image: url("./assets/background.webp"); */
   background-color: #fafafa;
+}
+
+/* Desktop version */
+@media (min-width: 768px) {
+  .container-hero {
+    background-image: url('assets/hero-background-desktop.svg');
+  }
+}
+
+/* Mobile version */
+@media (max-width: 767px) {
+  .container-hero {
+    background-image: url('assets/hero-background-mobile.svg');
+  }
 }
 
 .container-about {
@@ -91,6 +104,5 @@
   padding-bottom: 50px;
   overflow: hidden;
   height: auto;
-  display: flex;
   background-color: #fafafa;
 }

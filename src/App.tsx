@@ -30,7 +30,7 @@ import { Footer } from "./components/ui/footer";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { services_innenbereich, services_aussenbereich } from './constants';
+import { services_innenbereich, services_aussenbereich } from "./constants";
 
 function App() {
   return (
@@ -46,7 +46,7 @@ function App() {
         </div>
 
         {/* Hero */}
-        <div className="container-hero flex flex-col items-center justify-center">
+        <div className="container-hero hero-section flex flex-col items-center justify-center">
           <h2 className="text-2xl mb-4">Malerbetrieb Kühnle</h2>
           <h1 className="text-6xl mb-8 font-bold">
             Farbe schafft{" "}
@@ -89,12 +89,16 @@ function App() {
         </div>
 
         {/* Services */}
-        <div className="container-services">
+        <div className="container-services flex flex-col items-center justify-center">
           <h1 className="text-4xl mb-4">Services.</h1>
-          <Tabs defaultValue="innenbereich" className="w-[800px]">
-            <TabsList>
-              <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
-              <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
+          <Tabs defaultValue="innenbereich">
+            <TabsList className="flex justify-center">
+              <TabsTrigger value="innenbereich">
+                Arbeiten im Innenbereich
+              </TabsTrigger>
+              <TabsTrigger value="aussenbereich">
+                Arbeiten im Außenbereich
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="innenbereich">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
@@ -106,7 +110,7 @@ function App() {
               </div>
             </TabsContent>
             <TabsContent value="aussenbereich">
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
                 {services_aussenbereich.map((number) => (
                   <Button variant="outline" key={number}>
                     {number}
