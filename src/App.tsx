@@ -49,9 +49,9 @@ function App() {
         </div>
 
         {/* Hero */}
-        <div className="container-hero hero-section flex flex-col items-center justify-center">
+        <div className="container-hero bg-center bg-cover flex flex-col items-center justify-center ">
           <h2 className="text-2xl mb-4">Malerbetrieb Kühnle</h2>
-          <h1 className="text-6xl mb-8 font-bold">
+          <h1 className="text-6xl mb-8 font-bold text-center">
             Farbe schafft{" "}
             <span className="bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
               Atmosphäre

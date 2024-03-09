@@ -11,17 +11,31 @@
   margin: 0 auto;
   margin-top: 10px;
   overflow: hidden;
-  height: 70vh;
+  height: 76vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fafafa;
 }
 
+/* 4k version */
+@media (min-width: 3000px) {
+  .container-hero {
+    background-image: url("assets/hero-background-4k.svg");
+  }
+}
+
 /* Desktop version */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .container-hero {
     background-image: url("assets/hero-background-desktop.svg");
+  }
+}
+
+/* Tablet version */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container-hero {
+    background-image: url("assets/hero-background-tablet.svg");
   }
 }
 
