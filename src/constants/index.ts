@@ -1,5 +1,5 @@
-import instagram from "../assets/instagram.svg";
-import facebook from "../assets/facebook.svg";
+import instagram from "../assets/bxl-instagram.svg";
+import email from "../assets/bx-envelope.svg";
 
 export const navLinks = [
   {
@@ -55,13 +55,13 @@ export const footerLinks = [
 
 export const socialMedia = [
   {
-    id: "social-media-1",
+    id: "instagram",
     icon: instagram,
     link: "https://www.instagram.com/",
   },
   {
-    id: "social-media-2",
-    icon: facebook,
+    id: "email",
+    icon: email,
     link: "https://www.facebook.com/",
   },
 

@@ -20,7 +20,10 @@ import { Button } from "@/components/ui/button";
 
 // Import the images
 import fassade from "./assets/Fassade_Grabenstätt 1.png";
+import capetown from "./assets/capetown.jpeg";
 import about_us from "./assets/25-Jahre.png";
+import klinikum from "./assets/klinikum.jpeg";
+import sparkasse from "./assets/sparkasse.jpeg";
 
 // Navbar
 import { Navbar } from "./components/ui/navbar";
@@ -37,7 +40,7 @@ function App() {
     <html>
       <body>
         {/* Navbar */}
-        <div className="w-full  overflow-hidden">
+        <div className="w-full overflow-hidden">
           <div className={`${styles.paddingX} ${styles.flexCenter}`}>
             <div className={`${styles.boxWidth}`}>
               <Navbar />
@@ -62,8 +65,8 @@ function App() {
         <div className="container-about px-8 py-8">
           <div className="about-section flex items-center justify-between">
             <div className="w-1/2 pr-8">
-              <h1 className="text-4xl mb-4">Über uns.</h1>
-              <p className="text-gray-600">
+              <h1 className="text-6xl mb-4  font-bold">Über uns.</h1>
+              <p>
                 Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit
                 Sitz in Bad Aibling. Als Meisterbetrieb im Maler- und
                 Lackiererhandwerk stehen Qualitätsarbeit, Zuverlässigkeit und
@@ -81,7 +84,7 @@ function App() {
               </p>
             </div>
             <div className="w-1/2 ">
-              <div className="px-16 py-8 max-w-sm">
+              <div className="max-w-sm border-4 border-[#737174]">
                 <img src={about_us} alt="25 Jahre Malerbetrieb Kühnle"></img>
               </div>
             </div>
@@ -135,13 +138,13 @@ function App() {
                 <img src={fassade} alt="Fassade" />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <img src={fassade} alt="Fassade" />
+                <img src={capetown} alt="Capetown" />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <img src={fassade} alt="Fassade" />
+                <img src={klinikum} alt="Klinikum" />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <img src={fassade} alt="Fassade" />
+                <img src={sparkasse} alt="Sparkasse" />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                 <img src={fassade} alt="Fassade" />

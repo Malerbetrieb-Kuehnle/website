@@ -51,12 +51,11 @@ const Footer = () => (
         {socialMedia.map((social, index) => (
           <div
             key={social.id}
-            className={`w-[21px] h-[21px] object-contain cursor-pointer ${
+            className={`w-6 h-6 cursor-pointer hover:text-blue-800 duration-300 ${
               index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
             } social-icon`}
             style={{
               backgroundImage: `url(${social.icon})`,
-              backgroundColor: "#000",
             }}
             onClick={() => window.open(social.link)}
           />
