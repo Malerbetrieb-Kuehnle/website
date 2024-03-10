@@ -67,11 +67,11 @@
   margin: 0 auto;
   margin-top: 10px;
   overflow: hidden;
-  height: auto;
+  max-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1d1d1f;
+  background-color: #fafafa;
   border-radius: 15px;
 }
 
@@ -81,8 +81,7 @@
   margin: 0 auto;
   margin-top: 10px;
   max-width: 1100px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 100px;
   overflow: hidden;
   height: auto;
   display: flex;
@@ -102,7 +101,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fafafa;
+  padding-top: 200px;
 }
 
 .container-footer {
@@ -132,4 +131,17 @@
   overflow: hidden;
   height: auto;
   background-color: #fafafa;
+}
+
+.container-services-waves {
+  position: relative;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 1100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow: hidden;
+  height: auto;
+  z-index: 40;
 }

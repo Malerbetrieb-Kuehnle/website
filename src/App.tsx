@@ -19,7 +19,6 @@ import {
 import { Button } from "@/components/ui/button";
 
 // Import the images
-import fassade from "./assets/Fassade_Grabenstätt 1.png";
 import capetown from "./assets/capetown.jpeg";
 import about_us from "./assets/25-Jahre.png";
 import klinikum from "./assets/klinikum.jpeg";
@@ -100,7 +99,7 @@ function App() {
           className="container-services flex flex-col items-center justify-center"
           id="service"
         >
-          <h1 className="text-4xl mb-4">Services.</h1>
+          <h1 className="text-6xl mb-4  font-bold">Services.</h1>
           <Tabs defaultValue="innenbereich">
             <TabsList className="flex justify-center">
               <TabsTrigger value="innenbereich">
@@ -133,7 +132,8 @@ function App() {
 
         {/* Gallery */}
 
-        <div className="container-gallery p-20">
+        <div className="container-gallery p-20 flex flex-col items-center justify-center">
+          <h1 className="text-6xl mb-4  font-bold">Referenzen.</h1>
           <Carousel
             opts={{
               align: "start",
@@ -141,19 +141,16 @@ function App() {
             }}
           >
             <CarouselContent>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <img src={fassade} alt="Fassade" />
-              </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem>
                 <img src={capetown} alt="Capetown" />
               </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem>
                 <img src={klinikum} alt="Klinikum" />
               </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem>
                 <img src={haus} alt="Haus" />
               </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem>
                 <img src={balkon} alt="Balkon" />
               </CarouselItem>
             </CarouselContent>
@@ -163,32 +160,25 @@ function App() {
         </div>
 
         <div className="container-faq">
-          <Accordion type="single" collapsible>
+          <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger>
-                Machen Sie auch Aussenarbeiten im Sommer?
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern. Yes. It adheres
-                to the WAI-ARIA design pattern. Yes. It adheres to the WAI-ARIA
-                design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                Wie lange ist die Vorlaufzeit?
-              </AccordionTrigger>
+              <AccordionTrigger>Is it accessible?</AccordionTrigger>
               <AccordionContent>
                 Yes. It adheres to the WAI-ARIA design pattern.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                Haben Sie auch Restposten im Angebot?
-              </AccordionTrigger>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Is it styled?</AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern. Yes. It adheres
-                to the WAI-ARIA design pattern.
+                Yes. It comes with default styles that matches the other
+                components&apos; aesthetic.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It&apos;s animated by default, but you can disable it if
+                you prefer.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -205,7 +195,39 @@ function App() {
         </div>
 
         <div className="container-waves">
-          <BackgroundGradientAnimation/>
+          <BackgroundGradientAnimation>
+            <div className="container-services-waves flex flex-col items-center justify-center">
+              <h1 className="text-6xl mb-4 text-white">Services.</h1>
+              <Tabs defaultValue="innenbereich">
+                <TabsList className="flex justify-center">
+                  <TabsTrigger value="innenbereich">
+                    Arbeiten im Innenbereich
+                  </TabsTrigger>
+                  <TabsTrigger value="aussenbereich">
+                    Arbeiten im Außenbereich
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="innenbereich">
+                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
+                    {services_innenbereich.map((number) => (
+                      <Button variant="default" key={number}>
+                        {number}
+                      </Button>
+                    ))}
+                  </div>
+                </TabsContent>
+                <TabsContent value="aussenbereich">
+                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
+                    {services_aussenbereich.map((number) => (
+                      <Button variant="outline" key={number}>
+                        {number}
+                      </Button>
+                    ))}
+                  </div>
+                </TabsContent>
+              </Tabs>
+            </div>
+          </BackgroundGradientAnimation>
         </div>
 
         <div className="container-footer">
