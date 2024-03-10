@@ -37,6 +37,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { services_innenbereich, services_aussenbereich } from "./constants";
 
 import { WavyBackground } from "./components/ui/wavy-background";
+import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
 
 function App() {
   return (
@@ -201,6 +202,10 @@ function App() {
               <Button variant="default">Kontakt</Button>
             </div>
           </WavyBackground>
+        </div>
+
+        <div className="container-waves">
+          <BackgroundGradientAnimation/>
         </div>
 
         <div className="container-footer">
