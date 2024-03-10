@@ -184,7 +184,7 @@ function App() {
           </Accordion>
         </div>
         <div className="container-waves flex flex-col items-center justify-center">
-          <WavyBackground className="max-w-4xl mx-auto pb-40">
+          <WavyBackground className="max-w-4xl mx-auto ">
             <p className="text-2xl md:text-4xl lg:text-6xl text-black font-bold inter-var text-center">
               Wir bringen Farbe in Ihr Leben.
             </p>
@@ -210,7 +210,7 @@ function App() {
                 <TabsContent value="innenbereich">
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
                     {services_innenbereich.map((number) => (
-                      <Button variant="default" key={number}>
+                      <Button variant="outline" key={number}>
                         {number}
                       </Button>
                     ))}
@@ -219,7 +219,7 @@ function App() {
                 <TabsContent value="aussenbereich">
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
                     {services_aussenbereich.map((number) => (
-                      <Button variant="outline" key={number}>
+                      <Button variant="ghost" key={number}>
                         {number}
                       </Button>
                     ))}
