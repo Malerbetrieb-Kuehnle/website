@@ -36,6 +36,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { services_innenbereich, services_aussenbereich } from "./constants";
 
+import { WavyBackground } from "./components/ui/wavy-background";
+
 function App() {
   return (
     <html>
@@ -189,6 +191,9 @@ function App() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+        <div className="container-waves">
+          <WavyBackground />
         </div>
 
         <div className="container-footer">

@@ -91,6 +91,20 @@
   background-color: #fafafa;
 }
 
+.container-waves {
+  position: relative;
+  border-radius: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 10px;
+  overflow: hidden;
+  height: 76vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+}
+
 .container-footer {
   position: relative;
   border-radius: 15px;
