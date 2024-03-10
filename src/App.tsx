@@ -23,7 +23,8 @@ import fassade from "./assets/Fassade_Grabenstätt 1.png";
 import capetown from "./assets/capetown.jpeg";
 import about_us from "./assets/25-Jahre.png";
 import klinikum from "./assets/klinikum.jpeg";
-import sparkasse from "./assets/sparkasse.jpeg";
+import haus from "./assets/haus.jpeg";
+import balkon from "./assets/balkon.jpeg";
 
 // Navbar
 import { Navbar } from "./components/ui/navbar";
@@ -92,7 +93,10 @@ function App() {
         </div>
 
         {/* Services */}
-        <div className="container-services flex flex-col items-center justify-center">
+        <div
+          className="container-services flex flex-col items-center justify-center"
+          id="service"
+        >
           <h1 className="text-4xl mb-4">Services.</h1>
           <Tabs defaultValue="innenbereich">
             <TabsList className="flex justify-center">
@@ -144,13 +148,10 @@ function App() {
                 <img src={klinikum} alt="Klinikum" />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <img src={sparkasse} alt="Sparkasse" />
+                <img src={haus} alt="Haus" />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <img src={fassade} alt="Fassade" />
-              </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <img src={fassade} alt="Fassade" />
+                <img src={balkon} alt="Balkon" />
               </CarouselItem>
             </CarouselContent>
             <CarouselPrevious />
@@ -162,10 +163,12 @@ function App() {
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>
-                Machen Sie auch Aussenarbeiten?
+                Machen Sie auch Aussenarbeiten im Sommer?
               </AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Yes. It adheres to the WAI-ARIA design pattern. Yes. It adheres
+                to the WAI-ARIA design pattern. Yes. It adheres to the WAI-ARIA
+                design pattern.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -181,7 +184,8 @@ function App() {
                 Haben Sie auch Restposten im Angebot?
               </AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Yes. It adheres to the WAI-ARIA design pattern. Yes. It adheres
+                to the WAI-ARIA design pattern.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

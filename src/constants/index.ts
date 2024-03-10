@@ -1,5 +1,6 @@
 import instagram from "../assets/bxl-instagram.svg";
 import email from "../assets/bx-envelope.svg";
+import telefon from "../assets/bxs-phone.svg"
 
 export const navLinks = [
   {
@@ -62,6 +63,11 @@ export const socialMedia = [
   {
     id: "email",
     icon: email,
+    link: "https://www.facebook.com/",
+  },
+  {
+    id: "telefon",
+    icon: telefon,
     link: "https://www.facebook.com/",
   },
 
