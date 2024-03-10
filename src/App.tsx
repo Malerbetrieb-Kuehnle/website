@@ -192,8 +192,15 @@ function App() {
             </AccordionItem>
           </Accordion>
         </div>
-        <div className="container-waves">
-          <WavyBackground />
+        <div className="container-waves flex flex-col items-center justify-center">
+          <WavyBackground className="max-w-4xl mx-auto pb-40">
+            <p className="text-2xl md:text-4xl lg:text-6xl text-black font-bold inter-var text-center">
+              Wir bringen Farbe in Ihr Leben.
+            </p>
+            <div className="flex justify-center pt-8">
+              <Button variant="default">Kontakt</Button>
+            </div>
+          </WavyBackground>
         </div>
 
         <div className="container-footer">
