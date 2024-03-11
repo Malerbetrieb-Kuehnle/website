@@ -38,9 +38,9 @@ export function DefaultGallery() {
   ];
 
   return (
-    <div className="grid ld:grid-cols-3 gap-4 sm:grid-cols-1 md:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 ">
       {data.map(({ imageLink }, index) => (
-        <div key={index}>
+        <div key={index} className="overflow-hidden">
           <img
             className="h-40 w-full max-w-full rounded-lg object-cover object-center"
             src={imageLink}
