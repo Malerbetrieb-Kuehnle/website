@@ -20,13 +20,13 @@ import { DefaultGallery } from "./components/ui/image-gallery";
 
 // Import the images
 import about_us from "./assets/25-Jahre.png";
+import wirbildenaus from "./assets/wirbildenaus.png";
 
 // Navbar
 import { Navbar } from "./components/ui/navbar";
 
 // Footer
 import { Footer } from "./components/ui/footer";
-
 
 // import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
 
@@ -89,7 +89,7 @@ function App() {
         </div>
 
         {/* About us */}
-        <div className="container-about py-8 bg-[#717374]">
+        <div className="container-about py-8 bg-[#737174]">
           <div className="about-section flex  ">
             <div className="w-1/2 ">
               <div className="max-w-sm">
@@ -115,6 +115,40 @@ function App() {
                 Planung und Materialauswahl bis hin zur Fertigstellung, sind wir
                 gerne für Sie da.
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Ausbildung */}
+        <div className="container-about bg-[#737174]">
+          <div className="about-section flex  ">
+            <div className="w-1/2 pl-8 text-white ">
+              <h1 className="text-6xl mb-4  font-bold ">Ausbildung.</h1>
+              <p>
+                Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit
+                Sitz in Bad Aibling. Als Meisterbetrieb im Maler- und
+                Lackiererhandwerk stehen Qualitätsarbeit, Zuverlässigkeit und
+                termingerechte Abwicklung der Aufträge im Vordergrund.
+                <br />
+                <br /> Wir stehen für fachmännische Handwerksarbeit komplexer
+                Arbeiten rund um die Innen- und Außengestaltung von Räumen,
+                Gebäuden und Fassaden – im Großen wie im Kleinen.
+                <br />
+                <br />
+                Regelmäßige Fortbildungen und der Einsatz neuester Materialien
+                und Arbeitstechniken sichern bis heute die hohe Qualität und
+                Modernität der Leistungen. Von der ersten Beratung über die
+                Planung und Materialauswahl bis hin zur Fertigstellung, sind wir
+                gerne für Sie da.
+              </p>
+            </div>
+            <div className="w-1/2 ">
+              <div className="max-w-sm">
+                <img
+                  src={wirbildenaus}
+                  alt="25 Jahre Malerbetrieb Kühnle"
+                ></img>
+              </div>
             </div>
           </div>
         </div>
