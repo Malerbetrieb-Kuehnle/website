@@ -36,7 +36,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { services_innenbereich, services_aussenbereich } from "./constants";
 
 import { WavyBackground } from "./components/ui/wavy-background";
-import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
+
+import { DefaultGallery } from "./components/ui/image-gallery";
+// import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
+
 
 function App() {
   return (
@@ -99,18 +102,14 @@ function App() {
           className="container-services flex flex-col items-center justify-center"
           id="service"
         >
-          <h1 className="text-6xl mb-4  font-bold">Services.</h1>
+          <h1 className="text-6xl mb-4 font-bold">Services.</h1>
           <Tabs defaultValue="innenbereich">
             <TabsList className="flex justify-center">
-              <TabsTrigger value="innenbereich">
-                Arbeiten im Innenbereich
-              </TabsTrigger>
-              <TabsTrigger value="aussenbereich">
-                Arbeiten im Außenbereich
-              </TabsTrigger>
+              <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
+              <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
             </TabsList>
             <TabsContent value="innenbereich">
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
+              <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
                 {services_innenbereich.map((number) => (
                   <Button variant="outline" key={number}>
                     {number}
@@ -119,7 +118,7 @@ function App() {
               </div>
             </TabsContent>
             <TabsContent value="aussenbereich">
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
+              <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
                 {services_aussenbereich.map((number) => (
                   <Button variant="outline" key={number}>
                     {number}
@@ -132,7 +131,7 @@ function App() {
 
         {/* Gallery */}
 
-        <div className="container-gallery p-20 flex flex-col items-center justify-center">
+        {/* <div className="container-gallery p-20 flex flex-col items-center justify-center">
           <h1 className="text-6xl mb-4  font-bold">Referenzen.</h1>
           <Carousel
             opts={{
@@ -157,25 +156,32 @@ function App() {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
-        </div>
+        </div> */}
 
-        <div className="container-faq">
+        <div className="container-faq flex flex-col">
+          <h1 className="text-6xl mb-4 font-bold">Noch Fragen?</h1>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionTrigger>
+                Wie lange ist die Vorlaufzeit für Aufträge?
+              </AccordionTrigger>
               <AccordionContent>
                 Yes. It adheres to the WAI-ARIA design pattern.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>Is it styled?</AccordionTrigger>
+              <AccordionTrigger>
+                Führen Sie auch Wärmedämmungen aus?
+              </AccordionTrigger>
               <AccordionContent>
                 Yes. It comes with default styles that matches the other
                 components&apos; aesthetic.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionTrigger>
+                Haben Sie Restposen im Angebot?
+              </AccordionTrigger>
               <AccordionContent>
                 Yes. It&apos;s animated by default, but you can disable it if
                 you prefer.
@@ -194,7 +200,7 @@ function App() {
           </WavyBackground>
         </div>
 
-        <div className="container-waves">
+        {/* <div className="container-waves">
           <BackgroundGradientAnimation>
             <div className="container-services-waves flex flex-col items-center justify-center">
               <h1 className="text-6xl mb-4 text-white">Services.</h1>
@@ -228,7 +234,13 @@ function App() {
               </Tabs>
             </div>
           </BackgroundGradientAnimation>
+        </div> */}
+        <div className="container-gallery">
+          <h1 className="text-6xl mb-4 font-bold">Referenzen.</h1>
+
+          <DefaultGallery />
         </div>
+       
 
         <div className="container-footer">
           <Footer />
