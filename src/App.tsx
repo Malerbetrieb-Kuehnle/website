@@ -27,8 +27,7 @@ import { Navbar } from "./components/ui/navbar";
 
 // Footer
 import { Footer } from "./components/ui/footer";
-
-// import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
+import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
 
 function App() {
   return (
@@ -56,21 +55,20 @@ function App() {
           <Button variant="default">Kontakt</Button>
         </div>
 
-        {/* Services */}
         <div
           className="container-services flex flex-col items-center justify-center"
           id="service"
         >
-          <h1 className="text-6xl mb-4 font-bold">Services.</h1>
+          <h1 className="text-6xl mb-14 font-bold">Services.</h1>
           <Tabs defaultValue="innenbereich">
-            <TabsList className="flex justify-center">
+            <TabsList className="inline-flex">
               <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
               <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
             </TabsList>
             <TabsContent value="innenbereich">
               <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
                 {services_innenbereich.map((number) => (
-                  <Button variant="outline" key={number}>
+                  <Button variant="outline" key={number} className="w-60">
                     {number}
                   </Button>
                 ))}
@@ -79,7 +77,7 @@ function App() {
             <TabsContent value="aussenbereich">
               <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
                 {services_aussenbereich.map((number) => (
-                  <Button variant="outline" key={number}>
+                  <Button variant="outline" key={number} className="w-60">
                     {number}
                   </Button>
                 ))}
@@ -89,7 +87,7 @@ function App() {
         </div>
 
         {/* About us */}
-        <div className="container-about py-8 bg-[#737174]">
+        <div className="container-about py-8 bg-[#fafafa]">
           <div className="about-section flex  ">
             <div className="w-1/2 ">
               <div className="max-w-sm">
@@ -153,77 +151,50 @@ function App() {
           </div>
         </div>
 
-        {/* <div className="container-waves">
-          <BackgroundGradientAnimation>
-            <div className="container-services-waves flex flex-col items-center justify-center">
-              <h1 className="text-6xl mb-4 text-white">Services.</h1>
-              <Tabs defaultValue="innenbereich">
-                <TabsList className="flex justify-center">
-                  <TabsTrigger value="innenbereich">
-                    Arbeiten im Innenbereich
-                  </TabsTrigger>
-                  <TabsTrigger value="aussenbereich">
-                    Arbeiten im Außenbereich
-                  </TabsTrigger>
-                </TabsList>
-                <TabsContent value="innenbereich">
-                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
-                    {services_innenbereich.map((number) => (
-                      <Button variant="outline" key={number}>
-                        {number}
-                      </Button>
-                    ))}
-                  </div>
-                </TabsContent>
-                <TabsContent value="aussenbereich">
-                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
-                    {services_aussenbereich.map((number) => (
-                      <Button variant="ghost" key={number}>
-                        {number}
-                      </Button>
-                    ))}
-                  </div>
-                </TabsContent>
-              </Tabs>
-            </div>
-          </BackgroundGradientAnimation>
-        </div> */}
-
-        <div className="container-gallery flex flex-col pb-4 pt-4">
+        <div className="container-gallery flex flex-col pb-6 pt-6 h-screen">
           <h1 className="text-6xl mb-4 font-bold">Referenzen.</h1>
           <DefaultGallery />
         </div>
 
-        <div className="container-faq flex flex-col">
-          <h1 className="text-6xl mb-4 font-bold">Noch Fragen?</h1>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>
-                Wie lange ist die Vorlaufzeit für Aufträge?
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                Führen Sie auch Wärmedämmungen aus?
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components&apos; aesthetic.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                Haben Sie Restposen im Angebot?
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes. It&apos;s animated by default, but you can disable it if
-                you prefer.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        <div className="container-faq">
+          <BackgroundGradientAnimation className="z-0">
+            <div className="flex flex-col p-10">
+              <h1 className="text-6xl mb-4 font-bold z-10 mt-0">
+                Noch Fragen?
+              </h1>
+              <Accordion
+                type="single"
+                collapsible
+                className="overflow-x-auto w-full z-10 mt-0"
+              >
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>
+                    Wie lange ist die Vorlaufzeit für Aufträge?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    Antwort auf die Frage hier.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>
+                    Werden Wärmedämmungen auch im Winter ausgeführt?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    Antwort auf die Frage hier. Antwort auf die Frage hier.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>
+                    Gibt es Restposen im Angebot?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    Antwort auf die Frage hier. Antwort auf die Frage hier.
+                    Antwort auf die Frage hier. Antwort auf die Frage hier.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </BackgroundGradientAnimation>
         </div>
 
         <div className="container-waves flex flex-col items-center justify-center">
