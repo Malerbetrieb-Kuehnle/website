@@ -130,16 +130,7 @@
   max-width: 1100px;
   overflow: hidden;
   background-color: #fafafa;
-
-  /*   background-image: url("./assets/paint-brush-with-liquid-paint.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center; */
-  background-image: url("./assets/wepik-export-20240312110103eLGe.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 76vh;
+  height: 96vh;
 }
 
 .logo-images {

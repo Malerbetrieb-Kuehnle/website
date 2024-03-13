@@ -1,23 +1,6 @@
 import "./App.css";
 import styles from "./style";
 
-const features = [
-  { name: "Origin", description: "Designed by Good Goods, Inc." },
-  {
-    name: "Material",
-    description:
-      "Solid walnut base with rare earth magnets and powder coated steel card cover",
-  },
-  { name: "Dimensions", description: '6.25" x 3.55" x 1.15"' },
-  { name: "Finish", description: "Hand sanded and finished with natural oil" },
-  { name: "Includes", description: "Wood card tray and 3 refill packs" },
-  {
-    name: "Considerations",
-    description:
-      "Made from natural materials. Grain and color vary with each item.",
-  },
-];
-
 import {
   Accordion,
   AccordionContent,
@@ -28,8 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import { services_innenbereich, services_aussenbereich } from "./constants";
 
 import { WavyBackground } from "./components/ui/wavy-background";
 
@@ -48,6 +29,108 @@ import { Navbar } from "./components/ui/navbar";
 // Footer
 import { Footer } from "./components/ui/footer";
 import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
+import { StickyScroll } from "./components/ui/sticky-scroll-reveal";
+
+const content = [
+  {
+    title: "Innenanstrich",
+    description:
+      "Unsere professionellen Maler bieten hochwertige Innenanstriche für Ihr Zuhause oder Ihr Unternehmen an. Wir verwenden nur die besten Farben und Techniken, um sicherzustellen, dass Ihr Raum genau so aussieht, wie Sie es sich wünschen.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Innenanstrich
+      </div>
+    ),
+  },
+  {
+    title: "Individuelle Farbberatung",
+    description:
+      "Unsere erfahrenen Farbberater helfen Ihnen gerne dabei, die perfekte Farbpalette für Ihr Zuhause oder Ihr Unternehmen auszuwählen. Wir berücksichtigen Ihren Stil, Ihre Vorlieben und den Zweck des Raums, um eine individuelle und ansprechende Farblösung zu finden.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <img src={about_us} alt="About Us" className="max-w-full max-h-full" />
+      </div>
+    ),
+  },
+  {
+    title: "Tapezierarbeiten",
+    description:
+      "Unsere professionellen Tapezierer bieten eine Vielzahl von Tapeten- und Wandverkleidungsdiensten an. Egal, ob Sie nach klassischer Tapete, Wandmalerei oder anderen Dekorationstechniken suchen, wir können Ihre Vision umsetzen und Ihren Raum in etwas Besonderes verwandeln.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
+        Tapezierarbeiten
+      </div>
+    ),
+  },
+  {
+    title: "Bodenbeschichtungen1",
+    description:
+      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Bodenbeschichtungen1
+      </div>
+    ),
+  },
+  {
+    title: "Bodenbeschichtungen2",
+    description:
+      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Bodenbeschichtungen2
+      </div>
+    ),
+  },
+  {
+    title: "Bodenbeschichtungen3",
+    description:
+      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Bodenbeschichtungen3
+      </div>
+    ),
+  },
+  {
+    title: "Bodenbeschichtungen4",
+    description:
+      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Bodenbeschichtungen4
+      </div>
+    ),
+  },
+  {
+    title: "Bodenbeschichtungen5",
+    description:
+      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Bodenbeschichtungen5
+      </div>
+    ),
+  },
+  {
+    title: "Bodenbeschichtungen6",
+    description:
+      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Bodenbeschichtungen6
+      </div>
+    ),
+  },
+];
+
+export function StickyScrollRevealDemo() {
+  return (
+    <div className="p-10">
+      <StickyScroll content={content} />
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -80,37 +163,17 @@ function App() {
           className="container-services flex flex-col items-center justify-center"
           id="service"
         >
-          <h1 className="text-6xl mb-14 font-bold">Services.</h1>
+          <h1 className="text-6xl mb-4 font-bold">Services.</h1>
           <Tabs defaultValue="innenbereich">
-            <TabsList className="inline-flex">
+            <TabsList className="">
               <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
               <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
             </TabsList>
             <TabsContent value="innenbereich">
-              <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
-                {services_innenbereich.map((number) => (
-                  <Button
-                    variant="outline"
-                    key={number}
-                    className="w-60 bg-[#027f3f] text-white border-0"
-                  >
-                    {number}
-                  </Button>
-                ))}
-              </div>
+              <StickyScrollRevealDemo></StickyScrollRevealDemo>
             </TabsContent>
             <TabsContent value="aussenbereich">
-              <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 sm:grid-cols-2">
-                {services_aussenbereich.map((number) => (
-                  <Button
-                    variant="outline"
-                    key={number}
-                    className="w-60 bg-[#027f3f] text-white border-0"
-                  >
-                    {number}
-                  </Button>
-                ))}
-              </div>
+              <StickyScrollRevealDemo></StickyScrollRevealDemo>
             </TabsContent>
           </Tabs>
         </div>
@@ -167,65 +230,6 @@ function App() {
                 Maltechniken, Tapeten oder Dekorputzen. <br />
                 <br /> Der Malerberuf hat Zukunft!
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/*  <div className=" w-1100px bg-black flex">
-          <div className="w-1/3 bg-red-500">Left Content</div>
-          <div className="w-2/3 bg-blue-500">Right Content</div>
-        </div> */}
-
-        <div className="bg-white">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Technical Specifications
-              </h2>
-              <p className="mt-4 text-gray-500">
-                The walnut wood card tray is precision milled to perfectly fit a
-                stack of Focus cards. The powder coated steel divider separates
-                active cards from new ones, or can be used to archive important
-                task lists.
-              </p>
-
-              <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                {features.map((feature) => (
-                  <div
-                    key={feature.name}
-                    className="border-t border-gray-200 pt-4"
-                  >
-                    <dt className="font-medium text-gray-900">
-                      {feature.name}
-                    </dt>
-                    <dd className="mt-2 text-sm text-gray-500">
-                      {feature.description}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-            <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-              <img
-                src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
-                alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-                className="rounded-lg bg-gray-100"
-              />
-              <img
-                src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg"
-                alt="Top down view of walnut card tray with embedded magnets and card groove."
-                className="rounded-lg bg-gray-100"
-              />
-              <img
-                src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg"
-                alt="Side of walnut card tray with card groove and recessed card area."
-                className="rounded-lg bg-gray-100"
-              />
-              <img
-                src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg"
-                alt="Walnut card tray filled with cards and card angled in dedicated groove."
-                className="rounded-lg bg-gray-100"
-              />
             </div>
           </div>
         </div>
