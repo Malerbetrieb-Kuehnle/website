@@ -57,8 +57,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-image: url("./assets/background.webp"); */
-  background-color: #fafafa;
 }
 
 .container-gallery {
@@ -98,6 +96,16 @@
   align-items: center;
 }
 
+.partner-section {
+  position: relative;
+  border-radius: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+}
+
 .container-footer {
   position: relative;
   border-radius: 15px;
@@ -127,9 +135,19 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center; */
-  background-image: url("./assets/paint-brush.png");
+  background-image: url("./assets/wepik-export-20240312110103eLGe.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 90vh;
+  height: 76vh;
+}
+
+.logo-images {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.logo-images:hover {
+  -webkit-filter: none;
+  filter: none;
 }
