@@ -142,3 +142,12 @@
   -webkit-filter: none;
   filter: none;
 }
+
+.container-standard {
+  position: relative;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-top: 10px;
+  overflow: hidden;
+  background-color: #fafafa;
+}
