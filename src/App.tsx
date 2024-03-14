@@ -193,10 +193,12 @@ function App() {
         >
           <h1 className="text-6xl mb-4 font-bold">Services.</h1>
           <Tabs defaultValue="innenbereich">
-            <TabsList className="">
-              <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
-              <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
-            </TabsList>
+            <div className="max-w-max mx-auto">
+              <TabsList className="flex">
+                <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
+                <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
+              </TabsList>
+            </div>
             <TabsContent value="innenbereich">
               <StickyScrollRevealDemo></StickyScrollRevealDemo>
             </TabsContent>
