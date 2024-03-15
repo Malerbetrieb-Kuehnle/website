@@ -15,7 +15,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { WavyBackground } from "./components/ui/wavy-background";
 
 // Import the images
-import about_us from "./assets/25-Jahre-transformed.png";
+import about_us from "./assets/Fenster-25-Jahre.png";
 import wirbildenaus from "./assets/wirbildenaus-removebg.png";
 import Raab from "./assets/Raab.svg";
 import Ulber from "./assets/Ulber.png";
@@ -50,7 +50,7 @@ const images = [
   Wohnhaus_Bad_Aibling,
   Bauernhof_Brannenburg,
   Bauernhof_Oberpframmern,
- ];
+];
 const content = [
   {
     title: "Innenanstrich",
@@ -209,16 +209,19 @@ function App() {
         </div>
 
         {/* About us */}
-        <div className="container-about py-8">
-          <div className="about-section flex  ">
-            <div className="w-1/2 ">
-              <div className="max-w-sm">
-                <img src={about_us} alt="25 Jahre Malerbetrieb Kühnle"></img>
-              </div>
-            </div>
-            <div className="w-1/2 pr-8  ">
-              <h1 className="text-6xl mb-4  font-bold ">Ihr Malerbetrieb.</h1>
-              <p>
+
+        <div className="container-about min-h-screen">
+          <div className="hero-content flex-col lg:flex-row">
+            <img
+              src={about_us}
+              className="max-w-full lg:max-w-lg"
+              alt="About Us"
+            />
+            <div className="ml-0 lg:ml-12 mt-6 lg:mt-0">
+              <h1 className="text-4xl lg:text-6xl mb-4 lg:mb-6 font-bold">
+                Ihr Malerbetrieb.
+              </h1>
+              <p className="text-sm lg:text-base">
                 Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit
                 Sitz in Bad Aibling. Als Meisterbetrieb im Maler- und
                 Lackiererhandwerk stehen Qualitätsarbeit, Zuverlässigkeit und
@@ -235,31 +238,38 @@ function App() {
                 Planung und Materialauswahl bis hin zur Fertigstellung, sind wir
                 gerne für Sie da.
               </p>
+              <Button variant="default" className="mt-4 lg:mt-6">
+                Kontakt
+              </Button>
             </div>
           </div>
         </div>
 
         {/* Ausbildung */}
 
-        <div className="container-about flex flex-col sm:flex-row h-full">
-          <div className="w-full sm:w-1/3 mb-4 sm:mb-0 bg-[#fafafa] flex items-stretch">
+        <div className="container-about min-h-screen">
+          <div className="hero-content flex-col lg:flex-row">
             <img
               src={wirbildenaus}
-              alt="Placeholder"
-              className="h-full w-full object-cover"
+              className="max-w-full lg:max-w-lg"
+              alt="About Us"
             />
-          </div>
-          <div className="w-full sm:w-2/3 mb-4 bg-[#fafafa] flex flex-col justify-center">
-            <div className="p-6">
-              <h1 className="text-6xl mb-4 font-bold">Ausbildung.</h1>
+            <div className="ml-0 lg:ml-12 mt-6 lg:mt-0">
+              <h1 className="text-4xl lg:text-6xl mb-4 lg:mb-6 font-bold">
+                Ausbildung.
+              </h1>
               <p>
                 Wir bilden seit Jahren mit Erfolg Lehrlinge in diesem
                 interessanten und absolut vielseitigem Beruf aus. Wer sich dafür
                 entscheidet, gestaltet Innenräume und Fassaden, verlegt
                 Bodenbeläge und verschönert Wände mit verschiedenen
                 Maltechniken, Tapeten oder Dekorputzen. <br />
-                <br /> Der Malerberuf hat Zukunft!
+                <br /> Das Berufsbild ist traditionsreich und modern zugleich, nie langweilig, immer fordernd was Fachwissen, Materialkunde und individuelles Gespür für die Interessen der Kunden angeht. 
+                <br/><br/>Der Malerberuf hat Zukunft!
               </p>
+              <Button variant="default" className="mt-4 lg:mt-6">
+                Jetzt Bewerben
+              </Button>
             </div>
           </div>
         </div>
