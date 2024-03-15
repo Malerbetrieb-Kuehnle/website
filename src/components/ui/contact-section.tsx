@@ -50,7 +50,7 @@ const ContactSection: React.FC = () => (
   <div className="container-contact bg-center bg-cover flex flex-col lg:flex-row items-center justify-center py-12 px-6 lg:px-24">
     <div className="text-center lg:text-left lg:w-full lg:max-w-2xl lg:mr-12">
       <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-        Kontaktieren Sie uns
+        So erreichen Sie uns.
       </h2>
       <p className="text-lg lg:text-xl mb-6">
         Bei Fragen oder für weitere Informationen stehen wir Ihnen gerne zur
