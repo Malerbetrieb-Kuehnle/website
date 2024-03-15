@@ -34,6 +34,7 @@ import { Footer } from "./components/ui/footer";
 import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
 import { StickyScroll } from "./components/ui/sticky-scroll-reveal";
 import { ParallaxScroll } from "./components/ui/parallax-scroll";
+import ContactSection from "./components/ui/contact-section";
 const images = [
   MetzgereiRumpel,
   Wohnhaus_Hohenthann,
@@ -57,8 +58,8 @@ const content = [
     description:
       "Unsere professionellen Maler bieten hochwertige Innenanstriche für Ihr Zuhause oder Ihr Unternehmen an. Wir verwenden nur die besten Farben und Techniken, um sicherzustellen, dass Ihr Raum genau so aussieht, wie Sie es sich wünschen.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Innenanstrich
+      <div className="h-full w-full flex items-center justify-center">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
       </div>
     ),
   },
@@ -67,8 +68,8 @@ const content = [
     description:
       "Unsere erfahrenen Farbberater helfen Ihnen gerne dabei, die perfekte Farbpalette für Ihr Zuhause oder Ihr Unternehmen auszuwählen. Wir berücksichtigen Ihren Stil, Ihre Vorlieben und den Zweck des Raums, um eine individuelle und ansprechende Farblösung zu finden.",
     content: (
-      <div className="h-full w-full flex items-center justify-center text-white">
-        <img src={about_us} alt="About Us" className="max-w-full max-h-full" />
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
       </div>
     ),
   },
@@ -77,8 +78,8 @@ const content = [
     description:
       "Unsere professionellen Tapezierer bieten eine Vielzahl von Tapeten- und Wandverkleidungsdiensten an. Egal, ob Sie nach klassischer Tapete, Wandmalerei oder anderen Dekorationstechniken suchen, wir können Ihre Vision umsetzen und Ihren Raum in etwas Besonderes verwandeln.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Tapezierarbeiten
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
       </div>
     ),
   },
@@ -87,8 +88,8 @@ const content = [
     description:
       "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Bodenbeschichtungen1
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
       </div>
     ),
   },
@@ -97,8 +98,8 @@ const content = [
     description:
       "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Bodenbeschichtungen2
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
       </div>
     ),
   },
@@ -107,8 +108,8 @@ const content = [
     description:
       "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Bodenbeschichtungen3
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
       </div>
     ),
   },
@@ -117,8 +118,8 @@ const content = [
     description:
       "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Bodenbeschichtungen4
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
       </div>
     ),
   },
@@ -127,8 +128,8 @@ const content = [
     description:
       "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Bodenbeschichtungen5
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
       </div>
     ),
   },
@@ -137,20 +138,12 @@ const content = [
     description:
       "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Bodenbeschichtungen6
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
       </div>
     ),
   },
 ];
-
-export function StickyScrollRevealDemo() {
-  return (
-    <div className="p-10">
-      <StickyScroll content={content} />
-    </div>
-  );
-}
 
 function App() {
   return (
@@ -166,46 +159,22 @@ function App() {
         </div>
 
         {/* Hero */}
-        <div className="container-hero bg-center bg-cover flex flex-col items-center justify-center ">
-          <h2 className="text-2xl mb-4">Malerbetrieb Kühnle</h2>
-          <h1 className="text-6xl mb-8 font-bold text-center">
-            Farbe schafft{" "}
-            <span className="bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
-              Atmosphäre
-            </span>
-            .
-          </h1>
-          <Button variant="default">Kontakt</Button>
-        </div>
 
-        {/* Services */}
-        <div
-          className="container-services flex flex-col items-center justify-center"
-          id="service"
-        >
-          <h1 className="text-6xl mb-4 font-bold">Services.</h1>
-          <Tabs defaultValue="innenbereich">
-            <div className="max-w-max mx-auto">
-              <TabsList className="flex">
-                <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
-                <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
-              </TabsList>
+        <div className="container-waves flex flex-col items-center justify-center">
+          <WavyBackground className="max-w-4xl mx-auto ">
+            <h2 className="text-2xl mb-4 text-center">Malerbetrieb Kühnle</h2>
+
+            <h1 className="text-7xl font-bold text-center">
+              Farbe schafft{" "}
+              <span className="bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
+                Atmosphäre
+              </span>
+              .
+            </h1>
+            <div className="flex justify-center pt-8">
+              <Button variant="default">Kontakt</Button>
             </div>
-            <TabsContent value="innenbereich">
-              <StickyScrollRevealDemo></StickyScrollRevealDemo>
-            </TabsContent>
-            <TabsContent value="aussenbereich">
-              <StickyScrollRevealDemo></StickyScrollRevealDemo>
-            </TabsContent>
-          </Tabs>
-        </div>
-
-        {/* Referenzen */}
-        <div className="container-standard flex flex-col">
-          <h1 className="text-6xl mb-6 mt-6 font-bold text-center">
-            Referenzen.
-          </h1>
-          <ParallaxScroll images={images} />
+          </WavyBackground>
         </div>
 
         {/* About us */}
@@ -245,6 +214,36 @@ function App() {
           </div>
         </div>
 
+        {/* Services */}
+        <div
+          className="container-services flex flex-col items-center justify-center"
+          id="service"
+        >
+          <h1 className="text-6xl mb-4 font-bold text-white">Services.</h1>
+          <Tabs defaultValue="innenbereich">
+            <div className="max-w-max mx-auto">
+              <TabsList className="flex">
+                <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
+                <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
+              </TabsList>
+            </div>
+            <TabsContent value="innenbereich">
+              <StickyScroll content={content} />
+            </TabsContent>
+            <TabsContent value="aussenbereich">
+              <StickyScroll content={content} />
+            </TabsContent>
+          </Tabs>
+        </div>
+
+        {/* Referenzen */}
+        <div className="container-standard flex flex-col">
+          <h1 className="text-6xl mb-6 mt-6 font-bold text-center">
+            Referenzen.
+          </h1>
+          <ParallaxScroll images={images} />
+        </div>
+
         {/* Ausbildung */}
 
         <div className="container-about min-h-screen">
@@ -264,8 +263,12 @@ function App() {
                 entscheidet, gestaltet Innenräume und Fassaden, verlegt
                 Bodenbeläge und verschönert Wände mit verschiedenen
                 Maltechniken, Tapeten oder Dekorputzen. <br />
-                <br /> Das Berufsbild ist traditionsreich und modern zugleich, nie langweilig, immer fordernd was Fachwissen, Materialkunde und individuelles Gespür für die Interessen der Kunden angeht. 
-                <br/><br/>Der Malerberuf hat Zukunft!
+                <br /> Das Berufsbild ist traditionsreich und modern zugleich,
+                nie langweilig, immer fordernd was Fachwissen, Materialkunde und
+                individuelles Gespür für die Interessen der Kunden angeht.
+                <br />
+                <br />
+                Der Malerberuf hat Zukunft!
               </p>
               <Button variant="default" className="mt-4 lg:mt-6">
                 Jetzt Bewerben
@@ -347,16 +350,7 @@ function App() {
           </div>
         </div>
 
-        <div className="container-waves flex flex-col items-center justify-center">
-          <WavyBackground className="max-w-4xl mx-auto ">
-            <p className="text-2xl md:text-4xl lg:text-6xl text-black font-bold inter-var text-center">
-              Wir bringen Farbe in Ihr Leben.
-            </p>
-            <div className="flex justify-center pt-8">
-              <Button variant="default">Kontakt</Button>
-            </div>
-          </WavyBackground>
-        </div>
+        <ContactSection />
 
         <div className="container-footer">
           <Footer />
