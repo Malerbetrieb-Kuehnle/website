@@ -35,6 +35,7 @@ import { BackgroundGradientAnimation } from "./components/ui/background-gradient
 import { StickyScroll } from "./components/ui/sticky-scroll-reveal";
 import { ParallaxScroll } from "./components/ui/parallax-scroll";
 import ContactNew from "./components/ui/contact-section-new";
+import References from "./components/ui/references";
 const images = [
   MetzgereiRumpel,
   Wohnhaus_Hohenthann,
@@ -244,6 +245,9 @@ function App() {
           <ParallaxScroll images={images} />
         </div>
 
+        <div className="container-references flex flex-col">
+          <References />
+        </div>
         {/* Ausbildung */}
 
         <div className="container-about min-h-screen">
@@ -350,10 +354,7 @@ function App() {
           </BackgroundGradientAnimation>
         </div>
 
-        
-
-
-        <ContactNew/>
+        <ContactNew />
 
         <div className="container-footer">
           <Footer />
