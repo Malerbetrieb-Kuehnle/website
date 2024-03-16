@@ -1,18 +1,42 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 import logo from "../../assets/logo.png";
 import close from "../../assets/close.svg";
 import menu from "../../assets/menu.svg";
 
-import { navLinks } from "../../constants";
+const navLinks = [
+  {
+    id: "home",
+    title: "Home",
+    path: "/",
+  },
+  {
+    id: "service",
+    title: "Service",
+    path: "/service",
+  },
+  {
+    id: "referenzen",
+    title: "Referenzen",
+    path: "/referenzen",
+  },
+  {
+    id: "kontakt",
+    title: "Kontakt",
+    path: "/kontakt",
+  },
+];
 
 const Navbar = () => {
-  const [active, setActive] = useState("Service");
+  const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="malerbetrieb-logo" className="w-[120px] h-auto" />
+      <Link to="/" className="w-[120px] h-auto"> {/* Make logo clickable and navigate to home */}
+        <img src={logo} alt="malerbetrieb-logo" className="w-[120px] h-auto" />
+      </Link>
 
       {/* Desktop Menü */}
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
@@ -24,7 +48,7 @@ const Navbar = () => {
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <Link to={nav.path}>{nav.title}</Link> {/* Use Link component */}
           </li>
         ))}
       </ul>
@@ -52,7 +76,8 @@ const Navbar = () => {
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                 onClick={() => setActive(nav.title)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <Link to={nav.path}>{nav.title}</Link>{" "}
+                {/* Use Link component */}
               </li>
             ))}
           </ul>
@@ -62,4 +87,4 @@ const Navbar = () => {
   );
 };
 
-export { Navbar };
+export default Navbar;
