@@ -12,11 +12,6 @@ const navLinks = [
     path: "/",
   },
   {
-    id: "service",
-    title: "Service",
-    path: "/service",
-  },
-  {
     id: "referenzen",
     title: "Referenzen",
     path: "/referenzen",

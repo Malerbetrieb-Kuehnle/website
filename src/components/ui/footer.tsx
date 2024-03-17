@@ -1,8 +1,8 @@
 import logo from "../../assets/logo.png";
-import { footerLinks, socialMedia } from "../../constants";
 import styles from "../../style.ts";
-
 import { Separator } from "./separator.tsx";
+import { footerLinks, socialMedia } from "../../constants/index.ts";
+
 
 const Footer = () => (
   <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
@@ -30,12 +30,13 @@ const Footer = () => (
             <ul className="list-none mt-4">
               {footerlink.links.map((link, index) => (
                 <li
-                  key={link.name}
-                  className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secondary cursor-pointer ${
+                  key={link.title}
+                  className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-[#027f3f] cursor-pointer ${
                     index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
                   }`}
+                  onClick={() => window.location.href = link.path} // Change here
                 >
-                  {link.name}
+                  {link.title}
                 </li>
               ))}
             </ul>
@@ -51,18 +52,20 @@ const Footer = () => (
       </p>
 
       <div className="flex flex-row md:mt-0 mt-6">
-        {socialMedia.map((social, index) => (
-          <div
-            key={social.id}
-            className={`w-6 h-6 cursor-pointer hover:text-blue-800 duration-300 ${
-              index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
-            } social-icon`}
-            style={{
-              backgroundImage: `url(${social.icon})`,
-            }}
-            onClick={() => window.open(social.link)}
-          />
-        ))}
+        {socialMedia.map((social, index) => {
+          const Icon = social.icon;
+          return (
+            <div
+              key={social.id}
+              className={`w-6 h-6 cursor-pointer hover:text-[#027f3f] duration-300 ${
+                index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
+              }`}
+              onClick={() => window.location.href = social.path} // Change here
+            >
+              <Icon />
+            </div>
+          );
+        })}
       </div>
     </div>
   </section>

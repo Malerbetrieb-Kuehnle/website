@@ -1,12 +1,10 @@
-import instagram from "../assets/bxl-instagram.svg";
-import email from "../assets/bx-envelope.svg";
-import telefon from "../assets/bxs-phone.svg"
+import { FaPhone, FaEnvelope, FaInstagram } from "react-icons/fa";
 
 export const navLinks = [
   {
-    id: "service",
-    title: "Service",
-    path: "/service",
+    id: "home",
+    title: "Home",
+    path: "/",
   },
   {
     id: "referenzen",
@@ -25,16 +23,19 @@ export const footerLinks = [
     title: "Malerbetrieb",
     links: [
       {
-        name: "Service",
-        link: "https://www.malerbetrieb-kuehnle/services",
+        id: "home",
+        title: "Home",
+        path: "/",
       },
       {
-        name: "Referenzen",
-        link: "https://www.malerbetrieb-kuehnle/referenzen",
+        id: "referenzen",
+        title: "Referenzen",
+        path: "/referenzen",
       },
       {
-        name: "Kontakt",
-        link: "https://www.malerbetrieb-kuehnle/kontakt",
+        id: "kontakt",
+        title: "Kontakt",
+        path: "/kontakt",
       },
     ],
   },
@@ -42,16 +43,19 @@ export const footerLinks = [
     title: "Rechtliches",
     links: [
       {
-        name: "Impressum",
-        link: "https://www.malerbetrieb-kuehnle/impressum",
+        id: "impressum",
+        title: "Impressum",
+        path: "/impressum",
       },
       {
-        name: "Datenschutz",
-        link: "https://www.malerbetrieb-kuehnle/datenschutz",
+        id: "datenschutz",
+        title: "Datenschutz",
+        path: "/datenschutz",
       },
       {
-        name: "Cookie-Einstellungen",
-        link: "https://www.malerbetrieb-kuehnle/cookies",
+        id: "cookies",
+        title: "Cookies",
+        path: "/cookies",
       },
     ],
   },
@@ -60,20 +64,19 @@ export const footerLinks = [
 export const socialMedia = [
   {
     id: "instagram",
-    icon: instagram,
-    link: "https://www.instagram.com/",
+    icon: FaInstagram,
+    path: "https://www.instagram.com/",
   },
   {
     id: "email",
-    icon: email,
-    link: "https://www.facebook.com/",
+    icon: FaEnvelope,
+    path: "https://www.facebook.com/",
   },
   {
     id: "telefon",
-    icon: telefon,
-    link: "https://www.facebook.com/",
+    icon: FaPhone,
+    path: "https://www.facebook.com/",
   },
-
 ];
 
 export const services_innenbereich = [
@@ -99,4 +102,3 @@ export const services_aussenbereich = [
   "Renovierungsarbeiten",
   "Renova-Fenster Flügel",
 ];
-
