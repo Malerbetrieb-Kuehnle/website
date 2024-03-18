@@ -79,26 +79,4 @@ export const socialMedia = [
   },
 ];
 
-export const services_innenbereich = [
-  "Innenanstrich",
-  "Individuelle Farbberatung",
-  "Tapezierarbeiten",
-  "Bodenbeschichtungen",
-  "Spachteltechniken",
-  "Beton Optik",
-  "Lackierarbeiten",
-  "Renovierungsarbeiten",
-  "Verputzarbeiten",
-];
 
-export const services_aussenbereich = [
-  "Holzanstriche aller Art",
-  "Fassadenanstriche",
-  "Individuelle Farbberatung",
-  "Eigener Gerüstbau",
-  "Hochdruck-Wasser-Reinigung",
-  "Lackierarbeiten",
-  "Putzausbesserungen",
-  "Renovierungsarbeiten",
-  "Renova-Fenster Flügel",
-];

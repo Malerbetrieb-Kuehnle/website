@@ -29,11 +29,10 @@ import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
 import ContactNew from "../components/ui/contact-section-new";
 import References from "../components/ui/references";
 
-const content = [
+const service_innenbereich = [
   {
     title: "Innenanstrich",
-    description:
-      "Unsere professionellen Maler bieten hochwertige Innenanstriche für Ihr Zuhause oder Ihr Unternehmen an. Wir verwenden nur die besten Farben und Techniken, um sicherzustellen, dass Ihr Raum genau so aussieht, wie Sie es sich wünschen.",
+    description: "Wir führen sämtliche Anstriche im Innenbereich aus.",
     content: (
       <div className="h-full w-full flex items-center justify-center">
         <img src={Wohnhaus_Hohenthann} alt="About Us" />
@@ -41,9 +40,49 @@ const content = [
     ),
   },
   {
+    title: "Bodenbeschichtungen",
+    description:
+      "Anfragen von speziellen Beschichtungen auf verschiedenen Böden wie Epoxidharz oder Betonversiegelung.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
+      </div>
+    ),
+  },
+  {
+    title: "Lackierarbeiten",
+    description:
+      "Sämtliche Lackierarbeiten werden bei Ihnen vor Ort durchgeführt.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
+      </div>
+    ),
+  },
+  {
     title: "Individuelle Farbberatung",
     description:
-      "Unsere erfahrenen Farbberater helfen Ihnen gerne dabei, die perfekte Farbpalette für Ihr Zuhause oder Ihr Unternehmen auszuwählen. Wir berücksichtigen Ihren Stil, Ihre Vorlieben und den Zweck des Raums, um eine individuelle und ansprechende Farblösung zu finden.",
+      "Beratung und Farbgestaltung bei der Auswahl im Innen- und Außenbereich.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
+      </div>
+    ),
+  },
+  {
+    title: "Spachteltechniken",
+    description:
+      "Wir führen für Sie klassische Glättetechniken an Wänden und Decken durch.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
+      </div>
+    ),
+  },
+  {
+    title: "Renovierungsarbeiten",
+    description:
+      "Wir bringen auch alte Gemäuer wieder auf Vordermann.",
     content: (
       <div className="h-full w-full flex items-center justify-center ">
         <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
@@ -53,7 +92,7 @@ const content = [
   {
     title: "Tapezierarbeiten",
     description:
-      "Unsere professionellen Tapezierer bieten eine Vielzahl von Tapeten- und Wandverkleidungsdiensten an. Egal, ob Sie nach klassischer Tapete, Wandmalerei oder anderen Dekorationstechniken suchen, wir können Ihre Vision umsetzen und Ihren Raum in etwas Besonderes verwandeln.",
+      "Egal ob Fototapeten oder moderne Wandbeläge, wir bringen hochwertige italienische Wandbeläge für unsere Kunden an die Wand.",
     content: (
       <div className="h-full w-full flex items-center justify-center ">
         <img src={Wohnhaus_Hohenthann} alt="About Us" />
@@ -61,9 +100,9 @@ const content = [
     ),
   },
   {
-    title: "Bodenbeschichtungen1",
+    title: "Betonoptik",
     description:
-      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+      "Malerarbeiten in Betonoptik können eine moderne und industrielle Ästhetik in einem Raum schaffen. Hier wird die Textur und Optik von Beton nachgeahmt.",
     content: (
       <div className="h-full w-full flex items-center justify-center ">
         <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
@@ -71,9 +110,42 @@ const content = [
     ),
   },
   {
-    title: "Bodenbeschichtungen2",
+    title: "Verputzarbeiten",
     description:
-      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+      "Vorbereitende Arbeiten wie Spachteln, Verputzen und Glätten von Oberflächen.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
+      </div>
+    ),
+  },
+];
+
+const service_aussenbereich = [
+  {
+    title: "Holzanstriche aller Art",
+    description:
+      "Neu und abgewitterte Holzbauteile sowie Hagelschäden am Gebäude.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
+      </div>
+    ),
+  },
+  {
+    title: "Eigener Gerüstbau",
+    description:
+      "Wir bauen für unseren Eigengebrauch an Ihrem Gebäude Arbeitsschutzgerüste auf.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
+      </div>
+    ),
+  },
+  {
+    title: "Putzausbesserungen",
+    description:
+      "Vorbereitende Arbeiten wie Spachteln, Verputzen und Glätten von Oberflächen.",
     content: (
       <div className="h-full w-full flex items-center justify-center ">
         <img src={Wohnhaus_Hohenthann} alt="About Us" />
@@ -81,9 +153,9 @@ const content = [
     ),
   },
   {
-    title: "Bodenbeschichtungen3",
+    title: "Fassadenanstriche",
     description:
-      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+      "Von der Untergrundvorbereitung, der Auswahl von Farbtönen und der richtigen Materialen bis hin zur Ausführung.",
     content: (
       <div className="h-full w-full flex items-center justify-center ">
         <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
@@ -91,9 +163,8 @@ const content = [
     ),
   },
   {
-    title: "Bodenbeschichtungen4",
-    description:
-      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+    title: "Hochdruck-Wasser-Reiniger",
+    description: "Reinigung von verschmutzen Flächen am Gebäude.",
     content: (
       <div className="h-full w-full flex items-center justify-center ">
         <img src={Wohnhaus_Hohenthann} alt="About Us" />
@@ -101,9 +172,9 @@ const content = [
     ),
   },
   {
-    title: "Bodenbeschichtungen5",
+    title: "Renovierungsarbeiten",
     description:
-      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+      "Wir bringen stark renovierungsbedürftige Fassaden wieder auf Vordemann.",
     content: (
       <div className="h-full w-full flex items-center justify-center ">
         <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
@@ -111,9 +182,28 @@ const content = [
     ),
   },
   {
-    title: "Bodenbeschichtungen6",
+    title: "Individuelle Farbberatung",
     description:
-      "Wir bieten professionelle Bodenbeschichtungsdienste für eine Vielzahl von Oberflächen und Materialien an. Von Holzböden bis hin zu Beton- und Epoxidbeschichtungen können wir Ihre Böden schützen, verschönern und langlebiger machen.",
+      "Beratung und Farbgestaltung bei der Auswahl im Innen und Außenbereich.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Hohenthann} alt="About Us" />
+      </div>
+    ),
+  },
+  {
+    title: "Lackierarbeiten",
+    description: "Sämtliche Lackierarbeiten bei Ihnen vor Ort.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center ">
+        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
+      </div>
+    ),
+  },
+  {
+    title: "Renova-Fenster-Flügel",
+    description:
+      "Lieferung und Montage von Renova Alu-Fensterflügel und Fensterstock Abdeckungen.",
     content: (
       <div className="h-full w-full flex items-center justify-center ">
         <img src={Wohnhaus_Hohenthann} alt="About Us" />
@@ -196,10 +286,10 @@ function Home() {
               </TabsList>
             </div>
             <TabsContent value="innenbereich">
-              <StickyScroll content={content} />
+              <StickyScroll content={service_innenbereich} />
             </TabsContent>
             <TabsContent value="aussenbereich">
-              <StickyScroll content={content} />
+              <StickyScroll content={service_aussenbereich} />
             </TabsContent>
           </Tabs>
         </div>
@@ -277,7 +367,7 @@ function Home() {
         <div className="container-faq">
           <BackgroundGradientAnimation className="z-0">
             <div className="flex flex-col p-20">
-              <h1 className="text-6xl mb-4 font-bold z-10 mt-0">
+              <h1 className="text-6xl mb-7 font-bold z-10 mt-0">
                 Noch Fragen?
               </h1>
               <Accordion
@@ -331,6 +421,13 @@ function Home() {
                     Ein ausgezeichneter Kundenservice ist uns sehr wichtig,
                     ebenso wie die Berücksichtigung der Bedürfnisse und Wünsche
                     unserer Kunden.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-6">
+                  <AccordionTrigger>Sauberkeit und Ordnung?</AccordionTrigger>
+                  <AccordionContent>
+                    Wir halten die Baustelle sauber und ordentlich, sowohl
+                    während als auch nach der Arbeit.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
