@@ -16,10 +16,7 @@ export default function References() {
               Referenzen.
             </h1>
             <p className="mt-4 text-xl text-gray-500">
-              Sehen Sie sich einige unserer Referenzen an, wir arbeiten in
-              verschieden Bereichen. Sehen Sie sich einige unserer Referenzen
-              an, wir arbeiten in verschieden Bereichen. Sehen Sie sich einige
-              unserer Referenzen an, wir arbeiten in verschieden Bereichen.
+            Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende Farbkonzepte und handwerkliche Meisterleistungen.
             </p>
           </div>
           <div>

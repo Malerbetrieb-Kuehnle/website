@@ -365,8 +365,10 @@ function Home() {
 
       <div className="container-faq">
         <BackgroundGradientAnimation className="z-0">
-          <div className="flex flex-col sm:p-20 p-2">
-            <h1 className="text-3xl sm:text-6xl mb-7 font-bold z-10 mt-0">Noch Fragen?</h1>
+          <div className="flex flex-col sm:p-20 p-4">
+            <h1 className="text-3xl sm:text-6xl mb-7 font-bold z-10 mt-7">
+              Noch Fragen?
+            </h1>
             <Accordion
               type="single"
               collapsible
@@ -412,9 +414,7 @@ function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
-                <AccordionTrigger>
-                  Kundenorientierung?
-                  </AccordionTrigger>
+                <AccordionTrigger>Kundenorientierung?</AccordionTrigger>
                 <AccordionContent>
                   Ein ausgezeichneter Kundenservice ist uns sehr wichtig, ebenso
                   wie die Berücksichtigung der Bedürfnisse und Wünsche unserer
@@ -422,9 +422,7 @@ function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-6">
-                <AccordionTrigger>
-                  Sauberkeit und Ordnung?
-                  </AccordionTrigger>
+                <AccordionTrigger>Sauberkeit und Ordnung?</AccordionTrigger>
                 <AccordionContent>
                   Wir halten die Baustelle sauber und ordentlich, sowohl während
                   als auch nach der Arbeit.
