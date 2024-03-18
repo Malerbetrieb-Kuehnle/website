@@ -248,7 +248,7 @@ function Home() {
               <h1 className="text-4xl lg:text-6xl mb-4 lg:mb-6 font-bold">
                 Ihr Malerbetrieb.
               </h1>
-              <p className="text-sm lg:text-base">
+              <p className="text-sm lg:text-base text-gray-500">
                 Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit
                 Sitz in Bad Aibling. Als Meisterbetrieb im Maler- und
                 Lackiererhandwerk stehen Qualitätsarbeit, Zuverlässigkeit und
@@ -294,9 +294,7 @@ function Home() {
           </Tabs>
         </div>
 
-        <div className="container-references flex flex-col">
-          <References />
-        </div>
+        
         {/* Ausbildung */}
 
         <div className="container-about min-h-screen">
@@ -310,7 +308,7 @@ function Home() {
               <h1 className="text-4xl lg:text-6xl mb-4 lg:mb-6 font-bold">
                 Ausbildung.
               </h1>
-              <p>
+              <p className="text-gray-500">
                 Wir bilden seit Jahren mit Erfolg Lehrlinge in diesem
                 interessanten und absolut vielseitigem Beruf aus. Wer sich dafür
                 entscheidet, gestaltet Innenräume und Fassaden, verlegt
@@ -328,6 +326,10 @@ function Home() {
               </Button>
             </div>
           </div>
+        </div>
+
+        <div className="container-references flex flex-col">
+          <References />
         </div>
 
         <div className="partner-section py-24 sm:py-32">

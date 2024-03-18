@@ -76,7 +76,7 @@
   max-width: 1100px;
   margin: 0 auto;
   margin-top: 10px;
-  height: auto;
+  height: fit-content;
   overflow: hidden;
   display: flex;
 }
@@ -154,5 +154,6 @@
   margin: 0 auto;
   margin-top: 10px;
   overflow: hidden;
-  border: 1px solid #e7e7e9;
+  border: 2px solid #e7e7e9;
+  max-width: 1100px;
 }

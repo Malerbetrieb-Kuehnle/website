@@ -13,7 +13,7 @@ export default function References() {
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div className="sm:max-w-lg">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Referenzen.{" "}
+              Referenzen.
             </h1>
             <p className="mt-4 text-xl text-gray-500">
               Sehen Sie sich einige unserer Referenzen an, wir arbeiten in

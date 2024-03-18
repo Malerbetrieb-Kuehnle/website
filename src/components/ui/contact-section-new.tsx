@@ -36,7 +36,7 @@ export default function ContactNew() {
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             So erreichen Sie uns.
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-gray-500">
             Bei Fragen oder für weitere Informationen stehen wir Ihnen gerne zur
             Verfügung.
           </p>
@@ -46,7 +46,7 @@ export default function ContactNew() {
             {contact_details.map((feature) => (
               <div key={feature.name} className="relative pl-16">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#008ED7]">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#257D46]">
                     <feature.icon
                       className="h-6 w-6 text-white"
                       aria-hidden="true"
@@ -54,7 +54,7 @@ export default function ContactNew() {
                   </div>
                   {feature.name}
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-600">
+                <dd className="mt-2 text-base leading-7 text-gray-500">
                   {feature.description.split("\n").map((line, index) => (
                     <p key={index}>{line}</p>
                   ))}

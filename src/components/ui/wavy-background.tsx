@@ -60,7 +60,6 @@ export const WavyBackground = ({
     };
     render();
   };
-  // Theme colors: ["#027f3f", "#008ed7", "#f86801"]
   const waveColors = colors ?? ["#027f3f", "#008ed7", "#FFD7B5"];
   const drawWave = (n: number) => {
     nt += getSpeed();
@@ -70,7 +69,7 @@ export const WavyBackground = ({
       ctx.strokeStyle = waveColors[i % waveColors.length];
       for (x = 0; x < w; x += 5) {
         var y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5); // adjust for height, currently at 50% of the container
+        ctx.lineTo(x, y + h * 0.6); // adjust for height, currently at 60% of the container
       }
       ctx.stroke();
       ctx.closePath();
