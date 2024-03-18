@@ -10,7 +10,7 @@ import Kontakt from "./pages/kontakt";
 
 function App() {
   return (
-    <html>
+    <>
       {/* Navbar */}
       <div className="w-full overflow-hidden max-w-7xl mx-auto">
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
@@ -27,7 +27,7 @@ function App() {
       <div className="container-footer">
         <Footer />
       </div>
-    </html>
+    </>
   );
 }
 

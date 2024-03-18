@@ -26,7 +26,7 @@ const images = [
   ];
 
 export default function Referenzen(){
-    return (<html>
+    return (<div>
          {/* Referenzen */}
          <div className="container-standard flex flex-col">
           <h1 className="text-6xl mb-6 mt-6 font-bold text-center">
@@ -34,5 +34,5 @@ export default function Referenzen(){
           </h1>
           <ParallaxScroll images={images} />
         </div>
-    </html>)
+    </div>)
 }

@@ -29,6 +29,7 @@ import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
 import ContactNew from "../components/ui/contact-section-new";
 import References from "../components/ui/references";
 
+
 const service_innenbereich = [
   {
     title: "Innenanstrich",
@@ -214,8 +215,7 @@ const service_aussenbereich = [
 
 function Home() {
   return (
-    <html>
-      <body>
+      <>
         {/* Hero */}
 
         <div className="container-waves flex flex-col items-center justify-center">
@@ -436,8 +436,7 @@ function Home() {
         </div>
 
         <ContactNew />
-      </body>
-    </html>
+      </>
   );
 }
 
