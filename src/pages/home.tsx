@@ -1,4 +1,3 @@
-
 import {
   Accordion,
   AccordionContent,
@@ -24,14 +23,11 @@ import Wohnhaus_Bad_Aibling from "../assets/Wohnhaus _Bad_Aibling.jpg";
 import Bauernhof_Brannenburg from "../assets/Bauernhof_Brannenburg.jpg";
 import Bauernhof_Oberpframmern from "../assets/Bauernhof_Oberpframmern.jpg";
 
-
-
 // Footer
 import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
 import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
 import ContactNew from "../components/ui/contact-section-new";
 import References from "../components/ui/references";
-
 
 const content = [
   {
@@ -130,8 +126,6 @@ function Home() {
   return (
     <html>
       <body>
-       
-
         {/* Hero */}
 
         <div className="container-waves flex flex-col items-center justify-center">
@@ -209,8 +203,6 @@ function Home() {
             </TabsContent>
           </Tabs>
         </div>
-
-       
 
         <div className="container-references flex flex-col">
           <References />
@@ -295,25 +287,50 @@ function Home() {
               >
                 <AccordionItem value="item-1">
                   <AccordionTrigger>
-                    Mit welchen Materialien arbeiten wir?
+                    Werden nachhaltige Produkte verwendet?
                   </AccordionTrigger>
-                  <AccordionContent>Antwort hier.</AccordionContent>
+                  <AccordionContent>
+                    Wir sind ein nachhaltiger Malerbetrieb und verwenden
+                    Produkte, die umweltfreundlich hergestellt werden, wie
+                    Farben und Lacke mit geringem VOC-Gehalt (flüchtige
+                    Organische Verbindungen) und Lösungsmittelfreie
+                    Alternativen.
+                  </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                   <AccordionTrigger>
-                    Werden Wärmedämmungen auch im Winter ausgeführt?
+                    Kann beim Ausräumen vor dem Anstrich geholfen werden?
                   </AccordionTrigger>
                   <AccordionContent>
-                    Antwort auf die Frage hier. Antwort auf die Frage hier.
+                    Gerne sind wir bereit, Ihnen beim Aus- und Einräumen
+                    behilflich zu sein.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                   <AccordionTrigger>
-                    Gibt es Restposen im Angebot?
+                    Hat der Betrieb eine professionelle Ausstattung?
                   </AccordionTrigger>
                   <AccordionContent>
-                    Antwort auf die Frage hier. Antwort auf die Frage hier.
-                    Antwort auf die Frage hier. Antwort auf die Frage hier.
+                    Unser Betrieb verfügt über hochwertige Werkzeuge, Geräte und
+                    Materialien, um eine qualitativ hochwertige Arbeit zu
+                    gewährleisten.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                  <AccordionTrigger>
+                    Zuverlässigkeit und Pünktlichkeit?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    Wir halten Termine ein und arbeiten effizient, um den
+                    Zeitplan einzuhalten.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5">
+                  <AccordionTrigger>Kundenorientierung?</AccordionTrigger>
+                  <AccordionContent>
+                    Ein ausgezeichneter Kundenservice ist uns sehr wichtig,
+                    ebenso wie die Berücksichtigung der Bedürfnisse und Wünsche
+                    unserer Kunden.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -322,8 +339,6 @@ function Home() {
         </div>
 
         <ContactNew />
-
-       
       </body>
     </html>
   );
