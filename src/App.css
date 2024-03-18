@@ -1,12 +1,12 @@
 #root {
   margin: 0 auto;
   padding: 2rem;
+  max-width: 1280;
 }
 
 .container-contact {
   position: relative;
   border-radius: 15px;
-  max-width: 1100px;
   margin: 0 auto;
   margin-top: 10px;
   overflow: hidden;
@@ -17,50 +17,22 @@
   background-color: #fafafa;
 }
 
-/* 4k version */
-@media (min-width: 3000px) {
-  .container-contact {
-    background-image: url("assets/hero-background-4k.svg");
-  }
-}
-
-/* Desktop version */
-@media (min-width: 1024px) {
-  .container-contact {
-    background-image: url("assets/hero-background-desktop.svg");
-  }
-}
-
-/* Tablet version */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .container-contact {
-    background-image: url("assets/hero-background-tablet.svg");
-  }
-}
-
-/* Mobile version */
-@media (max-width: 767px) {
-  .container-contact {
-    background-image: url("assets/hero-background-mobile.svg");
-  }
-}
-
 .container-about {
   position: relative;
   border-radius: 15px;
-  max-width: 1100px;
   margin: 0 auto;
   margin-top: 10px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #e7e7e9;
+
 }
 
 .container-gallery {
   position: relative;
   display: flex;
-  max-width: 1100px;
   margin: 0 auto;
   margin-top: 10px;
   overflow: hidden;
@@ -73,7 +45,6 @@
 .container-faq {
   position: relative;
   border-radius: 15px;
-  max-width: 1100px;
   margin: 0 auto;
   margin-top: 10px;
   height: fit-content;
@@ -84,7 +55,6 @@
 .container-waves {
   position: relative;
   border-radius: 15px;
-  max-width: 1100px;
   margin: 0 auto;
   margin-top: 10px;
   overflow: hidden;
@@ -97,7 +67,6 @@
 .partner-section {
   position: relative;
   border-radius: 15px;
-  max-width: 1100px;
   margin: 0 auto;
   margin-top: 10px;
   overflow: hidden;
@@ -109,9 +78,7 @@
   border-radius: 15px;
   margin: 0 auto;
   margin-top: 10px;
-  max-width: 1100px;
   padding-top: 50px;
-  padding-bottom: 50px;
   overflow: hidden;
   height: auto;
   display: flex;
@@ -155,5 +122,4 @@
   margin-top: 10px;
   overflow: hidden;
   border: 2px solid #e7e7e9;
-  max-width: 1100px;
 }
