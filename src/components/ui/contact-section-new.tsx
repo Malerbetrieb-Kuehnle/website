@@ -8,18 +8,21 @@ import {
 const contact_details = [
   {
     name: "Email",
-    description: "kontakt@malerbetrieb-kuehnle.de",
+    description: "malerbetrieb.kuehnle@gmx.de",
     icon: FaEnvelope,
+    link: "mailto:malerbetrieb.kuehnle@gmx.de",
   },
   {
     name: "Instagram",
     description: "@malerbetrieb_kuehnle",
     icon: FaInstagram,
+    link: "https://www.instagram.com/malerbetrieb_kuehnle/",
   },
   {
     name: "Telefon",
     description: "Büro: +49 8061 93 98 333\nMobil: +49 172 85 17 479",
     icon: FaPhone,
+    link: "tel:+4980619398333",
   },
   {
     name: "Adresse",
@@ -55,9 +58,34 @@ export default function ContactNew() {
                   {feature.name}
                 </dt>
                 <dd className="mt-2 text-base leading-7 text-gray-500">
-                  {feature.description.split("\n").map((line, index) => (
-                    <p key={index}>{line}</p>
-                  ))}
+                  {feature.link ? (
+                    <a
+                      href={feature.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {window.innerWidth < 640 ? (
+                        <>
+                          <p>{feature.description.split("\n")[0]}</p>
+                          <p>{feature.description.split("\n")[1]}</p>
+                          <p>{feature.description.split("\n")[2]}</p>
+                          <p>{feature.description.split("\n")[3]}</p>
+                        </>
+                      ) : (
+                        feature.description.split("\n").map((line, index) => (
+                          <p key={index} className={`${index !== 0 ? "mt-2" : ""}`}>
+                            {line}
+                          </p>
+                        ))
+                      )}
+                    </a>
+                  ) : (
+                    feature.description.split("\n").map((line, index) => (
+                      <p key={index} className={`${index !== 0 ? "mt-2" : ""}`}>
+                        {line}
+                      </p>
+                    ))
+                  )}
                 </dd>
               </div>
             ))}

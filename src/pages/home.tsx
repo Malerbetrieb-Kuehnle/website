@@ -218,11 +218,11 @@ function Home() {
 
       <div className="container-waves flex flex-col items-center justify-center">
         <WavyBackground className="max-w-4xl mx-auto ">
-          <h2 className="text-2xl mb-4 text-center">Malerbetrieb Kühnle</h2>
+          <h2 className="md:text-2xl text-xl mb-4 text-center">Malerbetrieb Kühnle</h2>
 
-          <h1 className="text-7xl font-bold text-center">
+          <h1 className="md:text-7xl text-4xl font-bold text-center">
             Farbe schafft{" "}
-            <span className="bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-[#008ED7] to-[#257D46] text-transparent bg-clip-text">
               Atmosphäre
             </span>
             .
