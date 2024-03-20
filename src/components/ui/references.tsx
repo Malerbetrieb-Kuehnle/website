@@ -1,5 +1,4 @@
 // Import the images
-import MetzgereiRumpel from "../../assets/Metzgerei_Rumpel_Bruckmühl.jpg";
 import Wohnhaus_Hohenthann from "../../assets/Wohnhaus_Hohenthann.jpg";
 import Wohnhaus_Bad_Aibling from "../../assets/Wohnhaus _Bad_Aibling.jpg";
 import Bauernhof_Brannenburg from "../../assets/Bauernhof_Brannenburg.jpg";
@@ -34,7 +33,7 @@ export default function References() {
                     <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
                         <img
-                          src={MetzgereiRumpel}
+                          src={Bauernhof_Brannenburg}
                           alt=""
                           className="h-full w-full object-cover object-center"
                         />
