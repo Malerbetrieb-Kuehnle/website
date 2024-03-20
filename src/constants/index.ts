@@ -65,18 +65,16 @@ export const socialMedia = [
   {
     id: "instagram",
     icon: FaInstagram,
-    path: "https://www.instagram.com/",
+    path: "https://www.instagram.com/malerbetrieb_kuehnle/",
   },
   {
     id: "email",
     icon: FaEnvelope,
-    path: "https://www.facebook.com/",
+    path: "mailto:malerbetrieb.kuehnle@gmx.de",
   },
   {
     id: "telefon",
     icon: FaPhone,
-    path: "https://www.facebook.com/",
+    path: "tel:+491728517479",
   },
 ];
-
-
