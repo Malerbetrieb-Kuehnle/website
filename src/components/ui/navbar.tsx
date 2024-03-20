@@ -28,7 +28,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
+    <nav className="w-full flex py-6 justify-between items-center navbar overflow-hidden max-w-7xl mx-auto">
       <Link to="/" className="w-[120px] h-auto"> {/* Make logo clickable and navigate to home */}
         <img src={logo} alt="malerbetrieb-logo" className="w-[120px] h-auto" />
       </Link>

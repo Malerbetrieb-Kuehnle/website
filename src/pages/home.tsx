@@ -218,7 +218,9 @@ function Home() {
 
       <div className="container-waves flex flex-col items-center justify-center">
         <WavyBackground className="max-w-4xl mx-auto ">
-          <h2 className="md:text-2xl text-xl mb-4 text-center">Malerbetrieb Kühnle</h2>
+          <h2 className="md:text-2xl text-xl mb-4 text-center">
+            Malerbetrieb Kühnle
+          </h2>
 
           <h1 className="md:text-7xl text-4xl font-bold text-center">
             Farbe schafft{" "}

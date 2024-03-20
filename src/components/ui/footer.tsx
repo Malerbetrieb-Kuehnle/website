@@ -2,9 +2,11 @@ import logo from "../../assets/logo.png";
 import styles from "../../style.ts";
 import { Separator } from "./separator.tsx";
 import { footerLinks, socialMedia } from "../../constants/index.ts";
+import "../../App.css";
+
 
 const Footer = () => (
-  <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+  <section className={`${styles.flexCenter} ${styles.paddingY} container-footer flex-col`}>
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-[1] flex flex-col justify-start mr-10">
         <img

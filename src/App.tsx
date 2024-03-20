@@ -1,18 +1,35 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
 import "./App.css";
 
-import Navbar from "./components/ui/navbar";
-import Footer from "./components/ui/footer";
-import Home from "./pages/home";
-import Referenzen from "./pages/referenzen";
-import styles from "./style";
-import Kontakt from "./pages/kontakt";
 
-function App() {
-  return (
-    <>
+import Referenzen from "./pages/referenzen";
+import Kontakt from "./pages/kontakt";
+import NotFoundPage from "./pages/NotFoundPage";
+import HomePage from "./pages/HomePage";
+import MainLayout from "./layout/MainLayout";
+
+
+
+const App = () => {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path='/referenzen' element={<Referenzen />} />
+        <Route path='/kontakt' element={<Kontakt />}/>
+        <Route path='*' element={<NotFoundPage />} />
+      </Route>
+    )
+  );
+  return  <RouterProvider router={router} />;
+
       {/* Navbar */}
-      <div className="w-full overflow-hidden max-w-7xl mx-auto">
+      {/* <div className="w-full overflow-hidden max-w-7xl mx-auto">
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
           <div className={`${styles.boxWidth}`}>
             <Navbar />
@@ -26,9 +43,7 @@ function App() {
       </div>
       <div className="container-footer">
         <Footer />
-      </div>
-    </>
-  );
-}
-
+      </div> */}
+  
+    };
 export default App;
