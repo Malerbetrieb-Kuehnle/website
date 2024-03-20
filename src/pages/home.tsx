@@ -17,11 +17,9 @@ import wirbildenaus from "../assets/wirbildenaus-removebg.png";
 import Raab from "../assets/Raab.svg";
 import Ulber from "../assets/Ulber.png";
 import Hoegner from "../assets/Hoegner.png";
-import MetzgereiRumpel from "../assets/Metzgerei_Rumpel_Bruckmühl.jpg";
 import Wohnhaus_Hohenthann from "../assets/Wohnhaus_Hohenthann.jpg";
 import Wohnhaus_Bad_Aibling from "../assets/Wohnhaus _Bad_Aibling.jpg";
-import Bauernhof_Brannenburg from "../assets/Bauernhof_Brannenburg.jpg";
-import Bauernhof_Oberpframmern from "../assets/Bauernhof_Oberpframmern.jpg";
+
 
 // Footer
 import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
