@@ -3,6 +3,7 @@ import styles from "../../style.ts";
 import { Separator } from "./separator.tsx";
 import { footerLinks, socialMedia } from "../../constants/index.ts";
 import "../../App.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
   <section
@@ -37,9 +38,8 @@ const Footer = () => (
                     className={`font-poppins font-normal text-[16px] leading-[24px] text-gray-500 hover:text-[#027f3f] cursor-pointer ${
                       index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
                     }`}
-                    onClick={() => (window.location.href = link.path)} // Change here
                   >
-                    {link.title}
+                    <Link to={link.path}>{link.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -63,9 +63,10 @@ const Footer = () => (
                 className={`w-6 h-6 cursor-pointer hover:text-[#027f3f] duration-300 text-gray-900 ${
                   index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
                 }`}
-                onClick={() => (window.location.href = social.path)} // Change here
               >
-                <Icon />
+                <Link to={social.path}>
+                  <Icon />
+                </Link>
               </div>
             );
           })}

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom"; 
 
 import logo from "../../assets/logo.png";
 import close from "../../assets/close.svg";
@@ -24,12 +24,21 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+  const location = useLocation(); // Get the current location pathname
+
+  useEffect(() => {
+    // Extract the active section from the pathname
+    const activeSection =
+      location.pathname === "/" ? "Home" : location.pathname.split("/")[1];
+    setActive(activeSection.charAt(0).toUpperCase() + activeSection.slice(1)); // Capitalize the first letter
+  }, [location.pathname]); // Update the active state when the pathname changes
+
+  const [active, setActive] = useState("Home");
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar overflow-hidden max-w-7xl mx-auto">
-      <Link to="/" className="w-[120px] h-auto"> {/* Make logo clickable and navigate to home */}
+      <Link to="/" className="w-[120px] h-auto">
         <img src={logo} alt="malerbetrieb-logo" className="w-[120px] h-auto" />
       </Link>
 
@@ -41,9 +50,8 @@ const Navbar = () => {
             className={`font-poppins font-normal cursor-pointer text-[16px] ${
               active === nav.title ? "text-[#027f3f]" : "text-[#222222]"
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
-            onClick={() => setActive(nav.title)}
           >
-            <Link to={nav.path}>{nav.title}</Link> {/* Use Link component */}
+            <Link to={nav.path}>{nav.title}</Link>
           </li>
         ))}
       </ul>
@@ -69,10 +77,8 @@ const Navbar = () => {
                 className={`font-poppins font-medium cursor-pointer text-[16px] ${
                   active === nav.title ? "text-[#027f3f]" : "text-white"
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
-                onClick={() => setActive(nav.title)}
               >
                 <Link to={nav.path}>{nav.title}</Link>{" "}
-                {/* Use Link component */}
               </li>
             ))}
           </ul>
