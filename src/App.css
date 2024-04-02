@@ -4,43 +4,6 @@
   max-width: 1400;
 }
 
-.container-contact {
-  position: relative;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 10px;
-  overflow: hidden;
-  display: flex;
-  height: 90vh;
-  justify-content: center;
-  align-items: center;
-  background-color: #fafafa;
-}
-
-.container-about {
-  position: relative;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 10px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #e7e7e9;
-}
-
-.container-gallery {
-  position: relative;
-  display: flex;
-  margin: 0 auto;
-  margin-top: 10px;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  background-color: #fafafa;
-}
-
 .container-faq {
   position: relative;
   border-radius: 15px;
@@ -104,14 +67,6 @@
 .logo-images:hover {
   -webkit-filter: none;
   filter: none;
-}
-
-.container-standard {
-  position: relative;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 10px;
-  overflow: hidden;
 }
 
 .container-references {
