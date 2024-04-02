@@ -14,10 +14,7 @@ import Bauernhaus_Brannenburg1 from "../assets/referenzen/Bauernhaus_Brannenburg
 import Bauernhof_Brannenburg2 from "../assets/referenzen/Bauernhof_Brannenburg2.jpg";
 import Bauernhof_Oberpframmern1 from "../assets/referenzen/Bauernhof_Oberpframmern1.jpg";
 import Bauernhof_Oberpframmern3 from "../assets/referenzen/Bauernhof_Oberpframmern3.jpg";
-import Buerogebaeude_Bad_Aibling1 from "../assets/referenzen/Wohnhaus_Bruckmühl1.jpg";
-import Buerogebaeude_Bad_Aibling2 from "../assets/referenzen/Wohnhaus_Bruckmühl2.jpg";
-import Buerogebaeude_Bad_Aibling4 from "../assets/referenzen/Wohnhaus_Bruckmühl4.jpg";
-import Buerogebaeude_Bad_Aibling5 from "../assets/referenzen/Wohnhaus_Bruckmühl5.jpg";
+
 import Fassade_Bad_Aibling from "../assets/referenzen/Fassade_Bad_Aibling.jpg";
 import Fassade_Grabenstaett from "../assets/referenzen/Fassade_Grabenstätt.jpg";
 import Forschungshaus_Bad_Aibling from "../assets/referenzen/Forschungshaus_Bad_Aibling.jpg";
@@ -95,10 +92,6 @@ const images = [
   Bauernhof_Brannenburg2,
   Bauernhof_Oberpframmern1,
   Bauernhof_Oberpframmern3,
-  Buerogebaeude_Bad_Aibling1,
-  Buerogebaeude_Bad_Aibling2,
-  Buerogebaeude_Bad_Aibling4,
-  Buerogebaeude_Bad_Aibling5,
   Fassade_Bad_Aibling,
   Fassade_Grabenstaett,
   Forschungshaus_Bad_Aibling,
