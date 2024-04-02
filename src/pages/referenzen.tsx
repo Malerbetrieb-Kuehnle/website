@@ -1,7 +1,6 @@
 import { ParallaxScroll } from "@/components/ui/parallax-scroll";
 
 // Import the images
-import Alu_Fensterabdeckung from "../assets/referenzen/Alu_Fensterabdeckung.jpg";
 import Amtsgericht_Bad_Aibling from "../assets/referenzen/Amtsgericht_Bad_Aibling.jpg";
 import Augencentrum_Rosenheim1 from "../assets/referenzen/Augencentrum_Rosenheim1.jpg";
 import Augencentrum_Rosenheim2 from "../assets/referenzen/Augencentrum_Rosenheim2.jpg";
@@ -34,7 +33,6 @@ import Schreinerei_Vagen2 from "../assets/referenzen/Schreinerei_Vagen2.jpg";
 import Sparkasse_Vagen from "../assets/referenzen/Sparkasse_Vagen.jpg";
 import Sparkassenhochhaus_Rosenheim from "../assets/referenzen/Sparkassenhochhaus_Rosenheim .jpg";
 import Wintergarten_Hohenthann1 from "../assets/referenzen/Wintergarten_Hohenthann1.jpg";
-import Wintergarten_Hohenthann2 from "../assets/referenzen/Wintergarten_Hohenthann2.jpg";
 import Wintergarten_Hohenthann3 from "../assets/referenzen/Wintergarten_Hohenthann3.jpg";
 import Wohnhaus_Bad_Aibling1 from "../assets/referenzen/Wohnhaus_Bad_Aibling1.jpg";
 import Wohnhaus_Bad_Aibling2 from "../assets/referenzen/Wohnhaus_Bad_Aibling2.jpg";
@@ -47,8 +45,7 @@ import Wohnhaus_Bad_Aibling10 from "../assets/referenzen/Wohnhaus_Bad_Aibling10.
 import Wohnhaus_Bad_Feilnbach1 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach1.jpg";
 import Wohnhaus_Bad_Feilnbach2 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach2.jpg";
 import Wohnhaus_Bad_Feilnbach3 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach3.jpg";
-import Wohnhaus_Bad_Feilnbach4 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach4.jpg";
-import Wohnhaus_Bad_Feilnbach5 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach5.jpg";
+
 import Wohnhaus_Bad_Feilnbach6 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach6.jpg";
 import Wohnhaus_Beyharting from "../assets/referenzen/Wohnhaus_Beyharting.jpg";
 import Wohnhaus_Bruckmuehl1 from "../assets/referenzen/Wohnhaus_Bruckmuehl1.jpg";
@@ -78,7 +75,6 @@ import Wohnhaus_Rosenheim from "../assets/referenzen/Wohnhaus_Rosenheim.jpg";
 import Wohnhaus_Tuntenhausen1 from "../assets/referenzen/Wohnhaus_Tuntenhausen1.jpg";
 
 const images = [
-  Alu_Fensterabdeckung,
   Amtsgericht_Bad_Aibling,
   Augencentrum_Rosenheim1,
   Augencentrum_Rosenheim2,
@@ -111,7 +107,6 @@ const images = [
   Sparkasse_Vagen,
   Sparkassenhochhaus_Rosenheim,
   Wintergarten_Hohenthann1,
-  Wintergarten_Hohenthann2,
   Wintergarten_Hohenthann3,
   Wohnhaus_Bad_Aibling1,
   Wohnhaus_Bad_Aibling2,
@@ -124,8 +119,6 @@ const images = [
   Wohnhaus_Bad_Feilnbach1,
   Wohnhaus_Bad_Feilnbach2,
   Wohnhaus_Bad_Feilnbach3,
-  Wohnhaus_Bad_Feilnbach4,
-  Wohnhaus_Bad_Feilnbach5,
   Wohnhaus_Bad_Feilnbach6,
   Wohnhaus_Beyharting,
   Wohnhaus_Bruckmuehl1,
