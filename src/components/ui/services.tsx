@@ -11,7 +11,7 @@ import Innenanstrich from "../../assets/services/Innenanstrich.jpg";
 import Lackierarbeiten1 from "../../assets/services/Lackierarbeiten .jpg";
 import Lackierarbeiten2 from "../../assets/services/Lackierarbeiten.jpg";
 import Putzausbesserungen from "../../assets/services/Putzausbesserungen.jpg";
-import RenovaFensterflügelAbdeckung from "../../assets/services/Renova-Fensterflügel-Abdeckung.jpg";
+import RenovaFensterfluegelAbdeckung from "../../assets/services/Renova-Fensterfluegel-Abdeckung.jpg";
 import Renovierungsarbeiten from "../../assets/services/Renovierungsarbeiten.jpg";
 import Spachtelarbeiten from "../../assets/services/Spachtelarbeiten.jpg";
 import Tapezierarbeiten from "../../assets/services/Tapezierarbeiten.jpg";
@@ -262,7 +262,7 @@ const service_aussenbereich = [
     content: (
       <div className="bg-cover h-full">
         <img
-          src={RenovaFensterflügelAbdeckung}
+          src={RenovaFensterfluegelAbdeckung}
           alt="Renova-Fenster-Flügel"
           className="h-full w-full object-cover"
         />
