@@ -25,6 +25,7 @@ import { BackgroundGradientAnimation } from "../components/ui/background-gradien
 import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
 import ContactNew from "../components/ui/contact-section-new";
 import References from "../components/ui/references";
+import Malerbetrieb from "@/components/ui/malerbetrieb";
 
 const service_innenbereich = [
   {
@@ -232,42 +233,8 @@ function Home() {
         </WavyBackground>
       </div>
 
-      {/* About us */}
-
-      <div className="container-about min-h-screen">
-        <div className="hero-content flex-col lg:flex-row">
-          <img
-            src={about_us}
-            className="max-w-full lg:max-w-lg"
-            alt="About Us"
-          />
-          <div className="ml-0 lg:ml-12 mt-6 lg:mt-0">
-            <h1 className="text-4xl lg:text-6xl mb-4 lg:mb-6 font-bold">
-              Ihr Malerbetrieb.
-            </h1>
-            <p className="text-sm lg:text-base text-gray-500">
-              Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit Sitz
-              in Bad Aibling. Als Meisterbetrieb im Maler- und Lackiererhandwerk
-              stehen Qualitätsarbeit, Zuverlässigkeit und termingerechte
-              Abwicklung der Aufträge im Vordergrund.
-              <br />
-              <br /> Wir stehen für fachmännische Handwerksarbeit komplexer
-              Arbeiten rund um die Innen- und Außengestaltung von Räumen,
-              Gebäuden und Fassaden – im Großen wie im Kleinen.
-              <br />
-              <br />
-              Regelmäßige Fortbildungen und der Einsatz neuester Materialien und
-              Arbeitstechniken sichern bis heute die hohe Qualität und
-              Modernität der Leistungen. Von der ersten Beratung über die
-              Planung und Materialauswahl bis hin zur Fertigstellung, sind wir
-              gerne für Sie da.
-            </p>
-            <Button variant="default" className="mt-4 lg:mt-6">
-              Kontakt
-            </Button>
-          </div>
-        </div>
-      </div>
+      {/* Malerbetrieb Über uns und Ausbildung*/}
+      <Malerbetrieb />
 
       {/* Services */}
       <div
@@ -289,39 +256,6 @@ function Home() {
             <StickyScroll content={service_aussenbereich} />
           </TabsContent>
         </Tabs>
-      </div>
-
-      {/* Ausbildung */}
-
-      <div className="container-about min-h-screen">
-        <div className="hero-content flex-col lg:flex-row">
-          <img
-            src={wirbildenaus}
-            className="max-w-full lg:max-w-lg"
-            alt="About Us"
-          />
-          <div className="ml-0 lg:ml-12 mt-6 lg:mt-0">
-            <h1 className="text-4xl lg:text-6xl mb-4 lg:mb-6 font-bold">
-              Ausbildung.
-            </h1>
-            <p className="text-gray-500">
-              Wir bilden seit Jahren mit Erfolg Lehrlinge in diesem
-              interessanten und absolut vielseitigem Beruf aus. Wer sich dafür
-              entscheidet, gestaltet Innenräume und Fassaden, verlegt
-              Bodenbeläge und verschönert Wände mit verschiedenen Maltechniken,
-              Tapeten oder Dekorputzen. <br />
-              <br /> Das Berufsbild ist traditionsreich und modern zugleich, nie
-              langweilig, immer fordernd was Fachwissen, Materialkunde und
-              individuelles Gespür für die Interessen der Kunden angeht.
-              <br />
-              <br />
-              Der Malerberuf hat Zukunft!
-            </p>
-            <Button variant="default" className="mt-4 lg:mt-6">
-              Jetzt Bewerben
-            </Button>
-          </div>
-        </div>
       </div>
 
       <div className="container-references flex flex-col">
