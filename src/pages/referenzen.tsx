@@ -19,7 +19,7 @@ import Fassade_Grabenstaett from "../assets/referenzen/Fassade_Grabenstaett.jpg"
 import Forschungshaus_Bad_Aibling from "../assets/referenzen/Forschungshaus_Bad_Aibling.jpg";
 import Garage_Bad_Aibling from "../assets/referenzen/Garage_Bad_Aibling.jpg";
 import Garage_Bruckmuehl from "../assets/referenzen/Garage_Bruckmuehl.jpg";
-import Geschaeftshaus_Rosenheim from "../assets/referenzen/Geschäftshaus_Rosenheim .jpg";
+import Geschaeftshaus_Rosenheim from "../assets/referenzen/Geschaeftshaus_Rosenheim.jpg";
 import Haus from "../assets/referenzen/Haus.jpg";
 import Klinik_St_Georg_Bad_Aiblung from "../assets/referenzen/Klinik_St._Georg_Bad_Aiblung.jpg";
 import Lackarbeiten1 from "../assets/referenzen/Lackarbeiten1.jpg";
