@@ -2,7 +2,6 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import about_us from "../../assets/Fenster-25-Jahre.png";
 import wirbildenaus from "../../assets/wirbildenaus-removebg.png";
 
-
 const merkmale_about_us = [
   "25 Jahre Erfahrung",
   "Meisterbetrieb im Maler- und Lackiererhandwerk",
@@ -11,11 +10,11 @@ const merkmale_about_us = [
 ];
 
 const merkmale_ausbildung = [
-    "Tradition und Innovation",
-    "Vielseitiges Tätigkeitsfeld",
-    "Fachwissen und Kreativität",
-    "Zukunftssicherheit und Berufsperspektiven",
-  ];
+  "Tradition und Innovation",
+  "Vielseitiges Tätigkeitsfeld",
+  "Fachwissen und Kreativität",
+  "Zukunftssicherheit und Berufsperspektiven",
+];
 
 export default function Malerbetrieb() {
   return (
@@ -44,7 +43,7 @@ export default function Malerbetrieb() {
               Abwicklung der Aufträge im Vordergrund.
             </p>
             <div className="mt-10 flex items-center gap-x-4">
-              <h4 className="flex-none text-sm font-semibold leading-6 text-[#3e8cd1]">
+              <h4 className="flex-none text-sm font-semibold leading-6 text-[#257D46]">
                 Das macht uns aus
               </h4>
               <div className="h-px flex-auto bg-gray-100" />
@@ -56,7 +55,7 @@ export default function Malerbetrieb() {
               {merkmale_about_us.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
                   <CheckIcon
-                    className="h-6 w-5 flex-none text-[#3e8cd1]"
+                    className="h-6 w-5 flex-none text-[#257D46]"
                     aria-hidden="true"
                   />
                   {feature}
@@ -83,7 +82,7 @@ export default function Malerbetrieb() {
               Tapeten oder Dekorputzen.
             </p>
             <div className="mt-10 flex items-center gap-x-4">
-              <h4 className="flex-none text-sm font-semibold leading-6 text-[#3e8cd1]">
+              <h4 className="flex-none text-sm font-semibold leading-6 text-[#257D46]">
                 Deshalb eine Ausbildung
               </h4>
               <div className="h-px flex-auto bg-gray-100" />
@@ -95,7 +94,7 @@ export default function Malerbetrieb() {
               {merkmale_ausbildung.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
                   <CheckIcon
-                    className="h-6 w-5 flex-none text-[#3e8cd1]"
+                    className="h-6 w-5 flex-none text-[#257D46]"
                     aria-hidden="true"
                   />
                   {feature}

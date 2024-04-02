@@ -305,7 +305,7 @@ function Home() {
             <Accordion
               type="single"
               collapsible
-              className="overflow-x-auto w-full z-10 mt-0"
+              className="overflow-x-auto w-full z-10 mt-0 text-gray-500"
             >
               <AccordionItem value="item-1">
                 <AccordionTrigger>
