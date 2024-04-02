@@ -165,14 +165,21 @@ const images = [
 
 export default function referenzen() {
   return (
-    <div>
-      {/* referenzen */}
-      <div className="container-standard flex flex-col">
-        <h1 className="text-6xl mb-6 mt-6 font-bold text-center">
-          Referenzen.
-        </h1>
-        <ParallaxScroll images={images} />
+    <div className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h1 className="mt-2 text-3xl text-center font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Referenzen.
+          </h1>
+          <p className="mt-6 text-lg leading-8 text-gray-500">
+            Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
+            zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
+            Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
+            Farbkonzepte und handwerkliche Meisterleistungen.
+          </p>
+        </div>
       </div>
+      <ParallaxScroll images={images} />
     </div>
   );
 }

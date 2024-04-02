@@ -1,9 +1,15 @@
 // Import the images
-import Wohnhaus_Hohenthann from "../../assets/Wohnhaus_Hohenthann.jpg";
-import Wohnhaus_Bad_Aibling from "../../assets/Wohnhaus _Bad_Aibling.jpg";
-import Bauernhof_Brannenburg from "../../assets/Bauernhof_Brannenburg.jpg";
-import Bauernhof_Oberpframmern from "../../assets/Bauernhof_Oberpframmern.jpg";
+import Baderhaus_Bad_Aibling from "../../assets/referenzen/Baderhaus_Bad_Aibling1.jpg";
+import Bauernhof_Brannenburg from "../../assets/referenzen/Bauernhof_Brannenburg2.jpg";
+import Fassade_Grabenstaett from "../../assets/referenzen/Fassade_Grabenstätt.jpg";
+import Klinkik_St_Georg from "../../assets/referenzen/Klinik_St._Georg_Bad_Aiblung.jpg";
+import Schloss_Maxhofen from "../../assets/referenzen/Schloss_Maxhofen_Bruckmühl.jpg";
+import Wohnhaus_Bad_Feilnbach from "../../assets/referenzen/Wohnhaus_Bad_Feilnbach5.jpg";
+import Lackarbeiten from "../../assets/referenzen/Lackarbeiten1.jpg";
+
 import { Button } from "./button";
+import { Link } from "react-router-dom";
+
 
 export default function References() {
   return (
@@ -33,15 +39,15 @@ export default function References() {
                     <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
                         <img
-                          src={Bauernhof_Brannenburg}
-                          alt=""
+                          src={Baderhaus_Bad_Aibling}
+                          alt="Baderhaus Bad Aibling"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
                           src={Bauernhof_Brannenburg}
-                          alt=""
+                          alt="Bauernhof Brannenburg"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
@@ -49,22 +55,22 @@ export default function References() {
                     <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
-                          src={Bauernhof_Oberpframmern}
-                          alt=""
+                          src={Fassade_Grabenstaett}
+                          alt="Fassade Grabenstaett"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
-                          src={Wohnhaus_Bad_Aibling}
-                          alt=""
+                          src={Klinkik_St_Georg}
+                          alt="Klinik St. Georg"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
-                          src={Wohnhaus_Hohenthann}
-                          alt=""
+                          src={Lackarbeiten}
+                          alt="Lackarbeiten"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
@@ -72,15 +78,15 @@ export default function References() {
                     <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
-                          src={Wohnhaus_Bad_Aibling}
-                          alt=""
+                          src={Schloss_Maxhofen}
+                          alt="Schloss Maxhofen"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
                         <img
-                          src={Bauernhof_Brannenburg}
-                          alt=""
+                          src={Wohnhaus_Bad_Feilnbach}
+                          alt="Wohnhaus Bad Feilnbach"
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
@@ -89,9 +95,11 @@ export default function References() {
                 </div>
               </div>
 
-              <a>
+              
+                <Link to={"/referenzen"}>
                 <Button>Zur Gallerie</Button>
-              </a>
+                </Link>
+              
             </div>
           </div>
         </div>

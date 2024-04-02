@@ -16,6 +16,7 @@ import References from "../components/ui/references";
 import Malerbetrieb from "@/components/ui/malerbetrieb";
 import Services from "@/components/ui/services";
 import Partner from "@/components/ui/partner";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -35,7 +36,9 @@ function Home() {
             .
           </h1>
           <div className="flex justify-center pt-8">
+            <Link to={"/kontakt"}>
             <Button variant="default">Kontakt</Button>
+            </Link>
           </div>
         </WavyBackground>
       </div>
