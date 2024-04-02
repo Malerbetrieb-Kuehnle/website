@@ -14,7 +14,7 @@ const contact_details = [
   },
   {
     name: "Instagram",
-    description: "@malerbetrieb_kuehnle",
+    description: "malerbetrieb_kuehnle",
     icon: FaInstagram,
     link: "https://www.instagram.com/malerbetrieb_kuehnle/",
   },
@@ -22,7 +22,6 @@ const contact_details = [
     name: "Telefon",
     description: "Büro: +49 8061 93 98 333\nMobil: +49 172 85 17 479",
     icon: FaPhone,
-    link: "tel:+4980619398333",
   },
   {
     name: "Adresse",
