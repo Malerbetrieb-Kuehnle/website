@@ -7,207 +7,19 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 import { WavyBackground } from "../components/ui/wavy-background";
 
 // Import the images
-import about_us from "../assets/Fenster-25-Jahre.png";
-import wirbildenaus from "../assets/wirbildenaus-removebg.png";
 import Raab from "../assets/Raab.svg";
 import Ulber from "../assets/Ulber.png";
 import Hoegner from "../assets/Hoegner.png";
-import Wohnhaus_Hohenthann from "../assets/Wohnhaus_Hohenthann.jpg";
-import Wohnhaus_Bad_Aibling from "../assets/Wohnhaus _Bad_Aibling.jpg";
 
 // Footer
 import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
-import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
 import ContactNew from "../components/ui/contact-section-new";
 import References from "../components/ui/references";
 import Malerbetrieb from "@/components/ui/malerbetrieb";
-
-const service_innenbereich = [
-  {
-    title: "Innenanstrich",
-    description: "Wir führen sämtliche Anstriche im Innenbereich aus.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Bodenbeschichtungen",
-    description:
-      "Anfragen von speziellen Beschichtungen auf verschiedenen Böden wie Epoxidharz oder Betonversiegelung.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Lackierarbeiten",
-    description:
-      "Sämtliche Lackierarbeiten werden bei Ihnen vor Ort durchgeführt.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Individuelle Farbberatung",
-    description:
-      "Beratung und Farbgestaltung bei der Auswahl im Innen- und Außenbereich.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Spachteltechniken",
-    description:
-      "Wir führen für Sie klassische Glättetechniken an Wänden und Decken durch.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Renovierungsarbeiten",
-    description: "Wir bringen auch alte Gemäuer wieder auf Vordermann.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Tapezierarbeiten",
-    description:
-      "Egal ob Fototapeten oder moderne Wandbeläge, wir bringen hochwertige italienische Wandbeläge für unsere Kunden an die Wand.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Betonoptik",
-    description:
-      "Malerarbeiten in Betonoptik können eine moderne und industrielle Ästhetik in einem Raum schaffen. Hier wird die Textur und Optik von Beton nachgeahmt.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Verputzarbeiten",
-    description:
-      "Vorbereitende Arbeiten wie Spachteln, Verputzen und Glätten von Oberflächen.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-];
-
-const service_aussenbereich = [
-  {
-    title: "Holzanstriche aller Art",
-    description:
-      "Neu und abgewitterte Holzbauteile sowie Hagelschäden am Gebäude.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Eigener Gerüstbau",
-    description:
-      "Wir bauen für unseren Eigengebrauch an Ihrem Gebäude Arbeitsschutzgerüste auf.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Putzausbesserungen",
-    description:
-      "Vorbereitende Arbeiten wie Spachteln, Verputzen und Glätten von Oberflächen.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Fassadenanstriche",
-    description:
-      "Von der Untergrundvorbereitung, der Auswahl von Farbtönen und der richtigen Materialen bis hin zur Ausführung.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Hochdruck-Wasser-Reiniger",
-    description: "Reinigung von verschmutzen Flächen am Gebäude.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Renovierungsarbeiten",
-    description:
-      "Wir bringen stark renovierungsbedürftige Fassaden wieder auf Vordemann.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Individuelle Farbberatung",
-    description:
-      "Beratung und Farbgestaltung bei der Auswahl im Innen und Außenbereich.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Lackierarbeiten",
-    description: "Sämtliche Lackierarbeiten bei Ihnen vor Ort.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Bad_Aibling} alt="About Us" />
-      </div>
-    ),
-  },
-  {
-    title: "Renova-Fenster-Flügel",
-    description:
-      "Lieferung und Montage von Renova Alu-Fensterflügel und Fensterstock Abdeckungen.",
-    content: (
-      <div className="h-full w-full flex items-center justify-center ">
-        <img src={Wohnhaus_Hohenthann} alt="About Us" />
-      </div>
-    ),
-  },
-];
+import Services from "@/components/ui/services";
 
 function Home() {
   return (
@@ -237,26 +49,7 @@ function Home() {
       <Malerbetrieb />
 
       {/* Services */}
-      <div
-        className="container-services flex flex-col items-center justify-center"
-        id="services"
-      >
-        <h1 className="text-6xl mb-6 font-bold ">Services.</h1>
-        <Tabs defaultValue="innenbereich">
-          <div className="max-w-max mx-auto">
-            <TabsList>
-              <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
-              <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
-            </TabsList>
-          </div>
-          <TabsContent value="innenbereich">
-            <StickyScroll content={service_innenbereich} />
-          </TabsContent>
-          <TabsContent value="aussenbereich">
-            <StickyScroll content={service_aussenbereich} />
-          </TabsContent>
-        </Tabs>
-      </div>
+      <Services />
 
       <div className="container-references flex flex-col">
         <References />
