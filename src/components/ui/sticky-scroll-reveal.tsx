@@ -24,7 +24,7 @@ export const StickyScroll = ({
     offset: ["start start", "end start"],
   });
   // added +1 to reach last element
-  const cardLength = content.length+1;
+  const cardLength = content.length + 1;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
@@ -44,7 +44,7 @@ export const StickyScroll = ({
   return (
     <motion.div
       animate={{
-        backgroundColor: "#111111",
+        backgroundColor: "#f2f5f9",
       }}
       className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
       ref={ref}
@@ -60,7 +60,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100"
+                className="text-2xl font-bold text-[#377d46]"
               >
                 {item.title}
               </motion.h2>
@@ -71,7 +71,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg text-slate-300 max-w-sm mt-10"
+                className="text-kg text-black max-w-sm mt-10"
               >
                 {item.description}
               </motion.p>
@@ -82,7 +82,7 @@ export const StickyScroll = ({
       </div>
       <motion.div
         animate={{
-          background: "#111111",
+          background: "#fff",
         }}
         className={cn(
           "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",

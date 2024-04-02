@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import "./App.css";
 
-
 import Referenzen from "./pages/referenzen";
 import Kontakt from "./pages/kontakt";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -15,39 +14,19 @@ import MainLayout from "./layout/MainLayout";
 import Impressum from "./pages/impressum";
 import Datenschutz from "./pages/datenschutz";
 
-
-
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={<MainLayout />}>
+      <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route path='/impressum' element={<Impressum />} />
-        <Route path='/datenschutz' element={<Datenschutz />} />
-        <Route path='/referenzen' element={<Referenzen />} />
-        <Route path='/kontakt' element={<Kontakt />}/>
-        <Route path='*' element={<NotFoundPage />} />
+        <Route path="/impressum" element={<Impressum />} />
+        <Route path="/datenschutz" element={<Datenschutz />} />
+        <Route path="/referenzen" element={<Referenzen />} />
+        <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
   );
-  return  <RouterProvider router={router} />;
-
-      {/* Navbar */}
-      {/* <div className="w-full overflow-hidden max-w-7xl mx-auto">
-        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-          <div className={`${styles.boxWidth}`}>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/referenzen" element={<Referenzen />} />
-              <Route path="/kontakt" element={<Kontakt />} />
-            </Routes>
-          </div>
-        </div>
-      </div>
-      <div className="container-footer">
-        <Footer />
-      </div> */}
-  
-    };
+  return <RouterProvider router={router} />;
+};
 export default App;

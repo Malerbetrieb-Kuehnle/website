@@ -20,7 +20,6 @@ import Hoegner from "../assets/Hoegner.png";
 import Wohnhaus_Hohenthann from "../assets/Wohnhaus_Hohenthann.jpg";
 import Wohnhaus_Bad_Aibling from "../assets/Wohnhaus _Bad_Aibling.jpg";
 
-
 // Footer
 import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
 import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
@@ -275,10 +274,10 @@ function Home() {
         className="container-services flex flex-col items-center justify-center"
         id="services"
       >
-        <h1 className="text-6xl mb-4 font-bold text-white">Services.</h1>
+        <h1 className="text-6xl mb-6 font-bold ">Services.</h1>
         <Tabs defaultValue="innenbereich">
           <div className="max-w-max mx-auto">
-            <TabsList className="flex">
+            <TabsList>
               <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
               <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
             </TabsList>
