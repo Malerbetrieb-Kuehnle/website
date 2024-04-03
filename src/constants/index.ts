@@ -55,7 +55,7 @@ export const footerLinks = [
       {
         id: "cookies",
         title: "Cookies",
-        path: "/cookies",
+        path: "javascript:UC_UI.showSecondLayer();",
       },
     ],
   },
