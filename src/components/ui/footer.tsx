@@ -12,11 +12,13 @@ const Footer = () => (
     <div>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
         <div className="flex-[1] flex flex-col justify-start mr-10">
+          <Link to="/">
           <img
             src={logo}
             alt="Malerbetrieb Kühnle"
             className="w-[120px] h-auto object-contain"
           />
+          </Link>
           <p className={`${styles.paragraph} mt-4 max-w-[312px] text-gray-500`}>
             Wir bringen Farbe in Ihr Leben.
           </p>
