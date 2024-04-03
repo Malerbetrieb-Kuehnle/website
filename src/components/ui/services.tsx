@@ -273,7 +273,7 @@ const service_aussenbereich = [
 
 export default function Services() {
   return (
-    <div className="flex flex-col items-center justify-center" id="services">
+    <div className="flex flex-col max-w-7xl mx-auto  mb-12" id="services">
       <div className="mx-auto max-w-2xl sm:text-center mb-8">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Services.
@@ -286,20 +286,22 @@ export default function Services() {
           Renovierungsarbeiten und vieles mehr.
         </p>
       </div>
-      <Tabs defaultValue="innenbereich">
-        <div className="max-w-max mx-auto">
-          <TabsList>
-            <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
-            <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
-          </TabsList>
-        </div>
-        <TabsContent value="innenbereich">
-          <StickyScroll content={service_innenbereich} />
-        </TabsContent>
-        <TabsContent value="aussenbereich">
-          <StickyScroll content={service_aussenbereich} />
-        </TabsContent>
-      </Tabs>
+      <div className="rounded-2xl ring-2 ring-[#4a7b4b] bg-[#4a7b4b]">
+        <Tabs defaultValue="innenbereich">
+          <div className="max-w-max mx-auto my-4">
+            <TabsList>
+              <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
+              <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
+            </TabsList>
+          </div>
+          <TabsContent value="innenbereich">
+            <StickyScroll content={service_innenbereich} />
+          </TabsContent>
+          <TabsContent value="aussenbereich">
+            <StickyScroll content={service_aussenbereich} />
+          </TabsContent>
+        </Tabs>
+      </div>
     </div>
   );
 }
