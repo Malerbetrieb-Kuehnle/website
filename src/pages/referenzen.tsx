@@ -4,7 +4,6 @@ import { ParallaxScroll } from "@/components/ui/parallax-scroll";
 import Amtsgericht_Bad_Aibling from "../assets/referenzen/Amtsgericht_Bad_Aibling.jpg";
 import Augencentrum_Rosenheim1 from "../assets/referenzen/Augencentrum_Rosenheim1.jpg";
 import Augencentrum_Rosenheim2 from "../assets/referenzen/Augencentrum_Rosenheim2.jpg";
-import Augencentrum_Rosenheim3 from "../assets/referenzen/Augencentrum_Rosenheim3.jpg";
 import Augencentrum_Rosenheim4 from "../assets/referenzen/Augencentrum_Rosenheim4.jpg";
 import Autohalle_Kolbermoor from "../assets/referenzen/Autohalle_Kolbermoor.jpg";
 import Baderhaus_Bad_Aibling1 from "../assets/referenzen/Baderhaus_Bad_Aibling1.jpg";
@@ -28,34 +27,27 @@ import Praxis_Schoenau1 from "../assets/referenzen/Praxis_Schoenau1.jpg";
 import Praxis_Schoenau2 from "../assets/referenzen/Praxis_Schoenau2.jpg";
 import Praxis_Schoenau3 from "../assets/referenzen/Praxis_Schoenau3.jpg";
 import Schloss_Maxhofen_Bruckmuehl from "../assets/referenzen/Schloss_Maxhofen_Bruckmuehl.jpg";
-import Schreinerei_Vagen1 from "../assets/referenzen/Schreinerei_Vagen1.jpg";
 import Schreinerei_Vagen2 from "../assets/referenzen/Schreinerei_Vagen2.jpg";
 import Sparkasse_Vagen from "../assets/referenzen/Sparkasse_Vagen.jpg";
 import Sparkassenhochhaus_Rosenheim from "../assets/referenzen/Sparkassenhochhaus_Rosenheim .jpg";
 import Wintergarten_Hohenthann1 from "../assets/referenzen/Wintergarten_Hohenthann1.jpg";
 import Wintergarten_Hohenthann3 from "../assets/referenzen/Wintergarten_Hohenthann3.jpg";
-import Wohnhaus_Bad_Aibling1 from "../assets/referenzen/Wohnhaus_Bad_Aibling1.jpg";
 import Wohnhaus_Bad_Aibling2 from "../assets/referenzen/Wohnhaus_Bad_Aibling2.jpg";
 import Wohnhaus_Bad_Aibling3 from "../assets/referenzen/Wohnhaus_Bad_Aibling3.jpg";
 import Wohnhaus_Bad_Aibling5 from "../assets/referenzen/Wohnhaus_Bad_Aibling5.jpg";
 import Wohnhaus_Bad_Aibling6 from "../assets/referenzen/Wohnhaus_Bad_Aibling6.jpg";
 import Wohnhaus_Bad_Aibling7 from "../assets/referenzen/Wohnhaus_Bad_Aibling7.jpg";
-import Wohnhaus_Bad_Aibling9 from "../assets/referenzen/Wohnhaus_Bad_Aibling9.jpg";
 import Wohnhaus_Bad_Aibling10 from "../assets/referenzen/Wohnhaus_Bad_Aibling10.jpg";
 import Wohnhaus_Bad_Feilnbach1 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach1.jpg";
 import Wohnhaus_Bad_Feilnbach2 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach2.jpg";
 import Wohnhaus_Bad_Feilnbach3 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach3.jpg";
-
 import Wohnhaus_Bad_Feilnbach6 from "../assets/referenzen/Wohnhaus_Bad_Feilnbach6.jpg";
-import Wohnhaus_Beyharting from "../assets/referenzen/Wohnhaus_Beyharting.jpg";
 import Wohnhaus_Bruckmuehl1 from "../assets/referenzen/Wohnhaus_Bruckmuehl1.jpg";
 import Wohnhaus_Bruckmuehl2 from "../assets/referenzen/Wohnhaus_Bruckmuehl2.jpg";
 import Wohnhaus_Bruckmuehl3 from "../assets/referenzen/Wohnhaus_Bruckmuehl3.jpg";
 import Wohnhaus_Bruckmuehl4 from "../assets/referenzen/Wohnhaus_Bruckmuehl4.jpg";
-import Wohnhaus_Bruckmuehl5 from "../assets/referenzen/Wohnhaus_Bruckmuehl5.jpg";
 import Wohnhaus_Feldkirchen1 from "../assets/referenzen/Wohnhaus_Feldkirchen1.jpg";
 import Wohnhaus_Feldkirchen2 from "../assets/referenzen/Wohnhaus_Feldkirchen2.jpg";
-import Wohnhaus_Feldkirchen3 from "../assets/referenzen/Wohnhaus_Feldkirchen3.jpg";
 import Wohnhaus_Glonn from "../assets/referenzen/Wohnhaus_Glonn.jpg";
 import Wohnhaus_Grabenstaett3 from "../assets/referenzen/Wohnhaus_Grabenstaett3.jpg";
 import Wohnhaus_Grabenstaett4 from "../assets/referenzen/Wohnhaus_Grabenstaett4.jpg";
@@ -65,10 +57,8 @@ import Wohnhaus_Hoehenrain from "../assets/referenzen/Wohnhaus_Hoehenrain.jpg";
 import Wohnhaus_Hohenthann1 from "../assets/referenzen/Wohnhaus_Hohenthann1.jpg";
 import Wohnhaus_Hohenthann2 from "../assets/referenzen/Wohnhaus_Hohenthann2.jpg";
 import Wohnhaus_Hohenthann3 from "../assets/referenzen/Wohnhaus_Hohenthann3.jpg";
-import Wohnhaus_Hohenthann4 from "../assets/referenzen/Wohnhaus_Hohenthann4.jpg";
 import Wohnhaus_Hohenthann5 from "../assets/referenzen/Wohnhaus_Hohenthann5.jpg";
 import Wohnhaus_Hohenthann6 from "../assets/referenzen/Wohnhaus_Hohenthann6.jpg";
-import Wohnhaus_Kolbermoor from "../assets/referenzen/Wohnhaus_Kolbermoor.jpg";
 import Wohnhaus_Neubeuern from "../assets/referenzen/Wohnhaus_Neubeuern .jpg";
 import Wohnhaus_Pang from "../assets/referenzen/Wohnhaus_Pang .jpg";
 import Wohnhaus_Rosenheim from "../assets/referenzen/Wohnhaus_Rosenheim.jpg";
@@ -78,7 +68,6 @@ const images = [
   Amtsgericht_Bad_Aibling,
   Augencentrum_Rosenheim1,
   Augencentrum_Rosenheim2,
-  Augencentrum_Rosenheim3,
   Augencentrum_Rosenheim4,
   Autohalle_Kolbermoor,
   Baderhaus_Bad_Aibling1,
@@ -102,33 +91,27 @@ const images = [
   Praxis_Schoenau2,
   Praxis_Schoenau3,
   Schloss_Maxhofen_Bruckmuehl,
-  Schreinerei_Vagen1,
   Schreinerei_Vagen2,
   Sparkasse_Vagen,
   Sparkassenhochhaus_Rosenheim,
   Wintergarten_Hohenthann1,
   Wintergarten_Hohenthann3,
-  Wohnhaus_Bad_Aibling1,
   Wohnhaus_Bad_Aibling2,
   Wohnhaus_Bad_Aibling3,
   Wohnhaus_Bad_Aibling5,
   Wohnhaus_Bad_Aibling6,
   Wohnhaus_Bad_Aibling7,
-  Wohnhaus_Bad_Aibling9,
   Wohnhaus_Bad_Aibling10,
   Wohnhaus_Bad_Feilnbach1,
   Wohnhaus_Bad_Feilnbach2,
   Wohnhaus_Bad_Feilnbach3,
   Wohnhaus_Bad_Feilnbach6,
-  Wohnhaus_Beyharting,
   Wohnhaus_Bruckmuehl1,
   Wohnhaus_Bruckmuehl2,
   Wohnhaus_Bruckmuehl3,
   Wohnhaus_Bruckmuehl4,
-  Wohnhaus_Bruckmuehl5,
   Wohnhaus_Feldkirchen1,
   Wohnhaus_Feldkirchen2,
-  Wohnhaus_Feldkirchen3,
   Wohnhaus_Glonn,
   Wohnhaus_Grabenstaett3,
   Wohnhaus_Grabenstaett4,
@@ -138,10 +121,8 @@ const images = [
   Wohnhaus_Hohenthann1,
   Wohnhaus_Hohenthann2,
   Wohnhaus_Hohenthann3,
-  Wohnhaus_Hohenthann4,
   Wohnhaus_Hohenthann5,
   Wohnhaus_Hohenthann6,
-  Wohnhaus_Kolbermoor,
   Wohnhaus_Neubeuern,
   Wohnhaus_Pang,
   Wohnhaus_Rosenheim,
@@ -150,7 +131,7 @@ const images = [
 
 export default function referenzen() {
   return (
-    <div className="py-24 sm:py-32">
+    <div className="pt-24 sm:pt-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h1 className="mt-2 text-3xl text-center font-bold tracking-tight text-gray-900 sm:text-4xl">

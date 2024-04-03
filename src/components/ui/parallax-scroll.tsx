@@ -21,17 +21,16 @@ export const ParallaxScroll = ({
   const third = Math.ceil(images.length / 3);
 
   const firstPart = images.slice(0, third);
-  const secondPart = images.slice(third, 2 * third);
-  const thirdPart = images.slice(2 * third);
+  const thirdPart = images.slice(third, 2 * third);
+  const secondPart = images.slice(2 * third);
 
   return (
     <div
-      className={cn("min-h-full items-start overflow-y-auto w-full", className)} // Use min-h-full instead of fixed height
-      ref={containerRef} // Use the ref for the container
+      className={cn("min-h-full overflow-hidden", className)} // Apply overflow-hidden to prevent scrolling
+      ref={containerRef}
     >
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-5xl mx-auto gap-10 py-40 px-10"
-        ref={containerRef} // Use the ref for the container
       >
         <div className="grid gap-10">
           {firstPart.map((el, idx) => (
