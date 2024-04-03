@@ -49,15 +49,7 @@
   background-color: #fafafa;
 }
 
-.container-services {
-  position: relative;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 10px;
-  overflow: hidden;
-  background-color: #fff;
-  height: 96vh;
-}
+
 
 .logo-images {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */

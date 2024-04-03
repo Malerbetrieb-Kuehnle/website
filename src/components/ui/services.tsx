@@ -273,11 +273,19 @@ const service_aussenbereich = [
 
 export default function Services() {
   return (
-    <div
-      className="container-services flex flex-col items-center justify-center"
-      id="services"
-    >
-      <h1 className="text-6xl mb-6 font-bold ">Services.</h1>
+    <div className="flex flex-col items-center justify-center" id="services">
+      <div className="mx-auto max-w-2xl sm:text-center mb-8">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Services.
+        </h2>
+        <p className="mt-6 text-lg leading-8 text-gray-600">
+          Für den Innenbereich bieten wir eine breite Palette von
+          Dienstleistungen an, darunter Innenanstrich, Bodenbeschichtungen,
+          individuelle Farbberatung und mehr. Im Außenbereich umfassen unsere
+          Leistungen Fassadenanstriche, Hochdruck-Wasser-Reinigung,
+          Renovierungsarbeiten und vieles mehr.
+        </p>
+      </div>
       <Tabs defaultValue="innenbereich">
         <div className="max-w-max mx-auto">
           <TabsList>
