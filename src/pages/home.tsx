@@ -17,6 +17,7 @@ import Malerbetrieb from "@/components/ui/malerbetrieb";
 import Services from "@/components/ui/services";
 import Partner from "@/components/ui/partner";
 import { Link } from "react-router-dom";
+import Ausbildung from "@/components/ui/ausbildung";
 
 function Home() {
   return (
@@ -52,6 +53,8 @@ function Home() {
       <div className="container-references flex flex-col">
         <References />
       </div>
+
+      <Ausbildung/>
 
       <div className="partner-section py-24 sm:py-32">
         <Partner />

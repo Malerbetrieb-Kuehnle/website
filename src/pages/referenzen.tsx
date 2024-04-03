@@ -22,18 +22,13 @@ import Haus from "../assets/referenzen/Haus.jpg";
 import Klinik_St_Georg_Bad_Aiblung from "../assets/referenzen/Klinik_St._Georg_Bad_Aiblung.jpg";
 import Lackarbeiten1 from "../assets/referenzen/Lackarbeiten1.jpg";
 import Lackarbeiten2 from "../assets/referenzen/Lackarbeiten2.jpg";
-import Metzgerei_Rumpel_Bruckmuehl from "../assets/referenzen/Metzgerei_Rumpel_Bruckmuehl.jpg";
 import Praxis_Schoenau1 from "../assets/referenzen/Praxis_Schoenau1.jpg";
 import Praxis_Schoenau2 from "../assets/referenzen/Praxis_Schoenau2.jpg";
 import Praxis_Schoenau3 from "../assets/referenzen/Praxis_Schoenau3.jpg";
 import Schloss_Maxhofen_Bruckmuehl from "../assets/referenzen/Schloss_Maxhofen_Bruckmuehl.jpg";
-import Schreinerei_Vagen2 from "../assets/referenzen/Schreinerei_Vagen2.jpg";
 import Sparkasse_Vagen from "../assets/referenzen/Sparkasse_Vagen.jpg";
 import Sparkassenhochhaus_Rosenheim from "../assets/referenzen/Sparkassenhochhaus_Rosenheim .jpg";
 import Wintergarten_Hohenthann1 from "../assets/referenzen/Wintergarten_Hohenthann1.jpg";
-import Wintergarten_Hohenthann3 from "../assets/referenzen/Wintergarten_Hohenthann3.jpg";
-import Wohnhaus_Bad_Aibling2 from "../assets/referenzen/Wohnhaus_Bad_Aibling2.jpg";
-import Wohnhaus_Bad_Aibling3 from "../assets/referenzen/Wohnhaus_Bad_Aibling3.jpg";
 import Wohnhaus_Bad_Aibling5 from "../assets/referenzen/Wohnhaus_Bad_Aibling5.jpg";
 import Wohnhaus_Bad_Aibling6 from "../assets/referenzen/Wohnhaus_Bad_Aibling6.jpg";
 import Wohnhaus_Bad_Aibling7 from "../assets/referenzen/Wohnhaus_Bad_Aibling7.jpg";
@@ -46,7 +41,6 @@ import Wohnhaus_Bruckmuehl1 from "../assets/referenzen/Wohnhaus_Bruckmuehl1.jpg"
 import Wohnhaus_Bruckmuehl2 from "../assets/referenzen/Wohnhaus_Bruckmuehl2.jpg";
 import Wohnhaus_Bruckmuehl3 from "../assets/referenzen/Wohnhaus_Bruckmuehl3.jpg";
 import Wohnhaus_Bruckmuehl4 from "../assets/referenzen/Wohnhaus_Bruckmuehl4.jpg";
-import Wohnhaus_Feldkirchen1 from "../assets/referenzen/Wohnhaus_Feldkirchen1.jpg";
 import Wohnhaus_Feldkirchen2 from "../assets/referenzen/Wohnhaus_Feldkirchen2.jpg";
 import Wohnhaus_Glonn from "../assets/referenzen/Wohnhaus_Glonn.jpg";
 import Wohnhaus_Grabenstaett3 from "../assets/referenzen/Wohnhaus_Grabenstaett3.jpg";
@@ -86,18 +80,13 @@ const images = [
   Klinik_St_Georg_Bad_Aiblung,
   Lackarbeiten1,
   Lackarbeiten2,
-  Metzgerei_Rumpel_Bruckmuehl,
   Praxis_Schoenau1,
   Praxis_Schoenau2,
   Praxis_Schoenau3,
   Schloss_Maxhofen_Bruckmuehl,
-  Schreinerei_Vagen2,
   Sparkasse_Vagen,
   Sparkassenhochhaus_Rosenheim,
   Wintergarten_Hohenthann1,
-  Wintergarten_Hohenthann3,
-  Wohnhaus_Bad_Aibling2,
-  Wohnhaus_Bad_Aibling3,
   Wohnhaus_Bad_Aibling5,
   Wohnhaus_Bad_Aibling6,
   Wohnhaus_Bad_Aibling7,
@@ -110,7 +99,6 @@ const images = [
   Wohnhaus_Bruckmuehl2,
   Wohnhaus_Bruckmuehl3,
   Wohnhaus_Bruckmuehl4,
-  Wohnhaus_Feldkirchen1,
   Wohnhaus_Feldkirchen2,
   Wohnhaus_Glonn,
   Wohnhaus_Grabenstaett3,
