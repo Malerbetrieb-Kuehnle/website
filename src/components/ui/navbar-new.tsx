@@ -66,7 +66,7 @@ export default function NavbarNew() {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
             onClick={() => setMobileMenuOpen(true)}
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">Menü öffnen</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
@@ -75,7 +75,7 @@ export default function NavbarNew() {
             <Link
               key={nav.id}
               to={nav.path}
-              className={`text-sm font-semibold leading-6 ${
+              className={`text-lg font-normal leading-6 ${
                 active === nav.title ? "text-[#027f3f]" : "text-gray-900"
               }`}
             >
@@ -88,8 +88,14 @@ export default function NavbarNew() {
             className="hover:bg-[#407b4b] hover:text-white"
             variant="outline"
           >
-            <Link to="tel:+491728517479" className="flex items-center ">
-              <FaPhone className="mr-2" aria-hidden="true" />
+            <Link
+              to="tel:+491728517479"
+              className="flex items-center text-sm font-normal"
+            >
+              <FaPhone
+                className="mr-2 text-sm font-normal"
+                aria-hidden="true"
+              />
               Anrufen
             </Link>
           </Button>
@@ -124,7 +130,7 @@ export default function NavbarNew() {
                   <Link
                     key={nav.id}
                     to={nav.path}
-                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                    className={`-mx-3 text-center block rounded-lg px-3 py-2 text-base font-semibold leading-7${
                       active === nav.title
                         ? "text-[#027f3f] hover:bg-gray-50"
                         : "text-gray-900 hover:bg-gray-50"
@@ -135,7 +141,7 @@ export default function NavbarNew() {
                   </Link>
                 ))}
               </div>
-              <div className="py-6">
+              <div className="py-6 text-center">
                 <Button className="bg-[#407b4b] text-white">
                   <Link to="tel:+491728517479" className="flex items-center ">
                     <FaPhone className="mr-2" aria-hidden="true" />

@@ -4,9 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 import { Button } from "@/components/ui/button";
-
 import { WavyBackground } from "../components/ui/wavy-background";
 
 // Footer
@@ -38,7 +36,7 @@ function Home() {
           </h1>
           <div className="flex justify-center pt-8">
             <Link to={"/kontakt"}>
-            <Button variant="default">Kontakt</Button>
+              <Button variant="default">Kontakt</Button>
             </Link>
           </div>
         </WavyBackground>
@@ -54,7 +52,7 @@ function Home() {
         <References />
       </div>
 
-      <Ausbildung/>
+      <Ausbildung />
 
       <div className="partner-section py-24 sm:py-32">
         <Partner />
