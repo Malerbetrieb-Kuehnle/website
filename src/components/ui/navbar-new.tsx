@@ -84,10 +84,7 @@ export default function NavbarNew() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center">
-          <Button
-            className="hover:bg-[#407b4b] hover:text-white"
-            variant="outline"
-          >
+          <Button className="bg-[#407b4b] text-white" variant="default">
             <Link
               to="tel:+491728517479"
               className="flex items-center text-sm font-normal"

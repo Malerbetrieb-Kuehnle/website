@@ -21,7 +21,7 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <div className="container-waves flex flex-col items-center justify-center">
+      <div className="container-waves flex flex-col items-center justify-center border-2">
         <WavyBackground className="max-w-4xl mx-auto ">
           <h2 className="md:text-2xl text-xl mb-4 text-center">
             Malerbetrieb Kühnle
