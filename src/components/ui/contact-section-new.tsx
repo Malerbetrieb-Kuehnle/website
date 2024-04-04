@@ -56,7 +56,7 @@ export default function ContactNew() {
                   </div>
                   {feature.name}
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-500">
+                <dd className="mt-2 text-base leading-7 text-gray-600">
                   {feature.link ? (
                     <a
                       href={feature.link}

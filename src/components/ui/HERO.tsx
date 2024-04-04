@@ -9,7 +9,7 @@ const scrollToTop = () => {
 
 const HERO = () => {
   return (
-    <div className="container-waves flex flex-col items-center justify-center border-2">
+    <div className="relative overflow-hidden h-[75vh] max-w-screen-xl max-h-[1000px] mt-2.5 mx-auto my-0 rounded-[15px] flex flex-col items-center justify-center border-2">
 
     <WavyBackground className="max-w-4xl mx-auto ">
       <h2 className="md:text-2xl text-xl mb-4 text-center">

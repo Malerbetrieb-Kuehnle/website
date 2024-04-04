@@ -9,7 +9,7 @@ const scrollToTop = () => {
 };
 const Footer = () => (
   <section
-    className={`${styles.flexCenter} ${styles.paddingY} container-footer flex-col sm:mt-16 mt-6`}
+    className={`${styles.flexCenter} ${styles.paddingY} relative overflow-hidden h-auto flex justify-center items-center bg-neutral-50 mt-2.5 mx-auto my-0 pt-[50px] rounded-[15px] flex-col sm:mt-16`}
   >
     <div>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
