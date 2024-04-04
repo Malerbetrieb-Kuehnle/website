@@ -1,6 +1,4 @@
-const p = "mt-6 mb-10 text-lg leading-8 text-gray-500";
-const h1 =
-  "mt-2 mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl";
+const p = "mt-6 mb-10 text-lg leading-8 text-gray-600";
 const h2 = "mt-2 text-3xl  tracking-tight text-gray-900 sm:text-4xl";
 const h3 = "mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl";
 const h4 = "mt-2 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl";
@@ -8,11 +6,13 @@ const h4 = "mt-2 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl";
 const Datenschutz = () => {
   return (
     <>
-      <div className="py-24 sm:py-32">
+      <div className="my-24 sm:my-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
             <div className="max-w-7xl mx-auto"></div>
-            <h1 className={h1}>Datenschutz&shy;erkl&auml;rung</h1>
+            <h2 className="text-5xl font-bold tracking-tight text-gray-900 mb-16 text-center">
+              Datenschutz&shy;erkl&auml;rung
+            </h2>
             <h2 className={h2}>1. Datenschutz auf einen Blick</h2>
             <h3 className={h3}>Allgemeine Hinweise</h3>{" "}
             <p className={p}>

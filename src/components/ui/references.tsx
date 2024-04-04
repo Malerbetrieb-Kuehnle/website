@@ -17,15 +17,15 @@ const scrollToTop = () => {
 
 export default function References() {
   return (
-    <div className="container-references">
-      <div className="relative overflow-hidden bg-white ">
+    <div className="relative overflow-hidden max-w-screen-xl mx-auto rounded-[15px] border-0 border-solid border-[#e7e7e9] mb-40">
+      <div className="relative overflow-hidden">
         <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-lg">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              <h2 className="text-5xl font-bold tracking-tight text-gray-900">
                 Referenzen.
-              </h1>
-              <p className="mt-4 text-xl text-gray-500">
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
                 Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
                 zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
                 Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
@@ -33,7 +33,7 @@ export default function References() {
               </p>
             </div>
             <div>
-              <div className="mt-10">
+              <div className="mt-6">
                 {/* Decorative image grid */}
                 <div
                   aria-hidden="true"
@@ -101,7 +101,7 @@ export default function References() {
                 </div>
 
                 <Link to={"/referenzen"} onClick={scrollToTop}>
-                  <Button>Zur Gallerie</Button>
+                  <Button variant="default">Zur Gallerie</Button>
                 </Link>
               </div>
             </div>

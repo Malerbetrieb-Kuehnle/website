@@ -10,22 +10,23 @@ const merkmale_ausbildung = [
 
 export default function Ausbildung() {
   return (
-    <div className="bg-white py-24 sm:py-32 mx-auto">
+    <div className="mb-40 mx-auto">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-5xl font-bold tracking-tight text-gray-900">
             Wir bilden aus.
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Wir bilden seit Jahren mit Erfolg Lehrlinge in diesem interessanten
-            und absolut vielseitigem Beruf aus. Wir freuen uns auf Deine Bewerbung!
+            und absolut vielseitigem Beruf aus. Wir freuen uns auf Deine
+            Bewerbung!
           </p>
         </div>
 
         {/* Ausbildung */}
-        <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+        <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-[#f5f5f5] sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
-            <h3 className="text-2xl font-bold tracking-tight text-gray-900">
+            <h3 className="text-4xl font-bold tracking-tight text-gray-900">
               Ausbildung.
             </h3>
             <p className="mt-6 text-base leading-7 text-gray-600">

@@ -9,7 +9,7 @@ const scrollToTop = () => {
 };
 const Footer = () => (
   <section
-    className={`${styles.flexCenter} ${styles.paddingY} container-footer flex-col sm:mt-16 mt-6`}
+    className={`relative overflow-hidden h-auto flex justify-center items-center bg-[#f5f5f5] mx-auto py-16 rounded-[15px] flex-col`}
   >
     <div>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
@@ -21,7 +21,7 @@ const Footer = () => (
               className="w-[120px] h-auto object-contain"
             />
           </Link>
-          <p className={`${styles.paragraph} mt-4 max-w-[312px] text-gray-500`}>
+          <p className={`${styles.paragraph} mt-4 max-w-[312px] text-gray-900`}>
             Wir bringen Farbe in Ihr Leben.
           </p>
         </div>
@@ -66,7 +66,7 @@ const Footer = () => (
             return (
               <div
                 key={social.id}
-                className={`w-6 h-6 cursor-pointer hover:text-mbgreen duration-300 text-gray-500 ${
+                className={`w-6 h-6 cursor-pointer hover:text-mbgreen duration-300 text-gray-900 ${
                   index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
                 }`}
               >

@@ -3,54 +3,6 @@
   padding: 2rem;
 }
 
-.container-faq {
-  position: relative;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 10px;
-  height: fit-content;
-  overflow: hidden;
-  display: flex;
-  max-width: 1280px;
-}
-
-.container-waves {
-  position: relative;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 10px;
-  overflow: hidden;
-  height: 75vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1280px;
-  max-height: 1000px;
-}
-
-.partner-section {
-  position: relative;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 10px;
-  overflow: hidden;
-  display: flex;
-}
-
-.container-footer {
-  position: relative;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding-top: 50px;
-  overflow: hidden;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fafafa;
-}
-
 .logo-images {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
@@ -59,14 +11,4 @@
 .logo-images:hover {
   -webkit-filter: none;
   filter: none;
-}
-
-.container-references {
-  position: relative;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 10px;
-  overflow: hidden;
-  border: 2px solid #e7e7e9;
-  max-width: 1280px;
 }
