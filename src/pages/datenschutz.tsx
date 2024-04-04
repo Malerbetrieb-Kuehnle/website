@@ -1,10 +1,11 @@
-export default function Datenschutz() {
-  const p = "mt-6 mb-10 text-lg leading-8 text-gray-500";
-  const h1 =
-    "mt-2 mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl";
-  const h2 = "mt-2 text-3xl  tracking-tight text-gray-900 sm:text-4xl";
-  const h3 = "mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl";
-  const h4 = "mt-2 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl";
+const p = "mt-6 mb-10 text-lg leading-8 text-gray-500";
+const h1 =
+  "mt-2 mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl";
+const h2 = "mt-2 text-3xl  tracking-tight text-gray-900 sm:text-4xl";
+const h3 = "mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl";
+const h4 = "mt-2 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl";
+
+const Datenschutz = () => {
   return (
     <>
       <div className="py-24 sm:py-32">
@@ -608,4 +609,5 @@ export default function Datenschutz() {
       </div>
     </>
   );
-}
+};
+export default Datenschutz;

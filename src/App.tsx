@@ -2,13 +2,13 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
-import Referenzen from "./pages/Referenzen";
-import Kontakt from "./pages/Kontakt";
+import Referenzen from "./pages/referenzen";
+import Kontakt from "./pages/kontakt";
 import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
 import MainLayout from "./layout/MainLayout";
-import Impressum from "./pages/Impressum";
-import Datenschutz from "./pages/Datenschutz";
+import Impressum from "./pages/impressum";
+import Datenschutz from "./pages/datenschutz";
 
 function App() {
   return (
