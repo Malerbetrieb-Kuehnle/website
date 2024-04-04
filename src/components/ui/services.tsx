@@ -287,7 +287,7 @@ export default function Services() {
       <div className="mt-6 rounded-2xl ">
         <Tabs defaultValue="innenbereich">
           <div className="max-w-max mx-auto my-4">
-            <TabsList className="bg-[#f5f5f5] text-black">
+            <TabsList className="bg-[#f5f5f5]">
               <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
               <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
             </TabsList>
