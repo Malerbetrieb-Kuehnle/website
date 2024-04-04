@@ -13,7 +13,7 @@ export default function Malerbetrieb() {
     <div className=" py-24 sm:py-32 max-w-7xl mx-auto">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-5xl font-bold tracking-tight text-gray-900">
             Malerbetrieb Kühnle.
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -25,7 +25,7 @@ export default function Malerbetrieb() {
         {/* Über uns */}
         <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none ">
           <div className="p-8 sm:p-10 lg:flex-auto">
-            <h3 className="text-2xl font-bold tracking-tight text-gray-900">
+            <h3 className="text-4xl font-bold tracking-tight text-gray-900">
               Über uns.
             </h3>
             <p className="mt-6 text-base leading-7 text-gray-600">

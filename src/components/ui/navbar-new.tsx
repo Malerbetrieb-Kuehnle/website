@@ -100,10 +100,7 @@ export default function NavbarNew() {
               to="tel:+491728517479"
               className="flex items-center text-sm font-normal"
             >
-              <FaPhone
-                className="mr-2 text-sm font-normal"
-                aria-hidden="true"
-              />
+              <FaPhone className="mr-2 h-4 w-4" aria-hidden="true" />
               Anrufen
             </Link>
           </Button>

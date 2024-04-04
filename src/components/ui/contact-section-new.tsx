@@ -35,10 +35,10 @@ export default function ContactNew() {
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-5xl font-bold tracking-tight text-gray-900">
             So erreichen Sie uns.
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-500">
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
             Bei Fragen oder für weitere Informationen stehen wir Ihnen gerne zur
             Verfügung.
           </p>

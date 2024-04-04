@@ -273,9 +273,9 @@ const service_aussenbereich = [
 
 export default function Services() {
   return (
-    <div className="flex flex-col max-w-7xl mx-auto  mb-12" id="services">
+    <div className="flex flex-col max-w-7xl mx-auto  mb-12">
       <div className="mx-auto max-w-2xl sm:text-center mb-8">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      <h2 className="text-5xl font-bold tracking-tight text-gray-900">
           Services.
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
