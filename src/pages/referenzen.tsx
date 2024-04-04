@@ -1,4 +1,5 @@
 import { ParallaxScroll } from "@/components/ui/parallax-scroll";
+import MobileGallery from "@/components/ui/mobilegallery";
 
 // Import the images
 import Amtsgericht_Bad_Aibling from "../assets/referenzen/Amtsgericht_Bad_Aibling.jpg";
@@ -133,7 +134,14 @@ export default function referenzen() {
           </p>
         </div>
       </div>
-      <ParallaxScroll images={images} />
+      {/* Conditionally render ParallaxScroll for larger devices */}
+      <div className="hidden sm:block">
+        <ParallaxScroll images={images} />
+      </div>
+      {/* Conditionally render MobileGallery for smaller devices */}
+      <div className="block sm:hidden">
+        <MobileGallery images={images} />
+      </div>
     </div>
   );
 }
