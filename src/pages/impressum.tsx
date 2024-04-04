@@ -4,7 +4,7 @@ export default function Impressum() {
 
   return (
     <>
-      <div className="mt-24 sm:mt-32">
+      <div className="my-24 sm:my-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
             <div className="max-w-7xl mx-auto">
