@@ -1,10 +1,7 @@
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
-} from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
 import "./App.css";
+//import { HashRouter as Router } from "react-router-dom";
 
 import Referenzen from "./pages/referenzen";
 import Kontakt from "./pages/kontakt";
@@ -14,19 +11,20 @@ import MainLayout from "./layout/MainLayout";
 import Impressum from "./pages/impressum";
 import Datenschutz from "./pages/datenschutz";
 
-const App = () => {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/impressum" element={<Impressum />} />
-        <Route path="/datenschutz" element={<Datenschutz />} />
-        <Route path="/referenzen" element={<Referenzen />} />
-        <Route path="/kontakt" element={<Kontakt />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    )
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/referenzen" element={<Referenzen />} />
+          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </Router>
   );
-  return <RouterProvider router={router} />;
-};
+}
 export default App;
