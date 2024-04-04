@@ -10,7 +10,7 @@ const merkmale_about_us = [
 
 export default function Malerbetrieb() {
   return (
-    <div className=" py-24 sm:py-32 max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto mb-40">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-5xl font-bold tracking-tight text-gray-900">
@@ -23,7 +23,7 @@ export default function Malerbetrieb() {
           </p>
         </div>
         {/* Über uns */}
-        <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none ">
+        <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-[#f5f5f5] sm:mt-20 lg:mx-0 lg:flex lg:max-w-none ">
           <div className="p-8 sm:p-10 lg:flex-auto">
             <h3 className="text-4xl font-bold tracking-tight text-gray-900">
               Über uns.

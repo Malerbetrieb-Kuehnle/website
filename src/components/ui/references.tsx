@@ -17,7 +17,7 @@ const scrollToTop = () => {
 
 export default function References() {
   return (
-    <div className="relative overflow-hidden max-w-screen-xl mt-2.5 mx-auto my-0 rounded-[15px] border-2 border-solid border-[#e7e7e9]">
+    <div className="relative overflow-hidden max-w-screen-xl mx-auto rounded-[15px] border-0 border-solid border-[#e7e7e9] mb-40">
       <div className="relative overflow-hidden">
         <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">

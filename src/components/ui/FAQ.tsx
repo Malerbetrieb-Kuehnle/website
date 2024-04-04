@@ -8,7 +8,7 @@ import {
 
 const FAQ = () => {
   return (
-    <div className="relative h-fit overflow-hidden flex max-w-screen-xl mt-2.5 mx-auto my-0 rounded-[15px]">
+    <div className="relative h-fit overflow-hidden flex max-w-screen-xl mx-auto rounded-[15px] mb-32">
       <BackgroundGradientAnimation className="z-0">
         <div className="flex flex-col sm:p-20 p-4">
           <h2 className="text-5xl font-bold tracking-tight text-gray-900 z-10">
