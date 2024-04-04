@@ -17,10 +17,10 @@ import Datenschutz from "./pages/datenschutz";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="./" element={<MainLayout />}>
+      <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="impressum" element={<Impressum />} />
-        <Route path="./datenschutz" element={<Datenschutz />} />
+        <Route path="/impressum" element={<Impressum />} />
+        <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/referenzen" element={<Referenzen />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="*" element={<NotFoundPage />} />
