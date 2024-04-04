@@ -35,7 +35,7 @@ export default function Malerbetrieb() {
               Abwicklung der Aufträge im Vordergrund.
             </p>
             <div className="mt-10 flex items-center gap-x-4">
-              <h4 className="flex-none text-sm font-bold leading-6 text-[#257D46]">
+              <h4 className="flex-none text-sm font-bold leading-6 text-mbgreen">
                 Das macht uns aus
               </h4>
               <div className="h-px flex-auto bg-gray-100" />
@@ -47,7 +47,7 @@ export default function Malerbetrieb() {
               {merkmale_about_us.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
                   <CheckIcon
-                    className="h-6 w-5 flex-none text-[#257D46]"
+                    className="h-6 w-5 flex-none text-mbgreen"
                     aria-hidden="true"
                   />
                   {feature}

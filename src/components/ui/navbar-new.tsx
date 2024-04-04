@@ -27,7 +27,8 @@ const navLinks = [
 
 export default function NavbarNew() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation(); // Get the current location pathname
+  // Get the current location pathname
+  const location = useLocation();
 
   // Extract the active section from the pathname
   const activeSection =
@@ -51,15 +52,18 @@ export default function NavbarNew() {
   return (
     <header className="bg-white">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6"
         aria-label="Global"
       >
+        {/* Logo */}
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Malerbetrieb Kühnle</span>
             <img className="h-16 w-auto" src={logo} alt="Logo" />
           </Link>
         </div>
+
+        {/* Mobile Burger Menu */}
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -70,21 +74,28 @@ export default function NavbarNew() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
+
+        {/* Desktop Menu Items*/}
         <div className="hidden lg:flex lg:gap-x-12">
           {navLinks.map((nav) => (
             <Link
               key={nav.id}
               to={nav.path}
-              className={`text-lg font-normal leading-6 ${
-                active === nav.title ? "text-[#027f3f]" : "text-gray-900"
+              className={`text-md ${
+                active === nav.title ? "text-mbgreen" : "text-gray-900"
               }`}
             >
               {nav.title}
             </Link>
           ))}
         </div>
+
+        {/* Desktop Anrufen Button */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center">
-          <Button className="bg-[#407b4b] text-white" variant="default">
+          <Button
+            className="hover:bg-mbgreen hover:text-white"
+            variant="outline"
+          >
             <Link
               to="tel:+491728517479"
               className="flex items-center text-sm font-normal"
@@ -129,7 +140,7 @@ export default function NavbarNew() {
                     to={nav.path}
                     className={`-mx-3 text-center block rounded-lg px-3 py-2 text-base font-semibold leading-7${
                       active === nav.title
-                        ? "text-[#027f3f] hover:bg-gray-50"
+                        ? "text-mbgreen hover:bg-gray-50"
                         : "text-gray-900 hover:bg-gray-50"
                     }`}
                     onClick={handleMobileMenuItemClick} // Close the mobile menu on click
@@ -139,8 +150,8 @@ export default function NavbarNew() {
                 ))}
               </div>
               <div className="py-6 text-center">
-                <Button className="bg-[#407b4b] text-white">
-                  <Link to="tel:+491728517479" className="flex items-center ">
+                <Button className="bg-mbgreen text-white">
+                  <Link to="tel:+491728517479" className="flex items-center">
                     <FaPhone className="mr-2" aria-hidden="true" />
                     Anrufen
                   </Link>
