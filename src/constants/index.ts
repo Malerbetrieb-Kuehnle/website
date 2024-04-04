@@ -52,11 +52,11 @@ export const footerLinks = [
         title: "Datenschutz",
         path: "/datenschutz",
       },
-      {
+     /*  {
         id: "cookies",
         title: "Cookies",
         path: "javascript:UC_UI.showSecondLayer();",
-      },
+      }, */
     ],
   },
 ];
