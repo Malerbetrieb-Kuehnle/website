@@ -21,7 +21,7 @@ const Footer = () => (
               className="w-[120px] h-auto object-contain"
             />
           </Link>
-          <p className={`${styles.paragraph} mt-4 max-w-[312px] text-gray-500`}>
+          <p className={`${styles.paragraph} mt-4 max-w-[312px] text-gray-900`}>
             Wir bringen Farbe in Ihr Leben.
           </p>
         </div>
@@ -66,7 +66,7 @@ const Footer = () => (
             return (
               <div
                 key={social.id}
-                className={`w-6 h-6 cursor-pointer hover:text-mbgreen duration-300 text-gray-500 ${
+                className={`w-6 h-6 cursor-pointer hover:text-mbgreen duration-300 text-gray-900 ${
                   index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
                 }`}
               >

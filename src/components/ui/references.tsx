@@ -25,7 +25,7 @@ export default function References() {
             <h2 className="text-5xl font-bold tracking-tight text-gray-900">
             Referenzen.
           </h2>
-              <p className="mt-6 text-xl text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-gray-600">
                 Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
                 zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
                 Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
