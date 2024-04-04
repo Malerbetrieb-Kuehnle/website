@@ -22,7 +22,7 @@ export default function References() {
         <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-lg">
-              <h2 className="text-5xl font-bold tracking-tight text-gray-900">
+              <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
                 Referenzen.
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
