@@ -48,7 +48,7 @@ function Home() {
       {/* Services */}
       <Services />
 
-      <div className="container-references flex flex-col">
+      <div className="container-references">
         <References />
       </div>
 

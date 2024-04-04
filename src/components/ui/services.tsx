@@ -279,14 +279,13 @@ export default function Services() {
           Services.
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-          Für den Innenbereich bieten wir eine breite Palette von
-          Dienstleistungen an, darunter Innenanstrich, Bodenbeschichtungen,
-          individuelle Farbberatung und mehr. Im Außenbereich umfassen unsere
-          Leistungen Fassadenanstriche, Hochdruck-Wasser-Reinigung,
-          Renovierungsarbeiten und vieles mehr.
+          Wir bieten eine breite Palette von Innen- und Außendienstleistungen
+          an, darunter Innenanstriche, individuelle
+          Farbberatung, Fassadenanstriche und
+          Renovierungsarbeiten.
         </p>
       </div>
-      <div className="rounded-2xl ring-2 ring-[#4a7b4b] bg-[#4a7b4b]">
+      <div className="mt-6 rounded-2xl ring-2 ring-[#4a7b4b] bg-[#4a7b4b]">
         <Tabs defaultValue="innenbereich">
           <div className="max-w-max mx-auto my-4">
             <TabsList>

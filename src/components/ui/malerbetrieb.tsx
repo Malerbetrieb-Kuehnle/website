@@ -23,7 +23,7 @@ export default function Malerbetrieb() {
           </p>
         </div>
         {/* Über uns */}
-        <div className="mx-auto mt-16 max-w-2xl rounded-2xl ring-2 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none ">
+        <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none ">
           <div className="p-8 sm:p-10 lg:flex-auto">
             <h3 className="text-2xl font-bold tracking-tight text-gray-900">
               Über uns.
