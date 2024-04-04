@@ -35,7 +35,7 @@ export default function ContactNew() {
     <div className="mb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-5xl font-bold tracking-tight text-gray-900">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
             So erreichen Sie uns.
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">

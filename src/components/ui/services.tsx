@@ -275,7 +275,7 @@ export default function Services() {
   return (
     <div className="flex flex-col max-w-7xl mx-auto mb-40">
       <div className="mx-auto max-w-2xl sm:text-center mb-8">
-        <h2 className="text-5xl font-bold tracking-tight text-gray-900">
+        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
           Services.
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
