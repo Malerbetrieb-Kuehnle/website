@@ -6,10 +6,10 @@ const {
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -107,6 +107,8 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        mbgreen: "hsl(var(--mbgreen))",
+        mbblue: "hsl(var(--mbblue))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -114,14 +116,13 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
     },
-    
   },
   plugins: [
-    require("tailwindcss-animate"), 
-    require("daisyui"), 
+    require("tailwindcss-animate"),
+    require("daisyui"),
     addVariablesForColors,
   ],
-}
+};
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }) {
@@ -129,7 +130,7 @@ function addVariablesForColors({ addBase, theme }) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });
