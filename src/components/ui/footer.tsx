@@ -4,15 +4,18 @@ import { Separator } from "./separator.tsx";
 import { footerLinks, socialMedia } from "../../constants/index.ts";
 import "../../App.css";
 import { Link } from "react-router-dom";
-
+const scrollToTop = () => {
+  window.scrollTo(0, 0)
+}
 const Footer = () => (
+  
   <section
     className={`${styles.flexCenter} ${styles.paddingY} container-footer flex-col sm:mt-16 mt-6`}
   >
     <div>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
         <div className="flex-[1] flex flex-col justify-start mr-10">
-          <Link to="/">
+          <Link to="/" onClick={scrollToTop}>
           <img
             src={logo}
             alt="Malerbetrieb Kühnle"
@@ -41,7 +44,7 @@ const Footer = () => (
                       index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
                     }`}
                   >
-                    <Link to={link.path}>{link.title}</Link>
+                    <Link to={link.path} onClick={scrollToTop}>{link.title}</Link>
                   </li>
                 ))}
               </ul>

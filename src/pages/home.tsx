@@ -17,6 +17,11 @@ import Partner from "@/components/ui/partner";
 import { Link } from "react-router-dom";
 import Ausbildung from "@/components/ui/ausbildung";
 
+// Scroll to the top of the Page when pressing any Link
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
+
 function Home() {
   return (
     <>
@@ -35,7 +40,7 @@ function Home() {
             .
           </h1>
           <div className="flex justify-center pt-8">
-            <Link to={"/kontakt"}>
+            <Link to={"/kontakt"} onClick={scrollToTop}>
               <Button variant="default">Kontakt</Button>
             </Link>
           </div>

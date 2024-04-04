@@ -10,6 +10,10 @@ import Lackarbeiten from "../../assets/referenzen/Lackarbeiten1.jpg";
 import { Button } from "./button";
 import { Link } from "react-router-dom";
 
+// Scroll to the top of the Page when pressing any Link
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
 
 export default function References() {
   return (
@@ -95,11 +99,9 @@ export default function References() {
                 </div>
               </div>
 
-              
-                <Link to={"/referenzen"}>
+              <Link to={"/referenzen"} onClick={scrollToTop}>
                 <Button>Zur Gallerie</Button>
-                </Link>
-              
+              </Link>
             </div>
           </div>
         </div>
