@@ -5,16 +5,13 @@ import { createNoise3D } from "simplex-noise";
 
 export const WavyBackground = ({
   children,
-  className,
   containerClassName,
   colors,
   waveWidth,
   backgroundFill,
   blur = 10,
   speed = "slow",
-  waveOpacity = 0.5,
-  ...props
-}: {
+  waveOpacity = 0.5}: {
   children?: any;
   className?: string;
   containerClassName?: string;
@@ -101,7 +98,6 @@ export const WavyBackground = ({
         !navigator.userAgent.includes("Chrome")
     );
   }, []);
-
   return (
     <div
       className={cn(
