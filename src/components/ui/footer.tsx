@@ -73,9 +73,9 @@ const Footer = () => (
                   index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
                 }`}
               >
-                <Link to={social.path}>
+                <a href={social.path} target="_blank" rel="noopener noreferrer">
                   <Icon />
-                </Link>
+                </a>
               </div>
             );
           })}
