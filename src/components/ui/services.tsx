@@ -41,6 +41,7 @@ const service_innenbereich = [
           src={Bodenbeschichtungen}
           alt="Bodenbeschichtungen"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -55,6 +56,7 @@ const service_innenbereich = [
           src={Lackierarbeiten2}
           alt="Lackierarbeiten"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -69,6 +71,7 @@ const service_innenbereich = [
           src={Farbberatung}
           alt="Individuelle Farbberatung"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -83,6 +86,7 @@ const service_innenbereich = [
           src={Spachtelarbeiten}
           alt="Spachteltechniken"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -96,6 +100,7 @@ const service_innenbereich = [
           src={Renovierungsarbeiten}
           alt="Renovierungsarbeiten"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -110,6 +115,7 @@ const service_innenbereich = [
           src={Tapezierarbeiten}
           alt="Tapezierarbeiten"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -124,6 +130,7 @@ const service_innenbereich = [
           src={Betonoptik}
           alt="Betonoptik"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -138,6 +145,7 @@ const service_innenbereich = [
           src={Verputzarbeiten}
           alt="Verputzarbeiten"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -169,6 +177,7 @@ const service_aussenbereich = [
           src={Geruestbau}
           alt="Eigener Gerüstbau"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -183,6 +192,7 @@ const service_aussenbereich = [
           src={Putzausbesserungen}
           alt="Putzausbesserungen"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -197,6 +207,7 @@ const service_aussenbereich = [
           src={Fassadenanstriche}
           alt="Fassadenanstriche"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -210,6 +221,7 @@ const service_aussenbereich = [
           src={Hochdruckwasserreinigung}
           alt="Hochdruck-Wasser-Reiniger"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -224,6 +236,7 @@ const service_aussenbereich = [
           src={Renovierungsarbeiten}
           alt="Renovierungsarbeiten"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -238,6 +251,7 @@ const service_aussenbereich = [
           src={Farbberatung}
           alt="Individuelle Farbberatung"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -251,6 +265,7 @@ const service_aussenbereich = [
           src={Lackierarbeiten1}
           alt="Lackierarbeiten"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
@@ -265,6 +280,7 @@ const service_aussenbereich = [
           src={RenovaFensterfluegelAbdeckung}
           alt="Renova-Fenster-Flügel"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),

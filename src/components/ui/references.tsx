@@ -47,6 +47,7 @@ export default function References() {
                             src={Baderhaus_Bad_Aibling}
                             alt="Baderhaus Bad Aibling"
                             className="h-full w-full object-cover object-center"
+                            loading="lazy"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
@@ -54,6 +55,7 @@ export default function References() {
                             src={Bauernhof_Brannenburg}
                             alt="Bauernhof Brannenburg"
                             className="h-full w-full object-cover object-center"
+                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -63,6 +65,7 @@ export default function References() {
                             src={Fassade_Grabenstaett}
                             alt="Fassade Grabenstaett"
                             className="h-full w-full object-cover object-center"
+                            loading="lazy"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
@@ -70,6 +73,7 @@ export default function References() {
                             src={Klinkik_St_Georg}
                             alt="Klinik St. Georg"
                             className="h-full w-full object-cover object-center"
+                            loading="lazy"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
@@ -77,6 +81,7 @@ export default function References() {
                             src={Lackarbeiten}
                             alt="Lackarbeiten"
                             className="h-full w-full object-cover object-center"
+                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -86,6 +91,7 @@ export default function References() {
                             src={Schloss_Maxhofen}
                             alt="Schloss Maxhofen"
                             className="h-full w-full object-cover object-center"
+                            loading="lazy"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
@@ -93,6 +99,7 @@ export default function References() {
                             src={Wohnhaus_Bad_Feilnbach}
                             alt="Wohnhaus Bad Feilnbach"
                             className="h-full w-full object-cover object-center"
+                            loading="lazy"
                           />
                         </div>
                       </div>

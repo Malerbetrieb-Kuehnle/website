@@ -52,6 +52,7 @@ export const ParallaxScroll = ({
                 height="400"
                 width="400"
                 alt={extractFileName(el)}
+                loading="lazy"
               />
             </motion.div>
           ))}
@@ -65,6 +66,7 @@ export const ParallaxScroll = ({
                 height="400"
                 width="400"
                 alt={extractFileName(el)}
+                loading="lazy"
               />
             </motion.div>
           ))}
@@ -78,6 +80,7 @@ export const ParallaxScroll = ({
                 height="400"
                 width="400"
                 alt={extractFileName(el)}
+                loading="lazy"
               />
             </motion.div>
           ))}
