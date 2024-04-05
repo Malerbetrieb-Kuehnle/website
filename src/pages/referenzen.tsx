@@ -123,10 +123,10 @@ export default function referenzen() {
     <div className="mt-24 sm:mt-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
         <div className="mx-auto max-w-2xl lg:text-center">
-        <h2 className="text-5xl font-bold tracking-tight text-gray-900">
+        <h2 className="animate-slidein300 opacity-0 text-5xl font-bold tracking-tight text-gray-900">
           Referenzen.
         </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-500">
+          <p className="animate-slidein500 opacity-0 mt-6 text-lg leading-8 text-gray-500">
             Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
             zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
             Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende

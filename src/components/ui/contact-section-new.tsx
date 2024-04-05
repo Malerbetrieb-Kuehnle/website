@@ -35,15 +35,15 @@ export default function ContactNew() {
     <div className="mb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 text-balance">
+          <h2 className="animate-slidein300 opacity-0 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 text-balance">
             So erreichen Sie uns.
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="animate-slidein500 opacity-0 mt-6 text-lg leading-8 text-gray-600">
             Bei Fragen oder für weitere Informationen stehen wir Ihnen gerne zur
             Verfügung.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <div className="animate-slidein700 opacity-0 mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             {contact_details.map((feature) => (
               <div key={feature.name} className="relative pl-16">
