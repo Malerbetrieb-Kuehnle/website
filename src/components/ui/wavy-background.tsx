@@ -5,13 +5,16 @@ import { createNoise3D } from "simplex-noise";
 
 export const WavyBackground = ({
   children,
+  className,
   containerClassName,
   colors,
   waveWidth,
   backgroundFill,
   blur = 10,
   speed = "slow",
-  waveOpacity = 0.5}: {
+  waveOpacity = 0.5,
+  ...props
+}: {
   children?: any;
   className?: string;
   containerClassName?: string;
@@ -98,14 +101,14 @@ export const WavyBackground = ({
         !navigator.userAgent.includes("Chrome")
     );
   }, []);
+
   return (
     <div
       className={cn(
-        "relative h-full flex flex-col items-center justify-center",
+        "h-full flex flex-col items-center justify-center",
         containerClassName
       )}
     >
-      <div className="relative z-10">{children}</div>
       <canvas
         className="absolute inset-0 z-0"
         ref={canvasRef}
@@ -114,6 +117,9 @@ export const WavyBackground = ({
           ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
         }}
       ></canvas>
+      <div className={cn("relative z-10", className)} {...props}>
+        {children}
+      </div>
     </div>
   );
 };
