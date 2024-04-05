@@ -105,10 +105,11 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "h-full flex flex-col items-center justify-center",
+        "relative h-full flex flex-col items-center justify-center",
         containerClassName
       )}
     >
+      <div className="relative z-10">{children}</div>
       <canvas
         className="absolute inset-0 z-0"
         ref={canvasRef}
@@ -117,9 +118,6 @@ export const WavyBackground = ({
           ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
         }}
       ></canvas>
-      <div className={cn("relative z-10", className)} {...props}>
-        {children}
-      </div>
     </div>
   );
 };
