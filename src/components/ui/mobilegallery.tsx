@@ -23,6 +23,7 @@ const MobileGallery: React.FC<MobileGalleryProps> = ({ images }) => {
             src={image}
             alt={fileName}
             className="w-full rounded-lg"
+            loading="lazy"
           />
         );
       })}

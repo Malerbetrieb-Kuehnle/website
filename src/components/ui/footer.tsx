@@ -1,5 +1,4 @@
 import logo from "../../assets/logo.png";
-import styles from "../../style.ts";
 import { Separator } from "./separator.tsx";
 import { footerLinks, socialMedia } from "../../constants/index.ts";
 import "../../App.css";
@@ -12,7 +11,9 @@ const Footer = () => (
     className={`relative overflow-hidden h-auto flex justify-center items-center bg-[#f5f5f5] mx-auto py-16 rounded-[15px] flex-col`}
   >
     <div>
-      <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
+      <div
+        className={`flex justify-center items-start md:flex-row flex-col mb-8 w-full`}
+      >
         <div className="flex-[1] flex flex-col justify-start mr-10">
           <Link to="/" onClick={scrollToTop}>
             <img
@@ -21,7 +22,9 @@ const Footer = () => (
               className="w-[120px] h-auto object-contain"
             />
           </Link>
-          <p className={`${styles.paragraph} mt-4 max-w-[312px] text-gray-900`}>
+          <p
+            className={`font-normal text-[16px] leading-[30.8px] mt-4 max-w-[312px] text-gray-900`}
+          >
             Wir bringen Farbe in Ihr Leben.
           </p>
         </div>
