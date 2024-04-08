@@ -48,7 +48,7 @@ export function ProfileForm() {
         {
           token: VITE_PUSHOVER_API_TOKEN,
           user: VITE_PUSHOVER_USER_KEY,
-          message: values,
+          message: `Rückruf gewünscht von:\nName: ${values.name}\nTelefonnummer: ${values.phone}`,
         }
       );
 
