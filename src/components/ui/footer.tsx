@@ -8,7 +8,7 @@ const scrollToTop = () => {
 };
 const Footer = () => (
   <section
-    className={`relative overflow-hidden h-auto flex justify-center items-center bg-[#f5f5f5] mx-auto py-16 rounded-[15px] flex-col`}
+    className={`relative overflow-hidden h-auto flex justify-center items-center bg-[#f5f5f5] mx-auto py-16 rounded-[15px] flex-col max-w-7xl`}
   >
     <div>
       <div

@@ -6,6 +6,8 @@ import Partner from "@/components/ui/partner";
 import Ausbildung from "@/components/ui/ausbildung";
 import FAQ from "@/components/ui/FAQ";
 import HERO from "@/components/ui/HERO";
+import { ProfileForm } from "@/components/ui/profileform";
+import Example from "@/components/ui/rueckruf";
 
 const HomePage = () => {
   return (
@@ -18,6 +20,7 @@ const HomePage = () => {
       <Partner />
       <FAQ />
       <ContactNew />
+
     </>
   );
 };
