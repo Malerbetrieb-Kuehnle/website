@@ -34,22 +34,23 @@ import Example from "./rueckruf";
 
 export default function ContactNew() {
   return (
-    <div className="mb-32 w-7xl">
-      <div className="mx-auto px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="animate-slidein300 opacity-0 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 text-balance">
-            So erreichen Sie uns.
-          </h2>
-          <p className="animate-slidein500 opacity-0 mt-6 text-lg leading-8 text-gray-600">
-            Haben Sie Fragen oder benötigen Sie weitere Informationen? Gerne
-            können Sie einen Rückruf vereinbaren, damit wir Ihnen persönlich
-            weiterhelfen können. Falls Sie es bevorzugen, erreichen Sie uns
-            natürlich auch per E-Mail. Wir sind für Sie da und unterstützen Sie
-            gerne bei Ihren Anliegen.
-          </p>
-        </div>
+    <>
+      <div className="mb-8 max-w-7xl">
+        <div className="mx-auto px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="animate-slidein300 opacity-0 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 text-balance">
+              So erreichen Sie uns.
+            </h2>
+            <p className="animate-slidein500 opacity-0 mt-6 text-lg leading-8 text-gray-600">
+              Haben Sie Fragen oder benötigen Sie weitere Informationen? Gerne
+              können Sie einen Rückruf vereinbaren, damit wir Ihnen persönlich
+              weiterhelfen können. Falls Sie es bevorzugen, erreichen Sie uns
+              natürlich auch per E-Mail. Wir sind für Sie da und unterstützen
+              Sie gerne bei Ihren Anliegen.
+            </p>
+          </div>
 
-        {/* <div className="animate-slidein700 opacity-0 mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+          {/* <div className="animate-slidein700 opacity-0 mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             {contact_details.map((feature) => (
               <div key={feature.name} className="relative pl-16">
@@ -99,8 +100,9 @@ export default function ContactNew() {
             ))}
           </dl>
         </div> */}
-        <Example />
+        </div>
       </div>
-    </div>
+      <Example />
+    </>
   );
 }
