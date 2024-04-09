@@ -16,54 +16,92 @@ export default function Example() {
               Rückruf vereinbaren.
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-              Lassen Sie sich bequem von uns zurückrufen. Wir melden uns so schnell wie möglich bei Ihnen.
+              Lassen Sie sich bequem von uns zurückrufen. Wir melden uns so
+              schnell wie möglich bei Ihnen.
             </p>
             <div className="mt-6 flex max-w-md gap-x-4">
               <ProfileForm />
             </div>
           </div>
           <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-            <div className="flex flex-col items-start">
-              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+            {/* Instagram*/}
+            <div className="flex sm:flex-col sm:items-start flex-row items-start">
+              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10 h-10 w-10">
                 <FaInstagram
                   className="h-6 w-6 text-white"
                   aria-hidden="true"
                 />
               </div>
-              <dt className="mt-4 font-semibold text-white">Instagram</dt>
-              <dd className="mt-2 leading-7 text-gray-400">
-                malerbetrieb_kuehnle
-              </dd>
+              <div className="sm:ml-0 ml-4">
+                <dt className="sm:mt-4 mt-2 font-semibold text-white">
+                  Instagram
+                </dt>
+                <dd className="mt-2 leading-7 text-gray-400">
+                  <a
+                    href="https://www.instagram.com/malerbetrieb_kuehnle"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    malerbetrieb_kuehnle
+                  </a>
+                </dd>
+              </div>
             </div>
-            <div className="flex flex-col items-start">
-              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+
+            {/* Email */}
+            <div className="flex sm:flex-col sm:items-start flex-row items-start">
+              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10 h-10 w-10">
                 <FaEnvelope className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
-              <dt className="mt-4 font-semibold text-white">Email</dt>
-              <dd className="mt-2 leading-7 text-gray-400">
-                malerbetrieb.kuehnle@gmx.de
-              </dd>
+              <div className="sm:ml-0 ml-4">
+                <dt className="sm:mt-4 mt-2 font-semibold text-white">Email</dt>
+                <dd className="mt-2 leading-7 text-gray-400">
+                  <a href="mailto:malerbetrieb.kuehnle@gmx.de">
+                    malerbetrieb.kuehnle@gmx.de
+                  </a>
+                </dd>
+              </div>
             </div>
-            <div className="flex flex-col items-start">
-              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+
+            {/* Address */}
+            <div className="flex sm:flex-col sm:items-start flex-row items-start">
+              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10 h-10 w-10">
                 <FaMapMarkerAlt
                   className="h-6 w-6 text-white"
                   aria-hidden="true"
                 />
               </div>
-              <dt className="mt-4 font-semibold text-white">Adresse</dt>
-              <dd className="mt-2 leading-7 text-gray-400">
-                Ebersberger Straße 75 <br></br>83043 Bad Aibling
-              </dd>
+              <div className="sm:ml-0 ml-4">
+                <dt className="sm:mt-4 mt-2 font-semibold text-white">
+                  Address
+                </dt>
+                <dd className="mt-2 leading-7 text-gray-400">
+                  Ebersberger Straße 75 <br />
+                  83043 Bad Aibling
+                </dd>
+              </div>
             </div>
-            <div className="flex flex-col items-start">
-              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+
+            {/* Phone */}
+            <div className="flex sm:flex-col sm:items-start flex-row items-start">
+              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10 h-10 w-10">
                 <FaPhone className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
-              <dt className="mt-4 font-semibold text-white">Telefon</dt>
-              <dd className="mt-2 leading-7 text-gray-400">
-                Büro: +49 8061 93 98 333<br></br>Mobil: +49 172 85 17 479
-              </dd>
+              <div className="sm:ml-0 ml-4">
+                <dt className="sm:mt-4 mt-2 font-semibold text-white">Phone</dt>
+                <dd className="mt-2 leading-7 text-gray-400">
+                  <div className="flex flex-row gap-x-2">
+                    <div className="flex shrink flex-col">
+                      <p className="">Büro:</p>
+                      <p className="">Mobil:</p>
+                    </div>
+                    <div className="flex flex-col">
+                      <a href="tel:+4980619398333">+49 8061 93 98 333</a>
+                      <a href="tel:+491728517479">+49 172 85 17 479</a>
+                    </div>
+                  </div>
+                </dd>
+              </div>
             </div>
           </dl>
         </div>

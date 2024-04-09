@@ -56,7 +56,7 @@ export function ProfileForm() {
 
       toast({
         title: "Rückruf erfolgreich angefordert.",
-        description: "Wir rufen Sie bald zurück.",
+        description: "Vielen Dank für Ihr Interesse.",
       });
     } catch (error) {
       console.error("Error sending push notification:", error);
