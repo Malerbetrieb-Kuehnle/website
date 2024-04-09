@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import MainLayout from "./layout/MainLayout";
 import Impressum from "./pages/impressum";
 import Datenschutz from "./pages/datenschutz";
+import Service from "./pages/service";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/service" element={<Service />} />
           <Route path="/referenzen" element={<Referenzen />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="*" element={<NotFoundPage />} />

@@ -292,7 +292,7 @@ export default function Services() {
     <div className="flex flex-col max-w-7xl mx-auto mb-40">
       <div className="mx-auto max-w-2xl sm:text-center mb-8">
         <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-          Services.
+          Service.
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
           Wir bieten eine breite Palette von Innen- und Außendienstleistungen

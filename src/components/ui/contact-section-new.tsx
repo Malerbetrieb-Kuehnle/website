@@ -30,12 +30,12 @@ const contact_details = [
   },
 ]; */
 
-import Example from "./rueckruf";
+import CallBack from "./rueckruf";
 
 export default function ContactNew() {
   return (
     <>
-      <div className="mb-8 max-w-7xl">
+      <div className="mb-10 max-w-7xl mx-auto">
         <div className="mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="animate-slidein300 opacity-0 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 text-balance">
@@ -102,7 +102,9 @@ export default function ContactNew() {
         </div> */}
         </div>
       </div>
-      <Example />
+      <div className="animate-slidein700 opacity-0">
+      <CallBack />
+      </div>
     </>
   );
 }

@@ -28,6 +28,11 @@ export const footerLinks = [
         path: "/",
       },
       {
+        id: "service",
+        title: "Service",
+        path: "/service",
+      },
+      {
         id: "referenzen",
         title: "Referenzen",
         path: "/referenzen",
@@ -52,11 +57,11 @@ export const footerLinks = [
         title: "Datenschutz",
         path: "/datenschutz",
       },
-     /*  {
+       {
         id: "cookies",
         title: "Cookies",
         path: "javascript:UC_UI.showSecondLayer();",
-      }, */
+      }, 
     ],
   },
 ];
