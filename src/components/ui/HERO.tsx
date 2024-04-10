@@ -38,7 +38,7 @@ const HERO = () => {
           </h1>
           <div className="flex justify-center">
             <Link to={"/kontakt"} onClick={scrollToTop}>
-              <Button variant="outline" className="text-md">
+              <Button className="text-md">
                 Kontakt
               </Button>
             </Link>

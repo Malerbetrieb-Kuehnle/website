@@ -80,6 +80,7 @@ export default function Ausbildung() {
                 src={wirbildenaus}
                 className="md:max-w-xs"
                 alt="Ausbildung"
+                loading="lazy"
               />
             </div>
           </div>
