@@ -1,7 +1,22 @@
 const p = "mt-6 mb-10 text-lg leading-8 text-gray-600";
-const h2 = "mt-2 text-3xl  tracking-tight text-gray-900 sm:text-4xl";
+const h2 = "mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl";
 const h3 = "mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl";
 const h4 = "mt-2 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl";
+
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const Datenschutz = () => {
   return (
@@ -10,9 +25,11 @@ const Datenschutz = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
             <div className="max-w-7xl mx-auto"></div>
-            <h2 className="text-5xl font-bold tracking-tight text-gray-900 mb-16 text-center">
-              Datenschutz&shy;erkl&auml;rung
-            </h2>
+            <Reveal keyframes={customAnimation} triggerOnce>
+              <h2 className="text-5xl font-bold tracking-tight text-gray-900 mb-16 text-center">
+                Datenschutz&shy;erkl&auml;rung
+              </h2>
+            </Reveal>
             <h2 className={h2}>1. Datenschutz auf einen Blick</h2>
             <h3 className={h3}>Allgemeine Hinweise</h3>{" "}
             <p className={p}>

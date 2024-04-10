@@ -2,6 +2,21 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { WavyBackground } from "@/components/ui/wavy-background";
 
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 // Scroll to the top of the Page when pressing any Link
 const scrollToTop = () => {
   window.scrollTo(0, 0);
@@ -11,20 +26,24 @@ const HERO = () => {
   return (
     <div className="relative overflow-hidden h-[75vh] max-w-screen-xl max-h-[1000px] mt-2.5 mb-40 mx-auto rounded-[15px] flex flex-col border-2 border-[#f5f5f5]">
       <WavyBackground className="max-w-4xl mx-auto">
-        <h2 className="animate-slidein300 opacity-0 text-2xl text-center">Malerbetrieb Kühnle</h2>
+        <Reveal keyframes={customAnimation} cascade triggerOnce>
+          <h2 className="text-2xl text-center">Malerbetrieb Kühnle</h2>
 
-        <h1 className="animate-slidein500 opacity-0 md:text-7xl text-5xl font-bold text-center mt-4 mb-8">
-          Farbe schafft{" "}
-          <span className="bg-gradient-to-r from-mbblue to-mbgreen text-transparent bg-clip-text">
-            Atmosphäre
-          </span>
-          .
-        </h1>
-        <div className="animate-slidein700 opacity-0 flex justify-center">
-          <Link to={"/kontakt"} onClick={scrollToTop}>
-            <Button variant="default">Kontakt</Button>
-          </Link>
-        </div>
+          <h1 className=" md:text-7xl text-5xl font-bold text-center mt-4 mb-8">
+            Farbe schafft{" "}
+            <span className="bg-gradient-to-r from-mbblue to-mbgreen text-transparent bg-clip-text">
+              Atmosphäre
+            </span>
+            .
+          </h1>
+          <div className="flex justify-center">
+            <Link to={"/kontakt"} onClick={scrollToTop}>
+              <Button variant="outline" className="text-md">
+                Kontakt
+              </Button>
+            </Link>
+          </div>
+        </Reveal>
       </WavyBackground>
     </div>
   );
