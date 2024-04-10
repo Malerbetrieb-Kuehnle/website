@@ -14,14 +14,14 @@ const navLinks = [
     path: "/",
   },
   {
+    id: "service",
+    title: "Service",
+    path: "/service",
+  },
+  {
     id: "referenzen",
     title: "Referenzen",
     path: "/referenzen",
-  },
-  {
-    id: "kontakt",
-    title: "Kontakt",
-    path: "/kontakt",
   },
 ];
 
@@ -75,8 +75,8 @@ export default function NavbarNew() {
           </button>
         </div>
 
-        {/* Desktop Menu Items*/}
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-8">
+          {/* Desktop Menu Items*/}
           {navLinks.map((nav) => (
             <Link
               key={nav.id}
@@ -88,20 +88,14 @@ export default function NavbarNew() {
               {nav.title}
             </Link>
           ))}
-        </div>
-
-        {/* Desktop Anrufen Button */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center">
+          {/* Desktop Anrufen Button */}
           <Button
             className="hover:bg-mbgreen hover:text-white"
             variant="outline"
           >
-            <Link
-              to="tel:+491728517479"
-              className="flex items-center text-sm font-normal"
-            >
-              <FaPhone className="mr-2 h-4 w-4" aria-hidden="true" />
-              Anrufen
+            <Link to="/kontakt" className="flex items-center text-md">
+              <FaPhone className="hidden mr-2 h-4 w-4" aria-hidden="true" />
+              Kontakt
             </Link>
           </Button>
         </div>
@@ -148,9 +142,9 @@ export default function NavbarNew() {
               </div>
               <div className="py-6 text-center">
                 <Button className="bg-mbgreen text-white">
-                  <Link to="tel:+491728517479" className="flex items-center">
-                    <FaPhone className="mr-2" aria-hidden="true" />
-                    Anrufen
+                  <Link to="/kontakt" className="flex items-center" onClick={handleMobileMenuItemClick}>
+                    {/* <FaPhone className="mr-2" aria-hidden="true" /> */}
+                    Kontakt
                   </Link>
                 </Button>
               </div>
