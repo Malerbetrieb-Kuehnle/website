@@ -1,14 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
 import { useToast } from "@/components/ui/use-toast";
-
 import axios from "axios";
-
-const { VITE_PUSHOVER_API_TOKEN } = import.meta.env;
-const { VITE_PUSHOVER_USER_KEY } = import.meta.env;
-
 import {
   Form,
   FormControl,
@@ -20,13 +14,26 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "./button";
 
+const { VITE_PUSHOVER_API_TOKEN } = import.meta.env;
+const { VITE_PUSHOVER_USER_KEY } = import.meta.env;
+
+const phoneRegex = new RegExp(
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9]){5,}$/
+);
+
 const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name muss mind. zwei Buchstaben haben.",
-  }),
-  phone: z.string().min(5, {
-    message: "Telefonnummer muss mind. 5 Zahlen haben.",
-  }),
+  name: z
+    .string()
+    .min(3, {
+      message: "Bitte geben Sie Ihren Namen ein.",
+    })
+    .max(50, {
+      message: "Bitte geben Sie Ihren Namen ein.",
+    }),
+  phone: z
+    .string()
+    .min(1, "Bitte geben Sie Ihre Telefonnummer ein.")
+    .regex(phoneRegex, "Bitte geben Sie eine valide Telefonnummer ein."),
 });
 
 export function ProfileForm() {
@@ -73,7 +80,7 @@ export function ProfileForm() {
             <FormItem>
               <FormLabel className="text-white">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Name" {...field} />
+                <Input placeholder="Vor- und Nachname" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -92,10 +99,7 @@ export function ProfileForm() {
             </FormItem>
           )}
         />
-        <Button
-          type="submit"
-          className="bg-mbblue hover:bg-[#005f8d]"
-        >
+        <Button type="submit" className="bg-mbblue hover:bg-[#005f8d]">
           Rückruf anfordern
         </Button>
       </form>
