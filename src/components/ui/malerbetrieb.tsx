@@ -73,7 +73,7 @@ export default function Malerbetrieb() {
               </ul>
             </div>
             <div className="p-10 m-auto">
-              <img src={about_us} className="md:max-w-xs" alt="About Us" loading="lazy" />
+              <img src={about_us} className="md:max-w-xs max-w-64" alt="About Us" loading="lazy" />
             </div>
           </div>
         </Reveal>
