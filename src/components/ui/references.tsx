@@ -10,6 +10,21 @@ import Lackarbeiten from "../../assets/referenzen/Lackarbeiten1.jpg";
 import { Button } from "./button";
 import { Link } from "react-router-dom";
 
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 // Scroll to the top of the Page when pressing any Link
 const scrollToTop = () => {
   window.scrollTo(0, 0);
@@ -20,8 +35,11 @@ export default function References() {
     <div className="relative overflow-hidden max-w-screen-xl mx-auto rounded-[15px] border-0 border-solid border-[#e7e7e9] mb-40">
       <div className="relative overflow-hidden">
         <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-lg">
+            <Reveal keyframes={customAnimation} cascade triggerOnce>
+
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
                 Referenzen.
               </h2>
@@ -31,6 +49,7 @@ export default function References() {
                 Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
                 Farbkonzepte und handwerkliche Meisterleistungen.
               </p>
+              </Reveal>
             </div>
             <div>
               <div className="mt-6">
@@ -106,13 +125,17 @@ export default function References() {
                     </div>
                   </div>
                 </div>
+                <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+
 
                 <Link to={"/referenzen"} onClick={scrollToTop}>
                   <Button variant="default">Zur Gallerie</Button>
                 </Link>
+                </Reveal>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

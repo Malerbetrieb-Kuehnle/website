@@ -30,6 +30,21 @@ const contact_details = [
   },
 ]; */
 
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 import CallBack from "./rueckruf";
 
 export default function ContactNew() {
@@ -38,16 +53,18 @@ export default function ContactNew() {
       <div className="mb-10 max-w-7xl mx-auto">
         <div className="mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="animate-slidein300 opacity-0 text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 text-balance">
-              So erreichen Sie uns.
-            </h2>
-            <p className="animate-slidein500 opacity-0 mt-6 text-lg leading-8 text-gray-600">
-              Haben Sie Fragen oder benötigen Sie weitere Informationen? Gerne
-              können Sie einen Rückruf vereinbaren, damit wir Ihnen persönlich
-              weiterhelfen können. Falls Sie es bevorzugen, erreichen Sie uns
-              natürlich auch per E-Mail. Wir sind für Sie da und unterstützen
-              Sie gerne bei Ihren Anliegen.
-            </p>
+            <Reveal keyframes={customAnimation} cascade triggerOnce>
+              <h2 className=" text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 text-balance">
+                So erreichen Sie uns.
+              </h2>
+              <p className="  mt-6 text-lg leading-8 text-gray-600">
+                Haben Sie Fragen oder benötigen Sie weitere Informationen? Gerne
+                können Sie einen Rückruf vereinbaren, damit wir Ihnen persönlich
+                weiterhelfen können. Falls Sie es bevorzugen, erreichen Sie uns
+                natürlich auch per E-Mail. Wir sind für Sie da und unterstützen
+                Sie gerne bei Ihren Anliegen.
+              </p>
+            </Reveal>
           </div>
 
           {/* <div className="animate-slidein700 opacity-0 mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -102,9 +119,9 @@ export default function ContactNew() {
         </div> */}
         </div>
       </div>
-      <div className="animate-slidein700 opacity-0">
-      <CallBack />
-      </div>
+      <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+        <CallBack />
+      </Reveal>
     </>
   );
 }

@@ -17,6 +17,21 @@ import Spachtelarbeiten from "../../assets/services/Spachtelarbeiten.jpg";
 import Tapezierarbeiten from "../../assets/services/Tapezierarbeiten.jpg";
 import Verputzarbeiten from "../../assets/services/Verputzarbeiten.jpg";
 
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const service_innenbereich = [
   {
     title: "Innenanstrich",
@@ -291,31 +306,36 @@ export default function Services() {
   return (
     <div className="flex flex-col max-w-7xl mx-auto mb-40">
       <div className="mx-auto max-w-2xl sm:text-center mb-8">
-        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-          Service.
-        </h2>
-        <p className="mt-6 text-lg leading-8 text-gray-600">
-          Wir bieten eine breite Palette von Innen- und Außendienstleistungen
-          an, darunter Innenanstriche, individuelle Farbberatung,
-          Fassadenanstriche und Renovierungsarbeiten.
-        </p>
+        <Reveal keyframes={customAnimation} cascade triggerOnce>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+            Service.
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Wir bieten eine breite Palette von Innen- und Außendienstleistungen
+            an, darunter Innenanstriche, individuelle Farbberatung,
+            Fassadenanstriche und Renovierungsarbeiten.
+          </p>
+        </Reveal>
       </div>
-      <div className="mt-6 rounded-2xl ">
-        <Tabs defaultValue="innenbereich">
-          <div className="max-w-max mx-auto my-4">
-            <TabsList className="bg-[#f5f5f5]">
-              <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
-              <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
-            </TabsList>
-          </div>
-          <TabsContent value="innenbereich">
-            <StickyScroll content={service_innenbereich} />
-          </TabsContent>
-          <TabsContent value="aussenbereich">
-            <StickyScroll content={service_aussenbereich} />
-          </TabsContent>
-        </Tabs>
-      </div>
+      <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+
+        <div className="mt-6 rounded-2xl ">
+          <Tabs defaultValue="innenbereich">
+            <div className="max-w-max mx-auto my-4">
+              <TabsList className="bg-[#f5f5f5]">
+                <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
+                <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
+              </TabsList>
+            </div>
+            <TabsContent value="innenbereich">
+              <StickyScroll content={service_innenbereich} />
+            </TabsContent>
+            <TabsContent value="aussenbereich">
+              <StickyScroll content={service_aussenbereich} />
+            </TabsContent>
+          </Tabs>
+        </div>
+        </Reveal>
     </div>
   );
 }

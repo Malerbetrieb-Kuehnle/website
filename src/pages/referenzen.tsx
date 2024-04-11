@@ -118,30 +118,49 @@ const images = [
   Wohnhaus_Tuntenhausen1,
 ];
 
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 export default function referenzen() {
   return (
     <div className="mt-24 sm:mt-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
         <div className="mx-auto max-w-2xl lg:text-center">
-        <h2 className="animate-slidein300 opacity-0 text-5xl font-bold tracking-tight text-gray-900">
-          Referenzen.
-        </h2>
-          <p className="animate-slidein500 opacity-0 mt-6 text-lg leading-8 text-gray-500">
-            Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
-            zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
-            Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
-            Farbkonzepte und handwerkliche Meisterleistungen.
-          </p>
+          <Reveal keyframes={customAnimation} cascade triggerOnce>
+            <h2 className=" text-5xl font-bold tracking-tight text-gray-900">
+              Referenzen.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-500">
+              Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
+              zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
+              Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
+              Farbkonzepte und handwerkliche Meisterleistungen.
+            </p>
+          </Reveal>
         </div>
       </div>
-      {/* Conditionally render ParallaxScroll for larger devices */}
-      <div className="hidden sm:block">
-        <ParallaxScroll images={images} />
-      </div>
-      {/* Conditionally render MobileGallery for smaller devices */}
-      <div className="block sm:hidden">
-        <MobileGallery images={images} />
-      </div>
+      <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+        {/* Conditionally render ParallaxScroll for larger devices */}
+        <div className="hidden sm:block">
+          <ParallaxScroll images={images} />
+        </div>
+        {/* Conditionally render MobileGallery for smaller devices */}
+        <div className="block sm:hidden">
+          <MobileGallery images={images} />
+        </div>
+      </Reveal>
     </div>
   );
 }
