@@ -8,7 +8,10 @@ import {
 
 export default function CallBack() {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32 rounded-2xl mb-8 max-w-7xl mx-auto" id="callback">
+    <div
+      className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32 rounded-2xl mb-8 max-w-7xl mx-auto"
+      id="callback"
+    >
       <div className="mx-auto px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
@@ -23,7 +26,7 @@ export default function CallBack() {
               <ProfileForm />
             </div>
           </div>
-          <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
             {/* Instagram*/}
             <div className="flex sm:flex-col sm:items-start flex-row items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10 h-10 w-10">
@@ -32,7 +35,7 @@ export default function CallBack() {
                   aria-hidden="true"
                 />
               </div>
-              <div className="sm:ml-0 ml-4">
+              <dl className="sm:ml-0 ml-4">
                 <dt className="sm:mt-4 mt-2 font-semibold text-white">
                   Instagram
                 </dt>
@@ -45,7 +48,7 @@ export default function CallBack() {
                     malerbetrieb_kuehnle
                   </a>
                 </dd>
-              </div>
+              </dl>
             </div>
 
             {/* Email */}
@@ -53,14 +56,14 @@ export default function CallBack() {
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10 h-10 w-10">
                 <FaEnvelope className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
-              <div className="sm:ml-0 ml-4">
+              <dl className="sm:ml-0 ml-4">
                 <dt className="sm:mt-4 mt-2 font-semibold text-white">Email</dt>
                 <dd className="mt-2 leading-7 text-gray-400">
                   <a href="mailto:malerbetrieb.kuehnle@gmx.de">
                     malerbetrieb.kuehnle@gmx.de
                   </a>
                 </dd>
-              </div>
+              </dl>
             </div>
 
             {/* Address */}
@@ -71,7 +74,7 @@ export default function CallBack() {
                   aria-hidden="true"
                 />
               </div>
-              <div className="sm:ml-0 ml-4">
+              <dl className="sm:ml-0 ml-4">
                 <dt className="sm:mt-4 mt-2 font-semibold text-white">
                   Adresse
                 </dt>
@@ -79,7 +82,7 @@ export default function CallBack() {
                   Ebersberger Straße 75 <br />
                   83043 Bad Aibling
                 </dd>
-              </div>
+              </dl>
             </div>
 
             {/* Phone */}
@@ -87,8 +90,10 @@ export default function CallBack() {
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10 h-10 w-10">
                 <FaPhone className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
-              <div className="sm:ml-0 ml-4">
-                <dt className="sm:mt-4 mt-2 font-semibold text-white">Telefon</dt>
+              <dl className="sm:ml-0 ml-4">
+                <dt className="sm:mt-4 mt-2 font-semibold text-white">
+                  Telefon
+                </dt>
                 <dd className="mt-2 leading-7 text-gray-400">
                   <div className="flex flex-row gap-x-2">
                     <div className="flex shrink flex-col">
@@ -101,9 +106,9 @@ export default function CallBack() {
                     </div>
                   </div>
                 </dd>
-              </div>
+              </dl>
             </div>
-          </dl>
+          </div>
         </div>
       </div>
       <div

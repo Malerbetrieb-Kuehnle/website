@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
           <Link to="/" onClick={scrollToTop}>
             <img
               src={logo}
-              alt="Malerbetrieb Kühnle"
+              alt="Logo Malerbetrieb Kühnle"
               className="h-16 w-32 object-contain"
             />
           </Link>
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
                   index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
                 }`}
               >
-                <a href={social.path} target="_blank" rel="noopener noreferrer">
+                <a href={social.path} target="_blank" rel="noopener noreferrer" aria-label="Social Media">
                   <Icon />
                 </a>
               </div>

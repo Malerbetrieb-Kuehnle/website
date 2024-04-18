@@ -26,7 +26,6 @@ export default function Navbar() {
     setActive(activeSection.charAt(0).toUpperCase() + activeSection.slice(1));
   }, [location.pathname]);
 
-  // Function to handle click event on mobile menu item
   const handleMobileMenuItemClick = () => {
     setMobileMenuOpen(false); // Close the mobile menu
   };
@@ -41,7 +40,7 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Malerbetrieb Kühnle</span>
-            <img className="h-16 w-32" src={logo} alt="Malerbetrieb Kühnle" />
+            <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" />
           </Link>
         </div>
 
@@ -93,7 +92,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Malerbetrieb Kühnle</span>
-              <img className="h-16 w-32" src={logo} alt="Malerbetrieb Kühnle" />
+              <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" />
             </Link>
             <button
               type="button"
@@ -129,7 +128,6 @@ export default function Navbar() {
                     className="flex items-center"
                     onClick={handleMobileMenuItemClick}
                   >
-                    {/* <FaPhone className="mr-2" aria-hidden="true" /> */}
                     Kontakt
                   </Link>
                 </Button>
