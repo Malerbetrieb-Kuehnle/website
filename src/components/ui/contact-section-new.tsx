@@ -1,35 +1,3 @@
-/* import {
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaInstagram,
-} from "react-icons/fa";
-
-const contact_details = [
-  {
-    name: "Email",
-    description: "malerbetrieb.kuehnle@gmx.de",
-    icon: FaEnvelope,
-    link: "mailto:malerbetrieb.kuehnle@gmx.de",
-  },
-  {
-    name: "Instagram",
-    description: "malerbetrieb_kuehnle",
-    icon: FaInstagram,
-    link: "https://www.instagram.com/malerbetrieb_kuehnle/",
-  },
-  {
-    name: "Telefon",
-    description: "Büro: +49 8061 93 98 333\nMobil: +49 172 85 17 479",
-    icon: FaPhone,
-  },
-  {
-    name: "Adresse",
-    description: "Ebersberger Straße 75\n83043 Bad Aibling",
-    icon: FaMapMarkerAlt,
-  },
-]; */
-
 import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 

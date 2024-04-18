@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { WavyBackground } from "@/components/ui/wavy-background";
-
+import { scrollToTop } from "@/lib/utils";
 import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 
@@ -16,11 +16,6 @@ const customAnimation = keyframes`
     transform: translateY(0);
   }
 `;
-
-// Scroll to the top of the Page when pressing any Link
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
 
 const HERO = () => {
   return (

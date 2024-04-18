@@ -1,11 +1,7 @@
 import { FaExclamationTriangle } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-// Scroll to the top of the Page when pressing any Link
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
+import { scrollToTop } from "@/lib/utils";
 
 const NotFoundPage = () => {
   return (

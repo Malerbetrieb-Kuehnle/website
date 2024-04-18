@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { Separator } from "./separator.tsx";
 import { socialMedia } from "../../constants/index.ts";
-
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
+import { scrollToTop } from "@/lib/utils.ts";
 
 const handleCookiesClick = (
   event: React.MouseEvent<HTMLAnchorElement, MouseEvent>

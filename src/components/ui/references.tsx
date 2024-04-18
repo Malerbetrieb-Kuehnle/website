@@ -6,7 +6,7 @@ import Klinkik_St_Georg from "../../assets/referenzen/Klinik_St._Georg_Bad_Aiblu
 import Schloss_Maxhofen from "../../assets/referenzen/Schloss_Maxhofen_Bruckmuehl.jpg";
 import Wohnhaus_Bad_Feilnbach from "../../assets/referenzen/Wohnhaus_Bad_Feilnbach5.jpg";
 import Lackarbeiten from "../../assets/referenzen/Lackarbeiten1.jpg";
-
+import { scrollToTop } from "@/lib/utils";
 import { Button } from "./button";
 import { Link } from "react-router-dom";
 
@@ -24,11 +24,6 @@ const customAnimation = keyframes`
     transform: translateY(0);
   }
 `;
-
-// Scroll to the top of the Page when pressing any Link
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
 
 export default function References() {
   return (
