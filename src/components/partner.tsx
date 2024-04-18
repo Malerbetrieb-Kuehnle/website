@@ -1,8 +1,6 @@
-// Import the Logos
 import Hoegner from "@/assets/Hoegner.png";
 import Ulber from "@/assets/Ulber.png";
 import Raab from "@/assets/Raab.svg";
-
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
 

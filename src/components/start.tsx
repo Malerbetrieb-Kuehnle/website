@@ -5,7 +5,7 @@ import { scrollToTop } from "@/lib/utils";
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
 
-export default function Hero() {
+export default function Start() {
   return (
     <div className="relative overflow-hidden h-[75vh] max-w-screen-xl max-h-[1000px] mt-2.5 mb-40 mx-auto rounded-[15px] flex flex-col border-2 border-[#f5f5f5]">
       <WavyBackground className="max-w-4xl mx-auto">

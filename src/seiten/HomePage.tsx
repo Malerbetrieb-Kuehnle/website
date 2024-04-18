@@ -1,4 +1,4 @@
-import Hero from "@/components/start";
+import Start from "@/components/start";
 import Contact from "@/components/contact";
 import References from "@/components/references";
 import Malerbetrieb from "@/components/malerbetrieb";
@@ -10,7 +10,7 @@ import Faq from "@/components/fragen";
 const HomePage = () => {
   return (
     <>
-      <Hero />
+      <Start />
       <Malerbetrieb />
       <Services />
       <References />
