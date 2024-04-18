@@ -25,7 +25,7 @@ const navLinks = [
   },
 ];
 
-export default function NavbarNew() {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // Get the current location pathname
   const location = useLocation();
