@@ -4,19 +4,19 @@ import Malerbetrieb from "@/components/malerbetrieb";
 import Services from "@/components/services";
 import Partner from "@/components/partner";
 import Ausbildung from "@/components/ausbildung";
-import FAQ from "@/components/faq";
-import HERO from "@/components/hero";
+import Faq from "@/components/faq";
+import Hero from "@/components/hero";
 
 const HomePage = () => {
   return (
     <>
-      <HERO />
+      <Hero />
       <Malerbetrieb />
       <Services />
       <References />
       <Ausbildung />
       <Partner />
-      <FAQ />
+      <Faq />
       <Contact />
     </>
   );

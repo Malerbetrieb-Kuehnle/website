@@ -9,7 +9,7 @@ import {
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
 
-const FAQ = () => {
+export default function Faq() {
   return (
     <div className="relative h-fit overflow-hidden flex max-w-screen-xl mx-auto rounded-[15px] mb-32">
       <BackgroundGradientAnimation className="z-0">
@@ -24,7 +24,12 @@ const FAQ = () => {
             collapsible
             className="overflow-x-auto w-full z-10 mt-6 text-gray-600"
           >
-            <Reveal keyframes={customAnimation} cascade duration={400} triggerOnce>
+            <Reveal
+              keyframes={customAnimation}
+              cascade
+              duration={400}
+              triggerOnce
+            >
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   Werden nachhaltige Produkte verwendet?
@@ -85,6 +90,4 @@ const FAQ = () => {
       </BackgroundGradientAnimation>
     </div>
   );
-};
-
-export default FAQ;
+}
