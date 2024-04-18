@@ -1,7 +1,7 @@
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
 
-export default function Impressum() {
+const Impressum = () => {
   const p = "mt-6 mb-10 text-lg leading-8 text-gray-600";
   const h2 = "mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl";
 
@@ -118,3 +118,5 @@ export default function Impressum() {
     </>
   );
 }
+
+export default Impressum;

@@ -1,14 +1,14 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Referenzen from "./pages/Referenzen";
-import Kontakt from "./pages/Kontakt";
-import NotFound from "./pages/NotFound";
-import HomePage from "./pages/HomePage";
-import MainLayout from "./layout/MainLayout";
-import Impressum from "./pages/Impressum";
-import Datenschutz from "./pages/Datenschutz";
-import Service from "./pages/Service";
+import Referenzen from "@/pages/Referenzen";
+import Kontakt from "@/pages/Kontakt";
+import NotFound from "@/pages/NotFound";
+import HomePage from "@/pages/HomePage";
+import Impressum from "@/pages/Impressum";
+import Datenschutz from "@/pages/Datenschutz";
+import Service from "@/pages/Service";
+import MainLayout from "@/layout/MainLayout";
 
 function App() {
   return (
