@@ -1,13 +1,12 @@
-// Import the images
-import Baderhaus_Bad_Aibling from "../../assets/referenzen/Baderhaus_Bad_Aibling1.jpg";
-import Bauernhof_Brannenburg from "../../assets/referenzen/Bauernhof_Brannenburg2.jpg";
-import Fassade_Grabenstaett from "../../assets/referenzen/Fassade_Grabenstaett.jpg";
-import Klinkik_St_Georg from "../../assets/referenzen/Klinik_St._Georg_Bad_Aiblung.jpg";
-import Schloss_Maxhofen from "../../assets/referenzen/Schloss_Maxhofen_Bruckmuehl.jpg";
-import Wohnhaus_Bad_Feilnbach from "../../assets/referenzen/Wohnhaus_Bad_Feilnbach5.jpg";
-import Lackarbeiten from "../../assets/referenzen/Lackarbeiten1.jpg";
+import Baderhaus_Bad_Aibling from "@/assets/referenzen/Baderhaus_Bad_Aibling1.jpg";
+import Bauernhof_Brannenburg from "@/assets/referenzen/Bauernhof_Brannenburg2.jpg";
+import Fassade_Grabenstaett from "@/assets/referenzen/Fassade_Grabenstaett.jpg";
+import Klinkik_St_Georg from "@/assets/referenzen/Klinik_St._Georg_Bad_Aiblung.jpg";
+import Schloss_Maxhofen from "@/assets/referenzen/Schloss_Maxhofen_Bruckmuehl.jpg";
+import Wohnhaus_Bad_Feilnbach from "@/assets/referenzen/Wohnhaus_Bad_Feilnbach5.jpg";
+import Lackarbeiten from "@/assets/referenzen/Lackarbeiten1.jpg";
 import { scrollToTop } from "@/lib/utils";
-import { Button } from "./button";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 import Reveal from "react-awesome-reveal";

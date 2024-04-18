@@ -1,4 +1,4 @@
-import { ProfileForm } from "./profileform";
+import { ProfileForm } from "@/components/ui/profileform";
 import {
   FaPhone,
   FaEnvelope,

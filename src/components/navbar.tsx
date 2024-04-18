@@ -4,8 +4,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
 
-import logo from "../../assets/logo.png";
-import { Button } from "./button";
+import logo from "@/assets/logo.png";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   {

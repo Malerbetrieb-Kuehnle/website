@@ -4,7 +4,7 @@ import { keyframes } from "@emotion/react";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
-}
+};
 
 // Scroll to the top of the Page when pressing any Link
 export const scrollToTop = () => {

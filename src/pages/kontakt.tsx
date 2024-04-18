@@ -1,4 +1,4 @@
-import ContactNew from "@/components/ui/contact-section-new";
+import ContactNew from "@/components/contact-section-new";
 
 export default function Kontakt() {
   return (
