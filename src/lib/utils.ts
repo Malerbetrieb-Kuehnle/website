@@ -1,5 +1,6 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { keyframes } from "@emotion/react";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -9,3 +10,16 @@ export function cn(...inputs: ClassValue[]) {
 export const scrollToTop = () => {
   window.scrollTo(0, 0);
 };
+
+// Custom Reveal animation
+export const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;

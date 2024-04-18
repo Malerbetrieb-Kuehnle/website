@@ -3,19 +3,7 @@ import { Button } from "@/components/ui/button";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { scrollToTop } from "@/lib/utils";
 import Reveal from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
-
-const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import { customAnimation } from "@/lib/utils";
 
 const HERO = () => {
   return (

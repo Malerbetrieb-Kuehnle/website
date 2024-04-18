@@ -18,19 +18,7 @@ import Tapezierarbeiten from "../../assets/services/Tapezierarbeiten.jpg";
 import Verputzarbeiten from "../../assets/services/Verputzarbeiten.jpg";
 
 import Reveal from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
-
-const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import { customAnimation } from "@/lib/utils";
 
 const service_innenbereich = [
   {

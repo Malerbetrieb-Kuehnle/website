@@ -52,7 +52,7 @@ const footerLinks: FooterSection[] = [
         title: "Cookies",
         path: "#",
         onClick: handleCookiesClick,
-      }, // Added "Cookies" link
+      }, 
     ],
   },
 ];
