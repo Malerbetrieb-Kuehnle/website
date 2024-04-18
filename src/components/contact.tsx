@@ -23,7 +23,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <Reveal keyframes={customAnimation} triggerOnce delay={800} duration={500}>
+      <Reveal keyframes={customAnimation} triggerOnce delay={400} duration={500}>
         <CallBack />
       </Reveal>
     </>
