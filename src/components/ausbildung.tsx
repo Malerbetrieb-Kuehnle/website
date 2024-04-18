@@ -1,14 +1,8 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
-import wirbildenaus from "@/assets/wirbildenaus-removebg.png";
+import ausbildung from "@/assets/ausbildung.png";
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
-
-const merkmale_ausbildung = [
-  "Tradition und Innovation",
-  "Vielseitiges Tätigkeitsfeld",
-  "Fachwissen und Kreativität",
-  "Zukunftssicherheit und Berufsperspektiven",
-];
+import { merkmale_ausbildung } from "@/constants";
 
 export default function Ausbildung() {
   return (
@@ -65,7 +59,7 @@ export default function Ausbildung() {
             </div>
             <div className="p-10 m-auto">
               <img
-                src={wirbildenaus}
+                src={ausbildung}
                 className="md:max-w-xs"
                 alt="Ausbildung"
                 loading="lazy"

@@ -2,13 +2,7 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import about_us from "@/assets/Fenster-25-Jahre.png";
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
-
-const merkmale_about_us = [
-  "25 Jahre Erfahrung",
-  "Meisterbetrieb im Maler- und Lackiererhandwerk",
-  "Zuverlässigkeit und termingerechte Abwicklung",
-  "Fortbildung und Einsatz modernster Techniken",
-];
+import { merkmale_about_us } from "@/constants";
 
 export default function Malerbetrieb() {
   return (

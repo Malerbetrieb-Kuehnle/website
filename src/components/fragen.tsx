@@ -5,9 +5,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
+import { faqItems } from "@/constants";
 
 export default function Faq() {
   return (
@@ -30,60 +30,12 @@ export default function Faq() {
               duration={400}
               triggerOnce
             >
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  Werden nachhaltige Produkte verwendet?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Wir sind ein nachhaltiger Malerbetrieb und verwenden Produkte,
-                  die umweltfreundlich hergestellt werden, wie Farben und Lacke
-                  mit geringem VOC-Gehalt (flüchtige Organische Verbindungen)
-                  und Lösungsmittelfreie Alternativen.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>
-                  Kann beim Ausräumen vor dem Anstrich geholfen werden?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Gerne sind wir bereit, Ihnen beim Aus- und Einräumen
-                  behilflich zu sein.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>
-                  Hat der Betrieb eine professionelle Ausstattung?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Unser Betrieb verfügt über hochwertige Werkzeuge, Geräte und
-                  Materialien, um eine qualitativ hochwertige Arbeit zu
-                  gewährleisten.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger>
-                  Zuverlässigkeit und Pünktlichkeit?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Wir halten Termine ein und arbeiten effizient, um den Zeitplan
-                  einzuhalten.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-5">
-                <AccordionTrigger>Kundenorientierung?</AccordionTrigger>
-                <AccordionContent>
-                  Ein ausgezeichneter Kundenservice ist uns sehr wichtig, ebenso
-                  wie die Berücksichtigung der Bedürfnisse und Wünsche unserer
-                  Kunden.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-6">
-                <AccordionTrigger>Sauberkeit und Ordnung?</AccordionTrigger>
-                <AccordionContent>
-                  Wir halten die Baustelle sauber und ordentlich, sowohl während
-                  als auch nach der Arbeit.
-                </AccordionContent>
-              </AccordionItem>
+              {faqItems.map((item, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger>{item.question}</AccordionTrigger>
+                  <AccordionContent>{item.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
             </Reveal>
           </Accordion>
         </div>

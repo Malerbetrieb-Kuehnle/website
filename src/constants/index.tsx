@@ -373,3 +373,50 @@ export const service_aussenbereich = [
     ),
   },
 ];
+
+export const merkmale_about_us = [
+  "25 Jahre Erfahrung",
+  "Meisterbetrieb im Maler- und Lackiererhandwerk",
+  "Zuverlässigkeit und termingerechte Abwicklung",
+  "Fortbildung und Einsatz modernster Techniken",
+];
+
+export const merkmale_ausbildung = [
+  "Tradition und Innovation",
+  "Vielseitiges Tätigkeitsfeld",
+  "Fachwissen und Kreativität",
+  "Zukunftssicherheit und Berufsperspektiven",
+];
+
+export const faqItems = [
+  {
+    question: "Werden nachhaltige Produkte verwendet?",
+    answer:
+      "Wir sind ein nachhaltiger Malerbetrieb und verwenden Produkte, die umweltfreundlich hergestellt werden, wie Farben und Lacke mit geringem VOC-Gehalt (flüchtige Organische Verbindungen) und Lösungsmittelfreie Alternativen.",
+  },
+  {
+    question: "Kann beim Ausräumen vor dem Anstrich geholfen werden?",
+    answer:
+      "Gerne sind wir bereit, Ihnen beim Aus- und Einräumen behilflich zu sein.",
+  },
+  {
+    question: "Hat der Betrieb eine professionelle Ausstattung?",
+    answer:
+      "Unser Betrieb verfügt über hochwertige Werkzeuge, Geräte und Materialien, um eine qualitativ hochwertige Arbeit zu gewährleisten.",
+  },
+  {
+    question: "Zuverlässigkeit und Pünktlichkeit?",
+    answer:
+      "Wir halten Termine ein und arbeiten effizient, um den Zeitplan einzuhalten.",
+  },
+  {
+    question: "Kundenorientierung?",
+    answer:
+      "Ein ausgezeichneter Kundenservice ist uns sehr wichtig, ebenso wie die Berücksichtigung der Bedürfnisse und Wünsche unserer Kunden.",
+  },
+  {
+    question: "Sauberkeit und Ordnung?",
+    answer:
+      "Wir halten die Baustelle sauber und ordentlich, sowohl während als auch nach der Arbeit.",
+  },
+];

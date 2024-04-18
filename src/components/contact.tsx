@@ -1,6 +1,5 @@
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
-
 import CallBack from "@/components/callback";
 
 export default function Contact() {
