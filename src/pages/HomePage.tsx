@@ -1,11 +1,11 @@
-import ContactNew from "@/components/contact-section-new";
+import Contact from "@/components/contact";
 import References from "@/components/references";
 import Malerbetrieb from "@/components/malerbetrieb";
 import Services from "@/components/services";
 import Partner from "@/components/partner";
 import Ausbildung from "@/components/ausbildung";
-import FAQ from "@/components/FAQ";
-import HERO from "@/components/HERO";
+import FAQ from "@/components/faq";
+import HERO from "@/components/hero";
 
 const HomePage = () => {
   return (
@@ -17,7 +17,7 @@ const HomePage = () => {
       <Ausbildung />
       <Partner />
       <FAQ />
-      <ContactNew />
+      <Contact />
     </>
   );
 };

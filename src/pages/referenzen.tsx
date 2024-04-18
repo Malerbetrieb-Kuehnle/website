@@ -121,7 +121,7 @@ const images = [
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
 
-export default function referenzen() {
+export default function Referenzen() {
   return (
     <div className="mt-24 sm:mt-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">

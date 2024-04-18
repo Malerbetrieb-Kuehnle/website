@@ -1,9 +1,9 @@
 import Reveal from "react-awesome-reveal";
 import { customAnimation } from "@/lib/utils";
 
-import CallBack from "./rueckruf";
+import CallBack from "./callback";
 
-export default function ContactNew() {
+export default function Contact() {
   return (
     <>
       <div className="mb-10 max-w-7xl mx-auto">

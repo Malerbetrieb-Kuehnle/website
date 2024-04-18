@@ -6,12 +6,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 };
 
-// Scroll to the top of the Page when pressing any Link
+// Scroll to the top of the page when pressing any link
 export const scrollToTop = () => {
   window.scrollTo(0, 0);
 };
 
-// Custom Reveal animation
+// Custom reveal animation for text and sections
 export const customAnimation = keyframes`
   from {
     opacity: 0;
