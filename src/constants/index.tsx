@@ -114,6 +114,7 @@ export const service_innenbereich = [
           src={Innenanstrich}
           alt="Innenanstrich"
           className="h-full w-full object-cover"
+          loading="lazy"
         />
       </div>
     ),
