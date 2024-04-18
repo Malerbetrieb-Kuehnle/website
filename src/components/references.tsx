@@ -1,54 +1,35 @@
-// Import the images
-import Baderhaus_Bad_Aibling from "../../assets/referenzen/Baderhaus_Bad_Aibling1.jpg";
-import Bauernhof_Brannenburg from "../../assets/referenzen/Bauernhof_Brannenburg2.jpg";
-import Fassade_Grabenstaett from "../../assets/referenzen/Fassade_Grabenstaett.jpg";
-import Klinkik_St_Georg from "../../assets/referenzen/Klinik_St._Georg_Bad_Aiblung.jpg";
-import Schloss_Maxhofen from "../../assets/referenzen/Schloss_Maxhofen_Bruckmuehl.jpg";
-import Wohnhaus_Bad_Feilnbach from "../../assets/referenzen/Wohnhaus_Bad_Feilnbach5.jpg";
-import Lackarbeiten from "../../assets/referenzen/Lackarbeiten1.jpg";
-
-import { Button } from "./button";
+import Baderhaus_Bad_Aibling from "@/assets/referenzen/Baderhaus_Bad_Aibling1.jpg";
+import Bauernhof_Brannenburg from "@/assets/referenzen/Bauernhof_Brannenburg2.jpg";
+import Fassade_Grabenstaett from "@/assets/referenzen/Fassade_Grabenstaett.jpg";
+import Klinkik_St_Georg from "@/assets/referenzen/Klinik_St._Georg_Bad_Aiblung.jpg";
+import Schloss_Maxhofen from "@/assets/referenzen/Schloss_Maxhofen_Bruckmuehl.jpg";
+import Wohnhaus_Bad_Feilnbach from "@/assets/referenzen/Wohnhaus_Bad_Feilnbach5.jpg";
+import Lackarbeiten from "@/assets/referenzen/Lackarbeiten1.jpg";
+import { scrollToTop } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 import Reveal from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
-
-const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-// Scroll to the top of the Page when pressing any Link
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
+import { customAnimation } from "@/lib/utils";
 
 export default function References() {
   return (
     <div className="relative overflow-hidden max-w-screen-xl mx-auto rounded-[15px] border-0 border-solid border-[#e7e7e9] mb-40">
       <div className="relative overflow-hidden">
         <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
-
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-lg">
-            <Reveal keyframes={customAnimation} cascade triggerOnce>
-
-              <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-                Referenzen.
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
-                zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
-                Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
-                Farbkonzepte und handwerkliche Meisterleistungen.
-              </p>
+              <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
+                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+                  Referenzen.
+                </h2>
+                <p className="mt-6 text-lg leading-8 text-gray-600">
+                  Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider
+                  und zeigen Ihnen abgeschlossene Projekte in verschiedenen
+                  Stilen und Designs. Entdecken Sie inspirierende Wohnräume,
+                  beeindruckende Farbkonzepte und handwerkliche
+                  Meisterleistungen.
+                </p>
               </Reveal>
             </div>
             <div>
@@ -125,17 +106,14 @@ export default function References() {
                     </div>
                   </div>
                 </div>
-                <Reveal keyframes={customAnimation} triggerOnce delay={800}>
-
-
-                <Link to={"/referenzen"} onClick={scrollToTop}>
-                  <Button variant="default">Zur Gallerie</Button>
-                </Link>
+                <Reveal keyframes={customAnimation} triggerOnce delay={800} duration={500}>
+                  <Link to={"/referenzen"} onClick={scrollToTop}>
+                    <Button variant="default">Zur Gallerie</Button>
+                  </Link>
                 </Reveal>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

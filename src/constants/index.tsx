@@ -1,38 +1,110 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-import Betonoptik from "../../assets/services/Betonoptik.jpg";
-import Hochdruckwasserreinigung from "../../assets/services/Hochdruckwasserreinigung.jpg";
-import Bodenbeschichtungen from "../../assets/services/Bodenbeschichtungen.jpg";
-import Farbberatung from "../../assets/services/Farbberatung.jpg";
-import Fassadenanstriche from "../../assets/services/Fassadenanstriche.jpg";
-import Geruestbau from "../../assets/services/Geruestbau.jpg";
-import Holzanstrich from "../../assets/services/Holzanstrich.jpg";
-import Innenanstrich from "../../assets/services/Innenanstrich.jpg";
-import Lackierarbeiten1 from "../../assets/services/Lackierarbeiten .jpg";
-import Lackierarbeiten2 from "../../assets/services/Lackierarbeiten.jpg";
-import Putzausbesserungen from "../../assets/services/Putzausbesserungen.jpg";
-import RenovaFensterfluegelAbdeckung from "../../assets/services/Renova-Fensterfluegel-Abdeckung.jpg";
-import Renovierungsarbeiten from "../../assets/services/Renovierungsarbeiten.jpg";
-import Spachtelarbeiten from "../../assets/services/Spachtelarbeiten.jpg";
-import Tapezierarbeiten from "../../assets/services/Tapezierarbeiten.jpg";
-import Verputzarbeiten from "../../assets/services/Verputzarbeiten.jpg";
+import { FaPhone, FaEnvelope, FaInstagram } from "react-icons/fa";
+import Betonoptik from "@/assets/services/Betonoptik.jpg";
+import Hochdruckwasserreinigung from "@/assets/services/Hochdruckwasserreinigung.jpg";
+import Bodenbeschichtungen from "@/assets/services/Bodenbeschichtungen.jpg";
+import Farbberatung from "@/assets/services/Farbberatung.jpg";
+import Fassadenanstriche from "@/assets/services/Fassadenanstriche.jpg";
+import Geruestbau from "@/assets/services/Geruestbau.jpg";
+import Holzanstrich from "@/assets/services/Holzanstrich.jpg";
+import Innenanstrich from "@/assets/services/Innenanstrich.jpg";
+import Lackierarbeiten1 from "@/assets/services/Lackierarbeiten .jpg";
+import Lackierarbeiten2 from "@/assets/services/Lackierarbeiten.jpg";
+import Putzausbesserungen from "@/assets/services/Putzausbesserungen.jpg";
+import RenovaFensterfluegelAbdeckung from "@/assets/services/Renova-Fensterfluegel-Abdeckung.jpg";
+import Renovierungsarbeiten from "@/assets/services/Renovierungsarbeiten.jpg";
+import Spachtelarbeiten from "@/assets/services/Spachtelarbeiten.jpg";
+import Tapezierarbeiten from "@/assets/services/Tapezierarbeiten.jpg";
+import Verputzarbeiten from "@/assets/services/Verputzarbeiten.jpg";
 
-import Reveal from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
+export const navLinks = [
+  {
+    id: "home",
+    title: "Home",
+    path: "/",
+  },
+  {
+    id: "service",
+    title: "Service",
+    path: "/service",
+  },
+  {
+    id: "referenzen",
+    title: "Referenzen",
+    path: "/referenzen",
+  },
+];
 
-const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+export const socialMedia = [
+  {
+    id: "instagram",
+    icon: FaInstagram,
+    path: "https://www.instagram.com/malerbetrieb_kuehnle/",
+  },
+  {
+    id: "email",
+    icon: FaEnvelope,
+    path: "mailto:malerbetrieb.kuehnle@gmx.de",
+  },
+  {
+    id: "telefon",
+    icon: FaPhone,
+    path: "tel:+491728517479",
+  },
+];
+
+const handleCookiesClick = (
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+) => {
+  event.preventDefault();
+
+  if (
+    typeof (window as any).UC_UI !== "undefined" &&
+    (window as any).UC_UI.showSecondLayer
+  ) {
+    (window as any).UC_UI.showSecondLayer();
+  } else {
+    console.error("UC_UI or showSecondLayer function is not defined.");
   }
+};
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+interface FooterLink {
+  id: string;
+  title: string;
+  path: string;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void; // Make onClick optional
+}
 
-const service_innenbereich = [
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+export const footerLinks: FooterSection[] = [
+  {
+    title: "Malerbetrieb",
+    links: [
+      { id: "home", title: "Home", path: "/" },
+      { id: "service", title: "Service", path: "/service" },
+      { id: "referenzen", title: "Referenzen", path: "/referenzen" },
+      { id: "kontakt", title: "Kontakt", path: "/kontakt" },
+    ],
+  },
+  {
+    title: "Rechtliches",
+    links: [
+      { id: "impressum", title: "Impressum", path: "/impressum" },
+      { id: "datenschutz", title: "Datenschutz", path: "/datenschutz" },
+      {
+        id: "cookies",
+        title: "Cookies",
+        path: "#",
+        onClick: handleCookiesClick,
+      },
+    ],
+  },
+];
+
+export const service_innenbereich = [
   {
     title: "Innenanstrich",
     description: "Wir führen sämtliche Anstriche im Innenbereich aus.",
@@ -167,7 +239,7 @@ const service_innenbereich = [
   },
 ];
 
-const service_aussenbereich = [
+export const service_aussenbereich = [
   {
     title: "Holzanstriche aller Art",
     description:
@@ -302,40 +374,49 @@ const service_aussenbereich = [
   },
 ];
 
-export default function Services() {
-  return (
-    <div className="flex flex-col max-w-7xl mx-auto mb-40">
-      <div className="mx-auto max-w-2xl sm:text-center mb-8">
-        <Reveal keyframes={customAnimation} cascade triggerOnce>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-            Service.
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Wir bieten eine breite Palette von Innen- und Außendienstleistungen
-            an, darunter Innenanstriche, individuelle Farbberatung,
-            Fassadenanstriche und Renovierungsarbeiten.
-          </p>
-        </Reveal>
-      </div>
-      <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+export const merkmale_about_us = [
+  "25 Jahre Erfahrung",
+  "Meisterbetrieb im Maler- und Lackiererhandwerk",
+  "Zuverlässigkeit und termingerechte Abwicklung",
+  "Fortbildung und Einsatz modernster Techniken",
+];
 
-        <div className="mt-6 rounded-2xl ">
-          <Tabs defaultValue="innenbereich">
-            <div className="max-w-max mx-auto my-4">
-              <TabsList className="bg-[#f5f5f5]">
-                <TabsTrigger value="innenbereich">Innenbereich</TabsTrigger>
-                <TabsTrigger value="aussenbereich">Außenbereich</TabsTrigger>
-              </TabsList>
-            </div>
-            <TabsContent value="innenbereich">
-              <StickyScroll content={service_innenbereich} />
-            </TabsContent>
-            <TabsContent value="aussenbereich">
-              <StickyScroll content={service_aussenbereich} />
-            </TabsContent>
-          </Tabs>
-        </div>
-        </Reveal>
-    </div>
-  );
-}
+export const merkmale_ausbildung = [
+  "Tradition und Innovation",
+  "Vielseitiges Tätigkeitsfeld",
+  "Fachwissen und Kreativität",
+  "Zukunftssicherheit und Berufsperspektiven",
+];
+
+export const faqItems = [
+  {
+    question: "Werden nachhaltige Produkte verwendet?",
+    answer:
+      "Wir sind ein nachhaltiger Malerbetrieb und verwenden Produkte, die umweltfreundlich hergestellt werden, wie Farben und Lacke mit geringem VOC-Gehalt (flüchtige Organische Verbindungen) und Lösungsmittelfreie Alternativen.",
+  },
+  {
+    question: "Kann beim Ausräumen vor dem Anstrich geholfen werden?",
+    answer:
+      "Gerne sind wir bereit, Ihnen beim Aus- und Einräumen behilflich zu sein.",
+  },
+  {
+    question: "Hat der Betrieb eine professionelle Ausstattung?",
+    answer:
+      "Unser Betrieb verfügt über hochwertige Werkzeuge, Geräte und Materialien, um eine qualitativ hochwertige Arbeit zu gewährleisten.",
+  },
+  {
+    question: "Zuverlässigkeit und Pünktlichkeit?",
+    answer:
+      "Wir halten Termine ein und arbeiten effizient, um den Zeitplan einzuhalten.",
+  },
+  {
+    question: "Kundenorientierung?",
+    answer:
+      "Ein ausgezeichneter Kundenservice ist uns sehr wichtig, ebenso wie die Berücksichtigung der Bedürfnisse und Wünsche unserer Kunden.",
+  },
+  {
+    question: "Sauberkeit und Ordnung?",
+    answer:
+      "Wir halten die Baustelle sauber und ordentlich, sowohl während als auch nach der Arbeit.",
+  },
+];

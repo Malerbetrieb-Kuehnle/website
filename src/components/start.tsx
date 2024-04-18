@@ -1,32 +1,15 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { WavyBackground } from "@/components/ui/wavy-background";
-
+import { scrollToTop } from "@/lib/utils";
 import Reveal from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
+import { customAnimation } from "@/lib/utils";
 
-const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-// Scroll to the top of the Page when pressing any Link
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
-
-const HERO = () => {
+export default function Start() {
   return (
     <div className="relative overflow-hidden h-[75vh] max-w-screen-xl max-h-[1000px] mt-2.5 mb-40 mx-auto rounded-[15px] flex flex-col border-2 border-[#f5f5f5]">
       <WavyBackground className="max-w-4xl mx-auto">
-        <Reveal keyframes={customAnimation} cascade triggerOnce>
+        <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
           <span className="text-2xl text-center flex flex-col">
             Malerbetrieb Kühnle
           </span>
@@ -46,6 +29,4 @@ const HERO = () => {
       </WavyBackground>
     </div>
   );
-};
-
-export default HERO;
+}

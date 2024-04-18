@@ -1,15 +1,14 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-
 import "./App.css";
 
-import Referenzen from "./pages/referenzen";
-import Kontakt from "./pages/kontakt";
-import NotFoundPage from "./pages/NotFoundPage";
-import HomePage from "./pages/HomePage";
-import MainLayout from "./layout/MainLayout";
-import Impressum from "./pages/impressum";
-import Datenschutz from "./pages/datenschutz";
-import Service from "./pages/service";
+import Referenzen from "@/seiten/Referenzen";
+import Kontakt from "@/seiten/Kontakt";
+import NotFound from "@/seiten/NotFound";
+import HomePage from "@/seiten/HomePage";
+import Impressum from "@/seiten/Impressum";
+import Datenschutz from "@/seiten/Datenschutz";
+import Service from "@/seiten/Service";
+import MainLayout from "@/layout/MainLayout";
 
 function App() {
   return (
@@ -22,7 +21,7 @@ function App() {
           <Route path="/service" element={<Service />} />
           <Route path="/referenzen" element={<Referenzen />} />
           <Route path="/kontakt" element={<Kontakt />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>

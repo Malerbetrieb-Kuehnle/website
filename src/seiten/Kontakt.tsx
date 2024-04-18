@@ -1,9 +1,9 @@
-import ContactNew from "@/components/ui/contact-section-new";
+import Contact from "@/components/contact";
 
 export default function Kontakt() {
   return (
     <div className="mt-24 sm:mt-32">
-      <ContactNew />
+      <Contact />
     </div>
   );
 }

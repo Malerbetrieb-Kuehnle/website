@@ -1,19 +1,7 @@
 import Reveal from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
+import { customAnimation } from "@/lib/utils";
 
-const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-export default function Impressum() {
+const Impressum = () => {
   const p = "mt-6 mb-10 text-lg leading-8 text-gray-600";
   const h2 = "mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl";
 
@@ -23,7 +11,7 @@ export default function Impressum() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
             <div className="max-w-7xl mx-auto">
-              <Reveal keyframes={customAnimation} triggerOnce>
+              <Reveal keyframes={customAnimation} triggerOnce duration={500}>
                 <h2 className="text-5xl font-bold tracking-tight text-gray-900 mb-16 text-center">
                   Impressum
                 </h2>
@@ -130,3 +118,5 @@ export default function Impressum() {
     </>
   );
 }
+
+export default Impressum;

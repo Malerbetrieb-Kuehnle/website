@@ -4,19 +4,7 @@ const h3 = "mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl";
 const h4 = "mt-2 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl";
 
 import Reveal from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
-
-const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import { customAnimation } from "@/lib/utils";
 
 const Datenschutz = () => {
   return (
@@ -25,7 +13,7 @@ const Datenschutz = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
             <div className="max-w-7xl mx-auto"></div>
-            <Reveal keyframes={customAnimation} triggerOnce>
+            <Reveal keyframes={customAnimation} triggerOnce duration={500}>
               <h2 className="text-5xl font-bold tracking-tight text-gray-900 mb-16 text-center">
                 Datenschutz&shy;erkl&auml;rung
               </h2>

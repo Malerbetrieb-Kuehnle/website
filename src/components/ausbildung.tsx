@@ -1,33 +1,15 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
-import wirbildenaus from "../../assets/wirbildenaus-removebg.png";
+import ausbildung from "@/assets/ausbildung.png";
 import Reveal from "react-awesome-reveal";
-import { keyframes } from "@emotion/react";
-
-const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const merkmale_ausbildung = [
-  "Tradition und Innovation",
-  "Vielseitiges Tätigkeitsfeld",
-  "Fachwissen und Kreativität",
-  "Zukunftssicherheit und Berufsperspektiven",
-];
+import { customAnimation } from "@/lib/utils";
+import { merkmale_ausbildung } from "@/constants";
 
 export default function Ausbildung() {
   return (
     <div className="mb-40 mx-auto">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl sm:text-center">
-          <Reveal keyframes={customAnimation} cascade triggerOnce>
+          <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
               Wir bilden aus.
             </h2>
@@ -40,7 +22,7 @@ export default function Ausbildung() {
         </div>
 
         {/* Ausbildung */}
-        <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+        <Reveal keyframes={customAnimation} triggerOnce delay={800} duration={500}>
           <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-[#f5f5f5] sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
             <div className="p-8 sm:p-10 lg:flex-auto">
               <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
@@ -77,7 +59,7 @@ export default function Ausbildung() {
             </div>
             <div className="p-10 m-auto">
               <img
-                src={wirbildenaus}
+                src={ausbildung}
                 className="md:max-w-xs"
                 alt="Ausbildung"
                 loading="lazy"

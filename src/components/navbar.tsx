@@ -1,31 +1,13 @@
+import logo from "@/assets/logo.png";
 import { useState, useEffect } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { navLinks } from "@/constants";
 
-import logo from "../../assets/logo.png";
-import { Button } from "./button";
-
-const navLinks = [
-  {
-    id: "home",
-    title: "Home",
-    path: "/",
-  },
-  {
-    id: "service",
-    title: "Service",
-    path: "/service",
-  },
-  {
-    id: "referenzen",
-    title: "Referenzen",
-    path: "/referenzen",
-  },
-];
-
-export default function NavbarNew() {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // Get the current location pathname
   const location = useLocation();
@@ -35,7 +17,7 @@ export default function NavbarNew() {
     location.pathname === "/" ? "Home" : location.pathname.split("/")[1];
   const [active, setActive] = useState(
     activeSection.charAt(0).toUpperCase() + activeSection.slice(1)
-  ); // Capitalize the first letter
+  ); 
 
   // Update active state when the location changes
   useEffect(() => {
@@ -44,7 +26,6 @@ export default function NavbarNew() {
     setActive(activeSection.charAt(0).toUpperCase() + activeSection.slice(1));
   }, [location.pathname]);
 
-  // Function to handle click event on mobile menu item
   const handleMobileMenuItemClick = () => {
     setMobileMenuOpen(false); // Close the mobile menu
   };
@@ -59,7 +40,7 @@ export default function NavbarNew() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Malerbetrieb Kühnle</span>
-            <img className="h-16 w-auto" src={logo} alt="Logo" />
+            <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" rel="preload" />
           </Link>
         </div>
 
@@ -111,7 +92,7 @@ export default function NavbarNew() {
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Malerbetrieb Kühnle</span>
-              <img className="h-16 w-auto" src={logo} alt="Logo" />
+              <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" rel="preload"/>
             </Link>
             <button
               type="button"
@@ -142,8 +123,11 @@ export default function NavbarNew() {
               </div>
               <div className="py-6 text-center">
                 <Button className="bg-mbgreen text-white">
-                  <Link to="/kontakt" className="flex items-center" onClick={handleMobileMenuItemClick}>
-                    {/* <FaPhone className="mr-2" aria-hidden="true" /> */}
+                  <Link
+                    to="/kontakt"
+                    className="flex items-center"
+                    onClick={handleMobileMenuItemClick}
+                  >
                     Kontakt
                   </Link>
                 </Button>
