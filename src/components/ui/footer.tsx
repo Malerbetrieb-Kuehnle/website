@@ -34,11 +34,11 @@ const Footer: React.FC = () => {
               key={section.title}
               className={`flex flex-col ss:my-0 my-4 min-w-[150px]`}
             >
-              <h4
+              <div
                 className={`font-poppins font-medium text-[18px] leading-[27px] text-gray-900`}
               >
                 {section.title}
-              </h4>
+              </div>
               <ul className={`list-none mt-4`}>
                 {section.links.map((link, index) => (
                   <li
@@ -82,7 +82,12 @@ const Footer: React.FC = () => {
                   index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
                 }`}
               >
-                <a href={social.path} target="_blank" rel="noopener noreferrer" aria-label="Social Media">
+                <a
+                  href={social.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Social Media"
+                >
                   <Icon />
                 </a>
               </div>
