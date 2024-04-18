@@ -1,4 +1,4 @@
-import Hero from "@/components/hero";
+import Hero from "@/components/start";
 import Contact from "@/components/contact";
 import References from "@/components/references";
 import Malerbetrieb from "@/components/malerbetrieb";
