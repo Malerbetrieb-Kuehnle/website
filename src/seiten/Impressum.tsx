@@ -11,7 +11,7 @@ const Impressum = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
             <div className="max-w-7xl mx-auto">
-              <Reveal keyframes={customAnimation} triggerOnce>
+              <Reveal keyframes={customAnimation} triggerOnce duration={500}>
                 <h2 className="text-5xl font-bold tracking-tight text-gray-900 mb-16 text-center">
                   Impressum
                 </h2>

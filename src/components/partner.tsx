@@ -9,7 +9,7 @@ export default function Partner() {
     <div className="relative overflow-hidden flex mx-auto mb-32 rounded-[15px]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
-          <Reveal keyframes={customAnimation} cascade triggerOnce>
+          <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
               Partner & Lieferanten.
             </h2>
@@ -21,7 +21,7 @@ export default function Partner() {
             </p>
           </Reveal>
         </div>
-        <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+        <Reveal keyframes={customAnimation} triggerOnce delay={800} duration={500}>
           <div className="mx-auto mt-16 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4 ">
             <img
               className="logo-images col-span-2 max-h-12 w-full object-contain lg:col-span-1"

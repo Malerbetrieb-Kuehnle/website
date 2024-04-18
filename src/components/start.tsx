@@ -9,7 +9,7 @@ export default function Start() {
   return (
     <div className="relative overflow-hidden h-[75vh] max-w-screen-xl max-h-[1000px] mt-2.5 mb-40 mx-auto rounded-[15px] flex flex-col border-2 border-[#f5f5f5]">
       <WavyBackground className="max-w-4xl mx-auto">
-        <Reveal keyframes={customAnimation} cascade triggerOnce>
+        <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
           <span className="text-2xl text-center flex flex-col">
             Malerbetrieb Kühnle
           </span>

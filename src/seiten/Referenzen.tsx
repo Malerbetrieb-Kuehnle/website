@@ -126,7 +126,7 @@ export default function Referenzen() {
     <div className="mt-24 sm:mt-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <Reveal keyframes={customAnimation} cascade triggerOnce>
+          <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
             <h2 className=" text-5xl font-bold tracking-tight text-gray-900">
               Referenzen.
             </h2>
@@ -139,7 +139,7 @@ export default function Referenzen() {
           </Reveal>
         </div>
       </div>
-      <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+      <Reveal keyframes={customAnimation} triggerOnce delay={800} duration={500}>
         {/* Conditionally render ParallaxScroll for larger devices */}
         <div className="hidden sm:block">
           <ParallaxScroll images={images} />

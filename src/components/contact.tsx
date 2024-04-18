@@ -8,7 +8,7 @@ export default function Contact() {
       <div className="mb-10 max-w-7xl mx-auto">
         <div className="mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <Reveal keyframes={customAnimation} cascade triggerOnce>
+            <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
               <h2 className=" text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 text-balance">
                 So erreichen Sie uns.
               </h2>
@@ -23,7 +23,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+      <Reveal keyframes={customAnimation} triggerOnce delay={800} duration={500}>
         <CallBack />
       </Reveal>
     </>

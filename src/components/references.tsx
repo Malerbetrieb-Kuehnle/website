@@ -17,20 +17,19 @@ export default function References() {
     <div className="relative overflow-hidden max-w-screen-xl mx-auto rounded-[15px] border-0 border-solid border-[#e7e7e9] mb-40">
       <div className="relative overflow-hidden">
         <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
-
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-lg">
-            <Reveal keyframes={customAnimation} cascade triggerOnce>
-
-              <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-                Referenzen.
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
-                zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
-                Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
-                Farbkonzepte und handwerkliche Meisterleistungen.
-              </p>
+              <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
+                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+                  Referenzen.
+                </h2>
+                <p className="mt-6 text-lg leading-8 text-gray-600">
+                  Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider
+                  und zeigen Ihnen abgeschlossene Projekte in verschiedenen
+                  Stilen und Designs. Entdecken Sie inspirierende Wohnräume,
+                  beeindruckende Farbkonzepte und handwerkliche
+                  Meisterleistungen.
+                </p>
               </Reveal>
             </div>
             <div>
@@ -107,17 +106,14 @@ export default function References() {
                     </div>
                   </div>
                 </div>
-                <Reveal keyframes={customAnimation} triggerOnce delay={800}>
-
-
-                <Link to={"/referenzen"} onClick={scrollToTop}>
-                  <Button variant="default">Zur Gallerie</Button>
-                </Link>
+                <Reveal keyframes={customAnimation} triggerOnce delay={800} duration={500}>
+                  <Link to={"/referenzen"} onClick={scrollToTop}>
+                    <Button variant="default">Zur Gallerie</Button>
+                  </Link>
                 </Reveal>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

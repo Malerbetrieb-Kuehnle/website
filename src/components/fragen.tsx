@@ -14,7 +14,7 @@ export default function Faq() {
     <div className="relative h-fit overflow-hidden flex max-w-screen-xl mx-auto rounded-[15px] mb-32">
       <BackgroundGradientAnimation className="z-0">
         <div className="flex flex-col sm:p-20 pt-16 px-4">
-          <Reveal keyframes={customAnimation} cascade triggerOnce>
+          <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
             <h2 className="text-4xl pb-4 sm:text-5xl font-bold tracking-tight text-gray-900 z-10">
               Noch Fragen?
             </h2>
@@ -27,7 +27,7 @@ export default function Faq() {
             <Reveal
               keyframes={customAnimation}
               cascade
-              duration={400}
+              duration={300}
               triggerOnce
             >
               {faqItems.map((item, index) => (

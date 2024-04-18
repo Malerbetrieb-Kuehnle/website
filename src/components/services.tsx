@@ -19,7 +19,7 @@ export default function Services() {
           </p>
         </Reveal>
       </div>
-      <Reveal keyframes={customAnimation} triggerOnce delay={800}>
+      <Reveal keyframes={customAnimation} triggerOnce delay={800} duration={500}>
         <div className="mt-6 rounded-2xl ">
           <Tabs defaultValue="innenbereich">
             <div className="max-w-max mx-auto my-4">
