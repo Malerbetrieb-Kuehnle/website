@@ -1,5 +1,5 @@
 
-![Malerbetrieb Kühnle](https://malerbetrieb-kuehnle.de/assets/logo-D80sIUfO.png)
+![Malerbetrieb Kühnle](src/assets/logo.png)
 
 
 # Malerbetrieb Kühnle

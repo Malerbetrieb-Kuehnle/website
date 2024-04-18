@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Malerbetrieb Kühnle</span>
-            <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" />
+            <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" rel="preload" />
           </Link>
         </div>
 
@@ -92,7 +92,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Malerbetrieb Kühnle</span>
-              <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" />
+              <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" rel="preload"/>
             </Link>
             <button
               type="button"
