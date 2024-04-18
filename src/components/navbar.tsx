@@ -17,7 +17,7 @@ export default function Navbar() {
     location.pathname === "/" ? "Home" : location.pathname.split("/")[1];
   const [active, setActive] = useState(
     activeSection.charAt(0).toUpperCase() + activeSection.slice(1)
-  ); // Capitalize the first letter
+  ); 
 
   // Update active state when the location changes
   useEffect(() => {

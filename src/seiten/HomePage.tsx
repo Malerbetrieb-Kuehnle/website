@@ -1,12 +1,11 @@
-import { lazy } from "react";
 import Start from "@/components/start";
-const Contact = lazy(() => import("@/components/contact"));
-const References = lazy(() => import("@/components/references"));
-const Malerbetrieb = lazy(() => import("@/components/malerbetrieb"));
-const Services = lazy(() => import("@/components/services"));
-const Partner = lazy(() => import("@/components/partner"));
-const Ausbildung = lazy(() => import("@/components/ausbildung"));
-const Faq = lazy(() => import("@/components/fragen"));
+import Contact from "@/components/contact";
+import References from "@/components/references";
+import Malerbetrieb from "@/components/malerbetrieb";
+import Services from "@/components/services";
+import Partner from "@/components/partner";
+import Ausbildung from "@/components/ausbildung";
+import Faq from "@/components/fragen";
 
 const HomePage = () => {
   return (
