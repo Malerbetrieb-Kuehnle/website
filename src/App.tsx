@@ -1,5 +1,4 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
 
 import Referenzen from "@/seiten/Referenzen";
 import Kontakt from "@/seiten/Kontakt";
