@@ -7,7 +7,6 @@ import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/constants";
 
-
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // Get the current location pathname
@@ -42,7 +41,7 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Malerbetrieb Kühnle</span>
-            <img className="h-16 w-auto" src={logo} alt="Logo" />
+            <img className="h-16 w-32" src={logo} alt="Malerbetrieb Kühnle" />
           </Link>
         </div>
 
@@ -94,7 +93,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Malerbetrieb Kühnle</span>
-              <img className="h-16 w-auto" src={logo} alt="Logo" />
+              <img className="h-16 w-32" src={logo} alt="Malerbetrieb Kühnle" />
             </Link>
             <button
               type="button"
@@ -125,7 +124,11 @@ export default function Navbar() {
               </div>
               <div className="py-6 text-center">
                 <Button className="bg-mbgreen text-white">
-                  <Link to="/kontakt" className="flex items-center" onClick={handleMobileMenuItemClick}>
+                  <Link
+                    to="/kontakt"
+                    className="flex items-center"
+                    onClick={handleMobileMenuItemClick}
+                  >
                     {/* <FaPhone className="mr-2" aria-hidden="true" /> */}
                     Kontakt
                   </Link>

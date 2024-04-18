@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             <img
               src={logo}
               alt="Malerbetrieb Kühnle"
-              className="w-[120px] h-auto object-contain"
+              className="h-16 w-32 object-contain"
             />
           </Link>
           <p
