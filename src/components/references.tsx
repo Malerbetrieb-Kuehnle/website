@@ -106,7 +106,7 @@ export default function References() {
                     </div>
                   </div>
                 </div>
-                <Reveal keyframes={customAnimation} triggerOnce delay={800} duration={500}>
+                <Reveal keyframes={customAnimation} triggerOnce delay={400} duration={500}>
                   <Link to={"/referenzen"} onClick={scrollToTop}>
                     <Button variant="default">Zur Gallerie</Button>
                   </Link>
