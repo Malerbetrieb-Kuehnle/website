@@ -79,8 +79,8 @@ export default function CallBack() {
                   Adresse
                 </dt>
                 <dd className="mt-2 leading-7 text-gray-400">
-                  Ebersberger Straße 75 <br />
-                  83043 Bad Aibling
+                  <div className="mb-1">Ebersberger Straße 75</div>
+                  <div>83043 Bad Aibling</div>
                 </dd>
               </dl>
             </div>
@@ -97,11 +97,13 @@ export default function CallBack() {
                 <dd className="mt-2 leading-7 text-gray-400">
                   <div className="flex flex-row gap-x-2">
                     <div className="flex shrink flex-col">
-                      <p className="">Büro:</p>
+                      <p className="mb-1">Büro:</p>
                       <p className="">Mobil:</p>
                     </div>
                     <div className="flex flex-col">
-                      <a href="tel:+4980619398333">+49 8061 93 98 333</a>
+                      <a href="tel:+4980619398333" className="mb-1">
+                        +49 8061 93 98 333
+                      </a>
                       <a href="tel:+491728517479">+49 172 85 17 479</a>
                     </div>
                   </div>
