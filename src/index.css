@@ -27,8 +27,8 @@
     --accent: 90 16% 93%;
     --accent-foreground: 169 39% 13%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 354 54% 43%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 150 9% 85%;
     --input: 150 9% 85%;
@@ -82,15 +82,16 @@
   }
   html {
     -webkit-text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--header) + 1rem);
   }
   body {
     @apply bg-background font-sans text-foreground antialiased;
-    font-synthesis: none;
   }
   h1,
   h2,
   h3 {
-    @apply font-serif font-normal;
+    @apply font-display font-semibold;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
   p {
@@ -99,6 +100,10 @@
   :focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;
+  }
+  ::selection {
+    background-color: hsl(var(--mblime));
+    color: hsl(var(--foreground));
   }
 }
 
@@ -111,13 +116,17 @@
     @apply gutter py-20 lg:py-32;
   }
   .label {
-    @apply font-sans text-lg leading-7 text-foreground;
+    @apply font-sans text-lg font-normal leading-7 tracking-normal text-foreground;
   }
   .titel-gross {
-    @apply font-serif text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.05];
+    @apply font-display text-[clamp(2.5rem,6vw,5.5rem)] font-semibold leading-[1.1] tracking-[-0.01em];
   }
   .titel-mittel {
-    @apply font-serif text-[clamp(2rem,4vw,3.5rem)] leading-[1.1];
+    @apply font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.15] tracking-[-0.01em];
+  }
+  /* Feine Kante, damit helle Fotos sich vom weißen Grund lösen */
+  .foto {
+    @apply outline outline-1 -outline-offset-1 outline-black/10;
   }
 }
 

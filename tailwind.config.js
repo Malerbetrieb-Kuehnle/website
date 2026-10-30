@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  future: { hoverOnlyWhenSupported: true },
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -38,7 +39,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['"Schibsted Grotesk Variable"', "system-ui", "sans-serif"],
-        serif: ['"Young Serif"', "Georgia", "serif"],
+        display: ['"Bricolage Grotesque Variable"', "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

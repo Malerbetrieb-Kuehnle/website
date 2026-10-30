@@ -13,7 +13,7 @@ export default function Faq() {
       <Accordion type="single" collapsible className="border-t lg:col-span-8">
         {faqItems.map((item, index) => (
           <AccordionItem key={index} value={`item-${index}`}>
-            <AccordionTrigger className="font-serif text-xl font-normal">
+            <AccordionTrigger className="font-display text-xl font-semibold">
               {item.question}
             </AccordionTrigger>
             <AccordionContent className="max-w-2xl text-lg leading-8 text-muted-foreground">

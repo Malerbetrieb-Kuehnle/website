@@ -49,7 +49,7 @@ export default function Navbar() {
           ))}
           <a
             href="tel:+4980619398333"
-            className="tabular-nums transition-colors hover:text-mbgreen"
+            className="transition-colors hover:text-mbgreen"
           >
             +49 8061 93 98 333
           </a>
@@ -105,7 +105,7 @@ export default function Navbar() {
                 <li key={nav.id} className="border-b">
                   <Link
                     to={nav.path}
-                    className="block py-4 font-serif text-4xl"
+                    className="block py-4 font-display text-4xl font-semibold tracking-[-0.01em]"
                     onClick={closeMenu}
                   >
                     {nav.title}
