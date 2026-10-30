@@ -4,42 +4,45 @@
 
 @layer base {
   :root {
-    margin: 0;
-    padding: 2rem;
-    
+    --header: 4.5rem;
+
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 169 39% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 169 39% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 169 39% 13%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 166 48% 15%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 90 16% 93%;
+    --secondary-foreground: 169 39% 13%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 90 16% 93%;
+    --muted-foreground: 168 12% 34%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 90 16% 93%;
+    --accent-foreground: 169 39% 13%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 150 9% 85%;
+    --input: 150 9% 85%;
+    --ring: 150 100% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     /* Malerbetrieb Colors */
     --mbgreen: 150.24, 100%, 24.9%;
     --mbblue: 200.37, 100%, 42.16%;
+    --mbfir: 166, 48%, 15%;
+    --mblime: 66, 62%, 53%;
+    --mborange: 22, 86%, 52%;
+    --mbkalk: 90, 16%, 93%;
   }
 
   .dark {
@@ -77,7 +80,52 @@
   * {
     @apply border-border;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
+    font-synthesis: none;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif font-normal;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Einheitlicher Seitenrand aller randlosen Abschnitte */
+  .gutter {
+    @apply px-4 sm:px-6 lg:px-10 2xl:px-16;
+  }
+  .abschnitt {
+    @apply gutter py-20 lg:py-32;
+  }
+  .label {
+    @apply font-sans text-lg leading-7 text-foreground;
+  }
+  .titel-gross {
+    @apply font-serif text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.05];
+  }
+  .titel-mittel {
+    @apply font-serif text-[clamp(2rem,4vw,3.5rem)] leading-[1.1];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
