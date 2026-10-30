@@ -27,10 +27,8 @@ export default function Referenzen() {
         <h1 className="titel-gross lg:col-span-5">Referenzen</h1>
         <div className="lg:col-span-7">
           <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-            Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
-            zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
-            Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
-            Farbkonzepte und handwerkliche Meisterleistungen.
+            Abgeschlossene Projekte aus unserer Arbeit: Fassaden, Wohnhäuser,
+            Praxen und Innenräume in verschiedenen Stilen.
           </p>
           <div
             role="group"
@@ -76,7 +74,7 @@ export default function Referenzen() {
                 alt={bild.title}
                 width={bild.width}
                 height={bild.height}
-                className="h-auto w-full bg-mbkalk"
+                className="foto h-auto w-full bg-mbkalk"
                 loading="lazy"
                 decoding="async"
               />

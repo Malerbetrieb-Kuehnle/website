@@ -8,12 +8,14 @@ export default function Ausbildung() {
         <h2 className="titel-gross">Wir bilden aus.</h2>
         <p className="mt-8 max-w-xl text-lg leading-8">
           Wir bilden seit Jahren mit Erfolg Lehrlinge in diesem interessanten
-          und absolut vielseitigen Beruf aus. Wer sich dafür entscheidet,
-          gestaltet Innenräume und Fassaden, verlegt Bodenbeläge und verschönert
-          Wände mit verschiedenen Maltechniken, Tapeten oder Dekorputzen. Das
-          Berufsbild ist traditionsreich und modern zugleich, nie langweilig,
-          immer fordernd, was Fachwissen, Materialkunde und individuelles Gespür
-          für die Interessen der Kunden angeht.
+          und absolut vielseitigen Beruf aus.
+        </p>
+        <p className="mt-4 max-w-xl text-lg leading-8">
+          Du gestaltest Innenräume und Fassaden, verlegst Bodenbeläge und
+          verschönerst Wände mit verschiedenen Maltechniken, Tapeten oder
+          Dekorputzen. Der Beruf ist traditionsreich und modern zugleich, nie
+          langweilig und immer fordernd, was Fachwissen, Materialkunde und das
+          Gespür für die Wünsche der Kunden angeht.
         </p>
         <ul role="list" className="mt-10 grid max-w-xl gap-x-6 sm:grid-cols-2">
           {merkmale_ausbildung.map((feature) => (

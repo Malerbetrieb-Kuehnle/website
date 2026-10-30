@@ -16,10 +16,7 @@ export default function Partner() {
       <h2 className="label lg:col-span-4">Partner & Lieferanten</h2>
       <div className="lg:col-span-8">
         <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-          Unsere Dienstleistungen zeichnen sich durch die Verwendung
-          hochwertiger Materialien aus, die von etablierten Lieferanten bezogen
-          werden. Nur so können wir einen erstklassigen und hochwertigen
-          Malerservice bieten.
+          Wir arbeiten mit hochwertigen Materialien von etablierten Lieferanten.
         </p>
         <div className="mt-12 grid grid-cols-2 items-center gap-x-10 gap-y-10 sm:grid-cols-4">
           {partner.map((item) => (

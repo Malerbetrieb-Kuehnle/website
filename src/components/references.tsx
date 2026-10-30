@@ -43,10 +43,8 @@ export default function References() {
         <h2 className="titel-gross lg:col-span-5">Referenzen</h2>
         <div className="lg:col-span-7">
           <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-            Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider und
-            zeigen Ihnen abgeschlossene Projekte in verschiedenen Stilen und
-            Designs. Entdecken Sie inspirierende Wohnräume, beeindruckende
-            Farbkonzepte und handwerkliche Meisterleistungen.
+            Von der historischen Fassade bis zum Wartezimmer: eine Auswahl
+            unserer abgeschlossenen Projekte.
           </p>
           <Button asChild className="mt-6">
             <Link to="/referenzen">Alle Referenzen ansehen</Link>
@@ -62,7 +60,7 @@ export default function References() {
               srcSet={projektSrcSet(item.bild)}
               sizes={item.sizes}
               alt={item.text}
-              className="aspect-[4/3] h-auto w-full object-cover md:aspect-auto md:h-[46vw] md:max-h-[44rem]"
+              className="foto aspect-[4/3] h-auto w-full object-cover md:aspect-auto md:h-[46vw] md:max-h-[44rem]"
               loading="lazy"
             />
             <figcaption className="mt-2 text-sm text-muted-foreground">

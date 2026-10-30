@@ -18,13 +18,23 @@ const Footer: React.FC = () => {
               loading="lazy"
             />
           </Link>
-          <p className="mt-4 font-serif text-2xl">
+          <p className="mt-4 font-display text-2xl font-semibold tracking-[-0.01em]">
             Wir bringen Farbe in Ihr Leben.
           </p>
+          <address className="mt-4 not-italic leading-7 text-muted-foreground">
+            Ebersberger Straße 75, 83043 Bad Aibling
+            <br />
+            <a
+              href="tel:+4980619398333"
+              className="underline decoration-1 underline-offset-4 transition-colors hover:text-mbgreen"
+            >
+              +49 8061 93 98 333
+            </a>
+          </address>
         </div>
         {footerLinks.map((section) => (
           <div key={section.title} className="md:col-span-3">
-            <h2 className="font-sans text-base text-muted-foreground">
+            <h2 className="font-sans text-base font-normal tracking-normal text-muted-foreground">
               {section.title}
             </h2>
             <ul className="mt-3 space-y-1">

@@ -14,7 +14,7 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
       <div
         className={cn(
           "relative h-[60svh] lg:order-none lg:h-auto",
-          seite && "order-last"
+          seite && "order-last",
         )}
       >
         <img
@@ -26,12 +26,12 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
           loading="lazy"
         />
       </div>
-      <div className="abschnitt bg-mbfir text-white">
+      <div className="abschnitt bg-mbfir text-white [--ring:var(--mblime)]">
         <Titel className="titel-gross">So erreichen Sie uns.</Titel>
         <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
-          Haben Sie Fragen oder benötigen Sie weitere Informationen? Lassen Sie
-          sich bequem von uns zurückrufen. Wir melden uns so schnell wie möglich
-          bei Ihnen. Natürlich erreichen Sie uns auch per Telefon und E-Mail.
+          Haben Sie Fragen? Hinterlassen Sie Ihre Nummer, wir rufen Sie so
+          schnell wie möglich zurück. Natürlich erreichen Sie uns auch per
+          Telefon und E-Mail.
         </p>
 
         <div className="mt-10 max-w-md">

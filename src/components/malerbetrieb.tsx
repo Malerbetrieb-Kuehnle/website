@@ -1,4 +1,3 @@
-import jubilaeum from "@/assets/Fenster-25-Jahre.png";
 import { ablauf, merkmale_about_us } from "@/constants";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
 
@@ -16,14 +15,15 @@ export default function Malerbetrieb() {
       <section className="abschnitt grid gap-y-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <h2 className="label">Über uns</h2>
-          <img
-            src={jubilaeum}
-            className="mt-8 hidden w-40 lg:block"
-            width={541}
-            height={462}
-            alt="25 Jahre Ihr Malerbetrieb"
-            loading="lazy"
-          />
+          <div
+            aria-hidden="true"
+            className="mt-8 hidden h-40 w-40 flex-col items-center justify-center rounded-full bg-mborange lg:flex"
+          >
+            <span className="font-display text-6xl font-semibold leading-none tracking-[-0.01em]">
+              25
+            </span>
+            <span className="mt-1">Jahre</span>
+          </div>
         </div>
         <div className="lg:col-span-8">
           <p className="titel-mittel text-foreground/55">
@@ -96,7 +96,7 @@ export default function Malerbetrieb() {
                 className="grid grid-cols-[2.5rem_1fr] border-t py-6 sm:grid-cols-[2.5rem_10rem_1fr]"
               >
                 <span className="text-muted-foreground">{index + 1}</span>
-                <h3 className="font-serif text-xl">{schritt.title}</h3>
+                <h3 className="text-xl">{schritt.title}</h3>
                 <p className="col-start-2 mt-2 max-w-md leading-7 text-muted-foreground sm:col-start-3 sm:mt-0">
                   {schritt.description}
                 </p>

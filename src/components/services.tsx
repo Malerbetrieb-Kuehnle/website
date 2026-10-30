@@ -30,10 +30,10 @@ export default function Services({ seite = false }: { seite?: boolean }) {
           <img
             key={bereich + item.title}
             src={item.image}
-            alt=""
+            alt={index === active ? item.title : ""}
             className={cn(
               "absolute inset-0 h-full w-full object-cover transition-opacity duration-500",
-              index === active ? "opacity-100" : "opacity-0",
+              index === active ? "opacity-100" : "opacity-0"
             )}
             loading="lazy"
           />
@@ -43,9 +43,8 @@ export default function Services({ seite = false }: { seite?: boolean }) {
       <div className="gutter py-20 lg:py-16">
         <Titel className="titel-gross">Service</Titel>
         <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
-          Wir bieten eine breite Palette von Innen- und Außendienstleistungen
-          an, darunter Innenanstriche, individuelle Farbberatung,
-          Fassadenanstriche und Renovierungsarbeiten.
+          Von der Farbberatung bis zur fertigen Fassade: unsere Leistungen für
+          innen und außen.
         </p>
 
         <Tabs
@@ -75,16 +74,23 @@ export default function Services({ seite = false }: { seite?: boolean }) {
                   <li
                     key={item.title}
                     onMouseEnter={() => setActive(index)}
-                    onClick={() => setActive(index)}
                     className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 border-t py-4 last:border-b sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)_auto] lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
                   >
-                    <h3
-                      className={cn(
-                        "font-serif text-xl transition-colors max-sm:hyphens-auto",
-                        index === active && "lg:text-mbgreen",
-                      )}
-                    >
-                      {item.title}
+                    <h3 className="text-xl max-sm:hyphens-auto">
+                      <span className="lg:hidden">{item.title}</span>
+                      {/* Großes Bild gibt es nur am Desktop, nur dort wählbar */}
+                      <button
+                        type="button"
+                        aria-pressed={index === active}
+                        onClick={() => setActive(index)}
+                        onFocus={() => setActive(index)}
+                        className={cn(
+                          "hidden text-left font-semibold transition-colors lg:inline",
+                          index === active && "text-mbgreen"
+                        )}
+                      >
+                        {item.title}
+                      </button>
                     </h3>
                     <p className="col-start-1 row-start-2 mt-2 leading-6 text-muted-foreground sm:col-start-2 sm:row-start-1 sm:mt-0">
                       {item.description}
@@ -92,7 +98,7 @@ export default function Services({ seite = false }: { seite?: boolean }) {
                     <img
                       src={item.image}
                       alt=""
-                      className="col-start-2 row-span-2 row-start-1 h-20 w-20 object-cover sm:col-start-3 lg:hidden"
+                      className="foto col-start-2 row-span-2 row-start-1 h-20 w-20 object-cover sm:col-start-3 lg:hidden"
                       loading="lazy"
                     />
                   </li>

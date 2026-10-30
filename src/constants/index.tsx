@@ -108,25 +108,25 @@ export const footerLinks: FooterSection[] = [
 export const service_innenbereich = [
   {
     title: "Innenanstrich",
-    description: "Wir führen sämtliche Anstriche im Innenbereich aus.",
+    description: "Wir führen alle Anstriche im Innenbereich aus.",
     image: Innenanstrich,
   },
   {
     title: "Bodenbeschichtungen",
     description:
-      "Anfragen von speziellen Beschichtungen auf verschiedenen Böden wie Epoxidharz oder Betonversiegelung.",
+      "Spezielle Beschichtungen für verschiedene Böden, etwa Epoxidharz oder Betonversiegelung.",
     image: Bodenbeschichtungen,
   },
   {
     title: "Lackierarbeiten",
     description:
-      "Sämtliche Lackierarbeiten werden bei Ihnen vor Ort durchgeführt.",
+      "Alle Lackierarbeiten führen wir direkt bei Ihnen vor Ort aus.",
     image: Lackierarbeiten2,
   },
   {
     title: "Individuelle Farbberatung",
     description:
-      "Beratung und Farbgestaltung bei der Auswahl im Innen- und Außenbereich.",
+      "Wir beraten Sie bei der Farbgestaltung im Innen- und Außenbereich.",
     image: Farbberatung,
   },
   {
@@ -143,13 +143,13 @@ export const service_innenbereich = [
   {
     title: "Tapezierarbeiten",
     description:
-      "Egal ob Fototapeten oder moderne Wandbeläge, wir bringen hochwertige italienische Wandbeläge für unsere Kunden an die Wand.",
+      "Von der Fototapete bis zum hochwertigen italienischen Wandbelag.",
     image: projektBild("praxis-wandbelag"),
   },
   {
     title: "Betonoptik",
     description:
-      "Malerarbeiten in Betonoptik können eine moderne und industrielle Ästhetik in einem Raum schaffen. Hier wird die Textur und Optik von Beton nachgeahmt.",
+      "Wir bilden die Textur von Beton auf Ihren Wänden nach, für einen modernen, industriellen Raumeindruck.",
     image: Betonoptik,
   },
   {
@@ -164,29 +164,29 @@ export const service_aussenbereich = [
   {
     title: "Holzanstriche aller Art",
     description:
-      "Neu und abgewitterte Holzbauteile sowie Hagelschäden am Gebäude.",
+      "Für neue und abgewitterte Holzbauteile, auch nach Hagelschäden am Gebäude.",
     image: projektBild("giebel-grau-verschalung"),
   },
   {
     title: "Eigener Gerüstbau",
     description:
-      "Wir bauen für unseren Eigengebrauch an Ihrem Gebäude Arbeitsschutzgerüste auf.",
+      "Für unsere Arbeiten stellen wir das Arbeitsschutzgerüst an Ihrem Gebäude selbst.",
     image: Geruestbau,
   },
   {
     title: "Putzausbesserungen",
     description:
-      "Vorbereitende Arbeiten wie Spachteln, Verputzen und Glätten von Oberflächen.",
+      "Wir bessern beschädigten Putz aus und bereiten die Fläche für den Anstrich vor.",
     image: Putzausbesserungen,
   },
   {
     title: "Fassadenanstriche",
     description:
-      "Von der Untergrundvorbereitung, der Auswahl von Farbtönen und der richtigen Materialen bis hin zur Ausführung.",
+      "Von der Untergrundvorbereitung über die Auswahl von Farbtönen und Materialien bis zur Ausführung.",
     image: projektBild("altbau-pfirsich-seite"),
   },
   {
-    title: "Hochdruck-Wasser-Reiniger",
+    title: "Hochdruckreinigung",
     description: "Reinigung von verschmutzten Flächen am Gebäude.",
     image: Hochdruckwasserreinigung,
   },
@@ -199,18 +199,18 @@ export const service_aussenbereich = [
   {
     title: "Individuelle Farbberatung",
     description:
-      "Beratung und Farbgestaltung bei der Auswahl im Innen und Außenbereich.",
+      "Wir beraten Sie bei der Farbgestaltung im Innen- und Außenbereich.",
     image: Farbberatung,
   },
   {
     title: "Lackierarbeiten",
-    description: "Sämtliche Lackierarbeiten bei Ihnen vor Ort.",
+    description: "Alle Lackierarbeiten direkt bei Ihnen vor Ort.",
     image: Lackierarbeiten1,
   },
   {
-    title: "Renova-Fenster-Flügel",
+    title: "Renova-Fensterflügel",
     description:
-      "Lieferung und Montage von Renova Alu-Fensterflügel und Fensterstock Abdeckungen.",
+      "Lieferung und Montage von Renova-Alu-Fensterflügeln und Fensterstock-Abdeckungen.",
     image: RenovaFensterfluegelAbdeckung,
   },
 ];
@@ -308,33 +308,29 @@ export const merkmale_ausbildung = [
 
 export const faqItems = [
   {
-    question: "Werden nachhaltige Produkte verwendet?",
+    question: "Verwenden Sie nachhaltige Produkte?",
     answer:
-      "Wir sind ein nachhaltiger Malerbetrieb und verwenden Produkte, die umweltfreundlich hergestellt werden, wie Farben und Lacke mit geringem VOC-Gehalt (flüchtige Organische Verbindungen) und Lösungsmittelfreie Alternativen.",
+      "Ja. Wir verwenden umweltfreundlich hergestellte Produkte, etwa Farben und Lacke mit geringem VOC-Gehalt (flüchtige organische Verbindungen) und lösungsmittelfreie Alternativen.",
   },
   {
-    question: "Kann beim Ausräumen vor dem Anstrich geholfen werden?",
-    answer:
-      "Gerne sind wir bereit, Ihnen beim Aus- und Einräumen behilflich zu sein.",
+    question: "Helfen Sie beim Aus- und Einräumen?",
+    answer: "Ja, gerne helfen wir Ihnen beim Aus- und Einräumen.",
   },
   {
-    question: "Hat der Betrieb eine professionelle Ausstattung?",
-    answer:
-      "Unser Betrieb verfügt über hochwertige Werkzeuge, Geräte und Materialien, um eine qualitativ hochwertige Arbeit zu gewährleisten.",
+    question: "Welche Ausstattung bringen Sie mit?",
+    answer: "Wir arbeiten mit hochwertigen Werkzeugen, Geräten und Materialien.",
   },
   {
-    question: "Zuverlässigkeit und Pünktlichkeit?",
-    answer:
-      "Wir halten Termine ein und arbeiten effizient, um den Zeitplan einzuhalten.",
+    question: "Halten Sie Termine ein?",
+    answer: "Ja. Wir halten Termine ein und arbeiten nach Zeitplan.",
   },
   {
-    question: "Kundenorientierung?",
-    answer:
-      "Ein ausgezeichneter Kundenservice ist uns sehr wichtig, ebenso wie die Berücksichtigung der Bedürfnisse und Wünsche unserer Kunden.",
+    question: "Gehen Sie auf individuelle Wünsche ein?",
+    answer: "Ja. Guter Service und Ihre Wünsche sind uns sehr wichtig.",
   },
   {
-    question: "Sauberkeit und Ordnung?",
+    question: "Bleibt die Baustelle sauber?",
     answer:
-      "Wir halten die Baustelle sauber und ordentlich, sowohl während als auch nach der Arbeit.",
+      "Ja. Wir halten die Baustelle sauber und ordentlich, während und nach der Arbeit.",
   },
 ];

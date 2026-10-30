@@ -1,7 +1,7 @@
 const p = "mt-6 mb-10 text-lg leading-8 text-muted-foreground";
 const h2 = "mt-2 text-3xl sm:text-4xl";
 const h3 = "mt-2 text-2xl sm:text-3xl";
-const h4 = "mt-2 text-xl font-medium sm:text-2xl";
+const h4 = "mt-2 font-display text-xl font-semibold sm:text-2xl";
 
 const Datenschutz = () => {
   return (
