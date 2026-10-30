@@ -35,20 +35,6 @@ const Impressum = () => {
                 DE204642150
               </p>
 
-              <h2 className={h2}>EU-Streitschlichtung</h2>
-              <p className={p}>
-                Die Europ&auml;ische Kommission stellt eine Plattform zur
-                Online-Streitbeilegung (OS) bereit:{" "}
-                <a
-                  href="https://ec.europa.eu/consumers/odr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  https://ec.europa.eu/consumers/odr/
-                </a>
-                .<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.
-              </p>
-
               <h2 className={h2}>
                 Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle
               </h2>
