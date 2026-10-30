@@ -25,15 +25,15 @@ const formSchema = z.object({
   name: z
     .string()
     .min(3, {
-      message: "Bitte geben Sie Ihren Namen ein.",
+      message: "Geben Sie Ihren Vor- und Nachnamen ein.",
     })
     .max(50, {
-      message: "Bitte geben Sie Ihren Namen ein.",
+      message: "Kürzen Sie den Namen auf höchstens 50 Zeichen.",
     }),
   phone: z
     .string()
-    .min(1, "Bitte geben Sie Ihre Telefonnummer ein.")
-    .regex(phoneRegex, "Bitte geben Sie eine valide Telefonnummer ein."),
+    .min(1, "Geben Sie Ihre Telefonnummer ein.")
+    .regex(phoneRegex, "Geben Sie eine gültige Telefonnummer ein, zum Beispiel 08061 123456."),
 });
 
 export function ProfileForm() {
@@ -62,11 +62,20 @@ export function ProfileForm() {
       console.log("Push notification sent successfully:", response.data);
 
       toast({
-        title: "Rückruf erfolgreich angefordert.",
-        description: "Vielen Dank für Ihr Interesse.",
+        title: "Rückruf angefordert",
+        description: "Wir melden uns so schnell wie möglich bei Ihnen.",
       });
+      form.reset();
     } catch (error) {
       console.error("Error sending push notification:", error);
+
+      toast({
+        variant: "destructive",
+        duration: Infinity,
+        title: "Rückruf nicht gesendet",
+        description:
+          "Prüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder rufen Sie uns an: +49 8061 93 98 333.",
+      });
     }
   }
 
@@ -81,7 +90,7 @@ export function ProfileForm() {
               <FormLabel className="text-white">Name</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Vor- und Nachname"
+                  placeholder="Maria Muster"
                   autoComplete="name"
                   className="text-foreground"
                   {...field}
@@ -99,7 +108,7 @@ export function ProfileForm() {
               <FormLabel className="text-white">Telefon</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Telefonnummer"
+                  placeholder="08061 123456"
                   type="tel"
                   autoComplete="tel"
                   className="text-foreground"
@@ -113,6 +122,7 @@ export function ProfileForm() {
         <Button
           type="submit"
           size="lg"
+          disabled={form.formState.isSubmitting}
           className="bg-mblime text-foreground hover:bg-white"
         >
           Rückruf anfordern
