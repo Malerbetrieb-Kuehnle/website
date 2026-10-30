@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { farbtoene } from "@/constants";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
 import { cn } from "@/lib/utils";
@@ -41,6 +42,11 @@ export default function Start() {
           ) : null,
         )}
 
+        {/* Am Handy ist die Farbleiste zu schmal für Beschriftungen */}
+        <p className="absolute left-0 top-0 bg-white px-3 py-1.5 text-sm text-foreground sm:hidden">
+          {ton.name}, {ton.projekt}
+        </p>
+
         {/* Farbtupfer wie auf unseren Fahrzeugen */}
         <div
           className={cn(
@@ -50,19 +56,21 @@ export default function Start() {
           style={{ backgroundColor: ton.hex }}
         >
           <p className="text-sm sm:text-base">
-            Malerbetrieb Kühnle, Bad Aibling
+            Ihr Meisterbetrieb in Bad Aibling
           </p>
-          <h1 className="my-3 font-serif text-[clamp(2.25rem,min(11.5vw,7.2svh),5.5rem)] leading-[1.02] sm:my-4">
+          <h1 className="my-3 text-[clamp(2.25rem,min(11.5vw,7.2svh),5.5rem)] leading-[1.05] sm:my-4">
             Farbe <br />
             schafft <br />
             Atmosphäre.
           </h1>
-          <Link
-            to="/kontakt"
-            className="py-1 underline decoration-1 underline-offset-4 hover:no-underline"
+          <Button
+            asChild
+            className={cn(
+              ton.hell && "bg-white text-foreground hover:bg-white/90",
+            )}
           >
-            Rückruf vereinbaren
-          </Link>
+            <Link to="/kontakt">Rückruf vereinbaren</Link>
+          </Button>
         </div>
       </div>
 
@@ -85,25 +93,18 @@ export default function Start() {
               }}
               onPointerEnter={() => vormerken(index)}
               onFocus={() => vormerken(index)}
-              style={{ backgroundColor: item.hex, flexGrow: aktiv ? 3 : 1 }}
+              style={{ backgroundColor: item.hex, flexGrow: aktiv ? 4 : 1 }}
               className={cn(
-                "relative basis-0 overflow-hidden px-3 text-left leading-tight transition-[flex-grow] duration-500 ease-out focus-visible:-outline-offset-4 sm:px-4",
+                "flex basis-0 items-end overflow-hidden px-4 pb-3 text-left leading-tight transition-[flex-grow] duration-500 ease-out focus-visible:outline-current focus-visible:-outline-offset-4",
                 item.hell ? "text-white" : "text-foreground",
               )}
             >
-              <span
-                className={cn(
-                  "block whitespace-nowrap text-sm font-medium sm:text-base",
-                  !aktiv && "max-lg:sr-only",
-                )}
-              >
-                {item.name}
-              </span>
-              {aktiv && (
-                <span className="block whitespace-nowrap text-sm">
-                  {item.projekt}
+              <span className="flex items-baseline gap-x-2 whitespace-nowrap max-sm:sr-only">
+                <span className={cn("font-medium", !aktiv && "max-lg:sr-only")}>
+                  {item.name}
                 </span>
-              )}
+                {aktiv && <span className="text-sm">{item.projekt}</span>}
+              </span>
             </button>
           );
         })}

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Dialog } from "@headlessui/react";
 import {
   ChevronLeftIcon,
@@ -14,7 +15,7 @@ interface LightboxProps {
 }
 
 const buttonClass =
-  "flex h-12 w-12 items-center justify-center rounded-full text-white transition-colors hover:bg-white/15";
+  "flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white transition-colors hover:bg-white/15";
 
 export default function Lightbox({
   bilder,
@@ -22,15 +23,15 @@ export default function Lightbox({
   onChange,
   onClose,
 }: LightboxProps) {
-  if (index === null) return null;
+  const wischStart = useRef<number | null>(null);
 
-  const bild = bilder[index];
+  const bild = index === null ? null : bilder[index];
   const blaettern = (schritt: number) =>
-    onChange((index + schritt + bilder.length) % bilder.length);
+    onChange((index! + schritt + bilder.length) % bilder.length);
 
   return (
     <Dialog
-      open
+      open={bild !== null}
       onClose={onClose}
       className="relative z-50"
       onKeyDown={(event: React.KeyboardEvent) => {
@@ -38,52 +39,67 @@ export default function Lightbox({
         if (event.key === "ArrowRight") blaettern(1);
       }}
     >
-      <Dialog.Panel className="fixed inset-0 flex flex-col bg-mbfir text-white">
-        <div className="gutter flex h-[var(--header)] shrink-0 items-center justify-between">
-          <Dialog.Title className="truncate pr-4">{bild.title}</Dialog.Title>
-          <button
-            type="button"
-            onClick={onClose}
-            className={buttonClass}
-            aria-label="Schließen"
-          >
-            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
+      {bild && (
+        <Dialog.Panel className="fixed inset-0 flex flex-col bg-mbfir text-white [--ring:var(--mblime)]">
+          <div className="gutter flex min-h-[var(--header)] shrink-0 items-center justify-between gap-x-4">
+            <Dialog.Title className="font-sans text-base font-normal tracking-normal">
+              {bild.title}
+            </Dialog.Title>
+            <button
+              type="button"
+              onClick={onClose}
+              className={buttonClass}
+              aria-label="Schließen"
+            >
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
 
-        <div className="relative min-h-0 flex-1">
-          <img
-            key={bild.src}
-            src={bild.src}
-            srcSet={bild.srcSet}
-            sizes="100vw"
-            alt={bild.title}
-            className="h-full w-full object-contain"
-          />
-        </div>
+          <div
+            className="relative min-h-0 flex-1"
+            onTouchStart={(event) => {
+              wischStart.current =
+                event.touches.length === 1 ? event.touches[0].clientX : null;
+            }}
+            onTouchEnd={(event) => {
+              if (wischStart.current === null) return;
+              const weg = event.changedTouches[0].clientX - wischStart.current;
+              if (Math.abs(weg) > 50) blaettern(weg < 0 ? 1 : -1);
+            }}
+          >
+            <img
+              key={bild.src}
+              src={bild.src}
+              srcSet={bild.srcSet}
+              sizes="100vw"
+              alt={bild.title}
+              className="h-full w-full object-contain"
+            />
+          </div>
 
-        <div className="gutter flex h-20 shrink-0 items-center justify-between">
-          <button
-            type="button"
-            onClick={() => blaettern(-1)}
-            className={buttonClass}
-            aria-label="Vorheriges Bild"
-          >
-            <ChevronLeftIcon className="h-6 w-6" aria-hidden="true" />
-          </button>
-          <span className="tabular-nums text-white/80">
-            {index + 1} von {bilder.length}
-          </span>
-          <button
-            type="button"
-            onClick={() => blaettern(1)}
-            className={buttonClass}
-            aria-label="Nächstes Bild"
-          >
-            <ChevronRightIcon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-      </Dialog.Panel>
+          <div className="gutter flex h-20 shrink-0 items-center justify-between">
+            <button
+              type="button"
+              onClick={() => blaettern(-1)}
+              className={buttonClass}
+              aria-label="Vorheriges Bild"
+            >
+              <ChevronLeftIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+            <span className="tabular-nums text-white/80">
+              {index! + 1} von {bilder.length}
+            </span>
+            <button
+              type="button"
+              onClick={() => blaettern(1)}
+              className={buttonClass}
+              aria-label="Nächstes Bild"
+            >
+              <ChevronRightIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+        </Dialog.Panel>
+      )}
     </Dialog>
   );
 }
