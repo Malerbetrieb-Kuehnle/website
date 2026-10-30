@@ -1,80 +1,110 @@
-import { CheckIcon } from "@heroicons/react/20/solid";
-import about_us from "@/assets/Fenster-25-Jahre.png";
-import Reveal from "react-awesome-reveal";
-import { customAnimation } from "@/lib/utils";
-import { merkmale_about_us } from "@/constants";
+import jubilaeum from "@/assets/Fenster-25-Jahre.png";
+import { ablauf, merkmale_about_us } from "@/constants";
+import { projektBild, projektSrcSet } from "@/lib/bilder";
+
+const bauphasen = [
+  { bild: "altbau-geruest", text: "Historische Fassade im Gerüst" },
+  {
+    bild: "altbau-pfirsich-kirche",
+    text: "Dieselbe Fassade nach der Sanierung",
+  },
+];
 
 export default function Malerbetrieb() {
   return (
-    <div className="max-w-7xl mx-auto mb-40">
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-2xl sm:text-center">
-          <Reveal
-            keyframes={customAnimation}
-            cascade
-            triggerOnce
-            duration={500}
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-              Malerbetrieb Kühnle.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Wir stehen für fachmännische Handwerksarbeit komplexer Arbeiten
-              rund um die Innen- und Außengestaltung von Räumen, Gebäuden und
-              Fassaden – im Großen wie im Kleinen.
-            </p>
-          </Reveal>
+    <>
+      <section className="abschnitt grid gap-y-10 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <h2 className="label">Über uns</h2>
+          <img
+            src={jubilaeum}
+            className="mt-8 hidden w-40 lg:block"
+            width={541}
+            height={462}
+            alt="25 Jahre Ihr Malerbetrieb"
+            loading="lazy"
+          />
         </div>
-        {/* Über uns */}
-        <Reveal
-          keyframes={customAnimation}
-          triggerOnce
-          delay={400}
-          duration={500}
-        >
-          <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-[#f5f5f5] sm:mt-20 lg:mx-0 lg:flex lg:max-w-none ">
-            <div className="p-8 sm:p-10 lg:flex-auto">
-              <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
-                Über uns.
-              </h3>
-              <p className="mt-6 text-base leading-7 text-gray-600">
-                Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit
-                Sitz in Bad Aibling. Als Meisterbetrieb im Maler- und
-                Lackiererhandwerk stehen Qualitätsarbeit, Zuverlässigkeit und
-                termingerechte Abwicklung der Aufträge im Vordergrund.
-              </p>
-              <div className="mt-10 flex items-center gap-x-4">
-                <div className="flex-none text-sm font-bold leading-6 text-mbgreen">
-                  Das macht uns aus
-                </div>
-                <div className="h-px flex-auto bg-gray-100" />
-              </div>
-              <ul
-                role="list"
-                className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+        <div className="lg:col-span-8">
+          <p className="titel-mittel text-foreground/55">
+            <span className="text-foreground">
+              Wir stehen für fachmännische Handwerksarbeit
+            </span>{" "}
+            rund um die Innen- und Außengestaltung von Räumen, Gebäuden und
+            Fassaden,{" "}
+            <span className="text-foreground">im Großen wie im Kleinen.</span>
+          </p>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
+            Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit Sitz
+            in Bad Aibling. Als Meisterbetrieb im Maler- und Lackiererhandwerk
+            stehen Qualitätsarbeit, Zuverlässigkeit und termingerechte
+            Abwicklung der Aufträge im Vordergrund.
+          </p>
+          <ul
+            role="list"
+            className="mt-12 grid gap-x-6 sm:grid-cols-2 xl:grid-cols-4"
+          >
+            {merkmale_about_us.map((feature) => (
+              <li key={feature} className="border-t py-4 leading-6">
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section
+        aria-label="Vom Gerüst zur fertigen Fassade"
+        className="grid md:h-[100svh] md:grid-cols-2"
+      >
+        {bauphasen.map((phase) => (
+          <figure key={phase.bild} className="relative h-[80svh] md:h-auto">
+            <img
+              src={projektBild(phase.bild)}
+              srcSet={projektSrcSet(phase.bild)}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              alt={phase.text}
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
+            <figcaption className="absolute bottom-0 left-0 bg-white px-4 py-2 text-sm">
+              {phase.text}
+            </figcaption>
+          </figure>
+        ))}
+      </section>
+
+      <section className="grid lg:grid-cols-2">
+        <div className="relative h-[70svh] lg:h-auto">
+          <img
+            src={projektBild("bauernhaus-geruest")}
+            srcSet={projektSrcSet("bauernhaus-geruest")}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            alt="Drei Fahrzeuge des Malerbetriebs vor einem eingerüsteten Bauernhaus"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div className="abschnitt">
+          <h2 className="titel-mittel">
+            Beratung, Entwurf, Umsetzung. Ein Ansprechpartner.
+          </h2>
+          <ol role="list" className="mt-12 lg:mt-20">
+            {ablauf.map((schritt, index) => (
+              <li
+                key={schritt.title}
+                className="grid grid-cols-[2.5rem_1fr] border-t py-6 sm:grid-cols-[2.5rem_10rem_1fr]"
               >
-                {merkmale_about_us.map((feature) => (
-                  <li key={feature} className="flex gap-x-3">
-                    <CheckIcon
-                      className="h-6 w-5 flex-none text-mbgreen"
-                      aria-hidden="true"
-                    />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="p-10 m-auto">
-              <img
-                src={about_us}
-                className="md:max-w-xs max-w-64"
-                alt="Über uns - 25 Jahre"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </div>
+                <span className="text-muted-foreground">{index + 1}</span>
+                <h3 className="font-serif text-xl">{schritt.title}</h3>
+                <p className="col-start-2 mt-2 max-w-md leading-7 text-muted-foreground sm:col-start-3 sm:mt-0">
+                  {schritt.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,137 +1,128 @@
 import logo from "@/assets/logo.png";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/constants";
 
+const Logo = ({ onClick }: { onClick?: () => void }) => (
+  <Link to="/" className="-m-1 p-1" onClick={onClick}>
+    <img
+      className="h-12 w-auto"
+      src={logo}
+      width={249}
+      height={128}
+      alt="Malerbetrieb Kühnle, zur Startseite"
+    />
+  </Link>
+);
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // Get the current location pathname
-  const location = useLocation();
-
-  // Extract the active section from the pathname
-  const activeSection =
-    location.pathname === "/" ? "Home" : location.pathname.split("/")[1];
-  const [active, setActive] = useState(
-    activeSection.charAt(0).toUpperCase() + activeSection.slice(1)
-  ); 
-
-  // Update active state when the location changes
-  useEffect(() => {
-    const activeSection =
-      location.pathname === "/" ? "Home" : location.pathname.split("/")[1];
-    setActive(activeSection.charAt(0).toUpperCase() + activeSection.slice(1));
-  }, [location.pathname]);
-
-  const handleMobileMenuItemClick = () => {
-    setMobileMenuOpen(false); // Close the mobile menu
-  };
+  const closeMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className="bg-white">
+    <header className="sticky top-0 z-40 border-b bg-white">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6"
-        aria-label="Global"
+        className="gutter flex h-[var(--header)] items-center justify-between"
+        aria-label="Hauptnavigation"
       >
-        {/* Logo */}
-        <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Malerbetrieb Kühnle</span>
-            <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" rel="preload" />
-          </Link>
+        <Logo />
+
+        {/* Desktop */}
+        <div className="hidden items-center gap-x-8 lg:flex">
+          {navLinks.map((nav) => (
+            <NavLink
+              key={nav.id}
+              to={nav.path}
+              end
+              className={({ isActive }) =>
+                `transition-colors hover:text-mbgreen ${
+                  isActive ? "underline decoration-1 underline-offset-8" : ""
+                }`
+              }
+            >
+              {nav.title}
+            </NavLink>
+          ))}
+          <a
+            href="tel:+4980619398333"
+            className="tabular-nums transition-colors hover:text-mbgreen"
+          >
+            +49 8061 93 98 333
+          </a>
+          <Button asChild>
+            <Link to="/kontakt">Kontakt</Link>
+          </Button>
         </div>
 
-        {/* Mobile Burger Menu */}
-        <div className="flex lg:hidden">
+        {/* Mobil */}
+        <div className="flex items-center gap-x-1 lg:hidden">
+          <a
+            href="tel:+4980619398333"
+            className="flex h-11 w-11 items-center justify-center"
+            aria-label="Anrufen"
+          >
+            <FaPhone className="h-4 w-4" aria-hidden="true" />
+          </a>
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-mr-2 flex h-11 items-center gap-x-2 px-2"
             onClick={() => setMobileMenuOpen(true)}
           >
-            <span className="sr-only">Menü öffnen</span>
+            Menü
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-8">
-          {/* Desktop Menu Items*/}
-          {navLinks.map((nav) => (
-            <Link
-              key={nav.id}
-              to={nav.path}
-              className={`text-md ${
-                active === nav.title ? "text-mbgreen" : "text-gray-900"
-              }`}
-            >
-              {nav.title}
-            </Link>
-          ))}
-          {/* Desktop Anrufen Button */}
-          <Button
-            className="hover:bg-mbgreen hover:text-white"
-            variant="outline"
-          >
-            <Link to="/kontakt" className="flex items-center text-md">
-              <FaPhone className="hidden mr-2 h-4 w-4" aria-hidden="true" />
-              Kontakt
-            </Link>
-          </Button>
-        </div>
       </nav>
+
       <Dialog
         as="div"
         className="lg:hidden"
         open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
+        onClose={closeMenu}
       >
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-14 py-14 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Malerbetrieb Kühnle</span>
-              <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" rel="preload"/>
-            </Link>
+        <Dialog.Panel className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-white">
+          <div className="gutter flex h-[var(--header)] shrink-0 items-center justify-between border-b">
+            <Logo onClick={closeMenu} />
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
+              className="-mr-2 flex h-11 items-center gap-x-2 px-2"
+              onClick={closeMenu}
             >
-              <span className="sr-only">Close menu</span>
+              Schließen
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navLinks.map((nav) => (
+          <div className="gutter flex flex-1 flex-col justify-between py-8">
+            <ul>
+              {[
+                ...navLinks,
+                { id: "kontakt", title: "Kontakt", path: "/kontakt" },
+              ].map((nav) => (
+                <li key={nav.id} className="border-b">
                   <Link
-                    key={nav.id}
                     to={nav.path}
-                    className={`-mx-3 text-center block rounded-lg px-3 py-2 text-base font-semibold leading-7${
-                      active === nav.title
-                        ? "text-mbgreen hover:bg-gray-50"
-                        : "text-gray-900 hover:bg-gray-50"
-                    }`}
-                    onClick={handleMobileMenuItemClick} // Close the mobile menu on click
+                    className="block py-4 font-serif text-4xl"
+                    onClick={closeMenu}
                   >
                     {nav.title}
                   </Link>
-                ))}
-              </div>
-              <div className="py-6 text-center">
-                <Button className="bg-mbgreen text-white">
-                  <Link
-                    to="/kontakt"
-                    className="flex items-center"
-                    onClick={handleMobileMenuItemClick}
-                  >
-                    Kontakt
-                  </Link>
-                </Button>
-              </div>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-10 space-y-1">
+              <a href="tel:+4980619398333" className="block py-1 text-lg">
+                +49 8061 93 98 333
+              </a>
+              <a
+                href="mailto:malerbetrieb.kuehnle@gmx.de"
+                className="block py-1 text-lg"
+              >
+                malerbetrieb.kuehnle@gmx.de
+              </a>
             </div>
           </div>
         </Dialog.Panel>

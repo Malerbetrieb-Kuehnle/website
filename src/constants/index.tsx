@@ -3,9 +3,7 @@ import Betonoptik from "@/assets/services/Betonoptik.jpg";
 import Hochdruckwasserreinigung from "@/assets/services/Hochdruckwasserreinigung.jpg";
 import Bodenbeschichtungen from "@/assets/services/Bodenbeschichtungen.jpg";
 import Farbberatung from "@/assets/services/Farbberatung.jpg";
-import Fassadenanstriche from "@/assets/services/Fassadenanstriche.jpg";
 import Geruestbau from "@/assets/services/Geruestbau.jpg";
-import Holzanstrich from "@/assets/services/Holzanstrich.jpg";
 import Innenanstrich from "@/assets/services/Innenanstrich.jpg";
 import Lackierarbeiten1 from "@/assets/services/Lackierarbeiten .jpg";
 import Lackierarbeiten2 from "@/assets/services/Lackierarbeiten.jpg";
@@ -13,8 +11,8 @@ import Putzausbesserungen from "@/assets/services/Putzausbesserungen.jpg";
 import RenovaFensterfluegelAbdeckung from "@/assets/services/Renova-Fensterfluegel-Abdeckung.jpg";
 import Renovierungsarbeiten from "@/assets/services/Renovierungsarbeiten.jpg";
 import Spachtelarbeiten from "@/assets/services/Spachtelarbeiten.jpg";
-import Tapezierarbeiten from "@/assets/services/Tapezierarbeiten.jpg";
 import Verputzarbeiten from "@/assets/services/Verputzarbeiten.jpg";
+import { projektBild } from "@/lib/bilder";
 
 export const navLinks = [
   {
@@ -37,16 +35,19 @@ export const navLinks = [
 export const socialMedia = [
   {
     id: "instagram",
+    title: "Instagram",
     icon: FaInstagram,
     path: "https://www.instagram.com/malerbetrieb_kuehnle/",
   },
   {
     id: "email",
+    title: "E-Mail",
     icon: FaEnvelope,
     path: "mailto:malerbetrieb.kuehnle@gmx.de",
   },
   {
     id: "telefon",
+    title: "Telefon",
     icon: FaPhone,
     path: "tel:+491728517479",
   },
@@ -108,135 +109,54 @@ export const service_innenbereich = [
   {
     title: "Innenanstrich",
     description: "Wir führen sämtliche Anstriche im Innenbereich aus.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Innenanstrich}
-          alt="Innenanstrich"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Innenanstrich,
   },
   {
     title: "Bodenbeschichtungen",
     description:
       "Anfragen von speziellen Beschichtungen auf verschiedenen Böden wie Epoxidharz oder Betonversiegelung.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Bodenbeschichtungen}
-          alt="Bodenbeschichtungen"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Bodenbeschichtungen,
   },
   {
     title: "Lackierarbeiten",
     description:
       "Sämtliche Lackierarbeiten werden bei Ihnen vor Ort durchgeführt.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Lackierarbeiten2}
-          alt="Lackierarbeiten"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Lackierarbeiten2,
   },
   {
     title: "Individuelle Farbberatung",
     description:
       "Beratung und Farbgestaltung bei der Auswahl im Innen- und Außenbereich.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Farbberatung}
-          alt="Individuelle Farbberatung"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Farbberatung,
   },
   {
     title: "Spachteltechniken",
     description:
       "Wir führen für Sie klassische Glättetechniken an Wänden und Decken durch.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Spachtelarbeiten}
-          alt="Spachteltechniken"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Spachtelarbeiten,
   },
   {
     title: "Renovierungsarbeiten",
     description: "Wir bringen auch alte Gemäuer wieder auf Vordermann.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Renovierungsarbeiten}
-          alt="Renovierungsarbeiten"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Renovierungsarbeiten,
   },
   {
     title: "Tapezierarbeiten",
     description:
       "Egal ob Fototapeten oder moderne Wandbeläge, wir bringen hochwertige italienische Wandbeläge für unsere Kunden an die Wand.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Tapezierarbeiten}
-          alt="Tapezierarbeiten"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: projektBild("praxis-wandbelag"),
   },
   {
     title: "Betonoptik",
     description:
       "Malerarbeiten in Betonoptik können eine moderne und industrielle Ästhetik in einem Raum schaffen. Hier wird die Textur und Optik von Beton nachgeahmt.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Betonoptik}
-          alt="Betonoptik"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Betonoptik,
   },
   {
     title: "Verputzarbeiten",
     description:
       "Vorbereitende Arbeiten wie Spachteln, Verputzen und Glätten von Oberflächen.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Verputzarbeiten}
-          alt="Verputzarbeiten"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Verputzarbeiten,
   },
 ];
 
@@ -245,133 +165,130 @@ export const service_aussenbereich = [
     title: "Holzanstriche aller Art",
     description:
       "Neu und abgewitterte Holzbauteile sowie Hagelschäden am Gebäude.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Holzanstrich}
-          alt="Holzanstriche aller Art"
-          className="h-full w-full object-cover"
-        />
-      </div>
-    ),
+    image: projektBild("giebel-grau-verschalung"),
   },
   {
     title: "Eigener Gerüstbau",
     description:
       "Wir bauen für unseren Eigengebrauch an Ihrem Gebäude Arbeitsschutzgerüste auf.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Geruestbau}
-          alt="Eigener Gerüstbau"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Geruestbau,
   },
   {
     title: "Putzausbesserungen",
     description:
       "Vorbereitende Arbeiten wie Spachteln, Verputzen und Glätten von Oberflächen.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Putzausbesserungen}
-          alt="Putzausbesserungen"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Putzausbesserungen,
   },
   {
     title: "Fassadenanstriche",
     description:
       "Von der Untergrundvorbereitung, der Auswahl von Farbtönen und der richtigen Materialen bis hin zur Ausführung.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Fassadenanstriche}
-          alt="Fassadenanstriche"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: projektBild("altbau-pfirsich-seite"),
   },
   {
     title: "Hochdruck-Wasser-Reiniger",
-    description: "Reinigung von verschmutzen Flächen am Gebäude.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Hochdruckwasserreinigung}
-          alt="Hochdruck-Wasser-Reiniger"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    description: "Reinigung von verschmutzten Flächen am Gebäude.",
+    image: Hochdruckwasserreinigung,
   },
   {
     title: "Renovierungsarbeiten",
     description:
-      "Wir bringen stark renovierungsbedürftige Fassaden wieder auf Vordemann.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Renovierungsarbeiten}
-          alt="Renovierungsarbeiten"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+      "Wir bringen stark renovierungsbedürftige Fassaden wieder auf Vordermann.",
+    image: Renovierungsarbeiten,
   },
   {
     title: "Individuelle Farbberatung",
     description:
       "Beratung und Farbgestaltung bei der Auswahl im Innen und Außenbereich.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Farbberatung}
-          alt="Individuelle Farbberatung"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Farbberatung,
   },
   {
     title: "Lackierarbeiten",
     description: "Sämtliche Lackierarbeiten bei Ihnen vor Ort.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={Lackierarbeiten1}
-          alt="Lackierarbeiten"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: Lackierarbeiten1,
   },
   {
     title: "Renova-Fenster-Flügel",
     description:
       "Lieferung und Montage von Renova Alu-Fensterflügel und Fensterstock Abdeckungen.",
-    content: (
-      <div className="bg-cover h-full">
-        <img
-          src={RenovaFensterfluegelAbdeckung}
-          alt="Renova-Fenster-Flügel"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ),
+    image: RenovaFensterfluegelAbdeckung,
+  },
+];
+
+export const farbtoene = [
+  {
+    name: "Elfenbein",
+    projekt: "Kinderhaus",
+    hex: "#E6DCC6",
+    hell: false,
+    bild: "kinderhaus-elfenbein",
+    position: "50% 50%",
+  },
+  {
+    name: "Pfirsich",
+    projekt: "Historische Fassade",
+    hex: "#EFB98A",
+    hell: false,
+    bild: "altbau-pfirsich-seite",
+    position: "60% 45%",
+  },
+  {
+    name: "Flieder",
+    projekt: "Wohnhaus",
+    hex: "#B8B4DC",
+    hell: false,
+    bild: "wohnhaus-flieder",
+    position: "70% 55%",
+  },
+  {
+    name: "Salbei",
+    projekt: "Altbauzimmer",
+    hex: "#8F9674",
+    hell: false,
+    bild: "altbau-schablonendecke",
+    position: "50% 42%",
+  },
+  {
+    name: "Türkis",
+    projekt: "Wartezimmer",
+    hex: "#58AFC8",
+    hell: false,
+    bild: "praxis-wartezimmer",
+    position: "60% 50%",
+  },
+  {
+    name: "Karminrot",
+    projekt: "Mehrfamilienhaus",
+    hex: "#A8323E",
+    hell: true,
+    bild: "mehrfamilienhaus-rote-laeden",
+    position: "50% 62%",
+  },
+  {
+    name: "Anthrazit",
+    projekt: "Anbau",
+    hex: "#55585C",
+    hell: true,
+    bild: "anbau-anthrazit",
+    position: "50% 60%",
+  },
+];
+
+export const ablauf = [
+  {
+    title: "Beratung",
+    description:
+      "Wir beraten Sie bei der Auswahl von Farbtönen und Materialien im Innen- und Außenbereich.",
+  },
+  {
+    title: "Entwurf",
+    description:
+      "Gemeinsam legen wir die Farbgestaltung fest, von der Untergrundvorbereitung bis zum letzten Anstrich.",
+  },
+  {
+    title: "Umsetzung",
+    description:
+      "Wir halten Termine ein, arbeiten sauber und hinterlassen die Baustelle ordentlich.",
   },
 ];
 

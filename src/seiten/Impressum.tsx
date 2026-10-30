@@ -1,21 +1,14 @@
-import Reveal from "react-awesome-reveal";
-import { customAnimation } from "@/lib/utils";
-
 const Impressum = () => {
-  const p = "mt-6 mb-10 text-lg leading-8 text-gray-600";
-  const h2 = "mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl";
+  const p = "mt-6 mb-10 text-lg leading-8 text-muted-foreground";
+  const h2 = "mt-2 text-3xl sm:text-4xl";
 
   return (
     <>
-      <div className="my-24 sm:my-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl">
+      <div className="gutter py-16 lg:py-24">
+        <div>
+          <div className="max-w-3xl [&_a]:underline [&_a]:underline-offset-4">
             <div className="max-w-7xl mx-auto">
-              <Reveal keyframes={customAnimation} triggerOnce duration={500}>
-                <h2 className="text-5xl font-bold tracking-tight text-gray-900 mb-16 text-center">
-                  Impressum
-                </h2>
-              </Reveal>
+              <h1 className="titel-gross mb-16">Impressum</h1>
 
               <p className={p}>
                 Norbert K&uuml;hnle

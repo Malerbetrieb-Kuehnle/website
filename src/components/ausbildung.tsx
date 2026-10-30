@@ -1,83 +1,48 @@
-import { CheckIcon } from "@heroicons/react/20/solid";
 import ausbildung from "@/assets/ausbildung.png";
-import Reveal from "react-awesome-reveal";
-import { customAnimation } from "@/lib/utils";
 import { merkmale_ausbildung } from "@/constants";
 
 export default function Ausbildung() {
   return (
-    <div className="mb-40 mx-auto">
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-2xl sm:text-center">
-          <Reveal
-            keyframes={customAnimation}
-            cascade
-            triggerOnce
-            duration={500}
+    <section className="grid lg:min-h-[100svh] lg:grid-cols-2">
+      <div className="abschnitt flex flex-col justify-center bg-mblime">
+        <h2 className="titel-gross">Wir bilden aus.</h2>
+        <p className="mt-8 max-w-xl text-lg leading-8">
+          Wir bilden seit Jahren mit Erfolg Lehrlinge in diesem interessanten
+          und absolut vielseitigen Beruf aus. Wer sich dafür entscheidet,
+          gestaltet Innenräume und Fassaden, verlegt Bodenbeläge und verschönert
+          Wände mit verschiedenen Maltechniken, Tapeten oder Dekorputzen. Das
+          Berufsbild ist traditionsreich und modern zugleich, nie langweilig,
+          immer fordernd, was Fachwissen, Materialkunde und individuelles Gespür
+          für die Interessen der Kunden angeht.
+        </p>
+        <ul role="list" className="mt-10 grid max-w-xl gap-x-6 sm:grid-cols-2">
+          {merkmale_ausbildung.map((feature) => (
+            <li key={feature} className="border-t border-foreground/30 py-3">
+              {feature}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-8 text-lg">
+          Wir freuen uns auf Deine{" "}
+          <a
+            href="mailto:malerbetrieb.kuehnle@gmx.de?subject=Bewerbung%20Ausbildung"
+            className="underline decoration-1 underline-offset-4 hover:no-underline"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-              Wir bilden aus.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Wir bilden seit Jahren mit Erfolg Lehrlinge in diesem
-              interessanten und absolut vielseitigem Beruf aus. Wir freuen uns
-              auf Deine Bewerbung!
-            </p>
-          </Reveal>
-        </div>
-
-        {/* Ausbildung */}
-        <Reveal
-          keyframes={customAnimation}
-          triggerOnce
-          delay={400}
-          duration={500}
-        >
-          <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-[#f5f5f5] sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
-            <div className="p-8 sm:p-10 lg:flex-auto">
-              <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
-                Ausbildung.
-              </h3>
-              <p className="mt-6 text-base leading-7 text-gray-600">
-                Wer sich dafür entscheidet, gestaltet Innenräume und Fassaden,
-                verlegt Bodenbeläge und verschönert Wände mit verschiedenen
-                Maltechniken, Tapeten oder Dekorputzen. Das Berufsbild ist
-                traditionsreich und modern zugleich, nie langweilig, immer
-                fordernd was Fachwissen, Materialkunde und individuelles Gespür
-                für die Interessen der Kunden angeht.
-              </p>
-              <div className="mt-10 flex items-center gap-x-4">
-                <div className="flex-none text-sm font-bold leading-6 text-mbgreen">
-                  Deshalb eine Ausbildung
-                </div>
-                <div className="h-px flex-auto bg-gray-100" />
-              </div>
-              <ul
-                role="list"
-                className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
-              >
-                {merkmale_ausbildung.map((feature) => (
-                  <li key={feature} className="flex gap-x-3">
-                    <CheckIcon
-                      className="h-6 w-5 flex-none text-mbgreen"
-                      aria-hidden="true"
-                    />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="p-10 m-auto">
-              <img
-                src={ausbildung}
-                className="md:max-w-xs"
-                alt="Ausbildung"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </Reveal>
+            Bewerbung per E-Mail
+          </a>
+          .
+        </p>
       </div>
-    </div>
+      <div className="flex items-center justify-center p-8">
+        <img
+          src={ausbildung}
+          className="w-full max-w-xl"
+          width={911}
+          height={911}
+          alt="Wir bilden aus: Plakat des Malerbetriebs Kühnle"
+          loading="lazy"
+        />
+      </div>
+    </section>
   );
 }

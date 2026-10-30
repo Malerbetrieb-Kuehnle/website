@@ -72,7 +72,7 @@ export function ProfileForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
         <FormField
           control={form.control}
           name="name"
@@ -80,9 +80,14 @@ export function ProfileForm() {
             <FormItem>
               <FormLabel className="text-white">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Vor- und Nachname" {...field} />
+                <Input
+                  placeholder="Vor- und Nachname"
+                  autoComplete="name"
+                  className="text-foreground"
+                  {...field}
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-[#ffc9c0]" />
             </FormItem>
           )}
         />
@@ -91,15 +96,25 @@ export function ProfileForm() {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white ">Telefon</FormLabel>
+              <FormLabel className="text-white">Telefon</FormLabel>
               <FormControl>
-                <Input placeholder="Telefonnummer" {...field} />
+                <Input
+                  placeholder="Telefonnummer"
+                  type="tel"
+                  autoComplete="tel"
+                  className="text-foreground"
+                  {...field}
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-[#ffc9c0]" />
             </FormItem>
           )}
         />
-        <Button type="submit" className="bg-mbblue hover:bg-[#005f8d]">
+        <Button
+          type="submit"
+          size="lg"
+          className="bg-mblime text-foreground hover:bg-white"
+        >
           Rückruf anfordern
         </Button>
       </form>

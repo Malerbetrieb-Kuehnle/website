@@ -1,23 +1,15 @@
-const p = "mt-6 mb-10 text-lg leading-8 text-gray-600";
-const h2 = "mt-2 text-3xl tracking-tight text-gray-900 sm:text-4xl";
-const h3 = "mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl";
-const h4 = "mt-2 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl";
-
-import Reveal from "react-awesome-reveal";
-import { customAnimation } from "@/lib/utils";
+const p = "mt-6 mb-10 text-lg leading-8 text-muted-foreground";
+const h2 = "mt-2 text-3xl sm:text-4xl";
+const h3 = "mt-2 text-2xl sm:text-3xl";
+const h4 = "mt-2 text-xl font-medium sm:text-2xl";
 
 const Datenschutz = () => {
   return (
     <>
-      <div className="my-24 sm:my-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl">
-            <div className="max-w-7xl mx-auto"></div>
-            <Reveal keyframes={customAnimation} triggerOnce duration={500}>
-              <h2 className="text-5xl font-bold tracking-tight text-gray-900 mb-16 text-center">
-                Datenschutz&shy;erkl&auml;rung
-              </h2>
-            </Reveal>
+      <div className="gutter py-16 lg:py-24">
+        <div>
+          <div className="max-w-3xl [&_a]:underline [&_a]:underline-offset-4">
+            <h1 className="titel-gross mb-16">Datenschutz&shy;erkl&auml;rung</h1>
             <h2 className={h2}>1. Datenschutz auf einen Blick</h2>
             <h3 className={h3}>Allgemeine Hinweise</h3>{" "}
             <p className={p}>
