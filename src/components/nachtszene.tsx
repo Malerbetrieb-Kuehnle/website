@@ -1,28 +1,28 @@
-import { baumreihe, bergeFern, bergeMitte } from "@/lib/berge";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
 import { useScrollFortschritt } from "@/lib/bewegung";
 
 const fortschritt = (box: DOMRect, fensterhoehe: number) =>
   -box.top / (box.height - fensterhoehe);
 
-// Berge dürfen sich strecken, ihr Grat bleibt so immer ganz im Bild. Tannen nicht.
-const ketten = [
-  { klasse: "nacht-fern", pfad: bergeFern, farbe: "#33625f", ansicht: "none" },
-  { klasse: "nacht-mitte", pfad: bergeMitte, farbe: "#1f524b", ansicht: "none" },
-  {
-    klasse: "nacht-nah",
-    pfad: baumreihe,
-    farbe: "#0e2f29",
-    ansicht: "xMaxYMax slice",
-  },
-];
+const Ebene = ({ name, sizes }: { name: string; sizes: string }) => (
+  <img
+    src={projektBild(`nacht-${name}`)}
+    srcSet={projektSrcSet(`nacht-${name}`)}
+    sizes={sizes}
+    alt=""
+    className={`nacht-ebene nacht-${name}`}
+    loading="lazy"
+    decoding="async"
+  />
+);
 
-// Von hinten nach vorne. Fassade und dunkles Haus liegen deckungsgleich,
-// die Fassade hat Löcher in den Scheiben, durch die man in den Laden sieht.
-const ebenen = ["spiegel", "dunkel", "innen", "fassade"];
+const fotoBreite = "max(135vw, 146vh)";
+const hausBreite = "120vh";
 
-// Es dämmert, das Haus steht im Dunkeln. Beim Scrollen wird es Nacht und die
-// Lichter gehen an, erst außen, dann im Laden. Berge und Haus ziehen versetzt.
+// Abendlicht am Wendelstein, das Haus steht noch unbeleuchtet in der Wiese. Beim
+// Scrollen wird es blaue Stunde und die Lichter gehen an, erst außen, dann im Laden.
+// Berge, Wiese und Haus ziehen dabei versetzt. Fassade und dunkles Haus liegen
+// deckungsgleich, die Fassade hat Löcher in den Scheiben für den Blick in den Laden.
 export default function Nachtszene() {
   const bereich = useScrollFortschritt<HTMLDivElement>(fortschritt);
 
@@ -30,52 +30,27 @@ export default function Nachtszene() {
     <div
       ref={bereich}
       role="img"
-      aria-label="Das beleuchtete Schaufenster des Malerbetriebs Kühnle bei Nacht vor den Bergen"
+      aria-label="Das beleuchtete Schaufenster des Malerbetriebs Kühnle bei Nacht vor dem Wendelstein"
       className="nacht"
     >
       <div className="nacht-buehne">
-        <div aria-hidden="true" className="nacht-abend" />
-        <div aria-hidden="true" className="nacht-sterne" />
-        <div aria-hidden="true" className="nacht-mond" />
-        {ketten.map((kette) => (
-          <svg
-            key={kette.klasse}
-            aria-hidden="true"
-            viewBox="0 0 1600 420"
-            preserveAspectRatio={kette.ansicht}
-            className={`nacht-kette ${kette.klasse}`}
-          >
-            <path d={kette.pfad} fill={kette.farbe} />
-          </svg>
-        ))}
-        {/* Nasser Boden: Berge und Mond spiegeln sich, das Haus bringt seine Spiegelung mit */}
-        <div aria-hidden="true" className="nacht-boden">
-          {ketten.map((kette) => (
-            <svg
-              key={kette.klasse}
-              viewBox="0 0 1600 420"
-              preserveAspectRatio={kette.ansicht}
-              className="nacht-wasser"
-            >
-              <path d={kette.pfad} fill={kette.farbe} />
-            </svg>
-          ))}
+        <div className="nacht-abend" />
+        <div className="nacht-finster" />
+        <div className="nacht-sterne" />
+        <div className="nacht-foto">
+          <Ebene name="berge" sizes={fotoBreite} />
+          <Ebene name="land" sizes={fotoBreite} />
         </div>
+        <div className="nacht-ton" />
         <div className="nacht-haus">
-          {ebenen.map((ebene) => (
-            <img
-              key={ebene}
-              src={projektBild(`nacht-${ebene}`)}
-              srcSet={projektSrcSet(`nacht-${ebene}`)}
-              sizes="120vh"
-              alt=""
-              width={2400}
-              height={2160}
-              className={`nacht-ebene nacht-${ebene}`}
-              loading="lazy"
-              decoding="async"
-            />
-          ))}
+          <Ebene name="dunkel" sizes={hausBreite} />
+          <Ebene name="innen" sizes={hausBreite} />
+          <Ebene name="fassade" sizes={hausBreite} />
+          <Ebene name="gras" sizes={hausBreite} />
+          <Ebene name="schein" sizes={hausBreite} />
+        </div>
+        <div className="nacht-foto nacht-vorne">
+          <Ebene name="vorn" sizes={fotoBreite} />
         </div>
       </div>
     </div>
