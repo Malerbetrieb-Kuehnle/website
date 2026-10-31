@@ -25,24 +25,6 @@ export default function Services({ seite = false }: { seite?: boolean }) {
 
   return (
     <section className="grid lg:grid-cols-2">
-      {/* Bild zur gewählten Leistung, bleibt beim Scrollen stehen */}
-      <div className="sticky top-[var(--header)] hidden h-[calc(100svh-var(--header))] overflow-hidden bg-mbkalk lg:block">
-        {leistungen.map((item, index) => (
-          <img
-            key={bereich + item.title}
-            src={item.image}
-            srcSet={item.srcSet}
-            sizes="max(50vw, 134vh)"
-            alt={index === active ? item.title : ""}
-            className={cn(
-              "absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-700 ease-out",
-              index === active ? "scale-100 opacity-100" : "scale-105 opacity-0"
-            )}
-            loading="lazy"
-          />
-        ))}
-      </div>
-
       <div className="gutter py-20 lg:py-16">
         <Reveal art="titel">
           <Titel className="titel-gross">
@@ -122,6 +104,24 @@ export default function Services({ seite = false }: { seite?: boolean }) {
             </TabsContent>
           ))}
         </Tabs>
+      </div>
+
+      {/* Bild zur gewählten Leistung, bleibt beim Scrollen stehen */}
+      <div className="sticky top-[var(--header)] hidden h-[calc(100svh-var(--header))] overflow-hidden bg-mbkalk lg:block">
+        {leistungen.map((item, index) => (
+          <img
+            key={bereich + item.title}
+            src={item.image}
+            srcSet={item.srcSet}
+            sizes="max(50vw, 134vh)"
+            alt={index === active ? item.title : ""}
+            className={cn(
+              "absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-700 ease-out",
+              index === active ? "scale-100 opacity-100" : "scale-105 opacity-0"
+            )}
+            loading="lazy"
+          />
+        ))}
       </div>
     </section>
   );
