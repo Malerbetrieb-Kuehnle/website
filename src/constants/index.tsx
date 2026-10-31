@@ -53,34 +53,7 @@ export const socialMedia = [
   },
 ];
 
-const handleCookiesClick = (
-  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-) => {
-  event.preventDefault();
-
-  if (
-    typeof (window as any).UC_UI !== "undefined" &&
-    (window as any).UC_UI.showSecondLayer
-  ) {
-    (window as any).UC_UI.showSecondLayer();
-  } else {
-    console.error("UC_UI or showSecondLayer function is not defined.");
-  }
-};
-
-interface FooterLink {
-  id: string;
-  title: string;
-  path: string;
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void; // Make onClick optional
-}
-
-interface FooterSection {
-  title: string;
-  links: FooterLink[];
-}
-
-export const footerLinks: FooterSection[] = [
+export const footerLinks = [
   {
     title: "Malerbetrieb",
     links: [
@@ -95,12 +68,6 @@ export const footerLinks: FooterSection[] = [
     links: [
       { id: "impressum", title: "Impressum", path: "/impressum" },
       { id: "datenschutz", title: "Datenschutz", path: "/datenschutz" },
-      {
-        id: "cookies",
-        title: "Cookies",
-        path: "#",
-        onClick: handleCookiesClick,
-      },
     ],
   },
 ];

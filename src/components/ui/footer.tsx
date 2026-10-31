@@ -40,22 +40,12 @@ const Footer: React.FC = () => {
             <ul className="mt-3 space-y-1">
               {section.links.map((link) => (
                 <li key={link.id}>
-                  {link.onClick ? (
-                    <a
-                      href="#"
-                      onClick={link.onClick}
-                      className="inline-block py-1 transition-colors hover:text-mbgreen"
-                    >
-                      {link.title}
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.path}
-                      className="inline-block py-1 transition-colors hover:text-mbgreen"
-                    >
-                      {link.title}
-                    </Link>
-                  )}
+                  <Link
+                    to={link.path}
+                    className="inline-block py-1 transition-colors hover:text-mbgreen"
+                  >
+                    {link.title}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -39,8 +39,7 @@ const Datenschutz = () => {
               Sie in ein Kontaktformular eingeben.
             </p>{" "}
             <p className={p}>
-              Andere Daten werden automatisch oder nach Ihrer Einwilligung beim
-              Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor
+              Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor
               allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem
               oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten
               erfolgt automatisch, sobald Sie diese Website betreten.
@@ -106,13 +105,6 @@ const Datenschutz = () => {
               Die Verwendung von IONOS erfolgt auf Grundlage von Art. 6 Abs. 1
               lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer
               m&ouml;glichst zuverl&auml;ssigen Darstellung unserer Website.
-              Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt
-              die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6
-              Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TTDSG, soweit die
-              Einwilligung die Speicherung von Cookies oder den Zugriff auf
-              Informationen im Endger&auml;t des Nutzers (z.&nbsp;B.
-              Device-Fingerprinting) im Sinne des TTDSG umfasst. Die
-              Einwilligung ist jederzeit widerrufbar.
             </p>
             <h2 className={h2}>
               3. Allgemeine Hinweise und Pflicht&shy;informationen
@@ -190,11 +182,7 @@ const Datenschutz = () => {
               werden. Im Falle einer ausdr&uuml;cklichen Einwilligung in die
               &Uuml;bertragung personenbezogener Daten in Drittstaaten erfolgt
               die Datenverarbeitung au&szlig;erdem auf Grundlage von Art. 49
-              Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies
-              oder in den Zugriff auf Informationen in Ihr Endger&auml;t
-              (z.&nbsp;B. via Device-Fingerprinting) eingewilligt haben, erfolgt
-              die Datenverarbeitung zus&auml;tzlich auf Grundlage von &sect; 25
-              Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Sind
+              Abs. 1 lit. a DSGVO. Sind
               Ihre Daten zur Vertragserf&uuml;llung oder zur Durchf&uuml;hrung
               vorvertraglicher Ma&szlig;nahmen erforderlich, verarbeiten wir
               Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des
@@ -368,121 +356,48 @@ const Datenschutz = () => {
               Dritten mitgelesen werden.
             </p>
             <h2 className={h2}>4. Datenerfassung auf dieser Website</h2>
-            <h3 className={h3}>Cookies</h3>{" "}
+            <h3 className={h3}>Keine Cookies</h3>{" "}
             <p className={p}>
-              Unsere Internetseiten verwenden so genannte &bdquo;Cookies&ldquo;.
-              Cookies sind kleine Datenpakete und richten auf Ihrem
-              Endger&auml;t keinen Schaden an. Sie werden entweder
-              vor&uuml;bergehend f&uuml;r die Dauer einer Sitzung
-              (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem
-              Endger&auml;t gespeichert. Session-Cookies werden nach Ende Ihres
-              Besuchs automatisch gel&ouml;scht. Permanente Cookies bleiben auf
-              Ihrem Endger&auml;t gespeichert, bis Sie diese selbst l&ouml;schen
-              oder eine automatische L&ouml;schung durch Ihren Webbrowser
-              erfolgt.
-            </p>{" "}
-            <p className={p}>
-              Cookies k&ouml;nnen von uns (First-Party-Cookies) oder von
-              Drittunternehmen stammen (sog. Third-Party-Cookies).
-              Third-Party-Cookies erm&ouml;glichen die Einbindung bestimmter
-              Dienstleistungen von Drittunternehmen innerhalb von Webseiten
-              (z.&nbsp;B. Cookies zur Abwicklung von Zahlungsdienstleistungen).
-            </p>{" "}
-            <p className={p}>
-              Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind
-              technisch notwendig, da bestimmte Webseitenfunktionen ohne diese
-              nicht funktionieren w&uuml;rden (z.&nbsp;B. die Warenkorbfunktion
-              oder die Anzeige von Videos). Andere Cookies k&ouml;nnen zur
-              Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet
-              werden.
-            </p>{" "}
-            <p className={p}>
-              Cookies, die zur Durchf&uuml;hrung des elektronischen
-              Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen
-              erw&uuml;nschter Funktionen (z.&nbsp;B. f&uuml;r die
-              Warenkorbfunktion) oder zur Optimierung der Website (z.&nbsp;B.
-              Cookies zur Messung des Webpublikums) erforderlich sind
-              (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit.
-              f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben
-              wird. Der Websitebetreiber hat ein berechtigtes Interesse an der
-              Speicherung von notwendigen Cookies zur technisch fehlerfreien und
-              optimierten Bereitstellung seiner Dienste. Sofern eine
-              Einwilligung zur Speicherung von Cookies und vergleichbaren
-              Wiedererkennungstechnologien abgefragt wurde, erfolgt die
-              Verarbeitung ausschlie&szlig;lich auf Grundlage dieser
-              Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1
-              TTDSG); die Einwilligung ist jederzeit widerrufbar.
-            </p>{" "}
-            <p className={p}>
-              Sie k&ouml;nnen Ihren Browser so einstellen, dass Sie &uuml;ber
-              das Setzen von Cookies informiert werden und Cookies nur im
-              Einzelfall erlauben, die Annahme von Cookies f&uuml;r bestimmte
-              F&auml;lle oder generell ausschlie&szlig;en sowie das automatische
-              L&ouml;schen der Cookies beim Schlie&szlig;en des Browsers
-              aktivieren. Bei der Deaktivierung von Cookies kann die
-              Funktionalit&auml;t dieser Website eingeschr&auml;nkt sein.
-            </p>{" "}
-            <p className={p}>
-              Welche Cookies und Dienste auf dieser Website eingesetzt werden,
-              k&ouml;nnen Sie dieser Datenschutzerkl&auml;rung entnehmen.
+              Diese Website setzt keine Cookies und speichert keine
+              Informationen auf Ihrem Endger&auml;t. Schriften und Bilder liegen
+              auf unserem eigenen Webspace, beim Besuch der Website werden keine
+              Inhalte von Drittanbietern geladen. Deshalb fragen wir keine
+              Einwilligung ab und zeigen kein Cookie-Banner.
             </p>
-            <h3 className={h3}>Einwilligung mit Usercentrics</h3>{" "}
+            <h3 className={h3}>R&uuml;ckruf-Formular</h3>{" "}
             <p className={p}>
-              Diese Website nutzt die Consent-Technologie von Usercentrics, um
-              Ihre Einwilligung zur Speicherung bestimmter Cookies auf Ihrem
-              Endger&auml;t oder zum Einsatz bestimmter Technologien einzuholen
-              und diese datenschutzkonform zu dokumentieren. Anbieter dieser
-              Technologie ist die Usercentrics GmbH, Sendlinger Stra&szlig;e 7,
-              80331 M&uuml;nchen, Website:{" "}
+              Wenn Sie &uuml;ber das Formular einen R&uuml;ckruf anfordern,
+              verarbeiten wir Ihren Namen und Ihre Telefonnummer, um Sie
+              zur&uuml;ckzurufen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
+              DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines Vertrags
+              zusammenh&auml;ngt oder zur Durchf&uuml;hrung vorvertraglicher
+              Ma&szlig;nahmen erforderlich ist. In allen &uuml;brigen F&auml;llen
+              beruht die Verarbeitung auf unserem berechtigten Interesse an der
+              Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. f DSGVO).
+            </p>{" "}
+            <p className={p}>
+              Damit wir von Ihrer Anfrage erfahren, leitet unser Server Ihre
+              Angaben an den Benachrichtigungsdienst Pushover weiter. Anbieter
+              ist die Pushover, LLC, USA. Die Daten werden auf Servern in den
+              USA verarbeitet. Laut Anbieter werden Nachrichten nach
+              best&auml;tigter Zustellung gel&ouml;scht, sp&auml;testens nach 21
+              Tagen. F&uuml;r &Uuml;bermittlungen aus dem Europ&auml;ischen
+              Wirtschaftsraum nennt Pushover Standardvertragsklauseln als
+              Grundlage. Weitere Informationen finden Sie in der
+              Datenschutzerkl&auml;rung von Pushover:{" "}
               <a
-                href="https://usercentrics.com/de/"
+                href="https://pushover.net/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://usercentrics.com/de/
-              </a>{" "}
-              (im Folgenden &bdquo;Usercentrics&ldquo;).
+                https://pushover.net/privacy
+              </a>
+              .
             </p>{" "}
             <p className={p}>
-              Wenn Sie unsere Website betreten, werden folgende personenbezogene
-              Daten an Usercentrics &uuml;bertragen:
-            </p>{" "}
-            <ul>
-              {" "}
-              <li>
-                Ihre Einwilligung(en) bzw. der Widerruf Ihrer Einwilligung(en)
-              </li>{" "}
-              <li>Ihre IP-Adresse</li>{" "}
-              <li>Informationen &uuml;ber Ihren Browser</li>{" "}
-              <li>Informationen &uuml;ber Ihr Endger&auml;t</li>{" "}
-              <li>Zeitpunkt Ihres Besuchs auf der Website</li>{" "}
-              <li>Geolocation</li>{" "}
-            </ul>{" "}
-            <p className={p}>
-              Des Weiteren speichert Usercentrics ein Cookie in Ihrem Browser,
-              um Ihnen die erteilten Einwilligungen bzw. deren Widerruf zuordnen
-              zu k&ouml;nnen. Die so erfassten Daten werden gespeichert, bis Sie
-              uns zur L&ouml;schung auffordern, das Usercentrics-Cookie selbst
-              l&ouml;schen oder der Zweck f&uuml;r die Datenspeicherung
-              entf&auml;llt. Zwingende gesetzliche Aufbewahrungspflichten
-              bleiben unber&uuml;hrt.
-            </p>{" "}
-            <p className={p}>
-              Das Usercentrics-Banner auf dieser Website wurde mit Hilfe von
-              eRecht24 konfiguriert. Das erkennen Sie daran, dass im Banner das
-              Logo von eRecht24 auftaucht. Um das eRecht24-Logo im Banner
-              auszuspielen, wird eine Verbindung zum Bildserver von eRecht24
-              hergestellt. Hierbei wird auch die IP-Adresse &uuml;bertragen, die
-              jedoch nur in anonymisierter Form in den Server-Logs gespeichert
-              wird. Der Bildserver von eRecht24 befindet sich in Deutschland bei
-              einem deutschen Anbieter. Das Banner selbst wird
-              ausschlie&szlig;lich von Usercentrics zur Verf&uuml;gung gestellt.
-            </p>
-            <p className={p}>
-              Der Einsatz von Usercentrics erfolgt, um die gesetzlich
-              vorgeschriebenen Einwilligungen f&uuml;r den Einsatz bestimmter
-              Technologien einzuholen. Rechtsgrundlage hierf&uuml;r ist Art. 6
-              Abs. 1 lit. c DSGVO.
+              Wir l&ouml;schen Ihre Angaben, sobald Ihre Anfrage abschlie&szlig;end
+              bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten
+              entgegenstehen.
             </p>
             <h2 className={h2}>5. Analyse-Tools und Werbung</h2>
             <h3 className={h3}>IONOS WebAnalytics</h3>{" "}
@@ -521,13 +436,7 @@ const Datenschutz = () => {
               Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein
               berechtigtes Interesse an der statistischen Analyse des
               Nutzerverhaltens, um sowohl sein Webangebot als auch seine Werbung
-              zu optimieren. Sofern eine entsprechende Einwilligung abgefragt
-              wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage
-              von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TTDSG, soweit
-              die Einwilligung die Speicherung von Cookies oder den Zugriff auf
-              Informationen im Endger&auml;t des Nutzers (z.&nbsp;B.
-              Device-Fingerprinting) im Sinne des TTDSG umfasst. Die
-              Einwilligung ist jederzeit widerrufbar.
+              zu optimieren.
             </p>{" "}
             <p className={p}>
               Weitere Informationen zur Datenerfassung und Verarbeitung durch
