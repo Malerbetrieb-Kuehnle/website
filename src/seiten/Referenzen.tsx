@@ -81,8 +81,9 @@ export default function Referenzen() {
             width={bild.width}
             height={bild.height}
             className="h-full w-full bg-mbkalk object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] group-focus-visible:scale-[1.04] motion-reduce:!scale-100"
-            loading="lazy"
+            loading={bild === bilder[0] ? "eager" : "lazy"}
             decoding="async"
+            {...(bild === bilder[0] ? { fetchpriority: "high" } : {})}
           />
           <span className={cn("etikett", stil && "galerie-etikett")}>
             {bild.title}
