@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import Farbvorhang from "@/components/ui/farbvorhang";
 import Footer from "@/components/ui/footer";
 import Navbar from "@/components/navbar";
 
@@ -38,6 +39,7 @@ const MainLayout = () => {
         Zum Inhalt springen
       </button>
       <Navbar />
+      <Farbvorhang key={pathname} />
       <main ref={main} id="inhalt" tabIndex={-1} className="outline-none">
         <Outlet />
       </main>

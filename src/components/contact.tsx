@@ -1,5 +1,5 @@
 import { ProfileForm } from "@/components/ui/profileform";
-import Reveal from "@/components/ui/reveal";
+import Reveal, { WortMaske } from "@/components/ui/reveal";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
 import { cn } from "@/lib/utils";
 
@@ -29,8 +29,10 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
         />
       </Reveal>
       <div className="abschnitt bg-mbfir text-white [--ring:var(--mblime)]">
-        <Reveal>
-          <Titel className="titel-gross">So erreichen Sie uns.</Titel>
+        <Reveal art="titel">
+          <Titel className="titel-gross">
+            <WortMaske text="So erreichen Sie uns." />
+          </Titel>
         </Reveal>
         <Reveal verzoegerung={100}>
           <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">

@@ -1,13 +1,18 @@
 import ausbildung from "@/assets/ausbildung.png";
-import Reveal from "@/components/ui/reveal";
+import Reveal, { WortMaske } from "@/components/ui/reveal";
 import { merkmale_ausbildung } from "@/constants";
 
 export default function Ausbildung() {
   return (
     <section className="grid lg:min-h-[100svh] lg:grid-cols-2">
-      <div className="abschnitt flex flex-col justify-center bg-mblime">
-        <Reveal>
-          <h2 className="titel-gross">Wir bilden aus.</h2>
+      <Reveal
+        art="kachel"
+        className="abschnitt flex flex-col justify-center bg-mblime"
+      >
+        <Reveal art="titel">
+          <h2 className="titel-gross">
+            <WortMaske text="Wir bilden aus." />
+          </h2>
         </Reveal>
         <Reveal verzoegerung={100}>
           <p className="mt-8 max-w-xl text-lg leading-8">
@@ -44,9 +49,9 @@ export default function Ausbildung() {
           </a>
           .
         </p>
-      </div>
+      </Reveal>
       <div className="flex items-center justify-center p-8">
-        <Reveal art="foto" className="w-full max-w-xl">
+        <Reveal art="foto" verzoegerung={200} className="w-full max-w-xl">
           <img
             src={ausbildung}
             className="h-auto w-full"

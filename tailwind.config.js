@@ -47,8 +47,7 @@ module.exports = {
         einblenden: "einblenden 0.3s ease-out both",
       },
       fontFamily: {
-        sans: ['"Schibsted Grotesk Variable"', "system-ui", "sans-serif"],
-        display: ['"Bricolage Grotesque Variable"', "system-ui", "sans-serif"],
+        sans: ['"Outfit Variable"', "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

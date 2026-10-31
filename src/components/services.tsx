@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Reveal from "@/components/ui/reveal";
+import Reveal, { WortMaske } from "@/components/ui/reveal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { service_innenbereich, service_aussenbereich } from "@/constants";
 import { cn } from "@/lib/utils";
@@ -33,8 +33,8 @@ export default function Services({ seite = false }: { seite?: boolean }) {
             src={item.image}
             alt={index === active ? item.title : ""}
             className={cn(
-              "absolute inset-0 h-full w-full object-cover transition-opacity duration-500",
-              index === active ? "opacity-100" : "opacity-0"
+              "absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-700 ease-out",
+              index === active ? "scale-100 opacity-100" : "scale-105 opacity-0"
             )}
             loading="lazy"
           />
@@ -42,8 +42,10 @@ export default function Services({ seite = false }: { seite?: boolean }) {
       </div>
 
       <div className="gutter py-20 lg:py-16">
-        <Reveal>
-          <Titel className="titel-gross">Service</Titel>
+        <Reveal art="titel">
+          <Titel className="titel-gross">
+            <WortMaske text="Service" />
+          </Titel>
         </Reveal>
         <Reveal verzoegerung={100}>
           <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
@@ -76,8 +78,10 @@ export default function Services({ seite = false }: { seite?: boolean }) {
             <TabsContent key={b.id} value={b.id} className="mt-6">
               <ul role="list">
                 {b.leistungen.map((item, index) => (
-                  <li
+                  <Reveal
                     key={item.title}
+                    as="li"
+                    verzoegerung={Math.min(index, 3) * 60}
                     onMouseEnter={() => setActive(index)}
                     className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 border-t py-4 last:border-b sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)_auto] lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
                   >
@@ -90,7 +94,7 @@ export default function Services({ seite = false }: { seite?: boolean }) {
                         onClick={() => setActive(index)}
                         onFocus={() => setActive(index)}
                         className={cn(
-                          "hidden text-left font-semibold transition-colors lg:inline",
+                          "hidden text-left font-medium transition-colors lg:inline",
                           index === active && "text-mbgreen"
                         )}
                       >
@@ -106,7 +110,7 @@ export default function Services({ seite = false }: { seite?: boolean }) {
                       className="foto col-start-2 row-span-2 row-start-1 h-20 w-20 object-cover sm:col-start-3 lg:hidden"
                       loading="lazy"
                     />
-                  </li>
+                  </Reveal>
                 ))}
               </ul>
             </TabsContent>

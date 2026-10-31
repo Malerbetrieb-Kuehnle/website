@@ -1,14 +1,35 @@
-import Reveal from "@/components/ui/reveal";
+import type { CSSProperties } from "react";
+import Reveal, { WortMaske } from "@/components/ui/reveal";
+import VorherNachher from "@/components/vorhernachher";
 import { ablauf, merkmale_about_us } from "@/constants";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
+import { useScrollFortschritt } from "@/lib/bewegung";
 
-const bauphasen = [
-  { bild: "altbau-geruest", text: "Historische Fassade im Gerüst" },
-  {
-    bild: "altbau-pfirsich-kirche",
-    text: "Dieselbe Fassade nach der Sanierung",
-  },
-];
+const aussage =
+  "Wir stehen für fachmännische Handwerksarbeit rund um die Innen- und Außengestaltung von Räumen, Gebäuden und Fassaden, im Großen wie im Kleinen.".split(
+    " "
+  );
+
+const fuellung = (box: DOMRect, fensterhoehe: number) =>
+  (fensterhoehe * 0.85 - box.top) / (fensterhoehe * 0.6);
+
+// Die Aussage füllt sich beim Scrollen Wort für Wort mit Farbe
+function Aussage() {
+  const absatz = useScrollFortschritt<HTMLParagraphElement>(fuellung);
+
+  return (
+    <p ref={absatz} className="titel-mittel wort-fuellung">
+      {aussage.map((wort, index) => (
+        <span
+          key={index}
+          style={{ "--i": index / aussage.length } as CSSProperties}
+        >
+          {wort}{" "}
+        </span>
+      ))}
+    </p>
+  );
+}
 
 export default function Malerbetrieb() {
   return (
@@ -21,25 +42,14 @@ export default function Malerbetrieb() {
               aria-hidden="true"
               className="flex h-40 w-40 flex-col items-center justify-center rounded-full bg-mborange"
             >
-              <span className="font-display text-6xl font-semibold leading-none tracking-[-0.01em]">
-                25
-              </span>
+              <span className="text-6xl font-medium leading-none">25</span>
               <span className="mt-1">Jahre</span>
             </div>
           </Reveal>
         </div>
         <div className="lg:col-span-8">
+          <Aussage />
           <Reveal>
-            <p className="titel-mittel text-foreground/55">
-              <span className="text-foreground">
-                Wir stehen für fachmännische Handwerksarbeit
-              </span>{" "}
-              rund um die Innen- und Außengestaltung von Räumen, Gebäuden und
-              Fassaden,{" "}
-              <span className="text-foreground">im Großen wie im Kleinen.</span>
-            </p>
-          </Reveal>
-          <Reveal verzoegerung={100}>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
               Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit Sitz
               in Bad Aibling. Als Meisterbetrieb im Maler- und Lackiererhandwerk
@@ -65,32 +75,7 @@ export default function Malerbetrieb() {
         </div>
       </section>
 
-      <section
-        aria-label="Vom Gerüst zur fertigen Fassade"
-        className="grid md:h-[100svh] md:grid-cols-2"
-      >
-        {bauphasen.map((phase, index) => (
-          <Reveal
-            key={phase.bild}
-            as="figure"
-            art="foto"
-            verzoegerung={index * 300}
-            className="relative h-[80svh] md:h-auto"
-          >
-            <img
-              src={projektBild(phase.bild)}
-              srcSet={projektSrcSet(phase.bild)}
-              sizes="(min-width: 768px) 50vw, 100vw"
-              alt={phase.text}
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-            />
-            <figcaption className="absolute bottom-0 left-0 bg-white px-4 py-2 text-sm">
-              {phase.text}
-            </figcaption>
-          </Reveal>
-        ))}
-      </section>
+      <VorherNachher />
 
       <section className="grid lg:grid-cols-2">
         <Reveal art="foto" className="relative h-[70svh] lg:h-auto">
@@ -104,9 +89,9 @@ export default function Malerbetrieb() {
           />
         </Reveal>
         <div className="abschnitt">
-          <Reveal>
+          <Reveal art="titel">
             <h2 className="titel-mittel">
-              Beratung, Entwurf, Umsetzung. Ein Ansprechpartner.
+              <WortMaske text="Beratung, Entwurf, Umsetzung. Ein Ansprechpartner." />
             </h2>
           </Reveal>
           <ol role="list" className="mt-12 lg:mt-20">

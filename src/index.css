@@ -90,7 +90,7 @@
   h1,
   h2,
   h3 {
-    @apply font-display font-semibold;
+    @apply font-medium;
     letter-spacing: -0.01em;
     text-wrap: balance;
   }
@@ -119,10 +119,17 @@
     @apply font-sans text-lg font-normal leading-7 tracking-normal text-foreground;
   }
   .titel-gross {
-    @apply font-display text-[clamp(2.5rem,6vw,5.5rem)] font-semibold leading-[1.1] tracking-[-0.01em];
+    @apply text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.1] tracking-[-0.01em];
   }
   .titel-mittel {
-    @apply font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.15] tracking-[-0.01em];
+    @apply text-[clamp(2rem,4vw,3.5rem)] font-medium leading-[1.15] tracking-[-0.01em];
+  }
+  /* Bildbeschriftung wie das Etikett auf einer Farbkarte */
+  .etikett {
+    @apply absolute bottom-0 left-0 z-[1] max-w-[calc(100%-1rem)] hyphens-auto bg-white px-4 py-2.5 text-base font-medium leading-snug text-foreground [overflow-wrap:anywhere] lg:px-5 lg:py-3 lg:text-lg;
+  }
+  .etikett-gross {
+    @apply px-5 py-4 text-[clamp(1.5rem,3.4vw,3.25rem)] leading-tight lg:px-8 lg:py-6;
   }
   /* Feine Kante, damit helle Fotos sich vom weißen Grund lösen */
   .foto {
@@ -130,20 +137,136 @@
   }
 }
 
-/* Einmalige Einblendungen beim Scrollen, siehe components/ui/reveal.tsx */
+/* Alle Bewegungen teilen sich die Kurve der Farbrolle und laufen von links nach rechts */
+:root {
+  --rolle: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.wort-maske {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+  vertical-align: bottom;
+}
+.wort-innen {
+  display: inline-block;
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -0.25rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms var(--rolle);
+}
+.nav-link.aktiv::after {
+  transform: scaleX(1);
+}
+@media (hover: hover) {
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Vorher/Nachher: ohne Bewegung stehen beide Bilder nebeneinander */
+.vorher-nachher-buehne {
+  display: grid;
+}
+.vorher-nachher figure {
+  position: relative;
+  height: 80svh;
+}
+.rollen-kante {
+  display: none;
+}
+@media (min-width: 768px) {
+  .vorher-nachher-buehne {
+    grid-template-columns: 1fr 1fr;
+  }
+  .vorher-nachher figure {
+    height: 100svh;
+  }
+}
+
+/* Referenzen: Bilder behalten ihr Format, die Reihen füllen die Breite */
+.galerie {
+  --zeile: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+.galerie-abschnitt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.galerie-abschnitt::after {
+  content: "";
+  flex: 3 1 calc(var(--zeile) * 2);
+}
+.galerie-bild {
+  flex-basis: calc(var(--seiten) * var(--zeile));
+  aspect-ratio: var(--seiten);
+}
+.galerie-bild-gross {
+  flex-basis: 100%;
+  aspect-ratio: auto;
+  height: 70svh;
+}
+@media (min-width: 1024px) {
+  .galerie {
+    --zeile: 19rem;
+  }
+  .galerie-bild-gross {
+    height: 88svh;
+  }
+}
+@media (min-width: 1536px) {
+  .galerie {
+    --zeile: 24rem;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .reveal-text {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(16px);
     filter: blur(4px);
     transition-property: opacity, transform, filter;
-    transition-duration: 300ms;
+    transition-duration: 500ms;
     transition-timing-function: ease-out;
   }
-  /* Fotos werden wie mit der Farbrolle von links nach rechts aufgetragen */
+  .reveal-titel .wort-innen {
+    transform: translateY(105%);
+    transition: transform 900ms var(--rolle);
+  }
+  /* Fotos und Flächen werden wie mit der Farbrolle aufgetragen */
+  /* Der schmale Rest ist nötig: Ganz zugeklippt meldet der IntersectionObserver
+     nur noch die Ecke oben links, und nach Sprüngen bliebe das Bild leer. */
+  .reveal-foto,
+  .reveal-kachel {
+    clip-path: inset(0 99.9% 0 0);
+    transition: clip-path 1000ms var(--rolle);
+  }
   .reveal-foto {
-    clip-path: inset(0 100% 0 0);
-    transition: clip-path 800ms cubic-bezier(0.2, 0, 0, 1);
+    overflow: hidden;
+  }
+  .reveal-foto img {
+    transform: scale(1.14);
+    transition: transform 1500ms var(--rolle);
+    transition-delay: inherit;
+  }
+  .reveal-foto .etikett {
+    transform: translateX(-101%);
+    transition: transform 700ms var(--rolle) 650ms;
   }
   .reveal-sichtbar {
     opacity: 1;
@@ -151,15 +274,119 @@
     filter: none;
     clip-path: inset(0);
   }
+  .reveal-sichtbar.reveal-foto img,
+  .reveal-sichtbar .wort-innen,
+  .reveal-sichtbar.reveal-foto .etikett {
+    transform: none;
+  }
+
+  /* Farbbalken fallen in die Farbleiste */
+  .farbvorhang-balken {
+    transform-origin: bottom;
+    animation: vorhang 650ms var(--rolle) both;
+  }
+  @keyframes vorhang {
+    from {
+      transform: scaleY(1);
+    }
+    to {
+      transform: scaleY(0);
+    }
+  }
+
+  .wisch-ein {
+    animation: wisch 900ms var(--rolle) both;
+  }
+  @keyframes wisch {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0);
+    }
+  }
+
+  /* Startbereich: Beim Scrollen flutet der Kreis das Foto mit Farbe */
+  .hero-foto {
+    transform: translateY(calc(var(--f, 0) * 10%))
+      scale(calc(1 + var(--f, 0) * 0.08));
+  }
+  .hero-kreis {
+    transform: scale(calc(1 + var(--f, 0) * 7));
+    will-change: transform;
+  }
+  .hero-inhalt {
+    opacity: calc(1 - var(--f, 0) * 6);
+  }
+
+  /* Die Aussage füllt sich Wort für Wort */
+  .wort-fuellung span {
+    opacity: clamp(0.16, calc((var(--f, 1) - var(--i)) * 14 + 0.16), 1);
+    transition: opacity 120ms linear;
+  }
+
+  /* Vorher/Nachher: Abschnitt bleibt stehen, die Rolle zieht die Sanierung darüber */
+  .vorher-nachher {
+    --p: clamp(0, calc((var(--f, 0) - 0.12) / 0.76), 1);
+    height: 280svh;
+  }
+  .vorher-nachher-buehne {
+    position: sticky;
+    top: calc(var(--header) + 1px);
+    display: block;
+    height: calc(100svh - var(--header) - 1px);
+    overflow: hidden;
+  }
+  .vorher-nachher figure {
+    position: absolute;
+    inset: 0;
+    height: auto;
+    isolation: isolate;
+  }
+  .nachher-bild {
+    z-index: 1;
+    clip-path: inset(0 calc((1 - var(--p)) * 100%) 0 0);
+  }
+  .nachher-bild img {
+    transform: scale(calc(1.08 - var(--p) * 0.08));
+  }
+  .rollen-kante {
+    position: absolute;
+    inset-block: 0;
+    left: calc(var(--p) * 100%);
+    z-index: 2;
+    display: block;
+    width: 0.625rem;
+    background: #efb98a;
+    box-shadow: 0 0 2rem rgb(0 0 0 / 0.35);
+    transform: translateX(-50%);
+    opacity: calc(var(--p) * 30);
+  }
+
+  /* Referenzen: Das Etikett gleitet bei Mauszeiger oder Fokus ins Bild */
+  @media (hover: hover) {
+    .galerie-etikett {
+      transform: translateX(-101%);
+      transition: transform 500ms var(--rolle);
+    }
+    .group:hover .galerie-etikett,
+    .group:focus-visible .galerie-etikett {
+      transform: none;
+    }
+  }
 }
 
 @media print {
   .reveal-text,
-  .reveal-foto {
+  .reveal-foto,
+  .reveal-kachel {
     opacity: 1;
     transform: none;
     filter: none;
     clip-path: none;
+  }
+  .wort-innen {
+    transform: none;
   }
 }
 

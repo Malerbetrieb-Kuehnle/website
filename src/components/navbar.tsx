@@ -39,9 +39,7 @@ export default function Navbar() {
               to={nav.path}
               end
               className={({ isActive }) =>
-                `transition-colors hover:text-mbgreen ${
-                  isActive ? "underline decoration-1 underline-offset-8" : ""
-                }`
+                `nav-link ${isActive ? "aktiv" : ""}`
               }
             >
               {nav.title}
@@ -105,7 +103,7 @@ export default function Navbar() {
                 <li key={nav.id} className="border-b">
                   <Link
                     to={nav.path}
-                    className="block py-4 font-display text-4xl font-semibold tracking-[-0.01em]"
+                    className="block py-4 text-4xl font-medium"
                     onClick={closeMenu}
                   >
                     {nav.title}
