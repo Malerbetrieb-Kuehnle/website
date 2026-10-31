@@ -34,7 +34,11 @@ function Aussage() {
 export default function Malerbetrieb() {
   return (
     <>
-      <section className="abschnitt grid gap-y-10 lg:grid-cols-12">
+      <section
+        id="ueber-uns"
+        tabIndex={-1}
+        className="abschnitt grid gap-y-10 outline-none lg:grid-cols-12"
+      >
         <div className="lg:col-span-4">
           <h2 className="label">Über uns</h2>
           <Reveal verzoegerung={100} className="mt-8 hidden lg:block">
@@ -87,7 +91,7 @@ export default function Malerbetrieb() {
           <img
             src={projektBild("bauernhaus-geruest")}
             srcSet={projektSrcSet("bauernhaus-geruest")}
-            sizes="(min-width: 1024px) 50vw, 100vw"
+            sizes="(min-width: 1024px) max(50vw, 134vh), 100vw"
             alt="Drei Fahrzeuge des Malerbetriebs vor einem eingerüsteten Bauernhaus"
             className="absolute inset-0 h-full w-full object-cover"
             loading="lazy"

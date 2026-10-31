@@ -1,15 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import Farbleiste from "@/components/ui/farbleiste";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
-import {
-  einsatzorte,
-  email,
-  footerLinks,
-  instagram,
-} from "@/constants/index.tsx";
+import { einsatzorte, footerLinks, kontaktwege } from "@/constants/index.tsx";
 
 const linkClass = "inline-block py-1 transition-colors hover:text-mbgreen";
 const titelClass =
@@ -31,7 +26,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-14 grid gap-10 border-t border-foreground/15 pt-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-12">
-          <div className="sm:col-span-2 lg:col-span-5">
+          <div className="sm:col-span-2 lg:col-span-3">
             <Link to="/" className="inline-block">
               <img
                 src={logo}
@@ -47,27 +42,30 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="sm:col-span-2 lg:col-span-5">
             <h2 className={titelClass}>Kontakt</h2>
             <address className="mt-3 not-italic">
-              <p className="py-1">Ebersberger Straße 75</p>
-              <p className="py-1">83043 Bad Aibling</p>
-              <a href="tel:+4980619398333" className={`${linkClass} mt-2`}>
-                +49 8061 93 98 333
-              </a>
-              <br />
-              <a href={`mailto:${email}`} className={linkClass}>
-                {email}
-              </a>
-              <br />
-              <a
-                href={instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                Instagram
-              </a>
+              <dl className="grid min-[416px]:grid-cols-[6rem_minmax(0,1fr)]">
+                {kontaktwege.map((weg) => (
+                  <Fragment key={weg.titel}>
+                    <dt className="pt-2 text-muted-foreground min-[416px]:border-t min-[416px]:border-foreground/10 min-[416px]:py-2">
+                      {weg.titel}
+                    </dt>
+                    <dd className="pb-2 min-[416px]:border-t min-[416px]:border-foreground/10 min-[416px]:py-1">
+                      <a
+                        href={weg.href}
+                        {...(weg.extern && {
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        })}
+                        className={linkClass}
+                      >
+                        {weg.wert}
+                      </a>
+                    </dd>
+                  </Fragment>
+                ))}
+              </dl>
             </address>
           </div>
 

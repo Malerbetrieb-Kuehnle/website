@@ -6,7 +6,7 @@ import Navbar from "@/components/navbar";
 import { seiten } from "@/constants/seo";
 
 const MainLayout = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash, key } = useLocation();
   const pfad = pathname.endsWith("/") ? pathname : `${pathname}/`;
   const main = useRef<HTMLElement>(null);
   const letzterPfad = useRef(pfad);
@@ -20,6 +20,17 @@ const MainLayout = () => {
     window.scrollTo(0, 0);
     main.current?.focus({ preventScroll: true });
   }, [pfad]);
+
+  // Erst im nächsten Frame: Das mobile Menü gibt sonst seine Scrollsperre zu spät frei
+  useEffect(() => {
+    if (!hash) return;
+    const anker = document.getElementById(hash.slice(1));
+    const frame = requestAnimationFrame(() => {
+      anker?.scrollIntoView();
+      anker?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [hash, key]);
 
   return (
     <>

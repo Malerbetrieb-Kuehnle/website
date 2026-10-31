@@ -1,101 +1,98 @@
+import type { CSSProperties } from "react";
+import { Link } from "react-router-dom";
 import { ProfileForm } from "@/components/ui/profileform";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
-import { email, instagram } from "@/constants";
+import { farbtoene, kontaktwege } from "@/constants";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
-import { cn } from "@/lib/utils";
-
-const linkClass =
-  "inline-block py-0.5 underline decoration-1 underline-offset-4 transition-colors hover:text-mblime";
 
 export default function Contact({ seite = false }: { seite?: boolean }) {
   const Titel = seite ? "h1" : "h2";
+  const Untertitel = seite ? "h2" : "h3";
 
   return (
-    <section className="grid lg:min-h-[100svh] lg:grid-cols-2">
-      {/* Auf der Kontaktseite steht das Formular mobil vor dem Foto */}
-      <Reveal
-        art="foto"
-        className={cn(
-          "relative h-[60svh] lg:order-none lg:h-auto",
-          seite && "order-last"
-        )}
-      >
-        <img
-          src={projektBild("schaufenster-nacht")}
-          srcSet={projektSrcSet("schaufenster-nacht")}
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          alt="Unser Schaufenster bei Nacht"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
-        />
-      </Reveal>
-      <div className="abschnitt bg-mbfir text-white [--ring:var(--mblime)]">
+    <section>
+      <div className="abschnitt bg-mbfir text-white">
         <Reveal art="titel">
-          <Titel className="titel-gross">
+          <Titel className="text-[clamp(2.75rem,8vw,8.5rem)] font-medium leading-[1.05] tracking-[-0.01em]">
             <WortMaske text="So erreichen Sie uns." />
           </Titel>
         </Reveal>
         <Reveal verzoegerung={100}>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
-            Sie suchen einen Maler in Bad Aibling oder Umgebung? Hinterlassen
-            Sie Ihre Nummer, wir rufen Sie so schnell wie möglich zurück.
-            Natürlich erreichen Sie uns auch per Telefon und E-Mail.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 lg:text-xl lg:leading-9">
+            Sie suchen einen Maler in Bad Aibling oder Umgebung? Rufen Sie uns
+            an, schreiben Sie uns oder hinterlassen Sie Ihre Nummer.
           </p>
         </Reveal>
 
-        <div className="mt-10 max-w-md">
-          <ProfileForm />
-        </div>
-
-        <dl className="mt-14 grid gap-x-8 gap-y-6 border-t border-white/20 pt-8 sm:grid-cols-2">
-          <div>
-            <dt className="text-white/70">Telefon</dt>
-            <dd className="mt-1">
-              <div>
-                Büro:{" "}
-                <a href="tel:+4980619398333" className={linkClass}>
-                  +49 8061 93 98 333
-                </a>
-              </div>
-              <div>
-                Mobil:{" "}
-                <a href="tel:+491728517479" className={linkClass}>
-                  +49 172 85 17 479
-                </a>
-              </div>
-            </dd>
-          </div>
-          <div>
-            <dt className="text-white/70">E-Mail</dt>
-            <dd className="mt-1">
-              <a href={`mailto:${email}`} className={linkClass}>
-                {email}
-              </a>
-            </dd>
-          </div>
-          <div>
-            <dt className="text-white/70">Adresse</dt>
-            <dd className="mt-1">
-              Ebersberger Straße 75
-              <br />
-              83043 Bad Aibling
-            </dd>
-          </div>
-          <div>
-            <dt className="text-white/70">Instagram</dt>
-            <dd className="mt-1">
-              <a
-                href={instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
+        <div className="mt-12 grid gap-x-10 gap-y-12 lg:mt-20 lg:grid-cols-12">
+          <ul
+            role="list"
+            className="-mx-4 flex flex-col border-b border-white/20 [--ring:var(--mblime)] sm:-mx-6 lg:col-span-7 lg:-ml-10 lg:mr-0 2xl:-ml-16"
+          >
+            {kontaktwege.map((weg, index) => (
+              <Reveal
+                key={weg.titel}
+                as="li"
+                verzoegerung={index * 60}
+                className="flex-1 border-t border-white/20"
               >
-                malerbetrieb_kuehnle
-              </a>
-            </dd>
-          </div>
-        </dl>
+                <a
+                  href={weg.href}
+                  {...(weg.extern && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
+                  className="kontaktweg gutter lg:pr-4"
+                  style={{ "--ton": farbtoene[index].hex } as CSSProperties}
+                >
+                  <span className="kontaktweg-titel">{weg.titel}</span>
+                  <span className="kontaktweg-wert">{weg.wert}</span>
+                </a>
+              </Reveal>
+            ))}
+          </ul>
+
+          <Reveal
+            verzoegerung={200}
+            className="rounded bg-white p-6 text-foreground sm:p-8 lg:col-span-5 lg:p-10"
+          >
+            <Untertitel className="text-3xl font-medium">
+              Rückruf anfordern
+            </Untertitel>
+            <p className="mt-3 leading-7 text-muted-foreground">
+              Hinterlassen Sie Ihren Namen und Ihre Nummer, wir rufen Sie so
+              schnell wie möglich zurück.
+            </p>
+            <div className="mt-8">
+              <ProfileForm />
+            </div>
+            <p className="mt-6 text-sm leading-6 text-muted-foreground">
+              Ihre Angaben nutzen wir nur für den Rückruf. Mehr dazu in der{" "}
+              <Link
+                to="/datenschutz/"
+                className="underline decoration-1 underline-offset-4 transition-colors hover:text-mbgreen"
+              >
+                Datenschutzerklärung
+              </Link>
+              .
+            </p>
+          </Reveal>
+        </div>
       </div>
+
+      <Reveal art="foto" className="relative h-[45svh] lg:h-[70svh]">
+        <img
+          src={projektBild("schaufenster-nacht")}
+          srcSet={projektSrcSet("schaufenster-nacht")}
+          sizes="100vw"
+          alt="Unser Schaufenster bei Nacht"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_42%]"
+          loading="lazy"
+        />
+        <span className="etikett etikett-gross">
+          Unser Schaufenster bei Nacht
+        </span>
+      </Reveal>
     </section>
   );
 }

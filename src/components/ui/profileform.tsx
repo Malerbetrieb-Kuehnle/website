@@ -84,16 +84,15 @@ export function ProfileForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">Name</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Maria Muster"
                   autoComplete="name"
-                  className="text-foreground"
                   {...field}
                 />
               </FormControl>
-              <FormMessage className="text-[#ffc9c0]" />
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -102,17 +101,16 @@ export function ProfileForm() {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">Telefon</FormLabel>
+              <FormLabel>Telefon</FormLabel>
               <FormControl>
                 <Input
                   placeholder="08061 123456"
                   type="tel"
                   autoComplete="tel"
-                  className="text-foreground"
                   {...field}
                 />
               </FormControl>
-              <FormMessage className="text-[#ffc9c0]" />
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -129,7 +127,7 @@ export function ProfileForm() {
           type="submit"
           size="lg"
           disabled={form.formState.isSubmitting}
-          className="bg-mblime text-foreground hover:bg-white"
+          className="w-full sm:w-auto"
         >
           Rückruf anfordern
         </Button>

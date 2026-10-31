@@ -4,7 +4,11 @@ import { email, merkmale_ausbildung } from "@/constants";
 
 export default function Ausbildung() {
   return (
-    <section className="grid lg:min-h-[100svh] lg:grid-cols-2">
+    <section
+      id="ausbildung"
+      tabIndex={-1}
+      className="grid outline-none lg:min-h-[100svh] lg:grid-cols-2"
+    >
       <Reveal
         art="kachel"
         className="abschnitt flex flex-col justify-center bg-mblime"

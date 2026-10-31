@@ -1,39 +1,61 @@
-import Betonoptik from "@/assets/services/Betonoptik.jpg";
-import Hochdruckwasserreinigung from "@/assets/services/Hochdruckwasserreinigung.jpg";
-import Bodenbeschichtungen from "@/assets/services/Bodenbeschichtungen.jpg";
+import Betonoptik from "@/assets/services/Betonoptik.webp";
+import Hochdruckwasserreinigung from "@/assets/services/Hochdruckwasserreinigung.webp";
+import Bodenbeschichtungen from "@/assets/services/Bodenbeschichtungen.webp";
 import Farbberatung from "@/assets/services/Farbberatung.jpg";
-import Geruestbau from "@/assets/services/Geruestbau.jpg";
-import Innenanstrich from "@/assets/services/Innenanstrich.jpg";
-import Lackierarbeiten1 from "@/assets/services/Lackierarbeiten .jpg";
-import Lackierarbeiten2 from "@/assets/services/Lackierarbeiten.jpg";
-import Putzausbesserungen from "@/assets/services/Putzausbesserungen.jpg";
+import Lackierarbeiten from "@/assets/referenzen/Lackarbeiten2.jpg";
+import Putzausbesserungen from "@/assets/services/Putzausbesserungen.webp";
 import RenovaFensterfluegelAbdeckung from "@/assets/services/Renova-Fensterfluegel-Abdeckung.jpg";
 import Renovierungsarbeiten from "@/assets/services/Renovierungsarbeiten.jpg";
 import Spachtelarbeiten from "@/assets/services/Spachtelarbeiten.jpg";
 import Verputzarbeiten from "@/assets/services/Verputzarbeiten.jpg";
-import { projektBild } from "@/lib/bilder";
+import { projektBild, projektSrcSet } from "@/lib/bilder";
 
 export const navLinks = [
-  {
-    id: "home",
-    title: "Home",
-    path: "/",
-  },
-  {
-    id: "service",
-    title: "Service",
-    path: "/service/",
-  },
-  {
-    id: "referenzen",
-    title: "Referenzen",
-    path: "/referenzen/",
-  },
+  { id: "service", title: "Service", path: "/service/" },
+  { id: "referenzen", title: "Referenzen", path: "/referenzen/" },
+  { id: "ueber-uns", title: "Über uns", path: "/#ueber-uns" },
+  { id: "ausbildung", title: "Ausbildung", path: "/#ausbildung" },
+  { id: "fragen", title: "Fragen", path: "/#fragen" },
+];
+
+export const menueLinks = [
+  ...navLinks,
+  { id: "kontakt", title: "Kontakt", path: "/kontakt/" },
 ];
 
 export const email = "kontakt@malerbetrieb-kuehnle.de";
 
 export const instagram = "https://www.instagram.com/malerbetrieb_kuehnle/";
+
+export const telefon = {
+  anzeige: "+49 8061 93 98 333",
+  href: "tel:+4980619398333",
+};
+
+export const adresse = {
+  strasse: "Ebersberger Straße 75",
+  ort: "83043 Bad Aibling",
+};
+
+export const kontaktwege = [
+  { titel: "Telefon", wert: telefon.anzeige, href: telefon.href },
+  { titel: "Mobil", wert: "+49 172 85 17 479", href: "tel:+491728517479" },
+  { titel: "E-Mail", wert: email, href: `mailto:${email}` },
+  {
+    titel: "Adresse",
+    wert: "Ebersberger Straße\u00a075, 83043\u00a0Bad\u00a0Aibling",
+    href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      `${adresse.strasse}, ${adresse.ort}`
+    )}`,
+    extern: true,
+  },
+  {
+    titel: "Instagram",
+    wert: "malerbetrieb_kuehnle",
+    href: instagram,
+    extern: true,
+  },
+];
 
 // Orte aus unseren Referenzen
 export const einsatzorte = [
@@ -48,15 +70,7 @@ export const einsatzorte = [
 ];
 
 export const footerLinks = [
-  {
-    title: "Malerbetrieb",
-    links: [
-      { id: "home", title: "Home", path: "/" },
-      { id: "service", title: "Service", path: "/service/" },
-      { id: "referenzen", title: "Referenzen", path: "/referenzen/" },
-      { id: "kontakt", title: "Kontakt", path: "/kontakt/" },
-    ],
-  },
+  { title: "Malerbetrieb", links: menueLinks },
   {
     title: "Rechtliches",
     links: [
@@ -66,12 +80,24 @@ export const footerLinks = [
   },
 ];
 
-export const service_innenbereich = [
+interface Leistung {
+  title: string;
+  description: string;
+  image: string;
+  srcSet?: string;
+}
+
+const foto = (slug: string) => ({
+  image: projektBild(slug),
+  srcSet: projektSrcSet(slug),
+});
+
+export const service_innenbereich: Leistung[] = [
   {
     title: "Innenanstrich",
     description:
       "Wände und Decken in Wohnräumen, Büros und Praxen, sauber und deckend gestrichen.",
-    image: Innenanstrich,
+    ...foto("altbau-schablonendecke"),
   },
   {
     title: "Bodenbeschichtungen",
@@ -83,7 +109,7 @@ export const service_innenbereich = [
     title: "Lackierarbeiten",
     description:
       "Türen, Treppen und Geländer lackieren wir direkt bei Ihnen vor Ort.",
-    image: Lackierarbeiten2,
+    image: Lackierarbeiten,
   },
   {
     title: "Individuelle Farbberatung",
@@ -106,7 +132,7 @@ export const service_innenbereich = [
     title: "Tapezierarbeiten",
     description:
       "Tapezieren von der Fototapete bis zum hochwertigen italienischen Wandbelag.",
-    image: projektBild("praxis-wandbelag"),
+    ...foto("praxis-wandbelag"),
   },
   {
     title: "Betonoptik",
@@ -122,18 +148,18 @@ export const service_innenbereich = [
   },
 ];
 
-export const service_aussenbereich = [
+export const service_aussenbereich: Leistung[] = [
   {
     title: "Holzanstriche aller Art",
     description:
       "Holzanstriche für neue und abgewitterte Bauteile, auch nach Hagelschäden am Gebäude.",
-    image: projektBild("giebel-grau-verschalung"),
+    ...foto("giebel-grau-verschalung"),
   },
   {
     title: "Eigener Gerüstbau",
     description:
       "Für unsere Arbeiten stellen wir das Arbeitsschutzgerüst an Ihrem Gebäude selbst.",
-    image: Geruestbau,
+    ...foto("altbau-geruest"),
   },
   {
     title: "Putzausbesserungen",
@@ -145,7 +171,7 @@ export const service_aussenbereich = [
     title: "Fassadenanstriche",
     description:
       "Fassadenanstrich von der Untergrundvorbereitung über die Auswahl von Farbtönen und Materialien bis zur Ausführung.",
-    image: projektBild("altbau-pfirsich-seite"),
+    ...foto("altbau-pfirsich-seite"),
   },
   {
     title: "Hochdruckreinigung",
@@ -157,7 +183,7 @@ export const service_aussenbereich = [
     title: "Renovierungsarbeiten",
     description:
       "Wir bringen stark renovierungsbedürftige Fassaden wieder auf Vordermann.",
-    image: Renovierungsarbeiten,
+    ...foto("bauernhaus-geruest"),
   },
   {
     title: "Individuelle Farbberatung",
@@ -169,7 +195,7 @@ export const service_aussenbereich = [
     title: "Lackierarbeiten",
     description:
       "Fenster, Türen und Holzbauteile lackieren wir direkt bei Ihnen vor Ort.",
-    image: Lackierarbeiten1,
+    ...foto("hauswand-dunkle-laeden"),
   },
   {
     title: "Renova-Fensterflügel",

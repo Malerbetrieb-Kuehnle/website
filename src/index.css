@@ -157,18 +157,26 @@
   display: inline-block;
 }
 
+/* Anker im Menü: Der Abschnitt schließt direkt an die Kopfzeile an */
+section[id] {
+  scroll-margin-top: -1rem;
+}
+
+/* Der Farbstrich liegt auf der Unterkante der Kopfzeile */
 .nav-link {
   position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 .nav-link::after {
   content: "";
   position: absolute;
-  inset: auto 0 -0.25rem;
-  height: 1px;
-  background: currentColor;
+  inset: auto 0 -1px;
+  height: 4px;
+  background: var(--ton);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 400ms var(--rolle);
 }
 .nav-link.aktiv::after {
   transform: scaleX(1);
@@ -176,6 +184,65 @@
 @media (hover: hover) {
   .nav-link:hover::after {
     transform: scaleX(1);
+  }
+}
+
+/* Kontaktwege: Der Farbton rollt von links über die Zeile */
+.kontaktweg {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-content: center;
+  align-items: baseline;
+  height: 100%;
+  padding-block: 1rem;
+  overflow: hidden;
+  transition: color 300ms var(--rolle);
+}
+.kontaktweg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ton);
+  opacity: 0;
+}
+.kontaktweg:focus-visible {
+  color: hsl(var(--foreground));
+  outline-color: hsl(var(--foreground));
+  outline-offset: -4px;
+}
+.kontaktweg:focus-visible::before {
+  opacity: 1;
+}
+@media (hover: hover) {
+  .kontaktweg:hover {
+    color: hsl(var(--foreground));
+  }
+  .kontaktweg:hover::before,
+  .kontaktweg:hover .kontaktweg-titel {
+    opacity: 1;
+  }
+}
+.kontaktweg-titel {
+  opacity: 0.75;
+  transition: opacity 300ms var(--rolle);
+}
+.kontaktweg:focus-visible .kontaktweg-titel {
+  opacity: 1;
+}
+.kontaktweg-wert {
+  font-size: clamp(1.125rem, 5.2vw, 1.5rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+@media (min-width: 640px) {
+  .kontaktweg {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    column-gap: 1.5rem;
+  }
+  .kontaktweg-wert {
+    font-size: clamp(1.25rem, 2.2vw, 2.25rem);
   }
 }
 
@@ -428,6 +495,9 @@
 
   /* Referenzen: Das Etikett gleitet bei Mauszeiger oder Fokus ins Bild */
   @media (hover: hover) {
+    .kontaktweg:hover::before {
+      transform: none;
+    }
     .galerie-etikett {
       transform: translateX(-101%);
       transition: transform 500ms var(--rolle);

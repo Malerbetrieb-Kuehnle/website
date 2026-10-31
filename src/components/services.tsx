@@ -31,6 +31,8 @@ export default function Services({ seite = false }: { seite?: boolean }) {
           <img
             key={bereich + item.title}
             src={item.image}
+            srcSet={item.srcSet}
+            sizes="max(50vw, 134vh)"
             alt={index === active ? item.title : ""}
             className={cn(
               "absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-700 ease-out",
@@ -108,6 +110,8 @@ export default function Services({ seite = false }: { seite?: boolean }) {
                     </p>
                     <img
                       src={item.image}
+                      srcSet={item.srcSet}
+                      sizes="5rem"
                       alt=""
                       className="foto col-start-2 row-span-2 row-start-1 h-20 w-20 object-cover sm:col-start-3 lg:hidden"
                       loading="lazy"
