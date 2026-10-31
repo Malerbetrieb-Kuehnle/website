@@ -1,4 +1,5 @@
 import React from "react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
@@ -16,8 +17,21 @@ const linkClass = "inline-block py-1 transition-colors hover:text-mbgreen";
 
 const [festnetz, mobil, mail, anschrift, instagram] = kontaktwege;
 
-const kontaktSpalten = [
-  { titel: "Anrufen", wege: [festnetz, mobil] },
+interface Weg {
+  href: string;
+  wert: ReactNode;
+  extern?: boolean;
+  art?: string;
+}
+
+const kontaktSpalten: { titel: string; wege: Weg[] }[] = [
+  {
+    titel: "Anrufen",
+    wege: [
+      { ...festnetz, art: festnetz.titel },
+      { ...mobil, art: mobil.titel },
+    ],
+  },
   { titel: "Schreiben", wege: [mail, { ...instagram, wert: "Instagram" }] },
   {
     titel: "Besuchen",
@@ -66,6 +80,11 @@ const Footer: React.FC = () => {
                       })}
                       className={linkClass}
                     >
+                      {weg.art && (
+                        <span className="inline-block w-[3.25em] text-muted-foreground">
+                          {weg.art}
+                        </span>
+                      )}
                       {weg.wert}
                     </a>
                   </li>
@@ -115,7 +134,9 @@ const Footer: React.FC = () => {
                 {link.title}
               </Link>
             ))}
-            <p>© {new Date().getFullYear()} Malerbetrieb Kühnle</p>
+            <p suppressHydrationWarning>
+              © {new Date().getFullYear()} Malerbetrieb Kühnle
+            </p>
           </div>
         </div>
       </div>

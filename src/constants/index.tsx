@@ -23,6 +23,11 @@ export const menueLinks = [
   { id: "kontakt", title: "Kontakt", path: "/kontakt/" },
 ];
 
+export const gruendungsjahr = 1996;
+
+export const jahreSeitGruendung = () =>
+  new Date().getFullYear() - gruendungsjahr;
+
 export const email = "kontakt@malerbetrieb-kuehnle.de";
 
 export const instagram = "https://www.instagram.com/malerbetrieb_kuehnle/";
@@ -38,7 +43,7 @@ export const adresse = {
 };
 
 export const kontaktwege = [
-  { titel: "Telefon", wert: telefon.anzeige, href: telefon.href },
+  { titel: "Büro", wert: telefon.anzeige, href: telefon.href },
   { titel: "Mobil", wert: "+49 172 85 17 479", href: "tel:+491728517479" },
   { titel: "E-Mail", wert: email, href: `mailto:${email}` },
   {
@@ -277,7 +282,6 @@ export const ablauf = [
 ];
 
 export const merkmale_about_us = [
-  "25 Jahre Erfahrung",
   "Meisterbetrieb im Maler- und Lackiererhandwerk",
   "Zuverlässigkeit und termingerechte Abwicklung",
   "Fortbildung und Einsatz modernster Techniken",

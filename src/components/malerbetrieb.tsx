@@ -2,7 +2,12 @@ import type { CSSProperties } from "react";
 import portrait from "@/assets/portrait_malerbetrieb_norbert_kuehnle.jpeg";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
 import VorherNachher from "@/components/vorhernachher";
-import { ablauf, merkmale_about_us } from "@/constants";
+import {
+  ablauf,
+  gruendungsjahr,
+  jahreSeitGruendung,
+  merkmale_about_us,
+} from "@/constants";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
 import { useScrollFortschritt } from "@/lib/bewegung";
 
@@ -33,6 +38,10 @@ function Aussage() {
 }
 
 export default function Malerbetrieb() {
+  // Das Jahr im vorgerenderten HTML altert, im Browser rechnet die Seite neu
+  const jahre = jahreSeitGruendung();
+  const merkmale = [`${jahre} Jahre Erfahrung`, ...merkmale_about_us];
+
   return (
     <>
       <section
@@ -60,8 +69,11 @@ export default function Malerbetrieb() {
               aria-hidden="true"
               className="absolute right-3 top-3 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-mborange sm:h-28 sm:w-28"
             >
-              <span className="text-4xl font-medium leading-none sm:text-5xl">
-                25
+              <span
+                suppressHydrationWarning
+                className="text-4xl font-medium leading-none sm:text-5xl"
+              >
+                {jahre}
               </span>
               <span className="text-base sm:mt-0.5">Jahre</span>
             </div>
@@ -72,10 +84,10 @@ export default function Malerbetrieb() {
           <Aussage />
           <Reveal>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit Sitz
-              in Bad Aibling. Als Meisterbetrieb im Maler- und Lackiererhandwerk
-              stehen Qualitätsarbeit, Zuverlässigkeit und termingerechte
-              Abwicklung der Aufträge im Vordergrund.
+              Norbert Kühnle gründete {gruendungsjahr} seinen Malerbetrieb mit
+              Sitz in Bad Aibling. Als Meisterbetrieb im Maler- und
+              Lackiererhandwerk stehen Qualitätsarbeit, Zuverlässigkeit und
+              termingerechte Abwicklung der Aufträge im Vordergrund.
             </p>
             <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
               Wir arbeiten für Privathaushalte, Gewerbe und öffentliche
@@ -88,11 +100,12 @@ export default function Malerbetrieb() {
             role="list"
             className="mt-12 grid gap-x-6 sm:grid-cols-2 xl:grid-cols-4"
           >
-            {merkmale_about_us.map((feature, index) => (
+            {merkmale.map((feature, index) => (
               <Reveal
                 key={feature}
                 as="li"
                 verzoegerung={index * 100}
+                suppressHydrationWarning
                 className="border-t py-4 leading-6"
               >
                 {feature}
