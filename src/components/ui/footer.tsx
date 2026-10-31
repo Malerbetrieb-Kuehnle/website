@@ -8,6 +8,7 @@ import Reveal, { WortMaske } from "@/components/ui/reveal";
 import {
   adresse,
   einsatzorte,
+  facebook,
   kontaktwege,
   menueLinks,
   rechtlichesLinks,
@@ -32,7 +33,14 @@ const kontaktSpalten: { titel: string; wege: Weg[] }[] = [
       { ...mobil, art: mobil.titel },
     ],
   },
-  { titel: "Schreiben", wege: [mail, { ...instagram, wert: "Instagram" }] },
+  {
+    titel: "Schreiben",
+    wege: [
+      mail,
+      { ...instagram, wert: "Instagram" },
+      { href: facebook, wert: "Facebook", extern: true },
+    ],
+  },
   {
     titel: "Besuchen",
     wege: [

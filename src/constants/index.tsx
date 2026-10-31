@@ -32,6 +32,8 @@ export const email = "kontakt@malerbetrieb-kuehnle.de";
 
 export const instagram = "https://www.instagram.com/malerbetrieb_kuehnle/";
 
+export const facebook = "https://www.facebook.com/malerbetrieb.kuehnle/";
+
 export const telefon = {
   anzeige: "+49 8061 93 98 333",
   href: "tel:+4980619398333",
