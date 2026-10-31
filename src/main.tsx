@@ -1,13 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import "@fontsource-variable/outfit";
 import "./index.css";
-import { Toaster } from "./components/ui/toaster.tsx";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+// Frühere Adressen wie /#/kontakt führen auf die neuen Seiten
+if (window.location.hash.startsWith("#/")) {
+  window.location.replace(`${window.location.hash.slice(1)}/`);
+}
+
+const seite = (
   <React.StrictMode>
-    <App />
-    <Toaster/>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
+
+const wurzel = document.getElementById("root")!;
+
+// Im Build liegt die Seite fertig im HTML, im Dev-Server nicht
+if (wurzel.hasChildNodes()) {
+  ReactDOM.hydrateRoot(wurzel, seite);
+} else {
+  ReactDOM.createRoot(wurzel).render(seite);
+}

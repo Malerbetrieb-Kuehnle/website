@@ -3,31 +3,23 @@ import { Outlet, useLocation } from "react-router-dom";
 import Farbvorhang from "@/components/ui/farbvorhang";
 import Footer from "@/components/ui/footer";
 import Navbar from "@/components/navbar";
-
-const seitentitel: Record<string, string> = {
-  "/service": "Service",
-  "/referenzen": "Referenzen",
-  "/kontakt": "Kontakt",
-  "/impressum": "Impressum",
-  "/datenschutz": "Datenschutz",
-};
+import { seiten } from "@/constants/seo";
 
 const MainLayout = () => {
   const { pathname } = useLocation();
+  const pfad = pathname.endsWith("/") ? pathname : `${pathname}/`;
   const main = useRef<HTMLElement>(null);
-  const letzterPfad = useRef(pathname);
+  const letzterPfad = useRef(pfad);
 
   useEffect(() => {
-    const titel = seitentitel[pathname];
-    document.title = titel
-      ? `${titel} | Malerbetrieb Kühnle`
-      : "Malerbetrieb Kühnle | Maler in Bad Aibling";
+    document.title =
+      seiten[pfad]?.titel ?? "Seite nicht gefunden | Malerbetrieb Kühnle";
 
-    if (letzterPfad.current === pathname) return;
-    letzterPfad.current = pathname;
+    if (letzterPfad.current === pfad) return;
+    letzterPfad.current = pfad;
     window.scrollTo(0, 0);
     main.current?.focus({ preventScroll: true });
-  }, [pathname]);
+  }, [pfad]);
 
   return (
     <>
@@ -39,7 +31,8 @@ const MainLayout = () => {
         Zum Inhalt springen
       </button>
       <Navbar />
-      <Farbvorhang key={pathname} />
+      {/* Auf der Startseite fallen die Balken aus den Feldern der Farbleiste */}
+      {pfad !== "/" && <Farbvorhang key={pfad} />}
       <main ref={main} id="inhalt" tabIndex={-1} className="outline-none">
         <Outlet />
       </main>
