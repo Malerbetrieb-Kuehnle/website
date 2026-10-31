@@ -36,7 +36,7 @@ const kontaktSpalten: { titel: string; wege: Weg[] }[] = [
   {
     titel: "Schreiben",
     wege: [
-      mail,
+      { ...mail, wert: mail.titel },
       { ...instagram, wert: "Instagram" },
       { href: facebook, wert: "Facebook", extern: true },
     ],
