@@ -1,3 +1,4 @@
+import Reveal from "@/components/ui/reveal";
 import Hoegner from "@/assets/Hoegner.png";
 import Ulber from "@/assets/Ulber.png";
 import Raab from "@/assets/Raab.svg";
@@ -19,15 +20,16 @@ export default function Partner() {
           Wir arbeiten mit hochwertigen Materialien von etablierten Lieferanten.
         </p>
         <div className="mt-12 grid grid-cols-2 items-center gap-x-10 gap-y-10 sm:grid-cols-4">
-          {partner.map((item) => (
-            <img
-              key={item.name}
-              className="max-h-12 w-full object-contain object-left grayscale transition hover:grayscale-0"
-              src={item.logo}
-              alt={item.name}
-              height={48}
-              loading="lazy"
-            />
+          {partner.map((item, index) => (
+            <Reveal key={item.name} verzoegerung={index * 100}>
+              <img
+                className="max-h-12 w-full object-contain object-left grayscale transition hover:grayscale-0"
+                src={item.logo}
+                alt={item.name}
+                height={48}
+                loading="lazy"
+              />
+            </Reveal>
           ))}
         </div>
       </div>

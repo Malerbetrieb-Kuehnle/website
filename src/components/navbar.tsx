@@ -84,7 +84,7 @@ export default function Navbar() {
         open={mobileMenuOpen}
         onClose={closeMenu}
       >
-        <Dialog.Panel className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-white">
+        <Dialog.Panel className="fixed inset-0 z-50 flex flex-col overflow-y-auto overscroll-contain bg-white duration-200 motion-safe:animate-in motion-safe:fade-in">
           <div className="gutter flex h-[var(--header)] shrink-0 items-center justify-between border-b">
             <Logo onClick={closeMenu} />
             <button

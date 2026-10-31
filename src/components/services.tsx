@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Reveal from "@/components/ui/reveal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { service_innenbereich, service_aussenbereich } from "@/constants";
 import { cn } from "@/lib/utils";
@@ -41,11 +42,15 @@ export default function Services({ seite = false }: { seite?: boolean }) {
       </div>
 
       <div className="gutter py-20 lg:py-16">
-        <Titel className="titel-gross">Service</Titel>
-        <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
-          Von der Farbberatung bis zur fertigen Fassade: unsere Leistungen für
-          innen und außen.
-        </p>
+        <Reveal>
+          <Titel className="titel-gross">Service</Titel>
+        </Reveal>
+        <Reveal verzoegerung={100}>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
+            Von der Farbberatung bis zur fertigen Fassade: unsere Leistungen für
+            innen und außen.
+          </p>
+        </Reveal>
 
         <Tabs
           value={bereich}

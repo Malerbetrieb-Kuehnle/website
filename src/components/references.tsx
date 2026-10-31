@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import Reveal from "@/components/ui/reveal";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
-import { cn } from "@/lib/utils";
 
 const auswahl = [
   {
@@ -40,8 +40,10 @@ export default function References() {
   return (
     <section className="abschnitt">
       <div className="grid gap-y-6 lg:grid-cols-12">
-        <h2 className="titel-gross lg:col-span-5">Referenzen</h2>
-        <div className="lg:col-span-7">
+        <Reveal className="lg:col-span-5">
+          <h2 className="titel-gross">Referenzen</h2>
+        </Reveal>
+        <Reveal verzoegerung={100} className="lg:col-span-7">
           <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
             Von der historischen Fassade bis zum Wartezimmer: eine Auswahl
             unserer abgeschlossenen Projekte.
@@ -49,12 +51,18 @@ export default function References() {
           <Button asChild className="mt-6">
             <Link to="/referenzen">Alle Referenzen ansehen</Link>
           </Button>
-        </div>
+        </Reveal>
       </div>
 
       <div className="mt-12 grid gap-x-2 gap-y-6 md:grid-cols-12 lg:mt-20">
-        {auswahl.map((item) => (
-          <figure key={item.bild} className={cn(item.spalten)}>
+        {auswahl.map((item, index) => (
+          <Reveal
+            key={item.bild}
+            as="figure"
+            art="foto"
+            verzoegerung={(index % 3) * 150}
+            className={item.spalten}
+          >
             <img
               src={projektBild(item.bild)}
               srcSet={projektSrcSet(item.bild)}
@@ -66,7 +74,7 @@ export default function References() {
             <figcaption className="mt-2 text-sm text-muted-foreground">
               {item.text}
             </figcaption>
-          </figure>
+          </Reveal>
         ))}
       </div>
     </section>

@@ -31,11 +31,20 @@ module.exports = {
           from: { opacity: "0", transform: "scale(0.94)" },
           to: { opacity: "1", transform: "scale(1)" },
         },
+        einblenden: {
+          from: {
+            opacity: "0",
+            transform: "translateY(12px)",
+            filter: "blur(4px)",
+          },
+          to: { opacity: "1", transform: "none", filter: "none" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         tupfer: "tupfer 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both",
+        einblenden: "einblenden 0.3s ease-out both",
       },
       fontFamily: {
         sans: ['"Schibsted Grotesk Variable"', "system-ui", "sans-serif"],

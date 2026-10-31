@@ -18,7 +18,7 @@ export default function Referenzen() {
       aktiv === "alle"
         ? referenzen
         : referenzen.filter((bild) => bild.bereich === aktiv),
-    [aktiv],
+    [aktiv]
   );
 
   return (
@@ -45,7 +45,7 @@ export default function Referenzen() {
                   "border-b-2 py-2 text-lg transition-colors",
                   aktiv === item.id
                     ? "border-foreground"
-                    : "border-transparent text-muted-foreground hover:text-foreground",
+                    : "border-transparent text-muted-foreground hover:text-foreground"
                 )}
               >
                 {item.title}
@@ -67,17 +67,19 @@ export default function Referenzen() {
               className="group block w-full text-left"
               aria-label={`${bild.title} groß ansehen`}
             >
-              <img
-                src={bild.src}
-                srcSet={bild.srcSet}
-                sizes="(min-width: 1536px) 25vw, (min-width: 1024px) 33vw, 50vw"
-                alt={bild.title}
-                width={bild.width}
-                height={bild.height}
-                className="foto h-auto w-full bg-mbkalk"
-                loading="lazy"
-                decoding="async"
-              />
+              <span className="foto block overflow-hidden">
+                <img
+                  src={bild.src}
+                  srcSet={bild.srcSet}
+                  sizes="(min-width: 1536px) 25vw, (min-width: 1024px) 33vw, 50vw"
+                  alt={bild.title}
+                  width={bild.width}
+                  height={bild.height}
+                  className="h-auto w-full bg-mbkalk transition-transform duration-500 ease-out group-hover:scale-[1.03] group-focus-visible:scale-[1.03] motion-reduce:!scale-100"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
               <span className="mt-2 block text-sm text-muted-foreground transition-colors group-hover:text-foreground">
                 {bild.title}
               </span>

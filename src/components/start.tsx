@@ -35,11 +35,11 @@ export default function Start() {
               style={{ objectPosition: item.position }}
               className={cn(
                 "absolute inset-0 h-full w-full object-cover transition-opacity duration-700",
-                index === active ? "opacity-100" : "opacity-0",
+                index === active ? "opacity-100" : "opacity-0"
               )}
               {...(index === 0 ? { fetchpriority: "high" } : {})}
             />
-          ) : null,
+          ) : null
         )}
 
         {/* Am Handy ist die Farbleiste zu schmal für Beschriftungen */}
@@ -51,26 +51,28 @@ export default function Start() {
         <div
           className={cn(
             "absolute bottom-4 left-4 flex aspect-square w-[min(calc(100vw-2rem),max(60svh,20rem),44rem)] flex-col items-center justify-center rounded-full p-6 text-center transition-colors duration-500 motion-safe:animate-tupfer sm:bottom-6 sm:left-6 lg:left-10 2xl:left-16",
-            ton.hell ? "text-white" : "text-foreground",
+            ton.hell ? "text-white" : "text-foreground"
           )}
           style={{ backgroundColor: ton.hex }}
         >
-          <p className="text-sm sm:text-base">
+          <p className="text-sm [animation-delay:200ms] motion-safe:animate-einblenden sm:text-base">
             Ihr Meisterbetrieb in Bad Aibling
           </p>
-          <h1 className="my-3 text-[clamp(2.25rem,min(11.5vw,7.2svh),5.5rem)] leading-[1.05] sm:my-4">
+          <h1 className="my-3 text-[clamp(2.25rem,min(11.5vw,7.2svh),5.5rem)] leading-[1.05] [animation-delay:300ms] motion-safe:animate-einblenden sm:my-4">
             Farbe <br />
             schafft <br />
             Atmosphäre.
           </h1>
-          <Button
-            asChild
-            className={cn(
-              ton.hell && "bg-white text-foreground hover:bg-white/90",
-            )}
-          >
-            <Link to="/kontakt">Rückruf vereinbaren</Link>
-          </Button>
+          <div className="[animation-delay:400ms] motion-safe:animate-einblenden">
+            <Button
+              asChild
+              className={cn(
+                ton.hell && "bg-white text-foreground hover:bg-white/90"
+              )}
+            >
+              <Link to="/kontakt">Rückruf vereinbaren</Link>
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -96,7 +98,7 @@ export default function Start() {
               style={{ backgroundColor: item.hex, flexGrow: aktiv ? 4 : 1 }}
               className={cn(
                 "flex basis-0 items-end overflow-hidden px-4 pb-3 text-left leading-tight transition-[flex-grow] duration-500 ease-out focus-visible:outline-current focus-visible:-outline-offset-4",
-                item.hell ? "text-white" : "text-foreground",
+                item.hell ? "text-white" : "text-foreground"
               )}
             >
               <span className="flex items-baseline gap-x-2 whitespace-nowrap max-sm:sr-only">

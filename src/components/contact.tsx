@@ -1,4 +1,5 @@
 import { ProfileForm } from "@/components/ui/profileform";
+import Reveal from "@/components/ui/reveal";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
 import { cn } from "@/lib/utils";
 
@@ -11,10 +12,11 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
   return (
     <section className="grid lg:min-h-[100svh] lg:grid-cols-2">
       {/* Auf der Kontaktseite steht das Formular mobil vor dem Foto */}
-      <div
+      <Reveal
+        art="foto"
         className={cn(
           "relative h-[60svh] lg:order-none lg:h-auto",
-          seite && "order-last",
+          seite && "order-last"
         )}
       >
         <img
@@ -25,14 +27,18 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
           className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
-      </div>
+      </Reveal>
       <div className="abschnitt bg-mbfir text-white [--ring:var(--mblime)]">
-        <Titel className="titel-gross">So erreichen Sie uns.</Titel>
-        <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
-          Haben Sie Fragen? Hinterlassen Sie Ihre Nummer, wir rufen Sie so
-          schnell wie möglich zurück. Natürlich erreichen Sie uns auch per
-          Telefon und E-Mail.
-        </p>
+        <Reveal>
+          <Titel className="titel-gross">So erreichen Sie uns.</Titel>
+        </Reveal>
+        <Reveal verzoegerung={100}>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
+            Haben Sie Fragen? Hinterlassen Sie Ihre Nummer, wir rufen Sie so
+            schnell wie möglich zurück. Natürlich erreichen Sie uns auch per
+            Telefon und E-Mail.
+          </p>
+        </Reveal>
 
         <div className="mt-10 max-w-md">
           <ProfileForm />
