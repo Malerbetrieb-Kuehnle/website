@@ -21,6 +21,7 @@ export default function Services({ seite = false }: { seite?: boolean }) {
   const [bereich, setBereich] = useState(bereiche[0].id);
   const [active, setActive] = useState(0);
   const Titel = seite ? "h1" : "h2";
+  const Untertitel = seite ? "h2" : "h3";
   const leistungen = bereiche.find((b) => b.id === bereich)!.leistungen;
 
   return (
@@ -71,7 +72,7 @@ export default function Services({ seite = false }: { seite?: boolean }) {
                     onMouseEnter={() => setActive(index)}
                     className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 border-t py-4 last:border-b sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)_auto] lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
                   >
-                    <h3 className="text-xl max-sm:hyphens-auto">
+                    <Untertitel className="text-xl max-sm:hyphens-auto">
                       <span className="lg:hidden">{item.title}</span>
                       {/* Großes Bild gibt es nur am Desktop, nur dort wählbar */}
                       <button
@@ -86,7 +87,7 @@ export default function Services({ seite = false }: { seite?: boolean }) {
                       >
                         {item.title}
                       </button>
-                    </h3>
+                    </Untertitel>
                     <p className="col-start-1 row-start-2 mt-2 leading-6 text-muted-foreground sm:col-start-2 sm:row-start-1 sm:mt-0">
                       {item.description}
                     </p>
