@@ -1,40 +1,55 @@
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
+import Augencentrum_Rosenheim1 from "@/assets/referenzen/Augencentrum_Rosenheim1.jpg";
+import Bauernhof_Brannenburg2 from "@/assets/referenzen/Bauernhof_Brannenburg2.jpg";
+import Wohnhaus_Hohenthann3 from "@/assets/referenzen/Wohnhaus_Hohenthann3.jpg";
 import { Button } from "@/components/ui/button";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
 
-const auswahl = [
-  {
-    bild: "giebel-grau-verschalung",
-    text: "Holzgiebel in Grau mit dunklen Läden",
-    spalten: "md:col-span-7",
-    sizes: "(min-width: 768px) 58vw, 100vw",
-  },
-  {
-    bild: "bad-goldwand",
-    text: "Bad mit Goldwand und Mosaik",
-    spalten: "md:col-span-5",
-    sizes: "(min-width: 768px) 42vw, 100vw",
-  },
-  {
-    bild: "praxis-wartezimmer",
-    text: "Praxis, Wartezimmer mit Tapete in Türkis",
-    spalten: "md:col-span-4",
-    sizes: "(min-width: 768px) 33vw, 100vw",
-  },
-  {
-    bild: "mehrfamilienhaus-rote-laeden",
-    text: "Mehrfamilienhaus mit roten Läden",
-    spalten: "md:col-span-3",
-    sizes: "(min-width: 768px) 25vw, 100vw",
-  },
-  {
-    bild: "villa-abendlicht",
-    text: "Villa mit weißer Fassade in Kapstadt",
-    spalten: "md:col-span-5",
-    sizes: "(min-width: 768px) 42vw, 100vw",
-  },
+// Hochformat, Querformat und Innenraum im Wechsel. Die Bilder bleiben
+// ungeschnitten, die Breiten ergeben sich aus ihrem Seitenverhältnis.
+const zeilen = [
+  [
+    {
+      src: Wohnhaus_Hohenthann3,
+      breite: 1280,
+      hoehe: 720,
+      text: "Wohnhaus Hohenthann",
+    },
+    {
+      src: projektBild("altbau-pfirsich-kirche"),
+      srcSet: projektSrcSet("altbau-pfirsich-kirche"),
+      breite: 1080,
+      hoehe: 1062,
+      text: "Historische Fassade in Pfirsich",
+    },
+  ],
+  [
+    {
+      src: Bauernhof_Brannenburg2,
+      breite: 1280,
+      hoehe: 1145,
+      text: "Bauernhof Brannenburg",
+    },
+    {
+      src: projektBild("villa-abendlicht"),
+      srcSet: projektSrcSet("villa-abendlicht"),
+      breite: 3648,
+      hoehe: 2367,
+      text: "Villa mit weißer Fassade in Kapstadt",
+    },
+    {
+      src: Augencentrum_Rosenheim1,
+      breite: 1075,
+      hoehe: 708,
+      text: "Augencentrum Rosenheim",
+    },
+  ],
 ];
+
+const seitenverhaeltnis = ({ breite, hoehe }: (typeof zeilen)[0][0]) =>
+  breite / hoehe;
 
 export default function References() {
   return (
@@ -57,26 +72,50 @@ export default function References() {
         </Reveal>
       </div>
 
-      <div className="mt-12 grid gap-2 md:grid-cols-12 lg:mt-20">
-        {auswahl.map((item, index) => (
-          <Reveal
-            key={item.bild}
-            as="figure"
-            art="foto"
-            verzoegerung={(index % 3) * 150}
-            className={`relative overflow-hidden ${item.spalten}`}
-          >
-            <img
-              src={projektBild(item.bild)}
-              srcSet={projektSrcSet(item.bild)}
-              sizes={item.sizes}
-              alt={item.text}
-              className="aspect-[4/3] h-auto w-full object-cover md:aspect-auto md:h-[46vw] md:max-h-[44rem]"
-              loading="lazy"
-            />
-            <figcaption className="etikett">{item.text}</figcaption>
-          </Reveal>
-        ))}
+      <div className="mt-12 flex flex-col gap-2 lg:mt-20">
+        {zeilen.map((zeile) => {
+          const gesamt = zeile.reduce(
+            (summe, item) => summe + seitenverhaeltnis(item),
+            0
+          );
+
+          return (
+            <div key={zeile[0].src} className="flex flex-col gap-2 md:flex-row">
+              {zeile.map((item, index) => {
+                const seiten = seitenverhaeltnis(item);
+                return (
+                  <Reveal
+                    key={item.src}
+                    as="figure"
+                    art="foto"
+                    verzoegerung={index * 150}
+                    className="relative overflow-hidden md:flex-[var(--seiten)_1_0%]"
+                    style={
+                      {
+                        "--seiten": seiten,
+                        aspectRatio: seiten,
+                      } as CSSProperties
+                    }
+                  >
+                    <img
+                      src={item.src}
+                      srcSet={item.srcSet}
+                      sizes={`(min-width: 768px) ${Math.ceil(
+                        (seiten / gesamt) * 100
+                      )}vw, 100vw`}
+                      alt={item.text}
+                      width={item.breite}
+                      height={item.hoehe}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                    <figcaption className="etikett">{item.text}</figcaption>
+                  </Reveal>
+                );
+              })}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
