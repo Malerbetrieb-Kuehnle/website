@@ -9,23 +9,11 @@
     --background: 0 0% 100%;
     --foreground: 169 39% 13%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 169 39% 13%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 169 39% 13%;
-
     --primary: 166 48% 15%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 90 16% 93%;
-    --secondary-foreground: 169 39% 13%;
-
     --muted: 90 16% 93%;
     --muted-foreground: 168 12% 34%;
-
-    --accent: 90 16% 93%;
-    --accent-foreground: 169 39% 13%;
 
     --destructive: 354 54% 43%;
     --destructive-foreground: 0 0% 100%;
@@ -38,41 +26,10 @@
 
     /* Malerbetrieb Colors */
     --mbgreen: 150.24, 100%, 24.9%;
-    --mbblue: 200.37, 100%, 42.16%;
     --mbfir: 166, 48%, 15%;
     --mblime: 66, 62%, 53%;
     --mborange: 22, 86%, 52%;
     --mbkalk: 90, 16%, 93%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
   }
 }
 

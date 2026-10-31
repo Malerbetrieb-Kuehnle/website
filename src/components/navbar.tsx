@@ -3,8 +3,8 @@ import { useState } from "react";
 import type { CSSProperties } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon } from "@heroicons/react/24/solid";
 import { Link, NavLink } from "react-router-dom";
-import { FaPhone } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import {
   adresse,
@@ -75,7 +75,7 @@ export default function Navbar() {
             href={telefon.href}
             className="flex h-11 min-w-11 items-center justify-center gap-x-2 whitespace-nowrap tabular-nums transition-colors hover:text-mbgreen"
           >
-            <FaPhone className="h-3.5 w-3.5" aria-hidden="true" />
+            <PhoneIcon className="h-3.5 w-3.5" aria-hidden="true" />
             {/* Zwischen 1024 und 1280 px reicht der Platz nur für das Symbol */}
             <span className="sr-only xl:not-sr-only">{telefon.anzeige}</span>
           </a>
@@ -91,7 +91,7 @@ export default function Navbar() {
             className="flex h-11 w-11 items-center justify-center"
             aria-label="Anrufen"
           >
-            <FaPhone className="h-4 w-4" aria-hidden="true" />
+            <PhoneIcon className="h-4 w-4" aria-hidden="true" />
           </a>
           <button
             type="button"
@@ -145,7 +145,7 @@ export default function Navbar() {
             <div className="gutter py-8">
               <Button asChild size="lg" className="w-full gap-x-3 text-base">
                 <a href={telefon.href}>
-                  <FaPhone className="h-4 w-4" aria-hidden="true" />
+                  <PhoneIcon className="h-4 w-4" aria-hidden="true" />
                   {telefon.anzeige}
                 </a>
               </Button>

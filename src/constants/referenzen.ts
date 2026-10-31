@@ -17,13 +17,13 @@ import Garage_Bad_Aibling from "@/assets/referenzen/Garage_Bad_Aibling.jpg";
 import Garage_Bruckmuehl from "@/assets/referenzen/Garage_Bruckmuehl.jpg";
 import Geschaeftshaus_Rosenheim from "@/assets/referenzen/Geschaeftshaus_Rosenheim.jpg";
 import Haus from "@/assets/referenzen/Haus.jpg";
-import Klinik_St_Georg_Bad_Aiblung from "@/assets/referenzen/Klinik_St._Georg_Bad_Aiblung.jpg";
+import Klinik_St_Georg_Bad_Aibling from "@/assets/referenzen/Klinik_St_Georg_Bad_Aibling.jpg";
 import Lackarbeiten1 from "@/assets/referenzen/Lackarbeiten1.jpg";
 import Lackarbeiten2 from "@/assets/referenzen/Lackarbeiten2.jpg";
 import Praxis_Schoenau2 from "@/assets/referenzen/Praxis_Schoenau2.jpg";
 import Schloss_Maxhofen_Bruckmuehl from "@/assets/referenzen/Schloss_Maxhofen_Bruckmuehl.jpg";
 import Sparkasse_Vagen from "@/assets/referenzen/Sparkasse_Vagen.jpg";
-import Sparkassenhochhaus_Rosenheim from "@/assets/referenzen/Sparkassenhochhaus_Rosenheim .jpg";
+import Sparkassenhochhaus_Rosenheim from "@/assets/referenzen/Sparkassenhochhaus_Rosenheim.jpg";
 import Wintergarten_Hohenthann1 from "@/assets/referenzen/Wintergarten_Hohenthann1.jpg";
 import Wohnhaus_Bad_Aibling5 from "@/assets/referenzen/Wohnhaus_Bad_Aibling5.jpg";
 import Wohnhaus_Bad_Aibling6 from "@/assets/referenzen/Wohnhaus_Bad_Aibling6.jpg";
@@ -46,8 +46,8 @@ import Wohnhaus_Hoehenrain from "@/assets/referenzen/Wohnhaus_Hoehenrain.jpg";
 import Wohnhaus_Hohenthann2 from "@/assets/referenzen/Wohnhaus_Hohenthann2.jpg";
 import Wohnhaus_Hohenthann3 from "@/assets/referenzen/Wohnhaus_Hohenthann3.jpg";
 import Wohnhaus_Hohenthann5 from "@/assets/referenzen/Wohnhaus_Hohenthann5.jpg";
-import Wohnhaus_Neubeuern from "@/assets/referenzen/Wohnhaus_Neubeuern .jpg";
-import Wohnhaus_Pang from "@/assets/referenzen/Wohnhaus_Pang .jpg";
+import Wohnhaus_Neubeuern from "@/assets/referenzen/Wohnhaus_Neubeuern.jpg";
+import Wohnhaus_Pang from "@/assets/referenzen/Wohnhaus_Pang.jpg";
 import Wohnhaus_Rosenheim from "@/assets/referenzen/Wohnhaus_Rosenheim.jpg";
 import Wohnhaus_Tuntenhausen1 from "@/assets/referenzen/Wohnhaus_Tuntenhausen1.jpg";
 
@@ -125,7 +125,7 @@ export const referenzen: Referenz[] = [
   { title: "Garage Bruckmühl", bereich: "aussen", width: 1280, height: 960, src: Garage_Bruckmuehl },
   { title: "Geschäftshaus Rosenheim", bereich: "aussen", width: 1280, height: 720, src: Geschaeftshaus_Rosenheim },
   { title: "Haus", bereich: "aussen", width: 1280, height: 720, src: Haus },
-  { title: "Klinik St. Georg Bad Aibling", bereich: "aussen", width: 1280, height: 720, src: Klinik_St_Georg_Bad_Aiblung },
+  { title: "Klinik St. Georg Bad Aibling", bereich: "aussen", width: 1280, height: 720, src: Klinik_St_Georg_Bad_Aibling },
   { title: "Lackarbeiten", bereich: "innen", width: 747, height: 746, src: Lackarbeiten1 },
   { title: "Lackarbeiten", bereich: "innen", width: 960, height: 1280, src: Lackarbeiten2 },
   { title: "Praxis Schönau", bereich: "aussen", width: 1280, height: 960, src: Praxis_Schoenau2 },
