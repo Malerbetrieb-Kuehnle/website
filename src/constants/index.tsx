@@ -57,10 +57,10 @@ export const kontaktwege = [
   },
 ];
 
-// Orte aus unseren Referenzen
 export const einsatzorte = [
   "Bad Aibling",
   "Rosenheim",
+  "München",
   "Kolbermoor",
   "Bruckmühl",
   "Bad Feilnbach",
@@ -69,15 +69,9 @@ export const einsatzorte = [
   "Tuntenhausen",
 ];
 
-export const footerLinks = [
-  { title: "Malerbetrieb", links: menueLinks },
-  {
-    title: "Rechtliches",
-    links: [
-      { id: "impressum", title: "Impressum", path: "/impressum/" },
-      { id: "datenschutz", title: "Datenschutz", path: "/datenschutz/" },
-    ],
-  },
+export const rechtlichesLinks = [
+  { id: "impressum", title: "Impressum", path: "/impressum/" },
+  { id: "datenschutz", title: "Datenschutz", path: "/datenschutz/" },
 ];
 
 interface Leistung {
@@ -325,6 +319,14 @@ export const faqGruppen = [
             )} und Tuntenhausen. Einzelne Aufträge führten uns auch nach Grafing, Glonn und Grabenstätt.`,
           "Liegt Ihr Ort nicht dabei, fragen Sie uns einfach. Ob wir Ihr Projekt übernehmen können, hängt auch von Umfang und Termin ab.",
         ],
+      },
+      {
+        question: "Arbeiten Sie auch im Ausland?",
+        answer: [
+          "Ja. Unser Schwerpunkt liegt in Bad Aibling, Rosenheim und München, wir übernehmen aber auch Aufträge im Ausland. Zu unseren Referenzen gehört zum Beispiel eine Villa in Kapstadt.",
+          "Beschreiben Sie uns Ihr Vorhaben und den Standort. Dann klären wir gemeinsam, wie wir es umsetzen können.",
+        ],
+        link: { to: "/referenzen/", title: "Referenzen ansehen" },
       },
       {
         question: "Habe ich einen festen Ansprechpartner?",

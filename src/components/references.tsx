@@ -30,7 +30,7 @@ const auswahl = [
   },
   {
     bild: "villa-abendlicht",
-    text: "Villa mit weißer Fassade",
+    text: "Villa mit weißer Fassade in Kapstadt",
     spalten: "md:col-span-5",
     sizes: "(min-width: 768px) 42vw, 100vw",
   },
@@ -48,7 +48,8 @@ export default function References() {
         <Reveal verzoegerung={100} className="lg:col-span-7">
           <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
             Fassaden, Wohnhäuser und Praxen aus Bad Aibling, Rosenheim und der
-            Region: eine Auswahl unserer abgeschlossenen Projekte.
+            Region bis nach Kapstadt: eine Auswahl unserer abgeschlossenen
+            Projekte.
           </p>
           <Button asChild className="mt-6">
             <Link to="/referenzen/">Alle Referenzen ansehen</Link>
