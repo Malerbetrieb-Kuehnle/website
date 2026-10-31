@@ -4,42 +4,45 @@
 
 @layer base {
   :root {
-    margin: 0;
-    padding: 2rem;
-    
+    --header: 4.5rem;
+
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 169 39% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 169 39% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 169 39% 13%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 166 48% 15%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 90 16% 93%;
+    --secondary-foreground: 169 39% 13%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 90 16% 93%;
+    --muted-foreground: 168 12% 34%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 90 16% 93%;
+    --accent-foreground: 169 39% 13%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 354 54% 43%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 150 9% 85%;
+    --input: 150 9% 85%;
+    --ring: 150 100% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     /* Malerbetrieb Colors */
     --mbgreen: 150.24, 100%, 24.9%;
     --mbblue: 200.37, 100%, 42.16%;
+    --mbfir: 166, 48%, 15%;
+    --mblime: 66, 62%, 53%;
+    --mborange: 22, 86%, 52%;
+    --mbkalk: 90, 16%, 93%;
   }
 
   .dark {
@@ -77,7 +80,454 @@
   * {
     @apply border-border;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--header) + 1rem);
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-medium;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+  ::selection {
+    background-color: hsl(var(--mblime));
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  /* Einheitlicher Seitenrand aller randlosen Abschnitte */
+  .gutter {
+    @apply px-4 sm:px-6 lg:px-10 2xl:px-16;
+  }
+  .abschnitt {
+    @apply gutter py-20 lg:py-32;
+  }
+  .label {
+    @apply font-sans text-lg font-normal leading-7 tracking-normal text-foreground;
+  }
+  .titel-gross {
+    @apply text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.1] tracking-[-0.01em];
+  }
+  .titel-mittel {
+    @apply text-[clamp(2rem,4vw,3.5rem)] font-medium leading-[1.15] tracking-[-0.01em];
+  }
+  /* Bildbeschriftung wie das Etikett auf einer Farbkarte */
+  .etikett {
+    @apply absolute bottom-0 left-0 z-[1] max-w-[calc(100%-1rem)] hyphens-auto bg-white px-4 py-2.5 text-base font-medium leading-snug text-foreground [overflow-wrap:anywhere] lg:px-5 lg:py-3 lg:text-lg;
+  }
+  .etikett-gross {
+    @apply px-5 py-4 text-[clamp(1.5rem,3.4vw,3.25rem)] leading-tight lg:px-8 lg:py-6;
+  }
+  /* Feine Kante, damit helle Fotos sich vom weißen Grund lösen */
+  .foto {
+    @apply outline outline-1 -outline-offset-1 outline-black/10;
+  }
+}
+
+/* Alle Bewegungen teilen sich die Kurve der Farbrolle und laufen von links nach rechts */
+:root {
+  --rolle: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.farbbalken {
+  display: none;
+}
+
+.wort-maske {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+  vertical-align: bottom;
+}
+.wort-innen {
+  display: inline-block;
+}
+
+/* Anker im Menü: Der Abschnitt schließt direkt an die Kopfzeile an */
+section[id] {
+  scroll-margin-top: -1rem;
+}
+
+/* Der Farbstrich liegt auf der Unterkante der Kopfzeile */
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 4px;
+  background: var(--ton);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.nav-link.aktiv::after {
+  transform: scaleX(1);
+}
+@media (hover: hover) {
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Kontaktwege: Der Farbton rollt von links über die Zeile */
+.kontaktweg {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-content: center;
+  align-items: baseline;
+  height: 100%;
+  padding-block: 1rem;
+  overflow: hidden;
+  transition: color 300ms var(--rolle);
+}
+.kontaktweg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ton);
+  opacity: 0;
+}
+.kontaktweg:focus-visible {
+  color: hsl(var(--foreground));
+  outline-color: hsl(var(--foreground));
+  outline-offset: -4px;
+}
+.kontaktweg:focus-visible::before {
+  opacity: 1;
+}
+@media (hover: hover) {
+  .kontaktweg:hover {
+    color: hsl(var(--foreground));
+  }
+  .kontaktweg:hover::before,
+  .kontaktweg:hover .kontaktweg-titel {
+    opacity: 1;
+  }
+}
+.kontaktweg-titel {
+  opacity: 0.75;
+  transition: opacity 300ms var(--rolle);
+}
+.kontaktweg:focus-visible .kontaktweg-titel {
+  opacity: 1;
+}
+.kontaktweg-wert {
+  font-size: clamp(1.125rem, 5.2vw, 1.5rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+@media (min-width: 640px) {
+  .kontaktweg {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    column-gap: 1.5rem;
+  }
+  .kontaktweg-wert {
+    font-size: clamp(1.25rem, 2.2vw, 2.25rem);
+  }
+}
+
+/* Vorher/Nachher: ohne Bewegung stehen beide Bilder nebeneinander */
+.vorher-nachher-buehne {
+  display: grid;
+}
+.vorher-nachher figure {
+  position: relative;
+  height: 80svh;
+}
+.rollen-kante {
+  display: none;
+}
+@media (min-width: 768px) {
+  .vorher-nachher-buehne {
+    grid-template-columns: 1fr 1fr;
+  }
+  .vorher-nachher figure {
+    height: 100svh;
+  }
+}
+
+/* Referenzen: Bilder behalten ihr Format, die Reihen füllen die Breite */
+.galerie {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+.galerie-abschnitt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+/* Anteile kommen aus src/lib/galerie.ts, sie ergeben je Zeile die volle Breite.
+   Das Pixel Luft hält Rundungen aus dem Umbruch heraus, flex-grow gleicht es aus. */
+.galerie-bild {
+  flex-grow: var(--seiten);
+  flex-basis: calc(
+    (100% - var(--fugen-s) * 0.5rem) * var(--anteil-s) - 1px
+  );
+  aspect-ratio: var(--seiten);
+  background: hsl(var(--mbkalk));
+}
+.galerie-bild-gross {
+  flex-basis: 100%;
+  aspect-ratio: auto;
+  height: 70svh;
+}
+@media (min-width: 640px) {
+  .galerie-bild {
+    flex-basis: calc(
+      (100% - var(--fugen-m) * 0.5rem) * var(--anteil-m) - 1px
+    );
+  }
+  .galerie-bild-gross {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .galerie-bild-gross {
+    height: 88svh;
+  }
+}
+@media (min-width: 1280px) {
+  .galerie-bild {
+    flex-basis: calc(
+      (100% - var(--fugen-l) * 0.5rem) * var(--anteil-l) - 1px
+    );
+  }
+  .galerie-bild-gross {
+    flex-basis: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kontaktweg::before {
+    transition: opacity 200ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nav-link::after {
+    transition: transform 400ms var(--rolle);
+  }
+  .kontaktweg::before {
+    opacity: 1;
+    transform: translateX(-101%);
+    transition: transform 500ms var(--rolle);
+  }
+  .kontaktweg:focus-visible::before {
+    transform: none;
+  }
+  .reveal-text {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(4px);
+    transition-property: opacity, transform, filter;
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+  }
+  .reveal-titel .wort-innen {
+    transform: translateY(105%);
+    transition: transform 900ms var(--rolle);
+  }
+  /* Fotos und Flächen werden wie mit der Farbrolle aufgetragen */
+  /* Der schmale Rest ist nötig: Ganz zugeklippt meldet der IntersectionObserver
+     nur noch die Ecke oben links, und nach Sprüngen bliebe das Bild leer. */
+  .reveal-foto,
+  .reveal-kachel {
+    clip-path: inset(0 99.9% 0 0);
+    transition: clip-path 1000ms var(--rolle);
+  }
+  .reveal-foto {
+    overflow: hidden;
+  }
+  .reveal-foto img {
+    transform: scale(1.14);
+    transition: transform 1500ms var(--rolle);
+    transition-delay: inherit;
+  }
+  .reveal-foto .etikett {
+    transform: translateX(-101%);
+    transition: transform 700ms var(--rolle) 650ms;
+  }
+  .reveal-sichtbar {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: inset(0);
+  }
+  .reveal-sichtbar.reveal-foto img,
+  .reveal-sichtbar .wort-innen,
+  .reveal-sichtbar.reveal-foto .etikett {
+    transform: none;
+  }
+
+  /* Farbbalken fallen in die Farbleiste */
+  .farbvorhang-balken {
+    transform-origin: bottom;
+    animation: vorhang 650ms var(--rolle) both;
+  }
+  .farbbalken {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 100%;
+    display: block;
+    height: 100svh;
+    pointer-events: none;
+    transform-origin: bottom;
+    animation: vorhang 650ms var(--rolle) both;
+  }
+  @keyframes vorhang {
+    from {
+      transform: scaleY(1);
+    }
+    to {
+      transform: scaleY(0);
+    }
+  }
+
+  /* Die Laufzeit des Fortschritts bestimmt, wann das nächste Foto kommt */
+  .bildwechsel {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 3px;
+    background: currentColor;
+    transform-origin: left;
+    animation: bildwechsel 6s linear both;
+  }
+  @keyframes bildwechsel {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .wisch-ein {
+    animation: wisch 900ms var(--rolle) both;
+  }
+  @keyframes wisch {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0);
+    }
+  }
+
+  /* Startbereich: Beim Scrollen flutet der Kreis das Foto mit Farbe */
+  .hero-foto {
+    transform: translateY(calc(var(--f, 0) * 10%))
+      scale(calc(1 + var(--f, 0) * 0.08));
+  }
+  .hero-kreis {
+    transform: scale(calc(1 + var(--f, 0) * 7));
+    will-change: transform;
+  }
+  .hero-inhalt {
+    opacity: calc(1 - var(--f, 0) * 6);
+  }
+
+  /* Die Aussage füllt sich Wort für Wort */
+  .wort-fuellung span {
+    opacity: clamp(0.16, calc((var(--f, 1) - var(--i)) * 14 + 0.16), 1);
+    transition: opacity 120ms linear;
+  }
+
+  /* Vorher/Nachher: Abschnitt bleibt stehen, die Rolle zieht die Sanierung darüber */
+  .vorher-nachher {
+    --p: clamp(0, calc((var(--f, 0) - 0.12) / 0.76), 1);
+    height: 280svh;
+  }
+  .vorher-nachher-buehne {
+    position: sticky;
+    top: calc(var(--header) + 1px);
+    display: block;
+    height: calc(100svh - var(--header) - 1px);
+    overflow: hidden;
+  }
+  .vorher-nachher figure {
+    position: absolute;
+    inset: 0;
+    height: auto;
+    isolation: isolate;
+  }
+  .nachher-bild {
+    z-index: 1;
+    clip-path: inset(0 calc((1 - var(--p)) * 100%) 0 0);
+  }
+  .nachher-bild img {
+    transform: scale(calc(1.08 - var(--p) * 0.08));
+  }
+  .rollen-kante {
+    position: absolute;
+    inset-block: 0;
+    left: calc(var(--p) * 100%);
+    z-index: 2;
+    display: block;
+    width: 0.625rem;
+    background: #efb98a;
+    box-shadow: 0 0 2rem rgb(0 0 0 / 0.35);
+    transform: translateX(-50%);
+    opacity: calc(var(--p) * 30);
+  }
+
+  /* Referenzen: Das Etikett gleitet bei Mauszeiger oder Fokus ins Bild */
+  @media (hover: hover) {
+    .kontaktweg:hover::before {
+      transform: none;
+    }
+    .galerie-etikett {
+      transform: translateX(-101%);
+      transition: transform 500ms var(--rolle);
+    }
+    .group:hover .galerie-etikett,
+    .group:focus-visible .galerie-etikett {
+      transform: none;
+    }
+  }
+}
+
+@media print {
+  .reveal-text,
+  .reveal-foto,
+  .reveal-kachel {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: none;
+  }
+  .wort-innen {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -1,9 +1,6 @@
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  future: { hoverOnlyWhenSupported: true },
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -22,69 +19,25 @@ module.exports = {
     },
     extend: {
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+        tupfer: {
+          from: { opacity: "0", transform: "scale(0.94)" },
+          to: { opacity: "1", transform: "scale(1)" },
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        moveHorizontal: {
-          "0%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
-          "50%": {
-            transform: "translateX(50%) translateY(10%)",
-          },
-          "100%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
-        },
-        moveInCircle: {
-          "0%": {
-            transform: "rotate(0deg)",
-          },
-          "50%": {
-            transform: "rotate(180deg)",
-          },
-          "100%": {
-            transform: "rotate(360deg)",
-          },
-        },
-        moveVertical: {
-          "0%": {
-            transform: "translateY(-50%)",
-          },
-          "50%": {
-            transform: "translateY(50%)",
-          },
-          "100%": {
-            transform: "translateY(-50%)",
-          },
-        },
-        slidein: {
+        einblenden: {
           from: {
             opacity: "0",
-            transform: "translateY(-10px)",
+            transform: "translateY(12px)",
+            filter: "blur(4px)",
           },
-          to: {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
+          to: { opacity: "1", transform: "none", filter: "none" },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        first: "moveVertical 30s ease infinite",
-        second: "moveInCircle 20s reverse infinite",
-        third: "moveInCircle 40s linear infinite",
-        fourth: "moveHorizontal 40s ease infinite",
-        fifth: "moveInCircle 20s ease infinite",
-        slidein300: "slidein 1s ease 300ms forwards",
-        slidein500: "slidein 1s ease 500ms forwards",
-        slidein700: "slidein 1s ease 700ms forwards",
+        tupfer: "tupfer 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both",
+        einblenden: "einblenden 0.3s ease-out both",
+      },
+      fontFamily: {
+        sans: ['"Outfit Variable"', "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -122,6 +75,10 @@ module.exports = {
         },
         mbgreen: "hsl(var(--mbgreen))",
         mbblue: "hsl(var(--mbblue))",
+        mbfir: "hsl(var(--mbfir))",
+        mblime: "hsl(var(--mblime))",
+        mborange: "hsl(var(--mborange))",
+        mbkalk: "hsl(var(--mbkalk))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -130,21 +87,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("daisyui"),
-    addVariablesForColors,
-  ],
+  plugins: [require("tailwindcss-animate")],
 };
-
-// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
-function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
-
-  addBase({
-    ":root": newVars,
-  });
-}
