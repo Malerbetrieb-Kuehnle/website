@@ -10,8 +10,8 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
   const Untertitel = seite ? "h2" : "h3";
 
   return (
-    <section>
-      <div className="abschnitt bg-mbfir text-white">
+    <section className="bg-mbfir">
+      <div className="abschnitt pb-0 text-white lg:pb-0">
         <Reveal art="titel">
           <Titel className="text-[clamp(2.75rem,8vw,8.5rem)] font-medium leading-[1.05] tracking-[-0.01em]">
             <WortMaske text="So erreichen Sie uns." />
@@ -80,18 +80,21 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
         </div>
       </div>
 
-      <Reveal art="foto" className="relative h-[45svh] lg:h-[70svh]">
+      {/* Freigestellt: Himmel und Boden sind transparent und zeigen die Farbe der Sektion */}
+      <Reveal
+        art="foto"
+        className="mt-4 aspect-square sm:aspect-[3/2] lg:mt-0 lg:aspect-auto"
+      >
         <img
-          src={projektBild("schaufenster-nacht")}
-          srcSet={projektSrcSet("schaufenster-nacht")}
-          sizes="100vw"
-          alt="Unser Schaufenster bei Nacht"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_42%]"
+          src={projektBild("schaufenster-freigestellt")}
+          srcSet={projektSrcSet("schaufenster-freigestellt")}
+          sizes="(min-width: 640px) 100vw, 142vw"
+          alt="Das Schaufenster des Malerbetriebs Kühnle bei Nacht"
+          width={2400}
+          height={1692}
+          className="h-full w-full object-cover object-[60%_100%] lg:h-auto"
           loading="lazy"
         />
-        <span className="etikett etikett-gross">
-          Unser Schaufenster bei Nacht
-        </span>
       </Reveal>
     </section>
   );
