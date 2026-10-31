@@ -1,6 +1,6 @@
 import ausbildung from "@/assets/ausbildung.png";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
-import { merkmale_ausbildung } from "@/constants";
+import { email, merkmale_ausbildung } from "@/constants";
 
 export default function Ausbildung() {
   return (
@@ -16,8 +16,9 @@ export default function Ausbildung() {
         </Reveal>
         <Reveal verzoegerung={100}>
           <p className="mt-8 max-w-xl text-lg leading-8">
-            Wir bilden seit Jahren mit Erfolg Lehrlinge in diesem interessanten
-            und absolut vielseitigen Beruf aus.
+            Ausbildung zum Maler und Lackierer in Bad Aibling: Wir bilden seit
+            Jahren mit Erfolg Lehrlinge in diesem interessanten und absolut
+            vielseitigen Beruf aus.
           </p>
           <p className="mt-4 max-w-xl text-lg leading-8">
             Du gestaltest Innenräume und Fassaden, verlegst Bodenbeläge und
@@ -42,7 +43,7 @@ export default function Ausbildung() {
         <p className="mt-8 text-lg">
           Wir freuen uns auf Deine{" "}
           <a
-            href="mailto:malerbetrieb.kuehnle@gmx.de?subject=Bewerbung%20Ausbildung"
+            href={`mailto:${email}?subject=Bewerbung%20Ausbildung`}
             className="underline decoration-1 underline-offset-4 hover:no-underline"
           >
             Bewerbung per E-Mail

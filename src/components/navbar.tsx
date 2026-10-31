@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, NavLink } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import { navLinks } from "@/constants";
+import { email, navLinks } from "@/constants";
 
 const Logo = ({ onClick }: { onClick?: () => void }) => (
   <Link to="/" className="-m-1 p-1" onClick={onClick}>
@@ -52,7 +52,7 @@ export default function Navbar() {
             +49 8061 93 98 333
           </a>
           <Button asChild>
-            <Link to="/kontakt">Kontakt</Link>
+            <Link to="/kontakt/">Kontakt</Link>
           </Button>
         </div>
 
@@ -98,7 +98,7 @@ export default function Navbar() {
             <ul>
               {[
                 ...navLinks,
-                { id: "kontakt", title: "Kontakt", path: "/kontakt" },
+                { id: "kontakt", title: "Kontakt", path: "/kontakt/" },
               ].map((nav) => (
                 <li key={nav.id} className="border-b">
                   <Link
@@ -115,11 +115,8 @@ export default function Navbar() {
               <a href="tel:+4980619398333" className="block py-1 text-lg">
                 +49 8061 93 98 333
               </a>
-              <a
-                href="mailto:malerbetrieb.kuehnle@gmx.de"
-                className="block py-1 text-lg"
-              >
-                malerbetrieb.kuehnle@gmx.de
+              <a href={`mailto:${email}`} className="block py-1 text-lg">
+                {email}
               </a>
             </div>
           </div>

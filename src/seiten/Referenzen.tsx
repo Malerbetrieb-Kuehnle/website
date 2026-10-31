@@ -98,8 +98,8 @@ export default function Referenzen() {
           className="mt-8 grid gap-y-6 lg:mt-12 lg:grid-cols-12 lg:items-end"
         >
           <p className="max-w-2xl text-xl leading-8 text-muted-foreground lg:col-span-7">
-            Abgeschlossene Projekte aus unserer Arbeit: Fassaden, Wohnhäuser,
-            Praxen und Innenräume in verschiedenen Stilen.
+            Abgeschlossene Projekte aus Bad Aibling, Rosenheim und der Region:
+            Fassaden, Wohnhäuser, Praxen und Innenräume in verschiedenen Stilen.
           </p>
           <div
             role="group"
@@ -152,7 +152,7 @@ export default function Referenzen() {
             size="lg"
             className="mt-8 bg-mblime text-foreground hover:bg-white"
           >
-            <Link to="/kontakt">Rückruf vereinbaren</Link>
+            <Link to="/kontakt/">Rückruf vereinbaren</Link>
           </Button>
         </Reveal>
       </section>

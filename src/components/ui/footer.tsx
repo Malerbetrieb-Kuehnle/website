@@ -1,21 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import { Button } from "@/components/ui/button";
 import Farbleiste from "@/components/ui/farbleiste";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
-import { socialMedia, footerLinks } from "@/constants/index.tsx";
+import {
+  einsatzorte,
+  email,
+  footerLinks,
+  instagram,
+} from "@/constants/index.tsx";
+
+const linkClass = "inline-block py-1 transition-colors hover:text-mbgreen";
+const titelClass =
+  "font-sans text-base font-normal tracking-normal text-muted-foreground";
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-mbkalk">
-      <div className="gutter py-12 lg:py-16">
-        <Reveal art="titel" className="mb-12 lg:mb-20">
-          <p className="text-[clamp(2.75rem,10.5vw,11rem)] font-medium leading-[1.05] tracking-[-0.01em] [text-wrap:balance]">
-            <WortMaske text="Farbe schafft Atmosphäre." />
-          </p>
-        </Reveal>
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-6">
+      <div className="gutter pb-8 pt-16 lg:pt-24">
+        <div className="flex flex-col items-start gap-y-8 lg:flex-row lg:items-end lg:justify-between lg:gap-x-12">
+          <Reveal art="titel">
+            <p className="text-[clamp(2.75rem,8vw,8.5rem)] font-medium leading-[1.05] tracking-[-0.01em] [text-wrap:balance]">
+              <WortMaske text="Farbe schafft Atmosphäre." />
+            </p>
+          </Reveal>
+          <Button asChild size="lg" className="shrink-0">
+            <Link to="/kontakt/">Rückruf vereinbaren</Link>
+          </Button>
+        </div>
+
+        <div className="mt-14 grid gap-10 border-t border-foreground/15 pt-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-12">
+          <div className="sm:col-span-2 lg:col-span-5">
             <Link to="/" className="inline-block">
               <img
                 src={logo}
@@ -26,32 +42,42 @@ const Footer: React.FC = () => {
                 loading="lazy"
               />
             </Link>
-            <p className="mt-4 text-2xl font-medium">
-              Wir bringen Farbe in Ihr Leben.
+            <p className="mt-4 max-w-xs text-lg leading-7">
+              Meisterbetrieb für Maler- und Lackiererarbeiten in Bad Aibling.
             </p>
-            <address className="mt-4 not-italic leading-7 text-muted-foreground">
-              Ebersberger Straße 75, 83043 Bad Aibling
+          </div>
+
+          <div className="lg:col-span-3">
+            <h2 className={titelClass}>Kontakt</h2>
+            <address className="mt-3 not-italic">
+              <p className="py-1">Ebersberger Straße 75</p>
+              <p className="py-1">83043 Bad Aibling</p>
+              <a href="tel:+4980619398333" className={`${linkClass} mt-2`}>
+                +49 8061 93 98 333
+              </a>
+              <br />
+              <a href={`mailto:${email}`} className={linkClass}>
+                {email}
+              </a>
               <br />
               <a
-                href="tel:+4980619398333"
-                className="underline decoration-1 underline-offset-4 transition-colors hover:text-mbgreen"
+                href={instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
               >
-                +49 8061 93 98 333
+                Instagram
               </a>
             </address>
           </div>
+
           {footerLinks.map((section) => (
-            <div key={section.title} className="md:col-span-3">
-              <h2 className="font-sans text-base font-normal tracking-normal text-muted-foreground">
-                {section.title}
-              </h2>
-              <ul className="mt-3 space-y-1">
+            <div key={section.title} className="lg:col-span-2">
+              <h2 className={titelClass}>{section.title}</h2>
+              <ul className="mt-3">
                 {section.links.map((link) => (
                   <li key={link.id}>
-                    <Link
-                      to={link.path}
-                      className="inline-block py-1 transition-colors hover:text-mbgreen"
-                    >
+                    <Link to={link.path} className={linkClass}>
                       {link.title}
                     </Link>
                   </li>
@@ -60,25 +86,12 @@ const Footer: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="mt-12 flex items-center justify-between border-t border-foreground/15 pt-6 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Malerbetrieb Kühnle</p>
-          <div className="flex gap-x-1">
-            {socialMedia.map((social) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={social.id}
-                  href={social.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.title}
-                  className="flex h-11 w-11 items-center justify-center text-foreground transition-colors hover:text-mbgreen"
-                >
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </a>
-              );
-            })}
-          </div>
+
+        <div className="mt-12 flex flex-col gap-y-2 border-t border-foreground/15 pt-6 text-sm text-muted-foreground lg:flex-row lg:justify-between lg:gap-x-12">
+          <p>Im Einsatz in {einsatzorte.join(", ")} und der Region.</p>
+          <p className="shrink-0">
+            © {new Date().getFullYear()} Malerbetrieb Kühnle
+          </p>
         </div>
       </div>
       <Farbleiste />

@@ -44,13 +44,15 @@ export default function Services({ seite = false }: { seite?: boolean }) {
       <div className="gutter py-20 lg:py-16">
         <Reveal art="titel">
           <Titel className="titel-gross">
-            <WortMaske text="Service" />
+            <WortMaske text="Malerarbeiten für innen und außen" />
           </Titel>
         </Reveal>
         <Reveal verzoegerung={100}>
           <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
-            Von der Farbberatung bis zur fertigen Fassade: unsere Leistungen für
-            innen und außen.
+            Von der Farbberatung über Innenanstriche und Tapezierarbeiten bis
+            zum Fassadenanstrich: Als Meisterbetrieb aus Bad Aibling übernehmen
+            wir alle Malerarbeiten an Ihrem Haus, in Ihrer Wohnung oder Ihren
+            Geschäftsräumen.
           </p>
         </Reveal>
 

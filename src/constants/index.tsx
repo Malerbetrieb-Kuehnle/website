@@ -1,4 +1,3 @@
-import { FaPhone, FaEnvelope, FaInstagram } from "react-icons/fa";
 import Betonoptik from "@/assets/services/Betonoptik.jpg";
 import Hochdruckwasserreinigung from "@/assets/services/Hochdruckwasserreinigung.jpg";
 import Bodenbeschichtungen from "@/assets/services/Bodenbeschichtungen.jpg";
@@ -23,34 +22,29 @@ export const navLinks = [
   {
     id: "service",
     title: "Service",
-    path: "/service",
+    path: "/service/",
   },
   {
     id: "referenzen",
     title: "Referenzen",
-    path: "/referenzen",
+    path: "/referenzen/",
   },
 ];
 
-export const socialMedia = [
-  {
-    id: "instagram",
-    title: "Instagram",
-    icon: FaInstagram,
-    path: "https://www.instagram.com/malerbetrieb_kuehnle/",
-  },
-  {
-    id: "email",
-    title: "E-Mail",
-    icon: FaEnvelope,
-    path: "mailto:malerbetrieb.kuehnle@gmx.de",
-  },
-  {
-    id: "telefon",
-    title: "Telefon",
-    icon: FaPhone,
-    path: "tel:+491728517479",
-  },
+export const email = "kontakt@malerbetrieb-kuehnle.de";
+
+export const instagram = "https://www.instagram.com/malerbetrieb_kuehnle/";
+
+// Orte aus unseren Referenzen
+export const einsatzorte = [
+  "Bad Aibling",
+  "Rosenheim",
+  "Kolbermoor",
+  "Bruckmühl",
+  "Bad Feilnbach",
+  "Brannenburg",
+  "Neubeuern",
+  "Tuntenhausen",
 ];
 
 export const footerLinks = [
@@ -58,16 +52,16 @@ export const footerLinks = [
     title: "Malerbetrieb",
     links: [
       { id: "home", title: "Home", path: "/" },
-      { id: "service", title: "Service", path: "/service" },
-      { id: "referenzen", title: "Referenzen", path: "/referenzen" },
-      { id: "kontakt", title: "Kontakt", path: "/kontakt" },
+      { id: "service", title: "Service", path: "/service/" },
+      { id: "referenzen", title: "Referenzen", path: "/referenzen/" },
+      { id: "kontakt", title: "Kontakt", path: "/kontakt/" },
     ],
   },
   {
     title: "Rechtliches",
     links: [
-      { id: "impressum", title: "Impressum", path: "/impressum" },
-      { id: "datenschutz", title: "Datenschutz", path: "/datenschutz" },
+      { id: "impressum", title: "Impressum", path: "/impressum/" },
+      { id: "datenschutz", title: "Datenschutz", path: "/datenschutz/" },
     ],
   },
 ];
@@ -75,19 +69,20 @@ export const footerLinks = [
 export const service_innenbereich = [
   {
     title: "Innenanstrich",
-    description: "Wir führen alle Anstriche im Innenbereich aus.",
+    description:
+      "Wände und Decken in Wohnräumen, Büros und Praxen, sauber und deckend gestrichen.",
     image: Innenanstrich,
   },
   {
     title: "Bodenbeschichtungen",
     description:
-      "Spezielle Beschichtungen für verschiedene Böden, etwa Epoxidharz oder Betonversiegelung.",
+      "Bodenbeschichtungen für verschiedene Untergründe, etwa aus Epoxidharz oder als Betonversiegelung.",
     image: Bodenbeschichtungen,
   },
   {
     title: "Lackierarbeiten",
     description:
-      "Alle Lackierarbeiten führen wir direkt bei Ihnen vor Ort aus.",
+      "Türen, Treppen und Geländer lackieren wir direkt bei Ihnen vor Ort.",
     image: Lackierarbeiten2,
   },
   {
@@ -99,7 +94,7 @@ export const service_innenbereich = [
   {
     title: "Spachteltechniken",
     description:
-      "Wir führen für Sie klassische Glättetechniken an Wänden und Decken durch.",
+      "Klassische Spachtel- und Glättetechniken für Wände und Decken.",
     image: Spachtelarbeiten,
   },
   {
@@ -110,7 +105,7 @@ export const service_innenbereich = [
   {
     title: "Tapezierarbeiten",
     description:
-      "Von der Fototapete bis zum hochwertigen italienischen Wandbelag.",
+      "Tapezieren von der Fototapete bis zum hochwertigen italienischen Wandbelag.",
     image: projektBild("praxis-wandbelag"),
   },
   {
@@ -131,7 +126,7 @@ export const service_aussenbereich = [
   {
     title: "Holzanstriche aller Art",
     description:
-      "Für neue und abgewitterte Holzbauteile, auch nach Hagelschäden am Gebäude.",
+      "Holzanstriche für neue und abgewitterte Bauteile, auch nach Hagelschäden am Gebäude.",
     image: projektBild("giebel-grau-verschalung"),
   },
   {
@@ -149,12 +144,13 @@ export const service_aussenbereich = [
   {
     title: "Fassadenanstriche",
     description:
-      "Von der Untergrundvorbereitung über die Auswahl von Farbtönen und Materialien bis zur Ausführung.",
+      "Fassadenanstrich von der Untergrundvorbereitung über die Auswahl von Farbtönen und Materialien bis zur Ausführung.",
     image: projektBild("altbau-pfirsich-seite"),
   },
   {
     title: "Hochdruckreinigung",
-    description: "Reinigung von verschmutzten Flächen am Gebäude.",
+    description:
+      "Wir reinigen verschmutzte Flächen am Gebäude mit dem Hochdruckreiniger.",
     image: Hochdruckwasserreinigung,
   },
   {
@@ -171,7 +167,8 @@ export const service_aussenbereich = [
   },
   {
     title: "Lackierarbeiten",
-    description: "Alle Lackierarbeiten direkt bei Ihnen vor Ort.",
+    description:
+      "Fenster, Türen und Holzbauteile lackieren wir direkt bei Ihnen vor Ort.",
     image: Lackierarbeiten1,
   },
   {
@@ -273,31 +270,102 @@ export const merkmale_ausbildung = [
   "Zukunftssicherheit und Berufsperspektiven",
 ];
 
-export const faqItems = [
+export const faqGruppen = [
   {
-    question: "Verwenden Sie nachhaltige Produkte?",
-    answer:
-      "Ja. Wir verwenden umweltfreundlich hergestellte Produkte, etwa Farben und Lacke mit geringem VOC-Gehalt (flüchtige organische Verbindungen) und lösungsmittelfreie Alternativen.",
+    titel: "Angebot und Ablauf",
+    fragen: [
+      {
+        question: "Wie bekomme ich ein Angebot?",
+        answer:
+          "Rufen Sie uns an oder fordern Sie über das Formular einen Rückruf an. Wir besprechen Ihr Vorhaben mit Ihnen und erstellen auf dieser Grundlage Ihr Angebot.",
+      },
+      {
+        question: "Was kostet ein Anstrich?",
+        answer:
+          "Das hängt von Fläche, Untergrund, Material und den nötigen Vorarbeiten ab. Deshalb nennen wir hier keine Pauschalpreise. Beschreiben Sie uns Ihr Vorhaben, dann bekommen Sie ein Angebot, das zu Ihrem Projekt passt.",
+      },
+      {
+        question: "In welchen Orten sind Sie als Maler im Einsatz?",
+        answer: `Unser Betrieb sitzt in Bad Aibling. Projekte hatten wir unter anderem in ${einsatzorte
+          .slice(1, -1)
+          .join(
+            ", "
+          )} und Tuntenhausen. Liegt Ihr Ort nicht dabei, fragen Sie uns einfach.`,
+      },
+      {
+        question: "Habe ich einen festen Ansprechpartner?",
+        answer:
+          "Ja. Beratung, Entwurf und Umsetzung liegen bei uns in einer Hand. Sie haben von Anfang bis Ende einen Ansprechpartner.",
+      },
+      {
+        question: "Halten Sie vereinbarte Termine ein?",
+        answer:
+          "Ja. Wir halten Termine ein und arbeiten nach Zeitplan. Die termingerechte Abwicklung gehört für uns als Meisterbetrieb dazu.",
+      },
+    ],
   },
   {
-    question: "Helfen Sie beim Aus- und Einräumen?",
-    answer: "Ja, gerne helfen wir Ihnen beim Aus- und Einräumen.",
+    titel: "Leistungen",
+    fragen: [
+      {
+        question: "Welche Malerarbeiten übernehmen Sie?",
+        answer:
+          "Innenanstriche, Tapezier-, Spachtel- und Lackierarbeiten ebenso wie Fassadenanstriche, Holzanstriche und Putzausbesserungen. Dazu kommen Bodenbeschichtungen und Gestaltungen in Betonoptik.",
+      },
+      {
+        question: "Stellen Sie auch das Gerüst für den Fassadenanstrich?",
+        answer:
+          "Ja. Für unsere Arbeiten bauen wir das Arbeitsschutzgerüst an Ihrem Gebäude selbst auf. Sie brauchen dafür keine weitere Firma.",
+      },
+      {
+        question: "Beraten Sie bei der Farbauswahl?",
+        answer:
+          "Ja. Wir beraten Sie bei der Farbgestaltung im Innen- und Außenbereich und helfen bei der Auswahl von Farbtönen und Materialien.",
+      },
+      {
+        question: "Renovieren Sie auch alte Gebäude?",
+        answer:
+          "Ja. Wir bringen auch alte Gemäuer und stark renovierungsbedürftige Fassaden wieder auf Vordermann. Beispiele finden Sie bei unseren Referenzen.",
+      },
+      {
+        question: "Arbeiten Sie auch für Firmen und öffentliche Auftraggeber?",
+        answer:
+          "Ja. Neben Wohnhäusern gehören Praxen, Büros, Banken und öffentliche Gebäude zu unseren Referenzen.",
+      },
+      {
+        question: "Bilden Sie Maler und Lackierer aus?",
+        answer:
+          "Ja, wir bilden seit Jahren mit Erfolg aus. Bewerbungen nehmen wir gerne per E-Mail entgegen.",
+      },
+    ],
   },
   {
-    question: "Welche Ausstattung bringen Sie mit?",
-    answer: "Wir arbeiten mit hochwertigen Werkzeugen, Geräten und Materialien.",
-  },
-  {
-    question: "Halten Sie Termine ein?",
-    answer: "Ja. Wir halten Termine ein und arbeiten nach Zeitplan.",
-  },
-  {
-    question: "Gehen Sie auf individuelle Wünsche ein?",
-    answer: "Ja. Guter Service und Ihre Wünsche sind uns sehr wichtig.",
-  },
-  {
-    question: "Bleibt die Baustelle sauber?",
-    answer:
-      "Ja. Wir halten die Baustelle sauber und ordentlich, während und nach der Arbeit.",
+    titel: "Material und Baustelle",
+    fragen: [
+      {
+        question: "Verwenden Sie nachhaltige Produkte?",
+        answer:
+          "Ja. Wir verwenden umweltfreundlich hergestellte Produkte, etwa Farben und Lacke mit geringem VOC-Gehalt (flüchtige organische Verbindungen) und lösungsmittelfreie Alternativen.",
+      },
+      {
+        question: "Helfen Sie beim Aus- und Einräumen?",
+        answer: "Ja, gerne helfen wir Ihnen beim Aus- und Einräumen.",
+      },
+      {
+        question: "Bleibt die Baustelle sauber?",
+        answer:
+          "Ja. Wir halten die Baustelle sauber und ordentlich, während und nach der Arbeit.",
+      },
+      {
+        question: "Mit welcher Ausstattung arbeiten Sie?",
+        answer:
+          "Wir arbeiten mit hochwertigen Werkzeugen, Geräten und Materialien von etablierten Lieferanten.",
+      },
+      {
+        question: "Gehen Sie auf individuelle Wünsche ein?",
+        answer:
+          "Ja. Guter Service und Ihre Wünsche sind uns sehr wichtig, von der ersten Beratung bis zur fertigen Fläche.",
+      },
+    ],
   },
 ];

@@ -19,14 +19,6 @@ module.exports = {
     },
     extend: {
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
         tupfer: {
           from: { opacity: "0", transform: "scale(0.94)" },
           to: { opacity: "1", transform: "scale(1)" },
@@ -41,8 +33,6 @@ module.exports = {
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
         tupfer: "tupfer 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both",
         einblenden: "einblenden 0.3s ease-out both",
       },

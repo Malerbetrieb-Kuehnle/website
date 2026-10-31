@@ -47,11 +47,11 @@ export default function References() {
         </Reveal>
         <Reveal verzoegerung={100} className="lg:col-span-7">
           <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-            Von der historischen Fassade bis zum Wartezimmer: eine Auswahl
-            unserer abgeschlossenen Projekte.
+            Fassaden, Wohnhäuser und Praxen aus Bad Aibling, Rosenheim und der
+            Region: eine Auswahl unserer abgeschlossenen Projekte.
           </p>
           <Button asChild className="mt-6">
-            <Link to="/referenzen">Alle Referenzen ansehen</Link>
+            <Link to="/referenzen/">Alle Referenzen ansehen</Link>
           </Button>
         </Reveal>
       </div>

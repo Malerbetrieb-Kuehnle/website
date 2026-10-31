@@ -56,6 +56,11 @@ export default function Malerbetrieb() {
               stehen Qualitätsarbeit, Zuverlässigkeit und termingerechte
               Abwicklung der Aufträge im Vordergrund.
             </p>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
+              Wir arbeiten für Privathaushalte, Gewerbe und öffentliche
+              Auftraggeber in Bad Aibling, Rosenheim, Kolbermoor, Bruckmühl, Bad
+              Feilnbach und der Region.
+            </p>
           </Reveal>
           <ul
             role="list"

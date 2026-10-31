@@ -1,5 +1,6 @@
 import { ProfileForm } from "@/components/ui/profileform";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
+import { email, instagram } from "@/constants";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
 import { cn } from "@/lib/utils";
 
@@ -36,9 +37,9 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
         </Reveal>
         <Reveal verzoegerung={100}>
           <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
-            Haben Sie Fragen? Hinterlassen Sie Ihre Nummer, wir rufen Sie so
-            schnell wie möglich zurück. Natürlich erreichen Sie uns auch per
-            Telefon und E-Mail.
+            Sie suchen einen Maler in Bad Aibling oder Umgebung? Hinterlassen
+            Sie Ihre Nummer, wir rufen Sie so schnell wie möglich zurück.
+            Natürlich erreichen Sie uns auch per Telefon und E-Mail.
           </p>
         </Reveal>
 
@@ -67,11 +68,8 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
           <div>
             <dt className="text-white/70">E-Mail</dt>
             <dd className="mt-1">
-              <a
-                href="mailto:malerbetrieb.kuehnle@gmx.de"
-                className={linkClass}
-              >
-                malerbetrieb.kuehnle@gmx.de
+              <a href={`mailto:${email}`} className={linkClass}>
+                {email}
               </a>
             </dd>
           </div>
@@ -87,7 +85,7 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
             <dt className="text-white/70">Instagram</dt>
             <dd className="mt-1">
               <a
-                href="https://www.instagram.com/malerbetrieb_kuehnle"
+                href={instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={linkClass}
