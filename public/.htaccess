@@ -1,0 +1,15 @@
+ErrorDocument 404 /404.html
+
+# IONOS komprimiert von sich aus nur HTML
+<IfModule mod_filter.c>
+  <IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/css text/javascript application/javascript application/xml image/svg+xml
+  </IfModule>
+</IfModule>
+
+# Dateien mit Hash im Namen ändern sich nie, jeder Build vergibt neue Namen
+<IfModule mod_headers.c>
+  <FilesMatch "-[A-Za-z0-9_-]{8}\.(css|js|woff2|webp|jpe?g|png|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>

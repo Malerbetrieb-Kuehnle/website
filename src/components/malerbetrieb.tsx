@@ -1,80 +1,157 @@
-import { CheckIcon } from "@heroicons/react/20/solid";
-import about_us from "@/assets/Fenster-25-Jahre.png";
-import Reveal from "react-awesome-reveal";
-import { customAnimation } from "@/lib/utils";
-import { merkmale_about_us } from "@/constants";
+import type { CSSProperties } from "react";
+import portrait from "@/assets/portrait_malerbetrieb_norbert_kuehnle.jpeg";
+import Reveal, { WortMaske } from "@/components/ui/reveal";
+import VorherNachher from "@/components/vorhernachher";
+import {
+  ablauf,
+  gruendungsjahr,
+  jahreSeitGruendung,
+  merkmale_about_us,
+} from "@/constants";
+import { projektBild, projektSrcSet } from "@/lib/bilder";
+import { useScrollFortschritt } from "@/lib/bewegung";
+
+const aussage =
+  "Wir stehen für fachmännische Handwerksarbeit rund um die Innen- und Außengestaltung von Räumen, Gebäuden und Fassaden, im Großen wie im Kleinen.".split(
+    " "
+  );
+
+const fuellung = (box: DOMRect, fensterhoehe: number) =>
+  (fensterhoehe * 0.85 - box.top) / (fensterhoehe * 0.6);
+
+// Die Aussage füllt sich beim Scrollen Wort für Wort mit Farbe
+function Aussage() {
+  const absatz = useScrollFortschritt<HTMLParagraphElement>(fuellung);
+
+  return (
+    <p ref={absatz} className="titel-mittel wort-fuellung">
+      {aussage.map((wort, index) => (
+        <span
+          key={index}
+          style={{ "--i": index / aussage.length } as CSSProperties}
+        >
+          {wort}{" "}
+        </span>
+      ))}
+    </p>
+  );
+}
 
 export default function Malerbetrieb() {
+  // Das Jahr im vorgerenderten HTML altert, im Browser rechnet die Seite neu
+  const jahre = jahreSeitGruendung();
+  const merkmale = [`${jahre} Jahre Erfahrung`, ...merkmale_about_us];
+
   return (
-    <div className="max-w-7xl mx-auto mb-40">
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-2xl sm:text-center">
+    <>
+      <section
+        id="ueber-uns"
+        tabIndex={-1}
+        className="abschnitt grid gap-y-10 outline-none lg:grid-cols-12"
+      >
+        <div className="lg:col-span-4">
+          <h2 className="label">Über uns</h2>
           <Reveal
-            keyframes={customAnimation}
-            cascade
-            triggerOnce
-            duration={500}
+            as="figure"
+            art="foto"
+            verzoegerung={100}
+            className="foto relative mt-8 max-w-sm"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-              Malerbetrieb Kühnle.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Wir stehen für fachmännische Handwerksarbeit komplexer Arbeiten
-              rund um die Innen- und Außengestaltung von Räumen, Gebäuden und
-              Fassaden – im Großen wie im Kleinen.
-            </p>
+            <img
+              src={portrait}
+              alt="Norbert Kühnle lächelt im grauen Trachtenjanker in die Kamera"
+              width={768}
+              height={1024}
+              className="h-auto w-full"
+              loading="lazy"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute right-3 top-3 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-mborange sm:h-28 sm:w-28"
+            >
+              <span
+                suppressHydrationWarning
+                className="text-4xl font-medium leading-none sm:text-5xl"
+              >
+                {jahre}
+              </span>
+              <span className="text-base sm:mt-0.5">Jahre</span>
+            </div>
+            <figcaption className="etikett">Norbert Kühnle, Inhaber</figcaption>
           </Reveal>
         </div>
-        {/* Über uns */}
-        <Reveal
-          keyframes={customAnimation}
-          triggerOnce
-          delay={400}
-          duration={500}
-        >
-          <div className="mx-auto mt-6 max-w-2xl rounded-2xl ring-2 ring-[#f5f5f5] sm:mt-20 lg:mx-0 lg:flex lg:max-w-none ">
-            <div className="p-8 sm:p-10 lg:flex-auto">
-              <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
-                Über uns.
-              </h3>
-              <p className="mt-6 text-base leading-7 text-gray-600">
-                Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit
-                Sitz in Bad Aibling. Als Meisterbetrieb im Maler- und
-                Lackiererhandwerk stehen Qualitätsarbeit, Zuverlässigkeit und
-                termingerechte Abwicklung der Aufträge im Vordergrund.
-              </p>
-              <div className="mt-10 flex items-center gap-x-4">
-                <div className="flex-none text-sm font-bold leading-6 text-mbgreen">
-                  Das macht uns aus
-                </div>
-                <div className="h-px flex-auto bg-gray-100" />
-              </div>
-              <ul
-                role="list"
-                className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+        <div className="lg:col-span-8">
+          <Aussage />
+          <Reveal>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
+              Norbert Kühnle gründete {gruendungsjahr} seinen Malerbetrieb mit
+              Sitz in Bad Aibling. Als Meisterbetrieb im Maler- und
+              Lackiererhandwerk stehen Qualitätsarbeit, Zuverlässigkeit und
+              termingerechte Abwicklung der Aufträge im Vordergrund.
+            </p>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
+              Wir arbeiten für Privathaushalte, Gewerbe und öffentliche
+              Auftraggeber in Bad Aibling, Rosenheim, München, Kolbermoor,
+              Bruckmühl, Bad Feilnbach und der Region. Auch im Ausland sind wir
+              im Einsatz, zum Beispiel an einer Villa in Kapstadt.
+            </p>
+          </Reveal>
+          <ul
+            role="list"
+            className="mt-12 grid gap-x-6 sm:grid-cols-2 xl:grid-cols-4"
+          >
+            {merkmale.map((feature, index) => (
+              <Reveal
+                key={feature}
+                as="li"
+                verzoegerung={index * 100}
+                suppressHydrationWarning
+                className="border-t py-4 leading-6"
               >
-                {merkmale_about_us.map((feature) => (
-                  <li key={feature} className="flex gap-x-3">
-                    <CheckIcon
-                      className="h-6 w-5 flex-none text-mbgreen"
-                      aria-hidden="true"
-                    />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="p-10 m-auto">
-              <img
-                src={about_us}
-                className="md:max-w-xs max-w-64"
-                alt="Über uns - 25 Jahre"
-                loading="lazy"
-              />
-            </div>
-          </div>
+                {feature}
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <VorherNachher />
+
+      <section className="grid lg:grid-cols-2">
+        <Reveal art="foto" className="relative h-[70svh] lg:h-auto">
+          <img
+            src={projektBild("bauernhaus-geruest")}
+            srcSet={projektSrcSet("bauernhaus-geruest")}
+            sizes="(min-width: 1024px) max(50vw, 134vh), 100vw"
+            alt="Drei Fahrzeuge des Malerbetriebs vor einem eingerüsteten Bauernhaus"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
         </Reveal>
-      </div>
-    </div>
+        <div className="abschnitt">
+          <Reveal art="titel">
+            <h2 className="titel-mittel">
+              <WortMaske text="Beratung, Entwurf, Umsetzung. Ein Ansprechpartner." />
+            </h2>
+          </Reveal>
+          <ol role="list" className="mt-12 lg:mt-20">
+            {ablauf.map((schritt, index) => (
+              <Reveal
+                key={schritt.title}
+                as="li"
+                verzoegerung={index * 100}
+                className="grid grid-cols-[2.5rem_1fr] border-t py-6 sm:grid-cols-[2.5rem_10rem_1fr]"
+              >
+                <span className="text-muted-foreground">{index + 1}</span>
+                <h3 className="text-xl">{schritt.title}</h3>
+                <p className="col-start-2 mt-2 max-w-md leading-7 text-muted-foreground sm:col-start-3 sm:mt-0">
+                  {schritt.description}
+                </p>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+    </>
   );
 }

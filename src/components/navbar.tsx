@@ -1,137 +1,160 @@
 import logo from "@/assets/logo.png";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import type { CSSProperties } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, useLocation } from "react-router-dom";
-import { FaPhone } from "react-icons/fa";
+import { PhoneIcon } from "@heroicons/react/24/solid";
+import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { navLinks } from "@/constants";
+import {
+  adresse,
+  email,
+  farbtoene,
+  menueLinks,
+  navLinks,
+  telefon,
+} from "@/constants";
+
+const Logo = ({ onClick }: { onClick?: () => void }) => (
+  <Link to="/" className="-m-1 p-1" onClick={onClick}>
+    <img
+      className="h-12 w-auto"
+      src={logo}
+      width={249}
+      height={128}
+      alt="Malerbetrieb Kühnle, zur Startseite"
+    />
+  </Link>
+);
+
+// Jeder Menüpunkt trägt einen Ton aus der Farbleiste, Elfenbein ist auf Weiß zu blass
+const ton = (index: number) =>
+  ({ "--ton": farbtoene[index + 1].hex }) as CSSProperties;
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // Get the current location pathname
-  const location = useLocation();
-
-  // Extract the active section from the pathname
-  const activeSection =
-    location.pathname === "/" ? "Home" : location.pathname.split("/")[1];
-  const [active, setActive] = useState(
-    activeSection.charAt(0).toUpperCase() + activeSection.slice(1)
-  ); 
-
-  // Update active state when the location changes
-  useEffect(() => {
-    const activeSection =
-      location.pathname === "/" ? "Home" : location.pathname.split("/")[1];
-    setActive(activeSection.charAt(0).toUpperCase() + activeSection.slice(1));
-  }, [location.pathname]);
-
-  const handleMobileMenuItemClick = () => {
-    setMobileMenuOpen(false); // Close the mobile menu
-  };
+  const closeMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className="bg-white">
+    <header className="sticky top-0 z-40 border-b bg-white">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6"
-        aria-label="Global"
+        className="gutter flex h-[var(--header)] items-center justify-between"
+        aria-label="Hauptnavigation"
       >
-        {/* Logo */}
-        <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Malerbetrieb Kühnle</span>
-            <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" rel="preload" />
-          </Link>
+        <div className="lg:flex-1">
+          <Logo />
         </div>
 
-        {/* Mobile Burger Menu */}
-        <div className="flex lg:hidden">
+        {/* Desktop */}
+        <ul role="list" className="hidden h-full gap-x-8 lg:flex">
+          {navLinks.map((nav, index) => (
+            <li key={nav.id}>
+              {/* Abschnitte der Startseite sind keine eigene Seite und nie aktiv */}
+              {nav.path.includes("#") ? (
+                <Link to={nav.path} className="nav-link" style={ton(index)}>
+                  {nav.title}
+                </Link>
+              ) : (
+                <NavLink
+                  to={nav.path}
+                  end
+                  style={ton(index)}
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "aktiv" : ""}`
+                  }
+                >
+                  {nav.title}
+                </NavLink>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <div className="hidden flex-1 items-center justify-end gap-x-6 lg:flex">
+          <a
+            href={telefon.href}
+            className="flex h-11 min-w-11 items-center justify-center gap-x-2 whitespace-nowrap tabular-nums transition-colors hover:text-mbgreen"
+          >
+            <PhoneIcon className="h-3.5 w-3.5" aria-hidden="true" />
+            {/* Zwischen 1024 und 1280 px reicht der Platz nur für das Symbol */}
+            <span className="sr-only xl:not-sr-only">{telefon.anzeige}</span>
+          </a>
+          <Button asChild>
+            <Link to="/kontakt/">Kontakt</Link>
+          </Button>
+        </div>
+
+        {/* Mobil */}
+        <div className="flex items-center gap-x-1 lg:hidden">
+          <a
+            href={telefon.href}
+            className="flex h-11 w-11 items-center justify-center"
+            aria-label="Anrufen"
+          >
+            <PhoneIcon className="h-4 w-4" aria-hidden="true" />
+          </a>
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-mr-2 flex h-11 items-center gap-x-2 px-2"
             onClick={() => setMobileMenuOpen(true)}
           >
-            <span className="sr-only">Menü öffnen</span>
+            Menü
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-8">
-          {/* Desktop Menu Items*/}
-          {navLinks.map((nav) => (
-            <Link
-              key={nav.id}
-              to={nav.path}
-              className={`text-md ${
-                active === nav.title ? "text-mbgreen" : "text-gray-900"
-              }`}
-            >
-              {nav.title}
-            </Link>
-          ))}
-          {/* Desktop Anrufen Button */}
-          <Button
-            className="hover:bg-mbgreen hover:text-white"
-            variant="outline"
-          >
-            <Link to="/kontakt" className="flex items-center text-md">
-              <FaPhone className="hidden mr-2 h-4 w-4" aria-hidden="true" />
-              Kontakt
-            </Link>
-          </Button>
-        </div>
       </nav>
+
       <Dialog
         as="div"
         className="lg:hidden"
         open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
+        onClose={closeMenu}
+        aria-label="Menü"
       >
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-14 py-14 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Malerbetrieb Kühnle</span>
-              <img className="h-16 w-32" src={logo} alt="Logo Malerbetrieb Kühnle" rel="preload"/>
-            </Link>
+        <Dialog.Panel className="fixed inset-0 z-50 flex flex-col overflow-y-auto overscroll-contain bg-white duration-200 motion-safe:animate-in motion-safe:fade-in">
+          <div className="gutter flex h-[var(--header)] shrink-0 items-center justify-between border-b">
+            <Logo onClick={closeMenu} />
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
+              className="-mr-2 flex h-11 items-center gap-x-2 px-2"
+              onClick={closeMenu}
             >
-              <span className="sr-only">Close menu</span>
+              Schließen
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navLinks.map((nav) => (
+          <div className="flex flex-1 flex-col justify-between">
+            <ul role="list">
+              {menueLinks.map((nav, index) => (
+                <li key={nav.id} className="border-b">
                   <Link
-                    key={nav.id}
                     to={nav.path}
-                    className={`-mx-3 text-center block rounded-lg px-3 py-2 text-base font-semibold leading-7${
-                      active === nav.title
-                        ? "text-mbgreen hover:bg-gray-50"
-                        : "text-gray-900 hover:bg-gray-50"
-                    }`}
-                    onClick={handleMobileMenuItemClick} // Close the mobile menu on click
+                    className="gutter flex items-center justify-between py-3.5 text-3xl font-medium"
+                    onClick={closeMenu}
                   >
                     {nav.title}
+                    <span
+                      aria-hidden="true"
+                      className="h-5 w-10 bg-[var(--ton)]"
+                      style={ton(index)}
+                    />
                   </Link>
-                ))}
-              </div>
-              <div className="py-6 text-center">
-                <Button className="bg-mbgreen text-white">
-                  <Link
-                    to="/kontakt"
-                    className="flex items-center"
-                    onClick={handleMobileMenuItemClick}
-                  >
-                    Kontakt
-                  </Link>
-                </Button>
-              </div>
+                </li>
+              ))}
+            </ul>
+            <div className="gutter py-8">
+              <Button asChild size="lg" className="w-full gap-x-3 text-base">
+                <a href={telefon.href}>
+                  <PhoneIcon className="h-4 w-4" aria-hidden="true" />
+                  {telefon.anzeige}
+                </a>
+              </Button>
+              <a href={`mailto:${email}`} className="mt-5 block py-1 text-lg">
+                {email}
+              </a>
+              <p className="py-1 text-muted-foreground">
+                {adresse.strasse}, {adresse.ort}
+              </p>
             </div>
           </div>
         </Dialog.Panel>

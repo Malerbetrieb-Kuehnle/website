@@ -1,121 +1,122 @@
-import Baderhaus_Bad_Aibling from "@/assets/referenzen/Baderhaus_Bad_Aibling1.jpg";
-import Bauernhof_Brannenburg from "@/assets/referenzen/Bauernhof_Brannenburg2.jpg";
-import Fassade_Grabenstaett from "@/assets/referenzen/Fassade_Grabenstaett.jpg";
-import Klinkik_St_Georg from "@/assets/referenzen/Klinik_St._Georg_Bad_Aiblung.jpg";
-import Schloss_Maxhofen from "@/assets/referenzen/Schloss_Maxhofen_Bruckmuehl.jpg";
-import Wohnhaus_Bad_Feilnbach from "@/assets/referenzen/Wohnhaus_Bad_Feilnbach5.jpg";
-import Lackarbeiten from "@/assets/referenzen/Lackarbeiten1.jpg";
-import { scrollToTop } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
+import Augencentrum_Rosenheim1 from "@/assets/referenzen/Augencentrum_Rosenheim1.jpg";
+import Bauernhof_Brannenburg2 from "@/assets/referenzen/Bauernhof_Brannenburg2.jpg";
+import Wohnhaus_Hohenthann3 from "@/assets/referenzen/Wohnhaus_Hohenthann3.jpg";
+import { Button } from "@/components/ui/button";
+import Reveal, { WortMaske } from "@/components/ui/reveal";
+import { projektBild, projektSrcSet } from "@/lib/bilder";
 
-import Reveal from "react-awesome-reveal";
-import { customAnimation } from "@/lib/utils";
+// Hochformat, Querformat und Innenraum im Wechsel. Die Bilder bleiben
+// ungeschnitten, die Breiten ergeben sich aus ihrem Seitenverhältnis.
+const zeilen = [
+  [
+    {
+      src: Wohnhaus_Hohenthann3,
+      breite: 1280,
+      hoehe: 720,
+      text: "Wohnhaus Hohenthann",
+    },
+    {
+      src: projektBild("altbau-pfirsich-kirche"),
+      srcSet: projektSrcSet("altbau-pfirsich-kirche"),
+      breite: 1080,
+      hoehe: 1062,
+      text: "Historische Fassade in Pfirsich",
+    },
+  ],
+  [
+    {
+      src: Bauernhof_Brannenburg2,
+      breite: 1280,
+      hoehe: 1145,
+      text: "Bauernhof Brannenburg",
+    },
+    {
+      src: projektBild("villa-abendlicht"),
+      srcSet: projektSrcSet("villa-abendlicht"),
+      breite: 3648,
+      hoehe: 2367,
+      text: "Villa mit weißer Fassade in Kapstadt",
+    },
+    {
+      src: Augencentrum_Rosenheim1,
+      breite: 1075,
+      hoehe: 708,
+      text: "Augencentrum Rosenheim",
+    },
+  ],
+];
+
+const seitenverhaeltnis = ({ breite, hoehe }: (typeof zeilen)[0][0]) =>
+  breite / hoehe;
 
 export default function References() {
   return (
-    <div className="relative overflow-hidden max-w-screen-xl mx-auto rounded-[15px] border-0 border-solid border-[#e7e7e9] mb-40">
-      <div className="relative overflow-hidden">
-        <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
-          <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-            <div className="sm:max-w-lg">
-              <Reveal keyframes={customAnimation} cascade triggerOnce duration={500}>
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-                  Referenzen.
-                </h2>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
-                  Unsere Referenzen spiegeln die Vielfalt unserer Arbeit wider
-                  und zeigen Ihnen abgeschlossene Projekte in verschiedenen
-                  Stilen und Designs. Entdecken Sie inspirierende Wohnräume,
-                  beeindruckende Farbkonzepte und handwerkliche
-                  Meisterleistungen.
-                </p>
-              </Reveal>
-            </div>
-            <div>
-              <div className="mt-6">
-                {/* Decorative image grid */}
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
-                >
-                  <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-                    <div className="flex items-center space-x-6 lg:space-x-8">
-                      <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
-                          <img
-                            src={Baderhaus_Bad_Aibling}
-                            alt="Baderhaus Bad Aibling"
-                            className="h-full w-full object-cover object-center"
-                            loading="lazy"
-                          />
-                        </div>
-                        <div className="h-64 w-44 overflow-hidden rounded-lg">
-                          <img
-                            src={Bauernhof_Brannenburg}
-                            alt="Bauernhof Brannenburg"
-                            className="h-full w-full object-cover object-center"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                      <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div className="h-64 w-44 overflow-hidden rounded-lg">
-                          <img
-                            src={Fassade_Grabenstaett}
-                            alt="Fassade Grabenstaett"
-                            className="h-full w-full object-cover object-center"
-                            loading="lazy"
-                          />
-                        </div>
-                        <div className="h-64 w-44 overflow-hidden rounded-lg">
-                          <img
-                            src={Klinkik_St_Georg}
-                            alt="Klinik St. Georg"
-                            className="h-full w-full object-cover object-center"
-                            loading="lazy"
-                          />
-                        </div>
-                        <div className="h-64 w-44 overflow-hidden rounded-lg">
-                          <img
-                            src={Lackarbeiten}
-                            alt="Lackarbeiten"
-                            className="h-full w-full object-cover object-center"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                      <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                        <div className="h-64 w-44 overflow-hidden rounded-lg">
-                          <img
-                            src={Schloss_Maxhofen}
-                            alt="Schloss Maxhofen"
-                            className="h-full w-full object-cover object-center"
-                            loading="lazy"
-                          />
-                        </div>
-                        <div className="h-64 w-44 overflow-hidden rounded-lg">
-                          <img
-                            src={Wohnhaus_Bad_Feilnbach}
-                            alt="Wohnhaus Bad Feilnbach"
-                            className="h-full w-full object-cover object-center"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <Reveal keyframes={customAnimation} triggerOnce delay={400} duration={500}>
-                  <Link to={"/referenzen"} onClick={scrollToTop}>
-                    <Button variant="default">Zur Gallerie</Button>
-                  </Link>
-                </Reveal>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section className="abschnitt">
+      <div className="grid gap-y-6 lg:grid-cols-12">
+        <Reveal art="titel" className="lg:col-span-5">
+          <h2 className="titel-gross">
+            <WortMaske text="Referenzen" />
+          </h2>
+        </Reveal>
+        <Reveal verzoegerung={100} className="lg:col-span-7">
+          <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
+            Fassaden, Wohnhäuser und Praxen aus Bad Aibling, Rosenheim und der
+            Region bis nach Kapstadt: eine Auswahl unserer abgeschlossenen
+            Projekte.
+          </p>
+          <Button asChild className="mt-6">
+            <Link to="/referenzen/">Alle Referenzen ansehen</Link>
+          </Button>
+        </Reveal>
       </div>
-    </div>
+
+      <div className="mt-12 flex flex-col gap-2 lg:mt-20">
+        {zeilen.map((zeile) => {
+          const gesamt = zeile.reduce(
+            (summe, item) => summe + seitenverhaeltnis(item),
+            0
+          );
+
+          return (
+            <div key={zeile[0].src} className="flex flex-col gap-2 md:flex-row">
+              {zeile.map((item, index) => {
+                const seiten = seitenverhaeltnis(item);
+                return (
+                  <Reveal
+                    key={item.src}
+                    as="figure"
+                    art="foto"
+                    verzoegerung={index * 150}
+                    className="relative overflow-hidden md:flex-[var(--seiten)_1_0%]"
+                    style={
+                      {
+                        "--seiten": seiten,
+                        aspectRatio: seiten,
+                      } as CSSProperties
+                    }
+                  >
+                    <img
+                      src={item.src}
+                      srcSet={item.srcSet}
+                      sizes={`(min-width: 768px) ${Math.ceil(
+                        (seiten / gesamt) * 100
+                      )}vw, 100vw`}
+                      alt={item.text}
+                      width={item.breite}
+                      height={item.hoehe}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                    <figcaption className="etikett">{item.text}</figcaption>
+                  </Reveal>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }

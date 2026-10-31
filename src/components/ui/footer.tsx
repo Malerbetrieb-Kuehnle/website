@@ -1,101 +1,155 @@
 import React from "react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
-import { Separator } from "./separator.tsx";
-import { socialMedia } from "@/constants/index.tsx";
-import { scrollToTop } from "@/lib/utils.ts";
-import { footerLinks } from "@/constants/index.tsx";
+import { Button } from "@/components/ui/button";
+import Farbleiste from "@/components/ui/farbleiste";
+import Reveal, { WortMaske } from "@/components/ui/reveal";
+import {
+  adresse,
+  einsatzorte,
+  facebook,
+  kontaktwege,
+  menueLinks,
+  rechtlichesLinks,
+} from "@/constants/index.tsx";
+
+const linkClass = "inline-block py-1 transition-colors hover:text-mbgreen";
+
+const [festnetz, mobil, mail, anschrift, instagram] = kontaktwege;
+
+interface Weg {
+  href: string;
+  wert: ReactNode;
+  extern?: boolean;
+  art?: string;
+}
+
+const kontaktSpalten: { titel: string; wege: Weg[] }[] = [
+  {
+    titel: "Anrufen",
+    wege: [
+      { ...festnetz, art: festnetz.titel },
+      { ...mobil, art: mobil.titel },
+    ],
+  },
+  {
+    titel: "Schreiben",
+    wege: [
+      mail,
+      { ...instagram, wert: "Instagram" },
+      { href: facebook, wert: "Facebook", extern: true },
+    ],
+  },
+  {
+    titel: "Besuchen",
+    wege: [
+      {
+        ...anschrift,
+        wert: (
+          <>
+            {adresse.strasse}
+            <br />
+            {adresse.ort}
+          </>
+        ),
+      },
+    ],
+  },
+];
 
 const Footer: React.FC = () => {
   return (
-    <section
-      className={`relative overflow-hidden h-auto flex justify-center items-center bg-[#f5f5f5] mx-auto py-16 px-3 rounded-[15px] flex-col max-w-7xl`}
-    >
-      <div
-        className={`flex justify-center items-start md:flex-row flex-col mb-8 w-full max-w-2xl`}
-      >
-        <div className="flex-[1] flex flex-col justify-start mr-10">
-          <Link to="/" onClick={scrollToTop}>
-            <img
-              src={logo}
-              alt="Logo Malerbetrieb Kühnle"
-              className="h-16 w-32 object-contain"
-            />
-          </Link>
-          <p
-            className={`font-normal text-[16px] leading-[30.8px] mt-4 max-w-[312px] text-gray-900`}
-          >
-            Wir bringen Farbe in Ihr Leben.
-          </p>
+    <footer className="bg-mbkalk">
+      <div className="gutter pb-8 pt-16 lg:pt-24">
+        <div className="flex flex-col items-start gap-y-8 lg:flex-row lg:items-end lg:justify-between lg:gap-x-12">
+          <Reveal art="titel">
+            <p className="text-[clamp(2.75rem,8vw,8.5rem)] font-medium leading-[1.05] tracking-[-0.01em] [text-wrap:balance]">
+              <WortMaske text="Farbe schafft Atmosphäre." />
+            </p>
+          </Reveal>
+          <Button asChild size="lg" className="shrink-0">
+            <Link to="/kontakt/">Rückruf vereinbaren</Link>
+          </Button>
         </div>
-        <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
-          {footerLinks.map((section) => (
-            <div
-              key={section.title}
-              className={`flex flex-col ss:my-0 my-4 min-w-[150px]`}
-            >
-              <div
-                className={`font-poppins font-medium text-[18px] leading-[27px] text-gray-900`}
-              >
-                {section.title}
-              </div>
-              <ul className={`list-none mt-4`}>
-                {section.links.map((link, index) => (
-                  <li
-                    key={link.id}
-                    className={`font-poppins font-normal text-[16px] leading-[24px] text-gray-500 hover:text-mbgreen cursor-pointer ${
-                      index !== section.links.length - 1 ? "mb-4" : "mb-0"
-                    }`}
-                  >
-                    {link.onClick ? (
-                      <a href="#" onClick={link.onClick}>
-                        {link.title}
-                      </a>
-                    ) : (
-                      <Link to={link.path} onClick={scrollToTop}>
-                        {link.title}
-                      </Link>
-                    )}
+
+        <address className="mt-14 grid gap-x-10 gap-y-8 not-italic md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+          {kontaktSpalten.map((spalte) => (
+            <div key={spalte.titel}>
+              <p className="text-muted-foreground">{spalte.titel}</p>
+              <ul className="mt-2 text-lg leading-8 md:text-xl lg:text-lg xl:text-2xl xl:leading-9">
+                {spalte.wege.map((weg) => (
+                  <li key={weg.href}>
+                    <a
+                      href={weg.href}
+                      {...(weg.extern && {
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      })}
+                      className={linkClass}
+                    >
+                      {weg.art && (
+                        <span className="inline-block w-[3.25em] text-muted-foreground">
+                          {weg.art}
+                        </span>
+                      )}
+                      {weg.wert}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
+        </address>
+
+        <div className="mt-14 flex flex-col gap-y-8 lg:mt-20 lg:flex-row lg:items-end lg:justify-between lg:gap-x-12">
+          <div>
+            <Link to="/" className="inline-block">
+              <img
+                src={logo}
+                alt="Malerbetrieb Kühnle, zur Startseite"
+                className="h-14 w-auto"
+                width={249}
+                height={128}
+                loading="lazy"
+              />
+            </Link>
+            <p className="mt-4 max-w-xs leading-7">
+              Meisterbetrieb für Maler- und Lackiererarbeiten in Bad Aibling.
+            </p>
+          </div>
+          <nav aria-label="Fußzeile">
+            <ul role="list" className="flex flex-wrap gap-x-8 gap-y-1">
+              {menueLinks.map((link) => (
+                <li key={link.id}>
+                  <Link to={link.path} className={linkClass}>
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-y-3 border-t border-foreground/15 pt-6 text-sm text-muted-foreground lg:flex-row lg:items-baseline lg:justify-between lg:gap-x-12">
+          <p className="max-w-2xl">
+            Im Einsatz in {einsatzorte.join(", ")} und der Region sowie im
+            Ausland.
+          </p>
+          <div className="flex shrink-0 flex-wrap items-baseline gap-x-6">
+            {rechtlichesLinks.map((link) => (
+              <Link key={link.id} to={link.path} className={linkClass}>
+                {link.title}
+              </Link>
+            ))}
+            <p suppressHydrationWarning>
+              © {new Date().getFullYear()} Malerbetrieb Kühnle
+            </p>
+          </div>
         </div>
       </div>
-      <Separator className="max-w-2xl px-3" />
-      <div
-        className={`w-full flex justify-between items-center md:flex-row flex-col pt-6 max-w-2xl`}
-      >
-        <p
-          className={`font-poppins font-normal text-center text-[14px] leading-[27px] text-gray-500`}
-        >
-          Copyright Ⓒ 2024 Malerbetrieb Kühnle.
-        </p>
-        <div className={`flex flex-row md:mt-0 mt-6`}>
-          {socialMedia.map((social, index) => {
-            const Icon = social.icon;
-            return (
-              <div
-                key={social.id}
-                className={`w-6 h-6 cursor-pointer hover:text-mbgreen duration-300 text-gray-900 ${
-                  index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
-                }`}
-              >
-                <a
-                  href={social.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Social Media"
-                >
-                  <Icon />
-                </a>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+      <Farbleiste />
+    </footer>
   );
 };
 

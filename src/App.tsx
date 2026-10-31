@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Referenzen from "@/seiten/Referenzen";
 import Kontakt from "@/seiten/Kontakt";
@@ -8,10 +8,11 @@ import Impressum from "@/seiten/Impressum";
 import Datenschutz from "@/seiten/Datenschutz";
 import Service from "@/seiten/Service";
 import MainLayout from "@/layout/MainLayout";
+import { Toaster } from "@/components/ui/toaster";
 
 function App() {
   return (
-    <Router>
+    <>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
@@ -23,7 +24,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </Router>
+      <Toaster />
+    </>
   );
 }
 export default App;

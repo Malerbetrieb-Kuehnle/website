@@ -2,16 +2,21 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Malerbetrieb Kühnle aus Bad Aibling." />
-    <meta property="og:title" content="Malerbetrieb Kühnle aus Bad Aibling" />
+    <meta
+      name="description"
+      content="Ihr Meisterbetrieb für Malerarbeiten, Fassadenanstriche und Farbgestaltung in Bad Aibling und Umgebung. Beratung, Entwurf und Umsetzung aus einer Hand."
+    />
+    <meta property="og:title" content="Maler in Bad Aibling | Malerbetrieb Kühnle" />
     <meta property="og:site_name" content="Malerbetrieb Kühnle" />
-    <meta property="og:url" content=https://malerbetrieb-kuehnle.de>
+    <meta property="og:url" content="https://malerbetrieb-kuehnle.de/" />
+    <link rel="canonical" href="https://malerbetrieb-kuehnle.de/" />
     <meta
       property="og:description"
-      content="Malerbetrieb Kühnle aus Bad Aibling - Ihr Spezialist für hochwertige Malerarbeiten und Farbgestaltung. Wir bringen Farbe in Ihr Leben mit kreativen Lösungen und einem breiten Spektrum an Farbvariationen. Unsere professionellen Maler schaffen Atmosphäre und setzen Akzente, um Ihren Wohn- oder Arbeitsbereich zu verschönern. Vertrauen Sie auf unsere langjährige Erfahrung und unser Engagement für Qualität und Zuverlässigkeit. Kontaktieren Sie uns noch heute für ein persönliches Beratungsgespräch und lassen Sie uns gemeinsam Ihre individuellen Farbvorstellungen umsetzen."
+      content="Ihr Meisterbetrieb für Malerarbeiten, Fassadenanstriche und Farbgestaltung in Bad Aibling und Umgebung. Beratung, Entwurf und Umsetzung aus einer Hand."
     />
-    <meta property="og:type" content="business.business" />
-    <meta property="og:image" content="/src/assets/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:image" content="https://malerbetrieb-kuehnle.de/og-bild.jpg" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -35,54 +40,64 @@
       color="#407b4b"
     />
     <link rel="shortcut icon" href="/src/favicons/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#fafafa" />
-    <meta
-      name="msapplication-config"
-      content="/src/favicons/browserconfig.xml"
-    />
     <meta name="theme-color" content="#ffffff" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Malerbetrieb Kühnle</title>
+    <title>Maler in Bad Aibling | Malerbetrieb Kühnle</title>
 
-    <link
-      rel="preload"
-      fetchpriority="high"
-      as="image"
-      href="/src/assets/logo.png"
-      type="image/png"
-    />
-
-    <link rel="preconnect" href="//app.eu.usercentrics.eu" />
-    <link rel="preconnect" href="//api.eu.usercentrics.eu" />
-    <link rel="preconnect" href="//sdp.eu.usercentrics.eu" />
-    <link
-      rel="preload"
-      href="//app.eu.usercentrics.eu/browser-ui/latest/loader.js"
-      as="script"
-    />
-    <link
-      rel="preload"
-      href="//sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
-      as="script"
-    />
-
-    <script
-      id="usercentrics-cmp"
-      async
-      data-eu-mode="true"
-      data-settings-id="KpfKTCuAS1ndEU"
-      src="https://app.eu.usercentrics.eu/browser-ui/latest/loader.js"
-    ></script>
-
-    <script
-      type="application/javascript"
-      src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"
-    ></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HousePainter",
+        "name": "Malerbetrieb Kühnle",
+        "description": "Meisterbetrieb für Maler- und Lackiererarbeiten in Bad Aibling.",
+        "url": "https://malerbetrieb-kuehnle.de/",
+        "image": "https://malerbetrieb-kuehnle.de/og-bild.jpg",
+        "telephone": "+4980619398333",
+        "email": "kontakt@malerbetrieb-kuehnle.de",
+        "founder": { "@type": "Person", "name": "Norbert Kühnle" },
+        "foundingDate": "1996",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ebersberger Straße 75",
+          "postalCode": "83043",
+          "addressLocality": "Bad Aibling",
+          "addressCountry": "DE"
+        },
+        "areaServed": [
+          "Bad Aibling",
+          "Rosenheim",
+          "München",
+          "Kolbermoor",
+          "Bruckmühl",
+          "Bad Feilnbach",
+          "Brannenburg",
+          "Neubeuern",
+          "Tuntenhausen"
+        ],
+        "sameAs": [
+          "https://www.instagram.com/malerbetrieb_kuehnle/",
+          "https://www.facebook.com/malerbetrieb.kuehnle/"
+        ]
+      }
+    </script>
+    <noscript>
+      <style>
+        .reveal-text,
+        .reveal-foto,
+        .reveal-kachel,
+        .wort-innen {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+          clip-path: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
