@@ -9,7 +9,7 @@ const seiten = ({ width, height }: Format) => width / height;
 const zeilenZiele = { s: 2, m: 3.2, l: 4.6 };
 
 // Teilt die Bilder so in Zeilen, dass auch die letzte Zeile nah am Ziel liegt
-export function inZeilen<T extends Format>(bilder: T[], ziel: number) {
+function inZeilen<T extends Format>(bilder: T[], ziel: number) {
   const kosten = [0];
   const beginn = [0];
 

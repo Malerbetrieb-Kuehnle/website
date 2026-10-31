@@ -1,14 +1,62 @@
-import React, { Fragment } from "react";
+import React from "react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import Farbleiste from "@/components/ui/farbleiste";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
-import { einsatzorte, footerLinks, kontaktwege } from "@/constants/index.tsx";
+import {
+  adresse,
+  einsatzorte,
+  facebook,
+  kontaktwege,
+  menueLinks,
+  rechtlichesLinks,
+} from "@/constants/index.tsx";
 
 const linkClass = "inline-block py-1 transition-colors hover:text-mbgreen";
-const titelClass =
-  "font-sans text-base font-normal tracking-normal text-muted-foreground";
+
+const [festnetz, mobil, mail, anschrift, instagram] = kontaktwege;
+
+interface Weg {
+  href: string;
+  wert: ReactNode;
+  extern?: boolean;
+  art?: string;
+}
+
+const kontaktSpalten: { titel: string; wege: Weg[] }[] = [
+  {
+    titel: "Anrufen",
+    wege: [
+      { ...festnetz, art: festnetz.titel },
+      { ...mobil, art: mobil.titel },
+    ],
+  },
+  {
+    titel: "Schreiben",
+    wege: [
+      mail,
+      { ...instagram, wert: "Instagram" },
+      { href: facebook, wert: "Facebook", extern: true },
+    ],
+  },
+  {
+    titel: "Besuchen",
+    wege: [
+      {
+        ...anschrift,
+        wert: (
+          <>
+            {adresse.strasse}
+            <br />
+            {adresse.ort}
+          </>
+        ),
+      },
+    ],
+  },
+];
 
 const Footer: React.FC = () => {
   return (
@@ -25,8 +73,37 @@ const Footer: React.FC = () => {
           </Button>
         </div>
 
-        <div className="mt-14 grid gap-10 border-t border-foreground/15 pt-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-12">
-          <div className="sm:col-span-2 lg:col-span-3">
+        <address className="mt-14 grid gap-x-10 gap-y-8 not-italic md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+          {kontaktSpalten.map((spalte) => (
+            <div key={spalte.titel}>
+              <p className="text-muted-foreground">{spalte.titel}</p>
+              <ul className="mt-2 text-lg leading-8 md:text-xl lg:text-lg xl:text-2xl xl:leading-9">
+                {spalte.wege.map((weg) => (
+                  <li key={weg.href}>
+                    <a
+                      href={weg.href}
+                      {...(weg.extern && {
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      })}
+                      className={linkClass}
+                    >
+                      {weg.art && (
+                        <span className="inline-block w-[3.25em] text-muted-foreground">
+                          {weg.art}
+                        </span>
+                      )}
+                      {weg.wert}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </address>
+
+        <div className="mt-14 flex flex-col gap-y-8 lg:mt-20 lg:flex-row lg:items-end lg:justify-between lg:gap-x-12">
+          <div>
             <Link to="/" className="inline-block">
               <img
                 src={logo}
@@ -37,59 +114,38 @@ const Footer: React.FC = () => {
                 loading="lazy"
               />
             </Link>
-            <p className="mt-4 max-w-xs text-lg leading-7">
+            <p className="mt-4 max-w-xs leading-7">
               Meisterbetrieb für Maler- und Lackiererarbeiten in Bad Aibling.
             </p>
           </div>
-
-          <div className="sm:col-span-2 lg:col-span-5">
-            <h2 className={titelClass}>Kontakt</h2>
-            <address className="mt-3 not-italic">
-              <dl className="grid min-[416px]:grid-cols-[6rem_minmax(0,1fr)]">
-                {kontaktwege.map((weg) => (
-                  <Fragment key={weg.titel}>
-                    <dt className="pt-2 text-muted-foreground min-[416px]:border-t min-[416px]:border-foreground/10 min-[416px]:py-2">
-                      {weg.titel}
-                    </dt>
-                    <dd className="pb-2 min-[416px]:border-t min-[416px]:border-foreground/10 min-[416px]:py-1">
-                      <a
-                        href={weg.href}
-                        {...(weg.extern && {
-                          target: "_blank",
-                          rel: "noopener noreferrer",
-                        })}
-                        className={linkClass}
-                      >
-                        {weg.wert}
-                      </a>
-                    </dd>
-                  </Fragment>
-                ))}
-              </dl>
-            </address>
-          </div>
-
-          {footerLinks.map((section) => (
-            <div key={section.title} className="lg:col-span-2">
-              <h2 className={titelClass}>{section.title}</h2>
-              <ul className="mt-3">
-                {section.links.map((link) => (
-                  <li key={link.id}>
-                    <Link to={link.path} className={linkClass}>
-                      {link.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <nav aria-label="Fußzeile">
+            <ul role="list" className="flex flex-wrap gap-x-8 gap-y-1">
+              {menueLinks.map((link) => (
+                <li key={link.id}>
+                  <Link to={link.path} className={linkClass}>
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
-        <div className="mt-12 flex flex-col gap-y-2 border-t border-foreground/15 pt-6 text-sm text-muted-foreground lg:flex-row lg:justify-between lg:gap-x-12">
-          <p>Im Einsatz in {einsatzorte.join(", ")} und der Region.</p>
-          <p className="shrink-0">
-            © {new Date().getFullYear()} Malerbetrieb Kühnle
+        <div className="mt-10 flex flex-col gap-y-3 border-t border-foreground/15 pt-6 text-sm text-muted-foreground lg:flex-row lg:items-baseline lg:justify-between lg:gap-x-12">
+          <p className="max-w-2xl">
+            Im Einsatz in {einsatzorte.join(", ")} und der Region sowie im
+            Ausland.
           </p>
+          <div className="flex shrink-0 flex-wrap items-baseline gap-x-6">
+            {rechtlichesLinks.map((link) => (
+              <Link key={link.id} to={link.path} className={linkClass}>
+                {link.title}
+              </Link>
+            ))}
+            <p suppressHydrationWarning>
+              © {new Date().getFullYear()} Malerbetrieb Kühnle
+            </p>
+          </div>
         </div>
       </div>
       <Farbleiste />

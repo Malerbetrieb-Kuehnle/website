@@ -9,70 +9,27 @@
     --background: 0 0% 100%;
     --foreground: 169 39% 13%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 169 39% 13%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 169 39% 13%;
-
     --primary: 166 48% 15%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 90 16% 93%;
-    --secondary-foreground: 169 39% 13%;
-
     --muted: 90 16% 93%;
     --muted-foreground: 168 12% 34%;
-
-    --accent: 90 16% 93%;
-    --accent-foreground: 169 39% 13%;
 
     --destructive: 354 54% 43%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 150 9% 85%;
-    --input: 150 9% 85%;
+    --input: 165 8% 55%;
     --ring: 150 100% 25%;
 
     --radius: 0.25rem;
 
     /* Malerbetrieb Colors */
     --mbgreen: 150.24, 100%, 24.9%;
-    --mbblue: 200.37, 100%, 42.16%;
     --mbfir: 166, 48%, 15%;
     --mblime: 66, 62%, 53%;
     --mborange: 22, 86%, 52%;
     --mbkalk: 90, 16%, 93%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
   }
 }
 
@@ -187,7 +144,7 @@ section[id] {
   }
 }
 
-/* Kontaktwege: Der Farbton rollt von links über die Zeile */
+/* Kontaktwege: Farbmuster von Rand zu Rand, Tannengrün rollt von links darüber */
 .kontaktweg {
   position: relative;
   isolation: isolate;
@@ -195,8 +152,11 @@ section[id] {
   align-content: center;
   align-items: baseline;
   height: 100%;
-  padding-block: 1rem;
+  min-height: 5.5rem;
+  padding-block: 1.25rem;
   overflow: hidden;
+  color: hsl(var(--foreground));
+  background: var(--ton);
   transition: color 300ms var(--rolle);
 }
 .kontaktweg::before {
@@ -204,12 +164,12 @@ section[id] {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--ton);
+  background: hsl(var(--mbfir));
   opacity: 0;
 }
 .kontaktweg:focus-visible {
-  color: hsl(var(--foreground));
-  outline-color: hsl(var(--foreground));
+  color: #fff;
+  outline-color: #fff;
   outline-offset: -4px;
 }
 .kontaktweg:focus-visible::before {
@@ -217,19 +177,11 @@ section[id] {
 }
 @media (hover: hover) {
   .kontaktweg:hover {
-    color: hsl(var(--foreground));
+    color: #fff;
   }
-  .kontaktweg:hover::before,
-  .kontaktweg:hover .kontaktweg-titel {
+  .kontaktweg:hover::before {
     opacity: 1;
   }
-}
-.kontaktweg-titel {
-  opacity: 0.75;
-  transition: opacity 300ms var(--rolle);
-}
-.kontaktweg:focus-visible .kontaktweg-titel {
-  opacity: 1;
 }
 .kontaktweg-wert {
   font-size: clamp(1.125rem, 5.2vw, 1.5rem);
@@ -243,6 +195,11 @@ section[id] {
   }
   .kontaktweg-wert {
     font-size: clamp(1.25rem, 2.2vw, 2.25rem);
+  }
+}
+@media (min-width: 1024px) {
+  .kontaktweg {
+    min-height: 7rem;
   }
 }
 
@@ -351,11 +308,13 @@ section[id] {
   }
   /* Fotos und Flächen werden wie mit der Farbrolle aufgetragen */
   /* Der schmale Rest ist nötig: Ganz zugeklippt meldet der IntersectionObserver
-     nur noch die Ecke oben links, und nach Sprüngen bliebe das Bild leer. */
+     nur noch die Ecke oben links, und nach Sprüngen bliebe das Bild leer.
+     Die Deckkraft versteckt diesen Rest, bis die Rolle startet. */
   .reveal-foto,
   .reveal-kachel {
+    opacity: 0;
     clip-path: inset(0 99.9% 0 0);
-    transition: clip-path 1000ms var(--rolle);
+    transition: clip-path 1000ms var(--rolle), opacity 1ms;
   }
   .reveal-foto {
     overflow: hidden;
@@ -373,7 +332,11 @@ section[id] {
     opacity: 1;
     transform: none;
     filter: none;
-    clip-path: inset(0);
+  }
+  /* Nur Fotos und Flächen werden aufgewischt. Die Luft am Rand hält Fokusrahmen im Inneren frei. */
+  .reveal-sichtbar.reveal-foto,
+  .reveal-sichtbar.reveal-kachel {
+    clip-path: inset(-0.5rem);
   }
   .reveal-sichtbar.reveal-foto img,
   .reveal-sichtbar .wort-innen,

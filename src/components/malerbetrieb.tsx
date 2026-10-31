@@ -1,7 +1,13 @@
 import type { CSSProperties } from "react";
+import portrait from "@/assets/portrait_malerbetrieb_norbert_kuehnle.jpeg";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
 import VorherNachher from "@/components/vorhernachher";
-import { ablauf, merkmale_about_us } from "@/constants";
+import {
+  ablauf,
+  gruendungsjahr,
+  jahreSeitGruendung,
+  merkmale_about_us,
+} from "@/constants";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
 import { useScrollFortschritt } from "@/lib/bewegung";
 
@@ -32,6 +38,10 @@ function Aussage() {
 }
 
 export default function Malerbetrieb() {
+  // Das Jahr im vorgerenderten HTML altert, im Browser rechnet die Seite neu
+  const jahre = jahreSeitGruendung();
+  const merkmale = [`${jahre} Jahre Erfahrung`, ...merkmale_about_us];
+
   return (
     <>
       <section
@@ -41,40 +51,61 @@ export default function Malerbetrieb() {
       >
         <div className="lg:col-span-4">
           <h2 className="label">Über uns</h2>
-          <Reveal verzoegerung={100} className="mt-8 hidden lg:block">
+          <Reveal
+            as="figure"
+            art="foto"
+            verzoegerung={100}
+            className="foto relative mt-8 max-w-sm"
+          >
+            <img
+              src={portrait}
+              alt="Norbert Kühnle lächelt im grauen Trachtenjanker in die Kamera"
+              width={768}
+              height={1024}
+              className="h-auto w-full"
+              loading="lazy"
+            />
             <div
               aria-hidden="true"
-              className="flex h-40 w-40 flex-col items-center justify-center rounded-full bg-mborange"
+              className="absolute right-3 top-3 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-mborange sm:h-28 sm:w-28"
             >
-              <span className="text-6xl font-medium leading-none">25</span>
-              <span className="mt-1">Jahre</span>
+              <span
+                suppressHydrationWarning
+                className="text-4xl font-medium leading-none sm:text-5xl"
+              >
+                {jahre}
+              </span>
+              <span className="text-base sm:mt-0.5">Jahre</span>
             </div>
+            <figcaption className="etikett">Norbert Kühnle, Inhaber</figcaption>
           </Reveal>
         </div>
         <div className="lg:col-span-8">
           <Aussage />
           <Reveal>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Norbert Kühnle gründete vor 25 Jahren seinen Malerbetrieb mit Sitz
-              in Bad Aibling. Als Meisterbetrieb im Maler- und Lackiererhandwerk
-              stehen Qualitätsarbeit, Zuverlässigkeit und termingerechte
-              Abwicklung der Aufträge im Vordergrund.
+              Norbert Kühnle gründete {gruendungsjahr} seinen Malerbetrieb mit
+              Sitz in Bad Aibling. Als Meisterbetrieb im Maler- und
+              Lackiererhandwerk stehen Qualitätsarbeit, Zuverlässigkeit und
+              termingerechte Abwicklung der Aufträge im Vordergrund.
             </p>
             <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
               Wir arbeiten für Privathaushalte, Gewerbe und öffentliche
-              Auftraggeber in Bad Aibling, Rosenheim, Kolbermoor, Bruckmühl, Bad
-              Feilnbach und der Region.
+              Auftraggeber in Bad Aibling, Rosenheim, München, Kolbermoor,
+              Bruckmühl, Bad Feilnbach und der Region. Auch im Ausland sind wir
+              im Einsatz, zum Beispiel an einer Villa in Kapstadt.
             </p>
           </Reveal>
           <ul
             role="list"
             className="mt-12 grid gap-x-6 sm:grid-cols-2 xl:grid-cols-4"
           >
-            {merkmale_about_us.map((feature, index) => (
+            {merkmale.map((feature, index) => (
               <Reveal
                 key={feature}
                 as="li"
                 verzoegerung={index * 100}
+                suppressHydrationWarning
                 className="border-t py-4 leading-6"
               >
                 {feature}

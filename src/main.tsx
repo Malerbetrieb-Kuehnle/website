@@ -2,12 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
+import { seiten } from "./constants/seo";
 import "@fontsource-variable/outfit";
 import "./index.css";
 
-// Frühere Adressen wie /#/kontakt führen auf die neuen Seiten
+// Frühere Adressen wie /#/kontakt führen auf die neuen Seiten, /#/ war die Startseite.
+// Nur bekannte Pfade: Der Hash kommt aus dem Link, //fremde.seite wäre eine offene Weiterleitung.
 if (window.location.hash.startsWith("#/")) {
-  window.location.replace(`${window.location.hash.slice(1)}/`);
+  const alterPfad = window.location.hash.slice(1).replace(/\/*$/, "/");
+  if (alterPfad in seiten) window.location.replace(alterPfad);
 }
 
 const seite = (

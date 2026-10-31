@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ProfileForm } from "@/components/ui/profileform";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
 import { farbtoene, kontaktwege } from "@/constants";
-import { projektBild, projektSrcSet } from "@/lib/bilder";
 
 export default function Contact({ seite = false }: { seite?: boolean }) {
   const Titel = seite ? "h1" : "h2";
@@ -11,7 +10,7 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
 
   return (
     <section>
-      <div className="abschnitt bg-mbfir text-white">
+      <div className="abschnitt bg-mbfir pb-14 text-white lg:pb-20">
         <Reveal art="titel">
           <Titel className="text-[clamp(2.75rem,8vw,8.5rem)] font-medium leading-[1.05] tracking-[-0.01em]">
             <WortMaske text="So erreichen Sie uns." />
@@ -23,39 +22,37 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
             an, schreiben Sie uns oder hinterlassen Sie Ihre Nummer.
           </p>
         </Reveal>
+      </div>
 
-        <div className="mt-12 grid gap-x-10 gap-y-12 lg:mt-20 lg:grid-cols-12">
-          <ul
-            role="list"
-            className="-mx-4 flex flex-col border-b border-white/20 [--ring:var(--mblime)] sm:-mx-6 lg:col-span-7 lg:-ml-10 lg:mr-0 2xl:-ml-16"
-          >
-            {kontaktwege.map((weg, index) => (
-              <Reveal
-                key={weg.titel}
-                as="li"
-                verzoegerung={index * 60}
-                className="flex-1 border-t border-white/20"
+      {/* Farbkarte: Jeder Kontaktweg ist ein Farbmuster von Rand zu Rand */}
+      <div className="grid lg:grid-cols-12">
+        <ul role="list" className="flex flex-col lg:col-span-7">
+          {kontaktwege.map((weg, index) => (
+            <Reveal
+              key={weg.titel}
+              as="li"
+              art="kachel"
+              verzoegerung={index * 80}
+              className="flex-1"
+            >
+              <a
+                href={weg.href}
+                {...(weg.extern && {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                })}
+                className="kontaktweg gutter"
+                style={{ "--ton": farbtoene[index].hex } as CSSProperties}
               >
-                <a
-                  href={weg.href}
-                  {...(weg.extern && {
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                  })}
-                  className="kontaktweg gutter lg:pr-4"
-                  style={{ "--ton": farbtoene[index].hex } as CSSProperties}
-                >
-                  <span className="kontaktweg-titel">{weg.titel}</span>
-                  <span className="kontaktweg-wert">{weg.wert}</span>
-                </a>
-              </Reveal>
-            ))}
-          </ul>
+                <span>{weg.titel}</span>
+                <span className="kontaktweg-wert">{weg.wert}</span>
+              </a>
+            </Reveal>
+          ))}
+        </ul>
 
-          <Reveal
-            verzoegerung={200}
-            className="rounded bg-white p-6 text-foreground sm:p-8 lg:col-span-5 lg:p-10"
-          >
+        <div className="gutter bg-white py-12 lg:col-span-5 lg:py-16">
+          <Reveal verzoegerung={200} className="max-w-xl text-foreground">
             <Untertitel className="text-3xl font-medium">
               Rückruf anfordern
             </Untertitel>
@@ -79,20 +76,6 @@ export default function Contact({ seite = false }: { seite?: boolean }) {
           </Reveal>
         </div>
       </div>
-
-      <Reveal art="foto" className="relative h-[45svh] lg:h-[70svh]">
-        <img
-          src={projektBild("schaufenster-nacht")}
-          srcSet={projektSrcSet("schaufenster-nacht")}
-          sizes="100vw"
-          alt="Unser Schaufenster bei Nacht"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_42%]"
-          loading="lazy"
-        />
-        <span className="etikett etikett-gross">
-          Unser Schaufenster bei Nacht
-        </span>
-      </Reveal>
     </section>
   );
 }

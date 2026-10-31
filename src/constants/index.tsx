@@ -23,9 +23,16 @@ export const menueLinks = [
   { id: "kontakt", title: "Kontakt", path: "/kontakt/" },
 ];
 
+export const gruendungsjahr = 1996;
+
+export const jahreSeitGruendung = () =>
+  new Date().getFullYear() - gruendungsjahr;
+
 export const email = "kontakt@malerbetrieb-kuehnle.de";
 
 export const instagram = "https://www.instagram.com/malerbetrieb_kuehnle/";
+
+export const facebook = "https://www.facebook.com/malerbetrieb.kuehnle/";
 
 export const telefon = {
   anzeige: "+49 8061 93 98 333",
@@ -38,7 +45,7 @@ export const adresse = {
 };
 
 export const kontaktwege = [
-  { titel: "Telefon", wert: telefon.anzeige, href: telefon.href },
+  { titel: "Büro", wert: telefon.anzeige, href: telefon.href },
   { titel: "Mobil", wert: "+49 172 85 17 479", href: "tel:+491728517479" },
   { titel: "E-Mail", wert: email, href: `mailto:${email}` },
   {
@@ -57,10 +64,10 @@ export const kontaktwege = [
   },
 ];
 
-// Orte aus unseren Referenzen
 export const einsatzorte = [
   "Bad Aibling",
   "Rosenheim",
+  "München",
   "Kolbermoor",
   "Bruckmühl",
   "Bad Feilnbach",
@@ -69,15 +76,9 @@ export const einsatzorte = [
   "Tuntenhausen",
 ];
 
-export const footerLinks = [
-  { title: "Malerbetrieb", links: menueLinks },
-  {
-    title: "Rechtliches",
-    links: [
-      { id: "impressum", title: "Impressum", path: "/impressum/" },
-      { id: "datenschutz", title: "Datenschutz", path: "/datenschutz/" },
-    ],
-  },
+export const rechtlichesLinks = [
+  { id: "impressum", title: "Impressum", path: "/impressum/" },
+  { id: "datenschutz", title: "Datenschutz", path: "/datenschutz/" },
 ];
 
 interface Leistung {
@@ -283,7 +284,6 @@ export const ablauf = [
 ];
 
 export const merkmale_about_us = [
-  "25 Jahre Erfahrung",
   "Meisterbetrieb im Maler- und Lackiererhandwerk",
   "Zuverlässigkeit und termingerechte Abwicklung",
   "Fortbildung und Einsatz modernster Techniken",
@@ -325,6 +325,14 @@ export const faqGruppen = [
             )} und Tuntenhausen. Einzelne Aufträge führten uns auch nach Grafing, Glonn und Grabenstätt.`,
           "Liegt Ihr Ort nicht dabei, fragen Sie uns einfach. Ob wir Ihr Projekt übernehmen können, hängt auch von Umfang und Termin ab.",
         ],
+      },
+      {
+        question: "Arbeiten Sie auch im Ausland?",
+        answer: [
+          "Ja. Unser Schwerpunkt liegt in Bad Aibling, Rosenheim und München, wir übernehmen aber auch Aufträge im Ausland. Zu unseren Referenzen gehört zum Beispiel eine Villa in Kapstadt.",
+          "Beschreiben Sie uns Ihr Vorhaben und den Standort. Dann klären wir gemeinsam, wie wir es umsetzen können.",
+        ],
+        link: { to: "/referenzen/", title: "Referenzen ansehen" },
       },
       {
         question: "Habe ich einen festen Ansprechpartner?",
