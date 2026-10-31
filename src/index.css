@@ -19,7 +19,7 @@
     --destructive-foreground: 0 0% 100%;
 
     --border: 150 9% 85%;
-    --input: 150 9% 85%;
+    --input: 165 8% 55%;
     --ring: 150 100% 25%;
 
     --radius: 0.25rem;
@@ -330,7 +330,11 @@ section[id] {
     opacity: 1;
     transform: none;
     filter: none;
-    clip-path: inset(0);
+  }
+  /* Nur Fotos und Flächen werden aufgewischt. Die Luft am Rand hält Fokusrahmen im Inneren frei. */
+  .reveal-sichtbar.reveal-foto,
+  .reveal-sichtbar.reveal-kachel {
+    clip-path: inset(-0.5rem);
   }
   .reveal-sichtbar.reveal-foto img,
   .reveal-sichtbar .wort-innen,
