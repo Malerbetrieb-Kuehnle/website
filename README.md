@@ -20,9 +20,9 @@ Ihr Spezialist für hochwertige Malerarbeiten und Farbgestaltung aus Bad Aibling
 
 ## Rückruf-Formular
 
-Das Formular sendet an `public/api/rueckruf.php`. Das Skript läuft auf dem Server und schickt die Anfrage per E-Mail an kontakt@malerbetrieb-kuehnle.de. Zugangsdaten oder Secrets sind dafür nicht nötig.
+Das Formular sendet direkt aus dem Browser an Pushover (`src/components/ui/profileform.tsx`). Token und User-Key stehen in `.env` und landen beim Build im öffentlichen JavaScript. Das Deploy-Now-Projekt ist vom Typ Static, dort läuft kein Serverskript, das die Werte verbergen könnte.
 
-`npm run dev` und `npm run preview` führen kein PHP aus, das Formular zeigt dort deshalb die Fehlermeldung.
+`npm run dev` und `npm run preview` senden deshalb echte Nachrichten.
 
 
 ## Build

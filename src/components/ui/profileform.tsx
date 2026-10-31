@@ -13,6 +13,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "./button";
 
+const { VITE_PUSHOVER_API_TOKEN, VITE_PUSHOVER_USER_KEY } = import.meta.env;
+
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9]){5,}$/
 );
@@ -50,13 +52,23 @@ export function ProfileForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const antwort = await fetch("/api/rueckruf.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-      const ergebnis = await antwort.json();
-      if (!ergebnis.ok) throw new Error(`Status ${antwort.status}`);
+      // Das versteckte Feld füllen nur Spam-Bots aus. Sie sehen dieselbe
+      // Bestätigung wie ein Mensch, gesendet wird aber nichts.
+      if (!values.website) {
+        const antwort = await fetch(
+          "https://api.pushover.net/1/messages.json",
+          {
+            method: "POST",
+            body: new URLSearchParams({
+              token: VITE_PUSHOVER_API_TOKEN,
+              user: VITE_PUSHOVER_USER_KEY,
+              message: `Rückruf gewünscht von:\nName: ${values.name}\nTelefonnummer: ${values.phone}`,
+            }),
+          }
+        );
+        const ergebnis = await antwort.json();
+        if (ergebnis.status !== 1) throw new Error(`Status ${antwort.status}`);
+      }
 
       toast({
         title: "Rückruf angefordert",
