@@ -66,6 +66,7 @@ export interface Referenz {
   height: number;
   src: string;
   srcSet?: string;
+  gross?: boolean;
 }
 
 const projekt = (
@@ -73,7 +74,8 @@ const projekt = (
   title: string,
   bereich: Bereich,
   width: number,
-  height: number
+  height: number,
+  gross = false
 ): Referenz => ({
   title,
   bereich,
@@ -81,28 +83,29 @@ const projekt = (
   height,
   src: projektBild(slug),
   srcSet: projektSrcSet(slug),
+  gross,
 });
 
 export const referenzen: Referenz[] = [
-  projekt("kinderhaus-elfenbein", "Kinderhaus, Fassade in Elfenbein", "aussen", 3992, 2262),
+  projekt("kinderhaus-elfenbein", "Kinderhaus, Fassade in Elfenbein", "aussen", 3992, 2262, true),
   projekt("altbau-pfirsich-kirche", "Historische Fassade in Pfirsich", "aussen", 1080, 1062),
   projekt("bad-goldwand", "Bad mit Goldwand und Mosaik", "innen", 2699, 3000),
-  projekt("giebel-grau-verschalung", "Holzgiebel in Grau mit dunklen Läden", "aussen", 4000, 3000),
-  projekt("praxis-wandbelag", "Praxis, Wandbelag im Empfang", "innen", 4000, 3000),
-  projekt("villa-abendlicht", "Villa mit weißer Fassade", "aussen", 3648, 2367),
+  projekt("giebel-grau-verschalung", "Holzgiebel in Grau mit dunklen Läden", "aussen", 4000, 3000, true),
+  projekt("praxis-wandbelag", "Praxis, Wandbelag im Empfang", "innen", 4000, 3000, true),
+  projekt("villa-abendlicht", "Villa mit weißer Fassade", "aussen", 3648, 2367, true),
   projekt("altbau-schablonendecke", "Altbauzimmer mit Schablonendecke", "innen", 3000, 4000),
   projekt("wohnhaus-flieder", "Wohnhaus in Flieder", "aussen", 4000, 3000),
   projekt("mehrfamilienhaus-rote-laeden", "Mehrfamilienhaus mit roten Läden", "aussen", 3000, 4000),
-  projekt("praxis-wartezimmer", "Praxis, Wartezimmer mit Tapete in Türkis", "innen", 4000, 3000),
+  projekt("praxis-wartezimmer", "Praxis, Wartezimmer mit Tapete in Türkis", "innen", 4000, 3000, true),
   projekt("giebel-petrol", "Giebel in Petrol mit Holzbalkon", "aussen", 1328, 747),
   projekt("altbau-geruest", "Historische Fassade im Gerüst", "aussen", 4000, 3000),
-  projekt("altbau-pfirsich-seite", "Historische Fassade, Seitenansicht", "aussen", 4000, 3000),
+  projekt("altbau-pfirsich-seite", "Historische Fassade, Seitenansicht", "aussen", 4000, 3000, true),
   projekt("anbau-anthrazit", "Anbau in Anthrazit", "aussen", 4000, 3000),
   projekt("praxis-empfang", "Praxis, Empfang mit Holztresen", "innen", 4000, 3000),
   projekt("villa-palme", "Villa, Gartenseite", "aussen", 3648, 2367),
   projekt("villa-terrassen", "Villa, Terrassen zum Meer", "aussen", 3648, 2367),
   projekt("wohn-geschaeftshaus-laeden", "Wohn- und Geschäftshaus mit dunklen Läden", "aussen", 4000, 3000),
-  projekt("hof-grau-weiss", "Anwesen in Grau und Weiß", "aussen", 4000, 3000),
+  projekt("hof-grau-weiss", "Anwesen in Grau und Weiß", "aussen", 4000, 3000, true),
   projekt("hauswand-dunkle-laeden", "Hauswand mit dunklen Läden", "aussen", 3000, 4000),
   projekt("wohnhaus-warmgrau", "Wohnhaus in warmem Grau", "aussen", 4000, 3000),
   projekt("wohnhaus-warmgrau-pool", "Wohnhaus in warmem Grau, Poolseite", "aussen", 4000, 3000),
@@ -115,7 +118,7 @@ export const referenzen: Referenz[] = [
   projekt("balkon-hellgrau", "Terrasse und Balkon in Hellgrau", "aussen", 3000, 4000),
   projekt("bauernhaus-geruest", "Bauernhaus im Gerüst", "aussen", 4000, 3000),
   projekt("rohbau-abgeklebte-fenster", "Abgeklebte Fenster im Rohbau", "innen", 3264, 2448),
-  projekt("schaufenster-nacht", "Unser Schaufenster bei Nacht", "aussen", 4000, 3000),
+  projekt("schaufenster-nacht", "Unser Schaufenster bei Nacht", "aussen", 4000, 3000, true),
   { title: "Amtsgericht Bad Aibling", bereich: "aussen", width: 1280, height: 648, src: Amtsgericht_Bad_Aibling },
   { title: "Augencentrum Rosenheim", bereich: "innen", width: 1075, height: 708, src: Augencentrum_Rosenheim1 },
   { title: "Augencentrum Rosenheim", bereich: "innen", width: 960, height: 1280, src: Augencentrum_Rosenheim2 },

@@ -42,7 +42,7 @@ export default function Lightbox({
       {bild && (
         <Dialog.Panel className="fixed inset-0 flex flex-col bg-mbfir text-white duration-200 [--ring:var(--mblime)] motion-safe:animate-in motion-safe:fade-in">
           <div className="gutter flex min-h-[var(--header)] shrink-0 items-center justify-between gap-x-4">
-            <Dialog.Title className="font-sans text-base font-normal tracking-normal">
+            <Dialog.Title className="text-lg lg:text-2xl">
               {bild.title}
             </Dialog.Title>
             <button
@@ -73,7 +73,7 @@ export default function Lightbox({
               srcSet={bild.srcSet}
               sizes="100vw"
               alt={bild.title}
-              className="h-full w-full object-contain duration-300 motion-safe:animate-in motion-safe:fade-in"
+              className="wisch-ein h-full w-full object-contain"
             />
           </div>
 
