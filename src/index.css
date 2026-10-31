@@ -308,11 +308,13 @@ section[id] {
   }
   /* Fotos und Flächen werden wie mit der Farbrolle aufgetragen */
   /* Der schmale Rest ist nötig: Ganz zugeklippt meldet der IntersectionObserver
-     nur noch die Ecke oben links, und nach Sprüngen bliebe das Bild leer. */
+     nur noch die Ecke oben links, und nach Sprüngen bliebe das Bild leer.
+     Die Deckkraft versteckt diesen Rest, bis die Rolle startet. */
   .reveal-foto,
   .reveal-kachel {
+    opacity: 0;
     clip-path: inset(0 99.9% 0 0);
-    transition: clip-path 1000ms var(--rolle);
+    transition: clip-path 1000ms var(--rolle), opacity 1ms;
   }
   .reveal-foto {
     overflow: hidden;
