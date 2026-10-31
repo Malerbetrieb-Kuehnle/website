@@ -201,7 +201,6 @@
 
 /* Referenzen: Bilder behalten ihr Format, die Reihen füllen die Breite */
 .galerie {
-  --zeile: 10rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -212,34 +211,65 @@
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.galerie-abschnitt::after {
-  content: "";
-  flex: 3 1 calc(var(--zeile) * 2);
-}
+/* Anteile kommen aus src/lib/galerie.ts, sie ergeben je Zeile die volle Breite.
+   Das Pixel Luft hält Rundungen aus dem Umbruch heraus, flex-grow gleicht es aus. */
 .galerie-bild {
-  flex-basis: calc(var(--seiten) * var(--zeile));
+  flex-grow: var(--seiten);
+  flex-basis: calc(
+    (100% - var(--fugen-s) * 0.5rem) * var(--anteil-s) - 1px
+  );
   aspect-ratio: var(--seiten);
+  background: hsl(var(--mbkalk));
 }
 .galerie-bild-gross {
   flex-basis: 100%;
   aspect-ratio: auto;
   height: 70svh;
 }
-@media (min-width: 1024px) {
-  .galerie {
-    --zeile: 19rem;
+@media (min-width: 640px) {
+  .galerie-bild {
+    flex-basis: calc(
+      (100% - var(--fugen-m) * 0.5rem) * var(--anteil-m) - 1px
+    );
   }
+  .galerie-bild-gross {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 1024px) {
   .galerie-bild-gross {
     height: 88svh;
   }
 }
-@media (min-width: 1536px) {
-  .galerie {
-    --zeile: 24rem;
+@media (min-width: 1280px) {
+  .galerie-bild {
+    flex-basis: calc(
+      (100% - var(--fugen-l) * 0.5rem) * var(--anteil-l) - 1px
+    );
+  }
+  .galerie-bild-gross {
+    flex-basis: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kontaktweg::before {
+    transition: opacity 200ms ease-out;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .nav-link::after {
+    transition: transform 400ms var(--rolle);
+  }
+  .kontaktweg::before {
+    opacity: 1;
+    transform: translateX(-101%);
+    transition: transform 500ms var(--rolle);
+  }
+  .kontaktweg:focus-visible::before {
+    transform: none;
+  }
   .reveal-text {
     opacity: 0;
     transform: translateY(16px);

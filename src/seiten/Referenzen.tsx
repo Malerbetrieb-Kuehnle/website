@@ -10,6 +10,7 @@ import {
   type Bereich,
   type Referenz,
 } from "@/constants/referenzen";
+import { zeilenStile } from "@/lib/galerie";
 import { cn } from "@/lib/utils";
 
 const filter: { id: Bereich | "alle"; title: string }[] = [
@@ -25,12 +26,20 @@ const imBereich = (id: Bereich | "alle") =>
 const inAbschnitte = (liste: Referenz[]) => {
   const grosse = liste.filter((bild) => bild.gross);
   const kleine = liste.filter((bild) => !bild.gross);
-  const proAbschnitt = Math.ceil(kleine.length / grosse.length);
+  const grenze = (index: number) =>
+    Math.round((index * kleine.length) / grosse.length);
 
-  return grosse.map((gross, index) => ({
-    gross,
-    kleine: kleine.slice(index * proAbschnitt, (index + 1) * proAbschnitt),
-  }));
+  return grosse.map((gross, index) => {
+    const abschnitt = kleine.slice(grenze(index), grenze(index + 1));
+    return { gross, kleine: abschnitt, stile: zeilenStile(abschnitt) };
+  });
+};
+
+const bildBreite = (stil: Record<string, number>) => {
+  const prozent = (name: string) => Math.ceil(stil[`--anteil-${name}`] * 100);
+  return `(min-width: 1280px) ${prozent("l")}vw, (min-width: 640px) ${prozent(
+    "m"
+  )}vw, ${prozent("s")}vw`;
 };
 
 export default function Referenzen() {
@@ -43,46 +52,44 @@ export default function Referenzen() {
     [abschnitte]
   );
 
-  const kachel = (bild: Referenz, gross: boolean, index: number) => (
-    <Reveal
+  const kachel = (
+    bild: Referenz,
+    index: number,
+    stil?: Record<string, number>
+  ) => (
+    <li
       key={bild.src}
-      as="li"
-      art="kachel"
-      verzoegerung={gross ? 0 : (index % 3) * 100}
-      className={cn("galerie-bild", gross && "galerie-bild-gross")}
-      style={
-        {
-          "--seiten": bild.width / bild.height,
-          flexGrow: bild.width / bild.height,
-        } as CSSProperties
-      }
+      className={cn("galerie-bild", !stil && "galerie-bild-gross")}
+      style={stil as CSSProperties}
     >
-      <button
-        type="button"
-        onClick={() => setOffen(bilder.indexOf(bild))}
-        className="group relative block h-full w-full overflow-hidden text-left"
-        aria-label={`${bild.title} groß ansehen`}
+      <Reveal
+        art="kachel"
+        verzoegerung={stil ? (index % 3) * 100 : 0}
+        className="h-full"
       >
-        <img
-          src={bild.src}
-          srcSet={bild.srcSet}
-          sizes={
-            gross
-              ? "100vw"
-              : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          }
-          alt={bild.title}
-          width={bild.width}
-          height={bild.height}
-          className="h-full w-full bg-mbkalk object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] group-focus-visible:scale-[1.04] motion-reduce:!scale-100"
-          loading="lazy"
-          decoding="async"
-        />
-        <span className={cn("etikett", !gross && "galerie-etikett")}>
-          {bild.title}
-        </span>
-      </button>
-    </Reveal>
+        <button
+          type="button"
+          onClick={() => setOffen(bilder.indexOf(bild))}
+          className="group relative block h-full w-full overflow-hidden text-left"
+          aria-label={`${bild.title} groß ansehen`}
+        >
+          <img
+            src={bild.src}
+            srcSet={bild.srcSet}
+            sizes={stil ? bildBreite(stil) : "100vw"}
+            alt={bild.title}
+            width={bild.width}
+            height={bild.height}
+            className="h-full w-full bg-mbkalk object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] group-focus-visible:scale-[1.04] motion-reduce:!scale-100"
+            loading="lazy"
+            decoding="async"
+          />
+          <span className={cn("etikett", stil && "galerie-etikett")}>
+            {bild.title}
+          </span>
+        </button>
+      </Reveal>
+    </li>
   );
 
   return (
@@ -132,10 +139,10 @@ export default function Referenzen() {
       <Farbleiste />
 
       <div key={aktiv} className="galerie">
-        {abschnitte.map(({ gross, kleine }) => (
+        {abschnitte.map(({ gross, kleine, stile }) => (
           <ul key={gross.src} role="list" className="galerie-abschnitt">
-            {kachel(gross, true, 0)}
-            {kleine.map((bild, index) => kachel(bild, false, index))}
+            {kachel(gross, 0)}
+            {kleine.map((bild, index) => kachel(bild, index, stile.get(bild)))}
           </ul>
         ))}
       </div>
