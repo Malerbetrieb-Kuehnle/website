@@ -5,7 +5,11 @@ import { faqGruppen } from "@/constants";
 
 export default function Faq() {
   return (
-    <section className="abschnitt grid gap-y-8 lg:grid-cols-12">
+    <section
+      id="fragen"
+      tabIndex={-1}
+      className="abschnitt grid gap-y-8 outline-none lg:grid-cols-12"
+    >
       <div className="lg:col-span-4">
         <Reveal art="titel">
           <h2 className="titel-mittel">
@@ -42,9 +46,21 @@ export default function Faq() {
                       aria-hidden="true"
                     />
                   </summary>
-                  <p className="max-w-2xl pb-6 text-lg leading-8 text-muted-foreground motion-safe:group-open:animate-einblenden">
-                    {item.answer}
-                  </p>
+                  <div className="max-w-2xl space-y-4 pb-7 text-lg leading-8 text-muted-foreground motion-safe:group-open:animate-einblenden">
+                    {item.answer.map((absatz) => (
+                      <p key={absatz}>{absatz}</p>
+                    ))}
+                    {item.link && (
+                      <p>
+                        <Link
+                          to={item.link.to}
+                          className="text-foreground underline decoration-1 underline-offset-4 transition-colors hover:text-mbgreen"
+                        >
+                          {item.link.title}
+                        </Link>
+                      </p>
+                    )}
+                  </div>
                 </details>
               ))}
             </div>
