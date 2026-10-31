@@ -61,8 +61,14 @@ export default function Services({ seite = false }: { seite?: boolean }) {
             ))}
           </TabsList>
 
+          {/* Beide Listen stehen im HTML, damit Suchmaschinen alle Leistungen sehen */}
           {bereiche.map((b) => (
-            <TabsContent key={b.id} value={b.id} className="mt-6">
+            <TabsContent
+              key={b.id}
+              value={b.id}
+              forceMount
+              className="mt-6 data-[state=inactive]:hidden"
+            >
               <ul role="list">
                 {b.leistungen.map((item, index) => (
                   <Reveal
