@@ -24,7 +24,7 @@ const Impressum = () => {
               <p className={p}>
                 Telefon: +49 8061 93 98 333
                 <br />
-                E-Mail: malerbetrieb.kuehnle@gmx.de
+                E-Mail: kontakt@malerbetrieb-kuehnle.de
               </p>
 
               <h2 className={h2}>Umsatzsteuer-ID</h2>

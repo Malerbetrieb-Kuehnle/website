@@ -148,7 +148,7 @@ const Datenschutz = () => {
             <p className={p}>
               Telefon: +49 (0) 8061 93 98 333
               <br />
-              E-Mail: malerbetrieb.kuehnle@gmx.de
+              E-Mail: kontakt@malerbetrieb-kuehnle.de
             </p>
             <p className={p}>
               Verantwortliche Stelle ist die nat&uuml;rliche oder juristische
@@ -376,23 +376,11 @@ const Datenschutz = () => {
               Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. f DSGVO).
             </p>{" "}
             <p className={p}>
-              Damit wir von Ihrer Anfrage erfahren, leitet unser Server Ihre
-              Angaben an den Benachrichtigungsdienst Pushover weiter. Anbieter
-              ist die Pushover, LLC, USA. Die Daten werden auf Servern in den
-              USA verarbeitet. Laut Anbieter werden Nachrichten nach
-              best&auml;tigter Zustellung gel&ouml;scht, sp&auml;testens nach 21
-              Tagen. F&uuml;r &Uuml;bermittlungen aus dem Europ&auml;ischen
-              Wirtschaftsraum nennt Pushover Standardvertragsklauseln als
-              Grundlage. Weitere Informationen finden Sie in der
-              Datenschutzerkl&auml;rung von Pushover:{" "}
-              <a
-                href="https://pushover.net/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://pushover.net/privacy
-              </a>
-              .
+              Damit wir von Ihrer Anfrage erfahren, sendet unser Server Ihre Angaben
+              per E-Mail an unser Postfach kontakt@malerbetrieb-kuehnle.de.
+              Server und Postfach liegen bei unserem Anbieter IONOS (siehe
+              Abschnitt Hosting). Eine Weitergabe an weitere Dienste findet
+              nicht statt.
             </p>{" "}
             <p className={p}>
               Wir l&ouml;schen Ihre Angaben, sobald Ihre Anfrage abschlie&szlig;end

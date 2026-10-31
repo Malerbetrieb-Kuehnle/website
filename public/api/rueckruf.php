@@ -1,12 +1,13 @@
 <?php
-// Nimmt das Rückruf-Formular entgegen und leitet es an Pushover weiter.
-// Die Zugangsdaten bleiben so auf dem Server und erreichen den Browser nie.
+// Nimmt das Rückruf-Formular entgegen und schickt es per E-Mail an den Betrieb.
 declare(strict_types=1);
 
 ini_set('display_errors', '0');
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 header('Cache-Control: no-store');
+
+const POSTFACH = 'kontakt@malerbetrieb-kuehnle.de';
 
 function antworten(int $status, bool $ok): void
 {
@@ -41,31 +42,23 @@ if (!empty($daten['website'])) {
 $name = is_string($daten['name'] ?? null) ? trim($daten['name']) : '';
 $telefon = is_string($daten['phone'] ?? null) ? trim($daten['phone']) : '';
 if (
-    preg_match('/^.{3,50}$/u', $name) !== 1
+    preg_match('/^[^\p{C}]{3,50}$/u', $name) !== 1
     || preg_match('/^[+]?[0-9 ()\/-]{6,30}$/', $telefon) !== 1
 ) {
     antworten(400, false);
 }
 
-$zugangsdatei = __DIR__ . '/.htpushover.php';
-if (!is_file($zugangsdatei)) {
-    antworten(500, false);
-}
-$zugang = require $zugangsdatei;
-
-$anfrage = curl_init('https://api.pushover.net/1/messages.json');
-curl_setopt_array($anfrage, [
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => http_build_query([
-        'token' => $zugang['token'],
-        'user' => $zugang['user'],
-        'message' => "Rückruf gewünscht von:\nName: {$name}\nTelefonnummer: {$telefon}",
-    ]),
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_TIMEOUT => 10,
+$betreff = '=?UTF-8?B?' . base64_encode("Rückruf gewünscht: {$name}") . '?=';
+$text = "Rückruf gewünscht von:\r\n\r\n"
+    . "Name: {$name}\r\n"
+    . "Telefon: {$telefon}\r\n\r\n"
+    . "Gesendet über das Formular auf malerbetrieb-kuehnle.de\r\n";
+$kopfzeilen = implode("\r\n", [
+    'From: Website <' . POSTFACH . '>',
+    'Content-Type: text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding: 8bit',
 ]);
-curl_exec($anfrage);
-$status = (int) curl_getinfo($anfrage, CURLINFO_RESPONSE_CODE);
-curl_close($anfrage);
 
-antworten($status === 200 ? 200 : 502, $status === 200);
+$gesendet = mail(POSTFACH, $betreff, $text, $kopfzeilen, '-f' . POSTFACH);
+
+antworten($gesendet ? 200 : 502, $gesendet);
