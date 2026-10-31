@@ -376,11 +376,25 @@ const Datenschutz = () => {
               Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. f DSGVO).
             </p>{" "}
             <p className={p}>
-              Damit wir von Ihrer Anfrage erfahren, sendet unser Server Ihre Angaben
-              per E-Mail an unser Postfach kontakt@malerbetrieb-kuehnle.de.
-              Server und Postfach liegen bei unserem Anbieter IONOS (siehe
-              Abschnitt Hosting). Eine Weitergabe an weitere Dienste findet
-              nicht statt.
+              Damit wir von Ihrer Anfrage erfahren, sendet Ihr Browser Ihre
+              Angaben beim Absenden direkt an den Benachrichtigungsdienst
+              Pushover. Dabei erh&auml;lt Pushover auch Ihre IP-Adresse. Ohne
+              Absenden des Formulars besteht keine Verbindung zu Pushover.
+              Anbieter ist die Pushover, LLC, USA. Die Daten werden auf Servern
+              in den USA verarbeitet. Laut Anbieter werden Nachrichten nach
+              best&auml;tigter Zustellung gel&ouml;scht, sp&auml;testens nach 21
+              Tagen. F&uuml;r &Uuml;bermittlungen aus dem Europ&auml;ischen
+              Wirtschaftsraum nennt Pushover Standardvertragsklauseln als
+              Grundlage. Weitere Informationen finden Sie in der
+              Datenschutzerkl&auml;rung von Pushover:{" "}
+              <a
+                href="https://pushover.net/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://pushover.net/privacy
+              </a>
+              .
             </p>{" "}
             <p className={p}>
               Wir l&ouml;schen Ihre Angaben, sobald Ihre Anfrage abschlie&szlig;end
