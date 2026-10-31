@@ -5,9 +5,10 @@ import App from "./App.tsx";
 import "@fontsource-variable/outfit";
 import "./index.css";
 
-// Frühere Adressen wie /#/kontakt führen auf die neuen Seiten
-if (window.location.hash.startsWith("#/")) {
-  window.location.replace(`${window.location.hash.slice(1)}/`);
+// Frühere Adressen wie /#/kontakt führen auf die neuen Seiten, /#/ war die Startseite
+const alterPfad = window.location.hash.slice(1);
+if (alterPfad.startsWith("/")) {
+  window.location.replace(alterPfad.replace(/\/*$/, "/"));
 }
 
 const seite = (
