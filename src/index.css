@@ -187,7 +187,7 @@ section[id] {
   }
 }
 
-/* Kontaktwege: Der Farbton rollt von links über die Zeile */
+/* Kontaktwege: Farbmuster von Rand zu Rand, Tannengrün rollt von links darüber */
 .kontaktweg {
   position: relative;
   isolation: isolate;
@@ -195,8 +195,11 @@ section[id] {
   align-content: center;
   align-items: baseline;
   height: 100%;
-  padding-block: 1rem;
+  min-height: 5.5rem;
+  padding-block: 1.25rem;
   overflow: hidden;
+  color: hsl(var(--foreground));
+  background: var(--ton);
   transition: color 300ms var(--rolle);
 }
 .kontaktweg::before {
@@ -204,12 +207,12 @@ section[id] {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--ton);
+  background: hsl(var(--mbfir));
   opacity: 0;
 }
 .kontaktweg:focus-visible {
-  color: hsl(var(--foreground));
-  outline-color: hsl(var(--foreground));
+  color: #fff;
+  outline-color: #fff;
   outline-offset: -4px;
 }
 .kontaktweg:focus-visible::before {
@@ -217,19 +220,11 @@ section[id] {
 }
 @media (hover: hover) {
   .kontaktweg:hover {
-    color: hsl(var(--foreground));
+    color: #fff;
   }
-  .kontaktweg:hover::before,
-  .kontaktweg:hover .kontaktweg-titel {
+  .kontaktweg:hover::before {
     opacity: 1;
   }
-}
-.kontaktweg-titel {
-  opacity: 0.75;
-  transition: opacity 300ms var(--rolle);
-}
-.kontaktweg:focus-visible .kontaktweg-titel {
-  opacity: 1;
 }
 .kontaktweg-wert {
   font-size: clamp(1.125rem, 5.2vw, 1.5rem);
@@ -243,6 +238,11 @@ section[id] {
   }
   .kontaktweg-wert {
     font-size: clamp(1.25rem, 2.2vw, 2.25rem);
+  }
+}
+@media (min-width: 1024px) {
+  .kontaktweg {
+    min-height: 7rem;
   }
 }
 
@@ -264,148 +264,6 @@ section[id] {
   .vorher-nachher figure {
     height: 100svh;
   }
-}
-
-/* Nachtszene: Ohne Scrollwert (--f) steht die fertige Nacht mit allen Lichtern */
-.nacht {
-  --p: var(--f, 1);
-  --r: calc(1 - var(--p));
-  --dunkelheit: clamp(0, calc((var(--p) - 0.04) / 0.62), 1);
-  --abendrot: min(
-    clamp(0, calc(var(--p) / 0.2), 1),
-    clamp(0, calc((0.62 - var(--p)) / 0.3), 1)
-  );
-  --licht-aussen: clamp(0, calc((var(--p) - 0.26) / 0.2), 1);
-  --licht-innen: clamp(0, calc((var(--p) - 0.46) / 0.18), 1);
-  --buehne-h: max(calc(100svh - var(--header) - 1px), 35rem);
-  /* Der Horizont des Fotos liegt auf 58 % seiner Höhe, das Haus sieht ihn genauso */
-  --foto-b: max(135vw, calc(var(--buehne-h) * 1.46));
-  --foto-h: calc(var(--foto-b) * 0.75);
-  --szene-h: calc(var(--buehne-h) * 1.078);
-  --szene-b: calc(var(--szene-h) * 1.1111);
-  --schwenk: min(-3vw, calc(70vw - var(--szene-b) * 0.95));
-}
-.nacht-buehne {
-  position: relative;
-  height: var(--buehne-h);
-  overflow: hidden;
-  /* Oben läuft der Himmel in die Farbe des Kontaktbereichs aus */
-  background: linear-gradient(
-      to bottom,
-      hsl(var(--mbfir)),
-      transparent 22%
-    ),
-    linear-gradient(
-      to bottom,
-      #75b5e9,
-      #8cc4e7 26%,
-      #9ecfe5 40%,
-      #c3d6d1 58%
-    );
-}
-.nacht-abend,
-.nacht-finster,
-.nacht-sterne {
-  position: absolute;
-  inset: 0 0 42%;
-}
-.nacht-abend {
-  background: linear-gradient(
-    to bottom,
-    transparent 20%,
-    #8f8fb4 58%,
-    #e3ab8e 84%,
-    #efb98a
-  );
-  opacity: var(--abendrot);
-}
-.nacht-finster {
-  background: linear-gradient(to bottom, hsl(var(--mbfir)) 16%, #2a6b78);
-  opacity: var(--dunkelheit);
-}
-.nacht-sterne {
-  background-image: radial-gradient(1.5px 1.5px at 8% 22%, #fff, transparent),
-    radial-gradient(1px 1px at 17% 9%, #fff, transparent),
-    radial-gradient(1px 1px at 26% 34%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 35% 15%, #fff, transparent),
-    radial-gradient(1px 1px at 44% 30%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 52% 8%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 62% 24%, #fff, transparent),
-    radial-gradient(1px 1px at 71% 12%, #fff, transparent),
-    radial-gradient(1px 1px at 84% 42%, #fff, transparent),
-    radial-gradient(1px 1px at 90% 54%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 96% 36%, #fff, transparent);
-  opacity: calc((var(--dunkelheit) - 0.5) * 1.1);
-}
-/* Das Foto ist breiter als die Bühne: Der Wendelstein rückt rechts neben das Haus */
-.nacht-foto {
-  position: absolute;
-  top: calc((var(--buehne-h) - var(--foto-h)) * 0.58);
-  left: calc(50% - var(--foto-b) * 0.5 + 11vw);
-  width: var(--foto-b);
-  height: var(--foto-h);
-  transform: translateX(calc(var(--p) * var(--schwenk) * 0.14));
-}
-.nacht-vorne {
-  transform: translateX(calc(var(--p) * var(--schwenk) * 0.5));
-}
-.nacht-ton {
-  position: absolute;
-  inset: 0;
-  background: #0f3140;
-  opacity: calc(var(--dunkelheit) * 0.26);
-}
-.nacht-haus {
-  position: absolute;
-  bottom: calc(var(--szene-h) * -0.09);
-  left: 0;
-  width: var(--szene-b);
-  height: var(--szene-h);
-  transform-origin: 54% 72%;
-  transform: translateX(calc(var(--p) * var(--schwenk)))
-    scale(calc(1 + var(--r) * var(--r) * 0.12));
-}
-.nacht-ebene {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-}
-.nacht-berge {
-  filter: brightness(calc(1 - var(--dunkelheit) * 0.6))
-    saturate(calc(1 - var(--dunkelheit) * 0.2));
-  transform: translate(calc(var(--r) * 1%), calc(var(--r) * 2.5%));
-}
-.nacht-land {
-  filter: brightness(calc(1 - var(--dunkelheit) * 0.72))
-    saturate(calc(1 - var(--dunkelheit) * 0.3));
-  transform: translate(calc(var(--r) * 2%), calc(var(--r) * 5%));
-}
-.nacht-vorn {
-  filter: brightness(calc(1 - var(--dunkelheit) * 0.76))
-    saturate(calc(1 - var(--dunkelheit) * 0.3));
-  transform: translate(calc(var(--r) * 3%), calc(var(--r) * 11%));
-}
-.nacht-gras {
-  filter: brightness(calc(1 - var(--dunkelheit) * 0.76))
-    saturate(calc(1 - var(--dunkelheit) * 0.3));
-}
-.nacht-dunkel {
-  filter: brightness(calc(1.2 - var(--dunkelheit) * 0.7));
-}
-.nacht-fassade {
-  opacity: var(--licht-aussen);
-}
-/* Der Laden liegt hinter der Scheibe und zieht deshalb etwas langsamer mit */
-.nacht-innen {
-  opacity: var(--licht-innen);
-  transform-origin: 42% 42%;
-  transform: scale(calc(1 - var(--r) * var(--r) * 0.05));
-}
-.nacht-schein {
-  opacity: calc(var(--licht-innen) * 0.5);
-  mix-blend-mode: screen;
 }
 
 /* Referenzen: Bilder behalten ihr Format, die Reihen füllen die Breite */
@@ -595,19 +453,6 @@ section[id] {
   .wort-fuellung span {
     opacity: clamp(0.16, calc((var(--f, 1) - var(--i)) * 14 + 0.16), 1);
     transition: opacity 120ms linear;
-  }
-
-  /* Nachtszene: Die Bühne bleibt stehen, während es Nacht wird */
-  .nacht {
-    height: 260svh;
-  }
-  .nacht-buehne {
-    position: sticky;
-    top: calc(var(--header) + 1px);
-  }
-  .nacht-haus,
-  .nacht-ebene {
-    will-change: transform, opacity, filter;
   }
 
   /* Vorher/Nachher: Abschnitt bleibt stehen, die Rolle zieht die Sanierung darüber */
