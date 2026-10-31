@@ -1,7 +1,6 @@
 import { farbtoene } from "@/constants";
 
-// Beim Laden und beim Seitenwechsel fallen die Farbtöne an den unteren Rand.
-// Die Breiten entsprechen der Farbleiste auf der Startseite.
+// Beim Laden und beim Seitenwechsel fallen die Farbtöne an den unteren Rand
 export default function Farbvorhang() {
   return (
     <div
@@ -11,10 +10,9 @@ export default function Farbvorhang() {
       {farbtoene.map((ton, index) => (
         <div
           key={ton.name}
-          className="farbvorhang-balken basis-0"
+          className="farbvorhang-balken flex-1"
           style={{
             backgroundColor: ton.hex,
-            flexGrow: index === 0 ? 4 : 1,
             animationDelay: `${index * 50}ms`,
           }}
         />

@@ -142,6 +142,10 @@
   --rolle: cubic-bezier(0.2, 0, 0, 1);
 }
 
+.farbbalken {
+  display: none;
+}
+
 .wort-maske {
   display: inline-block;
   overflow: hidden;
@@ -285,12 +289,41 @@
     transform-origin: bottom;
     animation: vorhang 650ms var(--rolle) both;
   }
+  .farbbalken {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 100%;
+    display: block;
+    height: 100svh;
+    pointer-events: none;
+    transform-origin: bottom;
+    animation: vorhang 650ms var(--rolle) both;
+  }
   @keyframes vorhang {
     from {
       transform: scaleY(1);
     }
     to {
       transform: scaleY(0);
+    }
+  }
+
+  /* Die Laufzeit des Fortschritts bestimmt, wann das nächste Foto kommt */
+  .bildwechsel {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 3px;
+    background: currentColor;
+    transform-origin: left;
+    animation: bildwechsel 6s linear both;
+  }
+  @keyframes bildwechsel {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
     }
   }
 

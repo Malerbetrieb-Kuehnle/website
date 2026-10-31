@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { farbtoene } from "@/constants";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
-import { useScrollFortschritt } from "@/lib/bewegung";
+import { bewegungReduziert, useScrollFortschritt } from "@/lib/bewegung";
 import { cn } from "@/lib/utils";
 
 const fortschritt = (box: DOMRect) => -box.top / box.height;
@@ -13,8 +14,16 @@ export default function Start() {
   const [active, setActive] = useState(0);
   // Das bisherige Foto bleibt liegen, bis das neue es überrollt hat
   const [vorher, setVorher] = useState(0);
-  // Fotos laden erst, wenn jemand den Farbton ansteuert
-  const [geladen, setGeladen] = useState<number[]>([0]);
+  // Geladen ist immer das aktuelle Foto und das nächste
+  const [geladen, setGeladen] = useState<number[]>([0, 1]);
+
+  // Der Wechsel läuft nur, solange ihn niemand stört
+  const [automatik, setAutomatik] = useState(false);
+  const [angehalten, setAngehalten] = useState(false);
+  const [wirdBedient, setWirdBedient] = useState(false);
+  const [imBild, setImBild] = useState(true);
+  const pausiert = angehalten || wirdBedient || !imBild;
+
   const ton = farbtoene[active];
 
   const vormerken = (index: number) =>
@@ -23,9 +32,21 @@ export default function Start() {
   const waehlen = (index: number) => {
     if (index === active) return;
     vormerken(index);
+    vormerken((index + 1) % farbtoene.length);
     setVorher(active);
     setActive(index);
   };
+
+  useEffect(() => {
+    setAutomatik(!bewegungReduziert());
+
+    const beobachter = new IntersectionObserver(
+      ([eintrag]) => setImBild(eintrag.isIntersecting),
+      { threshold: 0.6 }
+    );
+    beobachter.observe(bereich.current!);
+    return () => beobachter.disconnect();
+  }, [bereich]);
 
   return (
     <section
@@ -66,6 +87,23 @@ export default function Start() {
           {ton.name}, {ton.projekt}
         </p>
 
+        {automatik && (
+          <button
+            type="button"
+            onClick={() => setAngehalten(!angehalten)}
+            aria-label={
+              angehalten ? "Bildwechsel fortsetzen" : "Bildwechsel anhalten"
+            }
+            className="hero-inhalt absolute right-4 top-4 z-[3] flex h-11 w-11 items-center justify-center rounded-full bg-white text-foreground transition-colors hover:bg-mbkalk sm:right-6 sm:top-auto sm:bottom-6"
+          >
+            {angehalten ? (
+              <PlayIcon className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <PauseIcon className="h-5 w-5" aria-hidden="true" />
+            )}
+          </button>
+        )}
+
         {/* Farbtupfer wie auf unseren Fahrzeugen. Beim Scrollen flutet er das Foto. */}
         <div className="hero-kreis absolute bottom-4 left-4 z-[3] aspect-square w-[min(calc(100vw-2rem),max(60svh,20rem),44rem)] sm:bottom-6 sm:left-6 lg:left-10 2xl:left-16">
           <div
@@ -76,14 +114,14 @@ export default function Start() {
             style={{ backgroundColor: ton.hex }}
           >
             <div className="hero-inhalt flex h-full flex-col items-center justify-center text-center">
-              <p className="text-sm [animation-delay:750ms] motion-safe:animate-einblenden sm:text-base">
-                Ihr Meisterbetrieb in Bad Aibling
-              </p>
-              <h1 className="my-3 text-[clamp(2.25rem,min(11.5vw,7.2svh),5.5rem)] leading-[1.05] [animation-delay:850ms] motion-safe:animate-einblenden sm:my-4">
+              <h1 className="text-sm font-normal tracking-normal [animation-delay:750ms] motion-safe:animate-einblenden sm:text-base">
+                Ihr Malerbetrieb in Bad Aibling
+              </h1>
+              <p className="my-3 text-[clamp(2.25rem,min(11.5vw,7.2svh),5.5rem)] font-medium leading-[1.05] tracking-[-0.01em] [animation-delay:850ms] motion-safe:animate-einblenden sm:my-4">
                 Farbe <br />
                 schafft <br />
                 Atmosphäre.
-              </h1>
+              </p>
               <div className="[animation-delay:950ms] motion-safe:animate-einblenden">
                 <Button
                   asChild
@@ -91,7 +129,7 @@ export default function Start() {
                     ton.hell && "bg-white text-foreground hover:bg-white/90"
                   )}
                 >
-                  <Link to="/kontakt">Rückruf vereinbaren</Link>
+                  <Link to="/kontakt/">Rückruf vereinbaren</Link>
                 </Button>
               </div>
             </div>
@@ -102,7 +140,15 @@ export default function Start() {
       <div
         role="group"
         aria-label="Farbton wählen und Projekt ansehen"
-        className="flex h-16 shrink-0 sm:h-20"
+        className="relative z-[5] flex h-16 shrink-0 sm:h-20"
+        onPointerEnter={(event) =>
+          event.pointerType === "mouse" && setWirdBedient(true)
+        }
+        onPointerLeave={() => setWirdBedient(false)}
+        onFocus={(event) =>
+          event.target.matches(":focus-visible") && setWirdBedient(true)
+        }
+        onBlur={() => setWirdBedient(false)}
       >
         {farbtoene.map((item, index) => {
           const aktiv = index === active;
@@ -117,11 +163,30 @@ export default function Start() {
               onFocus={() => vormerken(index)}
               style={{ backgroundColor: item.hex, flexGrow: aktiv ? 4 : 1 }}
               className={cn(
-                "flex basis-0 items-end overflow-hidden px-4 pb-3 text-left leading-tight transition-[flex-grow] duration-500 ease-out focus-visible:outline-current focus-visible:-outline-offset-4",
+                "relative flex min-w-0 basis-0 items-end px-4 pb-3 text-left leading-tight transition-[flex-grow] duration-500 ease-out focus-visible:outline-current focus-visible:-outline-offset-4",
                 item.hell ? "text-white" : "text-foreground"
               )}
             >
-              <span className="flex items-baseline gap-x-2 whitespace-nowrap max-sm:sr-only">
+              {/* Die Balken gehören zum Feld, Farbe und Grenzen stimmen dadurch immer */}
+              <span
+                aria-hidden="true"
+                className="farbbalken"
+                style={{
+                  backgroundColor: item.hex,
+                  animationDelay: `${index * 50}ms`,
+                }}
+              />
+              {aktiv && automatik && (
+                <span
+                  aria-hidden="true"
+                  className="bildwechsel"
+                  style={{
+                    animationPlayState: pausiert ? "paused" : "running",
+                  }}
+                  onAnimationEnd={() => waehlen((index + 1) % farbtoene.length)}
+                />
+              )}
+              <span className="flex min-w-0 items-baseline gap-x-2 overflow-hidden whitespace-nowrap max-sm:sr-only">
                 <span className={cn("font-medium", !aktiv && "max-lg:sr-only")}>
                   {item.name}
                 </span>
