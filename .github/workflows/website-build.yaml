@@ -16,6 +16,9 @@ on:
 env:
   DEPLOYMENT_FOLDER: dist
 
+permissions:
+  contents: read
+
 jobs:
 # Please do not rename this job
   build-project:
@@ -23,21 +26,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           submodules: 'recursive'
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: v20.x
+          node-version: 26.x
 
       - name: Build Node assets
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
         run: |
-          npm ci
+          npm ci --ignore-scripts
           npm run build
 
 # Please do not touch the following action

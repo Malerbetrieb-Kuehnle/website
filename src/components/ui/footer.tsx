@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import Farbleiste from "@/components/ui/farbleiste";

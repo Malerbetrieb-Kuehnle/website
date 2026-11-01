@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
 import { faqGruppen } from "@/constants";
 

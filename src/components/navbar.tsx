@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PhoneIcon } from "@heroicons/react/24/solid";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router";
 import { Button } from "@/components/ui/button";
 import {
   adresse,

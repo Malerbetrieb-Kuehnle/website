@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import { farbtoene } from "@/constants";
 import { projektBild, projektSrcSet } from "@/lib/bilder";
@@ -8,6 +8,7 @@ import { bewegungReduziert, useScrollFortschritt } from "@/lib/bewegung";
 import { cn } from "@/lib/utils";
 
 const fortschritt = (box: DOMRect) => -box.top / box.height;
+const keinAbo = () => () => {};
 
 export default function Start() {
   const bereich = useScrollFortschritt<HTMLElement>(fortschritt);
@@ -18,7 +19,11 @@ export default function Start() {
   const [geladen, setGeladen] = useState<number[]>([0, 1]);
 
   // Der Wechsel läuft nur, solange ihn niemand stört
-  const [automatik, setAutomatik] = useState(false);
+  const automatik = useSyncExternalStore(
+    keinAbo,
+    () => !bewegungReduziert(),
+    () => false
+  );
   const [angehalten, setAngehalten] = useState(false);
   const [wirdBedient, setWirdBedient] = useState(false);
   const [imBild, setImBild] = useState(true);
@@ -38,8 +43,6 @@ export default function Start() {
   };
 
   useEffect(() => {
-    setAutomatik(!bewegungReduziert());
-
     const beobachter = new IntersectionObserver(
       ([eintrag]) => setImBild(eintrag.isIntersecting),
       { threshold: 0.6 }
@@ -76,7 +79,7 @@ export default function Start() {
                   index === vorher && index !== active && "z-[1]",
                   index !== active && index !== vorher && "invisible"
                 )}
-                {...(index === 0 ? { fetchpriority: "high" } : {})}
+                fetchPriority={index === 0 ? "high" : undefined}
               />
             ) : null
           )}
