@@ -25,6 +25,11 @@ Das Formular sendet direkt aus dem Browser an Pushover (`src/components/ui/profi
 `npm run dev` und `npm run preview` senden deshalb echte Nachrichten.
 
 
+## Besucherstatistik
+
+Matomo läuft als Website 3 auf der Instanz unter https://api.wasser-werte.de/statistik/. `src/lib/statistik.ts` meldet die Aufrufe ohne `matomo.js` und ohne Cookies, nur auf der Live-Domain.
+
+
 ## Build
 
 `npm run build` erzeugt die Seite und schreibt danach mit `scripts/prerender.mjs` für jede Seite fertiges HTML nach `dist`. Titel und Beschreibungen stehen in `src/constants/seo.ts`.

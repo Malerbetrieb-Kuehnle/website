@@ -341,7 +341,8 @@ const Datenschutz = () => {
           auf Ihrem Endger&auml;t. Schriften und Bilder liegen auf unserem
           eigenen Webspace, beim Besuch der Website werden keine Inhalte von
           Drittanbietern geladen. Deshalb fragen wir keine Einwilligung ab und
-          zeigen kein Cookie-Banner.
+          zeigen kein Cookie-Banner. Die Besucherstatistik beschreibt Abschnitt
+          5.
         </p>
         <h3 className={h3}>R&uuml;ckruf-Formular</h3>
         <p className={p}>
@@ -425,6 +426,48 @@ const Datenschutz = () => {
           >
             https://www.ionos.de/terms-gtc/datenschutzerklaerung/
           </a>
+        </p>
+        <h3 className={h3}>Matomo</h3>
+        <p className={p}>
+          Diese Website nutzt den Open-Source-Webanalysedienst Matomo, um zu
+          z&auml;hlen, wie oft sie aufgerufen wird. Matomo l&auml;uft auf einem
+          Server bei der netcup GmbH in N&uuml;rnberg (api.wasser-werte.de), den
+          Manuel K&uuml;hnle in unserem Auftrag betreibt. Die Daten werden nicht
+          an weitere Dritte weitergegeben.
+        </p>
+        <p className={p}>
+          Bei jedem Seitenaufruf sendet die Seite an Matomo: die aufgerufene
+          Seite ohne Parameter, ihren Titel und, wenn Sie von einer anderen
+          Website kommen, deren Adresse ohne Pfad und Suchbegriffe (z.&nbsp;B.
+          &bdquo;https://www.google.com/&ldquo;). Mit der Anfrage erh&auml;lt
+          der Server au&szlig;erdem Ihre IP-Adresse, den Zeitpunkt und die
+          Kennung Ihres Browsers (User-Agent), aus der Matomo Browser,
+          Betriebssystem und Ger&auml;tetyp ableitet.
+        </p>
+        <p className={p}>
+          Ihre IP-Adresse wird vor jeder Speicherung und Auswertung um zwei
+          Bytes gek&uuml;rzt (z.&nbsp;B. 192.168.xxx.xxx); eine Zuordnung zu
+          Ihrer Person ist damit nicht m&ouml;glich. Matomo setzt keine Cookies,
+          und die Seite speichert nichts auf Ihrem Endger&auml;t und liest dort
+          nichts aus, auch keine Bildschirmgr&ouml;&szlig;e oder
+          Ger&auml;temerkmale. Die einzelnen Aufrufe werden nach 180 Tagen
+          gel&ouml;scht; danach bleiben nur zusammengefasste Zahlen ohne Bezug
+          zu einzelnen Besuchen.
+        </p>
+        <p className={p}>
+          Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+          Wir haben ein berechtigtes Interesse daran, die Nutzung der Website in
+          anonymisierter Form auszuwerten, um das Angebot zu verbessern. Da
+          weder Cookies gesetzt noch Informationen in Ihrem Endger&auml;t
+          gespeichert oder aus ihm ausgelesen werden, holen wir keine
+          Einwilligung nach &sect; 25 Abs. 1 TDDDG ein.
+        </p>
+        <p className={p}>
+          Sie k&ouml;nnen der Erfassung jederzeit widersprechen, ohne dass dazu
+          etwas auf Ihrem Ger&auml;t gespeichert wird: Schalten Sie in Ihrem
+          Browser &bdquo;Do Not Track&ldquo; oder &bdquo;Global Privacy
+          Control&ldquo; ein. Die Seite sendet dann nichts an Matomo, und Matomo
+          verwirft Anfragen mit diesem Signal.
         </p>
         <h2 className={h2}>6. Eigene Dienste</h2>
         <h3 className={h3}>Umgang mit Bewerberdaten</h3>

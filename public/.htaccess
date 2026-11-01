@@ -1,9 +1,10 @@
 ErrorDocument 404 /404.html
 
 <IfModule mod_headers.c>
-  # Erlaubt nur eigene Dateien und die Pushover-Anfrage des Formulars. So kann
-  # auch kein Banner, Tracker oder eingeschleustes Skript von außen laden.
-  Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src https://api.pushover.net; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+  # Erlaubt nur eigene Dateien, die Pushover-Anfrage des Formulars und die
+  # Meldung an Matomo. So kann kein Banner, Tracker oder eingeschleustes Skript
+  # von außen laden.
+  Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src https://api.pushover.net https://api.wasser-werte.de; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
   Header always set Strict-Transport-Security "max-age=31536000"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "DENY"
