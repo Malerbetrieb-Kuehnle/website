@@ -4,6 +4,7 @@ import Farbvorhang from "@/components/ui/farbvorhang";
 import Footer from "@/components/ui/footer";
 import Navbar from "@/components/navbar";
 import { seiten } from "@/constants/seo";
+import { zaehleAufruf } from "@/lib/statistik";
 
 const MainLayout = () => {
   const { pathname, hash, key } = useLocation();
@@ -14,6 +15,7 @@ const MainLayout = () => {
   useEffect(() => {
     document.title =
       seiten[pfad]?.titel ?? "Seite nicht gefunden | Malerbetrieb Kühnle";
+    zaehleAufruf();
 
     if (letzterPfad.current === pfad) return;
     letzterPfad.current = pfad;
