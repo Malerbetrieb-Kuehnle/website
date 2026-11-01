@@ -1,5 +1,17 @@
 ErrorDocument 404 /404.html
 
+<IfModule mod_headers.c>
+  # Erlaubt nur eigene Dateien und die Pushover-Anfrage des Formulars. So kann
+  # auch kein Banner, Tracker oder eingeschleustes Skript von außen laden.
+  Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src https://api.pushover.net; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "same-origin"
+  Header always set Permissions-Policy "camera=(), geolocation=(), microphone=(), payment=(), usb=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>
+
 # IONOS komprimiert von sich aus nur HTML
 <IfModule mod_filter.c>
   <IfModule mod_deflate.c>
