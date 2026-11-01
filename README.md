@@ -30,6 +30,13 @@ Das Formular sendet direkt aus dem Browser an Pushover (`src/components/ui/profi
 Matomo läuft als Website 3 auf der Instanz unter https://api.wasser-werte.de/statistik/. `src/lib/statistik.ts` meldet die Aufrufe ohne `matomo.js` und ohne Cookies, nur auf der Live-Domain.
 
 
+## Impressum und Datenschutz
+
+Beide Texte liegen als reines HTML in `src/legal/`. Aus eRecht24 den HTML-Code kopieren und den Inhalt von `impressum.html` oder `datenschutz.html` komplett ersetzen, die Überschrift `<h1>` gehört dazu. Das Aussehen kommt aus `.rechtstext` in `src/index.css`.
+
+Rückruf-Formular, „Keine Cookies“ und Matomo sind eigene Abschnitte der Datenschutzerklärung. Sie müssen nach dem Einfügen wieder drinstehen, sonst fehlen sie.
+
+
 ## Build
 
 `npm run build` erzeugt die Seite und schreibt danach mit `scripts/prerender.mjs` für jede Seite fertiges HTML nach `dist`. Titel und Beschreibungen stehen in `src/constants/seo.ts`.

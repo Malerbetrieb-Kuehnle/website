@@ -92,6 +92,35 @@
   .foto {
     @apply outline outline-1 -outline-offset-1 outline-black/10;
   }
+  /* Impressum und Datenschutz: Das HTML aus src/legal kommt ohne eigene Klassen */
+  .rechtstext {
+    @apply break-words;
+  }
+  .rechtstext h1 {
+    @apply titel-gross mb-16;
+  }
+  .rechtstext h2 {
+    @apply mt-2 text-3xl sm:text-4xl;
+  }
+  .rechtstext h3 {
+    @apply mt-2 text-2xl sm:text-3xl;
+  }
+  .rechtstext h4 {
+    @apply mt-2 text-xl font-medium sm:text-2xl;
+  }
+  .rechtstext p {
+    @apply mb-10 mt-6 text-lg leading-8 text-muted-foreground;
+  }
+  .rechtstext ul,
+  .rechtstext ol {
+    @apply mb-10 list-disc space-y-2 pl-6 text-lg leading-8 text-muted-foreground;
+  }
+  .rechtstext ol {
+    @apply list-decimal;
+  }
+  .rechtstext a {
+    @apply underline underline-offset-4;
+  }
 }
 
 /* Alle Bewegungen teilen sich die Kurve der Farbrolle und laufen von links nach rechts */
