@@ -1,5 +1,4 @@
 import React from "react";
-import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
@@ -16,15 +15,9 @@ import {
 } from "@/constants/index.tsx";
 
 const linkClass = "inline-block py-1 transition-colors hover:text-mbgreen";
+const titelClass = "text-sm text-muted-foreground";
 
 const [festnetz, mobil, mail, anschrift] = kontaktwege;
-
-interface Weg {
-  href: string;
-  wert: ReactNode;
-  extern?: boolean;
-  art?: string;
-}
 
 const netzwerke = [
   {
@@ -39,58 +32,19 @@ const netzwerke = [
   },
 ];
 
-const kontaktSpalten: { titel: string; wege: Weg[]; zusatz?: ReactNode }[] = [
+const wege = [
+  festnetz,
+  mobil,
+  mail,
   {
-    titel: "Anrufen",
-    wege: [
-      { ...festnetz, art: festnetz.titel },
-      { ...mobil, art: mobil.titel },
-    ],
-  },
-  {
-    titel: "Schreiben",
-    wege: [
-      { ...mail, wert: mail.titel },
-    ],
-    zusatz: (
-      <ul className="-ml-2.5 flex">
-        {netzwerke.map(({ name, href, pfad }) => (
-          <li key={name}>
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Malerbetrieb Kühnle auf ${name}`}
-              className="flex h-11 w-11 items-center justify-center transition-colors hover:text-mbgreen"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-                className="h-6 w-6"
-              >
-                <path d={pfad} />
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
+    ...anschrift,
+    wert: (
+      <>
+        {adresse.strasse}
+        <br />
+        {adresse.ort}
+      </>
     ),
-  },
-  {
-    titel: "Besuchen",
-    wege: [
-      {
-        ...anschrift,
-        wert: (
-          <>
-            {adresse.strasse}
-            <br />
-            {adresse.ort}
-          </>
-        ),
-      },
-    ],
   },
 ];
 
@@ -109,38 +63,8 @@ const Footer: React.FC = () => {
           </Button>
         </div>
 
-        <address className="mt-14 grid gap-x-10 gap-y-8 not-italic md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
-          {kontaktSpalten.map((spalte) => (
-            <div key={spalte.titel}>
-              <p className="text-muted-foreground">{spalte.titel}</p>
-              <ul className="mt-2 text-lg leading-8 md:text-xl lg:text-lg xl:text-2xl xl:leading-9">
-                {spalte.wege.map((weg) => (
-                  <li key={weg.href}>
-                    <a
-                      href={weg.href}
-                      {...(weg.extern && {
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                      })}
-                      className={linkClass}
-                    >
-                      {weg.art && (
-                        <span className="inline-block w-[3.25em] text-muted-foreground">
-                          {weg.art}
-                        </span>
-                      )}
-                      {weg.wert}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              {spalte.zusatz}
-            </div>
-          ))}
-        </address>
-
-        <div className="mt-14 flex flex-col gap-y-8 lg:mt-20 lg:flex-row lg:items-end lg:justify-between lg:gap-x-12">
-          <div>
+        <div className="mt-14 grid gap-x-16 gap-y-10 md:grid-cols-[1fr_auto] lg:mt-20 lg:grid-cols-[1fr_auto_auto] xl:gap-x-28">
+          <div className="md:col-span-2 lg:col-span-1">
             <Link to="/" className="inline-block">
               <img
                 src={logo}
@@ -154,9 +78,56 @@ const Footer: React.FC = () => {
             <p className="mt-4 max-w-xs leading-7">
               Meisterbetrieb für Maler- und Lackiererarbeiten in Bad Aibling.
             </p>
+            <ul className="-ml-2.5 mt-3 flex">
+              {netzwerke.map(({ name, href, pfad }) => (
+                <li key={name}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Malerbetrieb Kühnle auf ${name}`}
+                    className="flex h-11 w-11 items-center justify-center transition-colors hover:text-mbgreen"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      className="h-6 w-6"
+                    >
+                      <path d={pfad} />
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          <address className="not-italic">
+            <p className={titelClass}>Kontakt</p>
+            <ul className="mt-3">
+              {wege.map((weg) => (
+                <li key={weg.href}>
+                  <a
+                    href={weg.href}
+                    {...(weg.extern && {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    })}
+                    className="flex flex-wrap py-1 transition-colors hover:text-mbgreen"
+                  >
+                    <span className="w-20 text-muted-foreground">
+                      {weg.titel}
+                    </span>
+                    <span>{weg.wert}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </address>
+
           <nav aria-label="Fußzeile">
-            <ul role="list" className="flex flex-wrap gap-x-8 gap-y-1">
+            <p className={titelClass}>Seiten</p>
+            <ul role="list" className="mt-3">
               {menueLinks.map((link) => (
                 <li key={link.id}>
                   <Link to={link.path} className={linkClass}>
