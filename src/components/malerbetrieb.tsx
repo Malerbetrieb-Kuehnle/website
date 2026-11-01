@@ -67,7 +67,7 @@ export default function Malerbetrieb() {
             />
             <div
               aria-hidden="true"
-              className="absolute right-3 top-3 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-mborange sm:h-28 sm:w-28"
+              className="absolute right-3 top-3 flex h-28 w-28 flex-col items-center justify-center rounded-full bg-mborange text-center sm:h-32 sm:w-32"
             >
               <span
                 suppressHydrationWarning
@@ -75,7 +75,11 @@ export default function Malerbetrieb() {
               >
                 {jahre}
               </span>
-              <span className="text-base sm:mt-0.5">Jahre</span>
+              <span className="mt-0.5 text-sm leading-tight sm:text-base sm:leading-tight">
+                Jahre
+                <br />
+                Erfahrung
+              </span>
             </div>
             <figcaption className="etikett">Norbert Kühnle, Inhaber</figcaption>
           </Reveal>
