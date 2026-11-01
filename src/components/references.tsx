@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import Augencentrum_Rosenheim1 from "@/assets/referenzen/Augencentrum_Rosenheim1.jpg";
 import Bauernhof_Brannenburg2 from "@/assets/referenzen/Bauernhof_Brannenburg2.jpg";
 import Wohnhaus_Hohenthann3 from "@/assets/referenzen/Wohnhaus_Hohenthann3.jpg";

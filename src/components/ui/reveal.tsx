@@ -1,5 +1,10 @@
-import { createElement, Fragment, useEffect, useRef, useState } from "react";
-import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
+import type {
+  CSSProperties,
+  HTMLAttributes,
+  ReactNode,
+  RefObject,
+} from "react";
 import { cn } from "@/lib/utils";
 
 const arten = {
@@ -22,7 +27,7 @@ interface RevealProps extends HTMLAttributes<HTMLElement> {
 export default function Reveal({
   children,
   art = "text",
-  as = "div",
+  as: Element = "div",
   verzoegerung = 0,
   ohneRand = false,
   className,
@@ -50,15 +55,15 @@ export default function Reveal({
     ...style,
   };
 
-  return createElement(
-    as,
-    {
-      ...rest,
-      ref: element,
-      style: verzoegert,
-      className: cn(arten[art], sichtbar && "reveal-sichtbar", className),
-    },
-    children
+  return (
+    <Element
+      {...rest}
+      ref={element as RefObject<never>}
+      style={verzoegert}
+      className={cn(arten[art], sichtbar && "reveal-sichtbar", className)}
+    >
+      {children}
+    </Element>
   );
 }
 

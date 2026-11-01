@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router";
 import Farbvorhang from "@/components/ui/farbvorhang";
 import Footer from "@/components/ui/footer";
 import Navbar from "@/components/navbar";

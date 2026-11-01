@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import type { CSSProperties } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import Farbleiste from "@/components/ui/farbleiste";
 import Lightbox from "@/components/ui/lightbox";
@@ -83,7 +83,7 @@ export default function Referenzen() {
             className="h-full w-full bg-mbkalk object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] group-focus-visible:scale-[1.04] motion-reduce:!scale-100"
             loading={bild === bilder[0] ? "eager" : "lazy"}
             decoding="async"
-            {...(bild === bilder[0] ? { fetchpriority: "high" } : {})}
+            fetchPriority={bild === bilder[0] ? "high" : undefined}
           />
           <span className={cn("etikett", stil && "galerie-etikett")}>
             {bild.title}

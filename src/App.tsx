@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router";
 
 import Referenzen from "@/seiten/Referenzen";
 import Kontakt from "@/seiten/Kontakt";

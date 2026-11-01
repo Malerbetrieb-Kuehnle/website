@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { ProfileForm } from "@/components/ui/profileform";
 import Reveal, { WortMaske } from "@/components/ui/reveal";
 import { farbtoene, kontaktwege } from "@/constants";
