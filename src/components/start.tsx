@@ -97,7 +97,7 @@ export default function Start() {
             aria-label={
               angehalten ? "Bildwechsel fortsetzen" : "Bildwechsel anhalten"
             }
-            className="hero-inhalt absolute right-4 top-4 z-[3] flex h-11 w-11 items-center justify-center rounded-full bg-white text-foreground transition-colors hover:bg-mbkalk sm:right-6 sm:top-auto sm:bottom-6"
+            className="hero-inhalt absolute bottom-6 right-6 z-[3] hidden h-11 w-11 items-center justify-center rounded-full bg-white text-foreground transition-colors hover:bg-mbkalk sm:flex"
           >
             {angehalten ? (
               <PlayIcon className="h-5 w-5" aria-hidden="true" />
@@ -143,7 +143,7 @@ export default function Start() {
       <div
         role="group"
         aria-label="Farbton wählen und Projekt ansehen"
-        className="relative z-[5] flex h-16 shrink-0 sm:h-20"
+        className="relative z-[5] flex h-10 shrink-0 sm:h-14"
         onPointerEnter={(event) =>
           event.pointerType === "mouse" && setWirdBedient(true)
         }
@@ -166,7 +166,7 @@ export default function Start() {
               onFocus={() => vormerken(index)}
               style={{ backgroundColor: item.hex, flexGrow: aktiv ? 4 : 1 }}
               className={cn(
-                "relative flex min-w-0 basis-0 items-end px-4 pb-3 text-left leading-tight transition-[flex-grow] duration-500 ease-out focus-visible:outline-current focus-visible:-outline-offset-4",
+                "relative flex min-w-0 basis-0 items-center px-4 text-left leading-tight transition-[flex-grow] duration-500 ease-out focus-visible:outline-current focus-visible:-outline-offset-4",
                 item.hell ? "text-white" : "text-foreground"
               )}
             >
