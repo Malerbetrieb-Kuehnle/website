@@ -86,7 +86,7 @@ export default function Start() {
         </div>
 
         {/* Am Handy ist die Farbleiste zu schmal für Beschriftungen */}
-        <p className="hero-inhalt absolute left-0 top-0 z-[3] bg-white px-3 py-1.5 font-medium text-foreground sm:hidden">
+        <p className="absolute left-0 top-0 z-[3] bg-white px-3 py-1.5 font-medium text-foreground sm:hidden">
           {ton.name}, {ton.projekt}
         </p>
 
@@ -97,7 +97,7 @@ export default function Start() {
             aria-label={
               angehalten ? "Bildwechsel fortsetzen" : "Bildwechsel anhalten"
             }
-            className="hero-inhalt absolute bottom-6 right-6 z-[3] hidden h-11 w-11 items-center justify-center rounded-full bg-white text-foreground transition-colors hover:bg-mbkalk sm:flex"
+            className="absolute bottom-6 right-6 z-[3] hidden h-11 w-11 items-center justify-center rounded-full bg-white text-foreground transition-colors hover:bg-mbkalk sm:flex"
           >
             {angehalten ? (
               <PlayIcon className="h-5 w-5" aria-hidden="true" />
@@ -107,8 +107,8 @@ export default function Start() {
           </button>
         )}
 
-        {/* Farbtupfer wie auf unseren Fahrzeugen. Beim Scrollen flutet er das Foto. */}
-        <div className="hero-kreis absolute bottom-4 left-4 z-[3] aspect-square w-[max(min(72vw,46svh),14.5rem)] sm:bottom-6 sm:left-6 sm:w-[min(calc(100vw-2rem),max(60svh,20rem),44rem)] lg:left-10 2xl:left-16">
+        {/* Farbtupfer wie auf unseren Fahrzeugen */}
+        <div className="absolute bottom-4 left-4 z-[3] aspect-square w-[max(min(72vw,46svh),14.5rem)] sm:bottom-6 sm:left-6 sm:w-[min(calc(100vw-2rem),max(60svh,20rem),44rem)] lg:left-10 2xl:left-16">
           <div
             className={cn(
               "h-full w-full rounded-full p-3 transition-colors duration-500 [animation-delay:450ms] motion-safe:animate-tupfer sm:p-6",
@@ -116,7 +116,7 @@ export default function Start() {
             )}
             style={{ backgroundColor: ton.hex }}
           >
-            <div className="hero-inhalt flex h-full flex-col items-center justify-center text-center">
+            <div className="flex h-full flex-col items-center justify-center text-center">
               <h1 className="text-xs font-normal tracking-normal [animation-delay:750ms] motion-safe:animate-einblenden sm:text-base">
                 Ihr Malerbetrieb in Bad Aibling
               </h1>
