@@ -63,45 +63,7 @@ const Footer: React.FC = () => {
           </Button>
         </div>
 
-        <div className="mt-14 grid gap-x-16 gap-y-10 md:grid-cols-[1fr_auto] lg:mt-20 lg:grid-cols-[1fr_auto_auto] xl:gap-x-28">
-          <div className="md:col-span-2 lg:col-span-1">
-            <Link to="/" className="inline-block">
-              <img
-                src={logo}
-                alt="Malerbetrieb Kühnle, zur Startseite"
-                className="h-14 w-auto"
-                width={249}
-                height={128}
-                loading="lazy"
-              />
-            </Link>
-            <p className="mt-4 max-w-xs leading-7">
-              Meisterbetrieb für Maler- und Lackiererarbeiten in Bad Aibling.
-            </p>
-            <ul className="-ml-2.5 mt-3 flex">
-              {netzwerke.map(({ name, href, pfad }) => (
-                <li key={name}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Malerbetrieb Kühnle auf ${name}`}
-                    className="flex h-11 w-11 items-center justify-center transition-colors hover:text-mbgreen"
-                  >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    >
-                      <path d={pfad} />
-                    </svg>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+        <div className="mt-12 grid gap-x-16 gap-y-10 border-t border-foreground/15 pt-10 sm:grid-cols-[auto_1fr] lg:mt-20 lg:grid-cols-[auto_1fr_1fr] lg:pt-12 xl:grid-cols-3">
           <address className="not-italic">
             <p className={titelClass}>Kontakt</p>
             <ul className="mt-3">
@@ -122,12 +84,40 @@ const Footer: React.FC = () => {
                   </a>
                 </li>
               ))}
+              <li className="flex items-center">
+                <span className="w-20 text-muted-foreground">Folgen</span>
+                <ul className="-ml-2.5 flex">
+                  {netzwerke.map(({ name, href, pfad }) => (
+                    <li key={name}>
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Malerbetrieb Kühnle auf ${name}`}
+                        className="flex h-11 w-11 items-center justify-center transition-colors hover:text-mbgreen"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                          className="h-6 w-6"
+                        >
+                          <path d={pfad} />
+                        </svg>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
             </ul>
           </address>
 
           <nav aria-label="Fußzeile">
             <p className={titelClass}>Seiten</p>
-            <ul role="list" className="mt-3">
+            <ul
+              role="list"
+              className="mt-3 grid grid-cols-2 gap-x-8 sm:w-fit sm:grid-cols-1 xl:grid-cols-2"
+            >
               {menueLinks.map((link) => (
                 <li key={link.id}>
                   <Link to={link.path} className={linkClass}>
@@ -137,13 +127,32 @@ const Footer: React.FC = () => {
               ))}
             </ul>
           </nav>
+
+          <div className="sm:col-span-2 lg:col-span-1">
+            <p className={titelClass}>Einsatzgebiet</p>
+            <p className="mt-4 max-w-xl leading-6 lg:max-w-xs">
+              Im Einsatz in {einsatzorte.join(", ")} und der Region sowie im
+              Ausland.
+            </p>
+          </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-y-3 border-t border-foreground/15 pt-6 text-sm text-muted-foreground lg:flex-row lg:items-baseline lg:justify-between lg:gap-x-12">
-          <p className="max-w-2xl">
-            Im Einsatz in {einsatzorte.join(", ")} und der Region sowie im
-            Ausland.
-          </p>
+        <div className="mt-10 flex flex-col gap-y-5 border-t border-foreground/15 pt-6 text-sm text-muted-foreground lg:mt-12 lg:flex-row lg:items-center lg:justify-between lg:gap-x-12">
+          <div className="flex items-center gap-x-5">
+            <Link to="/" className="shrink-0">
+              <img
+                src={logo}
+                alt="Malerbetrieb Kühnle, zur Startseite"
+                className="h-12 w-auto"
+                width={249}
+                height={128}
+                loading="lazy"
+              />
+            </Link>
+            <p className="max-w-[17rem] leading-5">
+              Meisterbetrieb für Maler- und Lackiererarbeiten in Bad Aibling.
+            </p>
+          </div>
           <div className="flex shrink-0 flex-wrap items-baseline gap-x-6">
             {rechtlichesLinks.map((link) => (
               <Link key={link.id} to={link.path} className={linkClass}>
