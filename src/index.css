@@ -434,16 +434,23 @@ section[id] {
       scale(calc(1 + var(--f, 0) * 0.08));
   }
   .hero-kreis {
-    transform: scale(calc(1 + var(--f, 0) * 7));
+    --flut: 7;
+    transform: scale(calc(1 + var(--f, 0) * var(--flut)));
     will-change: transform;
+  }
+  /* Der kleinere Kreis am Handy flutet in derselben Scrollstrecke */
+  @media (max-width: 639px) {
+    .hero-kreis {
+      --flut: 11;
+    }
   }
   .hero-inhalt {
     opacity: calc(1 - var(--f, 0) * 6);
   }
 
-  /* Die Aussage füllt sich Wort für Wort */
+  /* Die Aussage füllt sich Wort für Wort. 0.94 lässt dem letzten Wort Platz bis zur vollen Deckkraft */
   .wort-fuellung span {
-    opacity: clamp(0.16, calc((var(--f, 1) - var(--i)) * 14 + 0.16), 1);
+    opacity: clamp(0.16, calc((var(--f, 1) - var(--i) * 0.94) * 14 + 0.16), 1);
     transition: opacity 120ms linear;
   }
 
