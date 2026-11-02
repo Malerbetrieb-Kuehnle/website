@@ -97,7 +97,7 @@ export default function Start() {
             aria-label={
               angehalten ? "Bildwechsel fortsetzen" : "Bildwechsel anhalten"
             }
-            className="hero-inhalt absolute right-4 top-4 z-[3] flex h-11 w-11 items-center justify-center rounded-full bg-white text-foreground transition-colors hover:bg-mbkalk sm:right-6 sm:top-auto sm:bottom-6"
+            className="hero-inhalt absolute bottom-6 right-6 z-[3] hidden h-11 w-11 items-center justify-center rounded-full bg-white text-foreground transition-colors hover:bg-mbkalk sm:flex"
           >
             {angehalten ? (
               <PlayIcon className="h-5 w-5" aria-hidden="true" />
@@ -108,19 +108,19 @@ export default function Start() {
         )}
 
         {/* Farbtupfer wie auf unseren Fahrzeugen. Beim Scrollen flutet er das Foto. */}
-        <div className="hero-kreis absolute bottom-4 left-4 z-[3] aspect-square w-[min(calc(100vw-2rem),max(60svh,20rem),44rem)] sm:bottom-6 sm:left-6 lg:left-10 2xl:left-16">
+        <div className="hero-kreis absolute bottom-4 left-4 z-[3] aspect-square w-[max(min(72vw,46svh),14.5rem)] sm:bottom-6 sm:left-6 sm:w-[min(calc(100vw-2rem),max(60svh,20rem),44rem)] lg:left-10 2xl:left-16">
           <div
             className={cn(
-              "h-full w-full rounded-full p-6 transition-colors duration-500 [animation-delay:450ms] motion-safe:animate-tupfer",
+              "h-full w-full rounded-full p-3 transition-colors duration-500 [animation-delay:450ms] motion-safe:animate-tupfer sm:p-6",
               ton.hell ? "text-white" : "text-foreground"
             )}
             style={{ backgroundColor: ton.hex }}
           >
             <div className="hero-inhalt flex h-full flex-col items-center justify-center text-center">
-              <h1 className="text-sm font-normal tracking-normal [animation-delay:750ms] motion-safe:animate-einblenden sm:text-base">
+              <h1 className="text-xs font-normal tracking-normal [animation-delay:750ms] motion-safe:animate-einblenden sm:text-base">
                 Ihr Malerbetrieb in Bad Aibling
               </h1>
-              <p className="my-3 text-[clamp(2.25rem,min(11.5vw,7.2svh),5.5rem)] font-medium leading-[1.05] tracking-[-0.01em] [animation-delay:850ms] motion-safe:animate-einblenden sm:my-4">
+              <p className="my-2 text-[clamp(1.75rem,min(8.6vw,5svh),2.5rem)] font-medium leading-[1.05] tracking-[-0.01em] [animation-delay:850ms] motion-safe:animate-einblenden sm:my-4 sm:text-[clamp(2.25rem,min(11.5vw,7.2svh),5.5rem)]">
                 Farbe <br />
                 schafft <br />
                 Atmosphäre.
@@ -143,7 +143,7 @@ export default function Start() {
       <div
         role="group"
         aria-label="Farbton wählen und Projekt ansehen"
-        className="relative z-[5] flex h-16 shrink-0 sm:h-20"
+        className="relative z-[5] flex h-10 shrink-0 sm:h-14"
         onPointerEnter={(event) =>
           event.pointerType === "mouse" && setWirdBedient(true)
         }
@@ -166,7 +166,7 @@ export default function Start() {
               onFocus={() => vormerken(index)}
               style={{ backgroundColor: item.hex, flexGrow: aktiv ? 4 : 1 }}
               className={cn(
-                "relative flex min-w-0 basis-0 items-end px-4 pb-3 text-left leading-tight transition-[flex-grow] duration-500 ease-out focus-visible:outline-current focus-visible:-outline-offset-4",
+                "relative flex min-w-0 basis-0 items-center px-4 text-left leading-tight transition-[flex-grow] duration-500 ease-out focus-visible:outline-current focus-visible:-outline-offset-4",
                 item.hell ? "text-white" : "text-foreground"
               )}
             >

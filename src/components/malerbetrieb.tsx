@@ -28,7 +28,7 @@ function Aussage() {
       {aussage.map((wort, index) => (
         <span
           key={index}
-          style={{ "--i": index / aussage.length } as CSSProperties}
+          style={{ "--i": index / (aussage.length - 1) } as CSSProperties}
         >
           {wort}{" "}
         </span>
